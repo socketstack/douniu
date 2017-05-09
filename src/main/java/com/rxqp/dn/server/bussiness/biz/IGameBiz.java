@@ -32,4 +32,14 @@ public interface IGameBiz {
 	 */
 	public Builder discardProcess(MessageInfo messageInfoReq,
 			ChannelHandlerContext ctx);
+
+	/**
+	 * 开始游戏
+	 * 
+	 * @param messageInfoReq
+	 * @param ctx
+	 * @return
+	 */
+	public Builder startNNGame(MessageInfo messageInfoReq,
+			ChannelHandlerContext ctx);
 }

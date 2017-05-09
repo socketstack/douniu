@@ -158,7 +158,7 @@ public class RoomBizImpl implements IRoomBiz {
 					MessageConstants.ENTRY_ROOM_ERROR_TYPE_4000,
 					MessageConstants.ENTRY_ROOM_ERROR_MSG_4000);
 			return messageInfo;
-		} else if (players.size() >= 3) {
+		} else if (players.size() > 5) {// 斗牛每一房间最多5个玩家
 			messageInfo = commonBiz.setMessageInfo(
 					MessageConstants.ENTRY_ROOM_ERROR_TYPE_4001,
 					MessageConstants.ENTRY_ROOM_ERROR_MSG_4001);
@@ -177,11 +177,10 @@ public class RoomBizImpl implements IRoomBiz {
 				return messageInfo;
 			}
 			// 设置下一位玩家的ID
-			if (players.size() == 1) {// 当前玩家是第二位进入房间的玩家
-				players.get(0).setNextPlayerId(playerId);// 将其设置为第一位玩家的下家
-			} else if (players.size() == 2) {// 当前玩家是第三位进入房间的玩家
-				players.get(1).setNextPlayerId(playerId);
-				player.setNextPlayerId(players.get(0).getId());
+			int existPlayersCnt = players.size();// 当前已经进入房间的玩家数量
+			players.get(existPlayersCnt - 1).setNextPlayerId(playerId);// 将其设置为前一位玩家的下家
+			if (existPlayersCnt == 4) {// 当前玩家是第五位进入房间的玩家
+				player.setNextPlayerId(players.get(0).getId());// 其下一位玩家是第一位玩家
 			}
 			if (player.getIsland() && !player.getOnPlay()) {// 该玩家登陆，并且不在玩牌状态，才可以进入房间
 				player.setRoomId(roomId);

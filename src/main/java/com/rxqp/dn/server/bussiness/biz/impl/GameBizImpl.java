@@ -18,18 +18,19 @@ import com.rxqp.common.dn.data.CommonData;
 import com.rxqp.dn.common.enums.PokersTypeEnum;
 import com.rxqp.dn.exception.BusinnessException;
 import com.rxqp.dn.protobuf.DdzProto;
-import com.rxqp.dn.protobuf.DdzProto.DealReq;
-import com.rxqp.dn.protobuf.DdzProto.DealResp;
 import com.rxqp.dn.protobuf.DdzProto.DiscardReq;
 import com.rxqp.dn.protobuf.DdzProto.GrabHostReq;
 import com.rxqp.dn.protobuf.DdzProto.MESSAGE_ID;
 import com.rxqp.dn.protobuf.DdzProto.MessageInfo;
+import com.rxqp.dn.protobuf.DdzProto.MessageInfo.Builder;
+import com.rxqp.dn.protobuf.DdzProto.NNDealReq;
+import com.rxqp.dn.protobuf.DdzProto.NNDealResp;
 import com.rxqp.dn.protobuf.DdzProto.Poker;
 import com.rxqp.dn.protobuf.DdzProto.PostDealOver;
 import com.rxqp.dn.protobuf.DdzProto.PostDiscard;
 import com.rxqp.dn.protobuf.DdzProto.PostGrabHostResp;
-import com.rxqp.dn.protobuf.DdzProto.RoomInfo;
-import com.rxqp.dn.protobuf.DdzProto.MessageInfo.Builder;
+import com.rxqp.dn.protobuf.DdzProto.PostStartNNGame;
+import com.rxqp.dn.protobuf.DdzProto.StartNNGameReq;
 import com.rxqp.dn.server.bo.Player;
 import com.rxqp.dn.server.bo.Room;
 import com.rxqp.dn.server.bussiness.biz.ICommonBiz;
@@ -52,7 +53,7 @@ public class GameBizImpl implements IGameBiz {
 			ChannelHandlerContext ctx) {
 		try {
 			MessageInfo.Builder messageInfo = MessageInfo.newBuilder();
-			DealReq req = messageInfoReq.getDealReq();
+			NNDealReq req = messageInfoReq.getNnDealReq();
 			Integer playerId = req.getPlayerId();
 			Player player = CommonData.getPlayerById(playerId);
 			if (player == null) {
@@ -81,18 +82,9 @@ public class GameBizImpl implements IGameBiz {
 			}
 			LinkedList<Poker> remainderPokers = roomIdToPokerIds.get(player
 					.getRoomId());
-			if (CollectionUtils.isNotEmpty(players) && players.size() == 3) {
-				Channel channel = player.getChannel();
-				DdzProto.MessageInfo mi = shuffleDeal(player, remainderPokers);
-				channel.writeAndFlush(mi);
-			}
-			if (CollectionUtils.isNotEmpty(remainderPokers)
-					&& remainderPokers.size() == 3) {// 留三张底牌，表示给三个玩家都发完牌了，通知前端，可以开始抢地主了
-				// 广播房间里其他玩家
-				for (Player py : players) {
-					py.getChannel().writeAndFlush(setPostDealOver());
-				}
-			}
+			Channel channel = player.getChannel();
+			DdzProto.MessageInfo mi = shuffleDeal(player, remainderPokers);
+			channel.writeAndFlush(mi);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -118,33 +110,28 @@ public class GameBizImpl implements IGameBiz {
 	private DdzProto.MessageInfo shuffleDeal(Player player,
 			LinkedList<Poker> pks) {
 		MessageInfo.Builder messageInfo = MessageInfo.newBuilder();
-		messageInfo.setMessageId(MESSAGE_ID.msg_DealResp);
+		messageInfo.setMessageId(MESSAGE_ID.msg_NNDealResp);
 
 		Integer playerId = player.getId();
 		Room room = CommonData.getRoomByRoomId(player.getRoomId());
-		Integer grabHostStartPlayerId = room.getGrabHostStartPlayerId();// 该房间由哪位玩家开始抢地主
-		if (grabHostStartPlayerId.equals(-1)) {
-			messageInfo = commonBiz.setMessageInfo(
-					MessageConstants.UNKNOWN_CAUSE_TYPE,
-					MessageConstants.UNKNOWN_CAUSE_MSG);
-			return messageInfo.build();
-		}
-		DealResp.Builder dealResp = DealResp.newBuilder();
+		NNDealResp.Builder dealResp = NNDealResp.newBuilder();
 		dealResp.setPlayerId(playerId);
-		dealResp.setGrabHost(grabHostStartPlayerId);
 
 		if (CollectionUtils.isEmpty(pks)) {
 			pks = initPokers();
 		}
 		List<Poker> pokers = getPokers(pks);
+		List<Integer> pokerIds = new ArrayList<Integer>();
+		for (Poker poker : pokers) {
+			pokerIds.add(poker.getID());
+		}
 		player.setPokers(pokers);
 		roomIdToPokerIds.put(player.getRoomId(), pks);
-		dealResp.addAllPokers(pokers);
-		RoomInfo.Builder roomInfo = RoomInfo.newBuilder();
-		roomInfo.setRoomId(player.getRoomId());
-		dealResp.setRoomInfo(roomInfo);
+		dealResp.addAllPokers(pokerIds);
+		dealResp.setPlayedGames(room.getPlayedGames());
+		dealResp.setRemainderGames(room.getRemainderGames());
 
-		messageInfo.setDealResp(dealResp);
+		messageInfo.setNnDealResp(dealResp);
 
 		return messageInfo.build();
 	}
@@ -152,7 +139,7 @@ public class GameBizImpl implements IGameBiz {
 	private List<Poker> getPokers(List<Poker> pks) {
 		List<Poker> pokers = new ArrayList<Poker>();
 		Random random = new Random();
-		for (int i = 17; i > 0; i--) {
+		for (int i = 3; i > 0; i--) {
 			int s = random.nextInt(pks.size());
 			pokers.add(pks.get(s));
 			pks.remove(s);
@@ -496,5 +483,44 @@ public class GameBizImpl implements IGameBiz {
 						cardsType, preCardIds);
 			}
 		}
+	}
+
+	@Override
+	public Builder startNNGame(MessageInfo messageInfoReq,
+			ChannelHandlerContext ctx) {
+		MessageInfo.Builder msgInfo = MessageInfo.newBuilder();
+		msgInfo.setMessageId(MESSAGE_ID.msg_StartNNGameResp);
+
+		StartNNGameReq req = messageInfoReq.getStartNNGame();
+		Integer roomOwnerId = req.getPlayerid();// 该房间房主ID，也就是创建房间玩家
+		List<Player> players = null;
+		try {
+			players = CommonData.getPlayersByIdInSameRoom(roomOwnerId);// 获取同一房间其他玩家信息
+		} catch (BusinnessException e) {
+			if (ExcMsgConstants.NO_EXISTS_THE_ROOM_EXC_CODE.equals(e.getCode())) {// 该房间不存在
+				msgInfo = commonBiz.setMessageInfo(
+						MessageConstants.THE_ROOM_NO_EXTIST_ERROR_TYPE,
+						MessageConstants.THE_ROOM_NO_EXTIST_ERROR_MSG);
+				return msgInfo;
+			} else {
+				msgInfo = commonBiz.setMessageInfo(
+						MessageConstants.UNKNOWN_CAUSE_TYPE,
+						MessageConstants.UNKNOWN_CAUSE_MSG);
+				return msgInfo;
+			}
+		}
+		// 广播其他玩家开始游戏
+		if (CollectionUtils.isNotEmpty(players)) {
+			MessageInfo.Builder postMsgInfo = MessageInfo.newBuilder();
+			postMsgInfo.setMessageId(MESSAGE_ID.msg_PostStartNNGame);
+			PostStartNNGame.Builder postStartNNGame = PostStartNNGame
+					.newBuilder();
+			postMsgInfo.setPostStartNNGame(postStartNNGame);
+			for (Player pl : players) {
+				if (!pl.getId().equals(roomOwnerId))
+					pl.getChannel().writeAndFlush(postMsgInfo.build());
+			}
+		}
+		return msgInfo;
 	}
 }
