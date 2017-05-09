@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="douniu"
+  id="myeclipse.1489418632614"
+  context-root="/game"
+  j2ee-spec="5.0"
+  archive="douniu.war">
+  <attributes>
+    <attribute name="webrootdir" value="&lt;prjroot&gt;" />
+  </attributes>
+</project-module>
+
