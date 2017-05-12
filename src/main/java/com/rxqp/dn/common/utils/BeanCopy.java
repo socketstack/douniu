@@ -22,7 +22,6 @@ public class BeanCopy {
 			py.setName(player.getName());
 			py.setImgUrl(player.getImgUrl());
 			py.setScore(player.getScore());
-			py.setIsDz(player.getIsDz());
 			py.setOrder(player.getOrder());
 			des.add(py.build());
 		}
@@ -38,7 +37,6 @@ public class BeanCopy {
 		py.setName(player.getName());
 		py.setImgUrl(player.getImgUrl());
 		py.setScore(player.getScore());
-		py.setIsDz(player.getIsDz());
 		py.setOrder(player.getOrder());
 		return py.build();
 	}

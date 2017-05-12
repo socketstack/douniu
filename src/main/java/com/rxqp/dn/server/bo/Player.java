@@ -4,10 +4,7 @@ import io.netty.channel.Channel;
 
 import java.io.Serializable;
 import java.net.Socket;
-import java.util.ArrayList;
 import java.util.List;
-
-import com.rxqp.dn.protobuf.DdzProto;
 
 public class Player implements Serializable {
 
@@ -15,7 +12,7 @@ public class Player implements Serializable {
 
 	private Integer id;
 	private String name;
-	private List<DdzProto.Poker> pokers = new ArrayList<DdzProto.Poker>();
+	private List<Integer> pokerIds;
 	private Socket socket;
 	private Boolean island = false;// 是否登录
 	private Boolean onPlay = false;// 是否正在玩牌中
@@ -26,11 +23,9 @@ public class Player implements Serializable {
 	private String imgUrl = "";
 	private Integer score = 0;// 本局得分
 	private Integer finalScore = 0;// 最终得分
-	private Boolean isDz = true;// 当前是否地主
-	private Integer grabHostType = -1;// // type:0--不抢 1--抢地主1分 2--抢地主2分//
-										// 3--抢地主3分
 	private Integer order;// 座位顺序
 	private Integer nextPlayerId;// 按照座位顺序下家玩家ID
+	private Integer betPoints;// 下注分数
 
 	public Integer getId() {
 		return id;
@@ -46,14 +41,6 @@ public class Player implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public List<DdzProto.Poker> getPokers() {
-		return pokers;
-	}
-
-	public void setPokers(List<DdzProto.Poker> pokers) {
-		this.pokers = pokers;
 	}
 
 	public Boolean getIsland() {
@@ -102,7 +89,7 @@ public class Player implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Player [id=" + id + ", name=" + name + ", pokers=" + pokers
+		return "Player [id=" + id + ", name=" + name + ", pokerIds=" + pokerIds
 				+ ", island=" + island + "]";
 	}
 
@@ -162,22 +149,6 @@ public class Player implements Serializable {
 		this.finalScore = finalScore;
 	}
 
-	public Boolean getIsDz() {
-		return isDz;
-	}
-
-	public void setIsDz(Boolean isDz) {
-		this.isDz = isDz;
-	}
-
-	public Integer getGrabHostType() {
-		return grabHostType;
-	}
-
-	public void setGrabHostType(Integer grabHostType) {
-		this.grabHostType = grabHostType;
-	}
-
 	public Integer getOrder() {
 		return order;
 	}
@@ -192,6 +163,22 @@ public class Player implements Serializable {
 
 	public void setNextPlayerId(Integer nextPlayerId) {
 		this.nextPlayerId = nextPlayerId;
+	}
+
+	public Integer getBetPoints() {
+		return betPoints;
+	}
+
+	public List<Integer> getPokerIds() {
+		return pokerIds;
+	}
+
+	public void setPokerIds(List<Integer> pokerIds) {
+		this.pokerIds = pokerIds;
+	}
+
+	public void setBetPoints(Integer betPoints) {
+		this.betPoints = betPoints;
 	}
 
 	public boolean equals(Player player) {

@@ -17,23 +17,6 @@ public interface IGameBiz {
 			ChannelHandlerContext ctx);
 
 	/**
-	 * 抢地主
-	 * 
-	 * @param messageInfoReq
-	 * @return
-	 */
-	public MessageInfo.Builder grabHost(MessageInfo messageInfoReq);
-
-	/**
-	 * 处理出牌请求
-	 * 
-	 * @param messageInfoReq
-	 * @return
-	 */
-	public Builder discardProcess(MessageInfo messageInfoReq,
-			ChannelHandlerContext ctx);
-
-	/**
 	 * 开始游戏
 	 * 
 	 * @param messageInfoReq
@@ -41,5 +24,25 @@ public interface IGameBiz {
 	 * @return
 	 */
 	public Builder startNNGame(MessageInfo messageInfoReq,
+			ChannelHandlerContext ctx);
+
+	/**
+	 * 下注请求
+	 * 
+	 * @param messageInfoReq
+	 * @param ctx
+	 * @return
+	 */
+	public Builder stakeProcess(MessageInfo messageInfoReq,
+			ChannelHandlerContext ctx);
+
+	/**
+	 * 开牌请求
+	 * 
+	 * @param messageInfoReq
+	 * @param ctx
+	 * @return
+	 */
+	public Builder showCardsProcess(MessageInfo messageInfoReq,
 			ChannelHandlerContext ctx);
 }

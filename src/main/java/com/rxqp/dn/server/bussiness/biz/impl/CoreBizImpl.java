@@ -36,6 +36,11 @@ public class CoreBizImpl implements ICoreBiz {
 		case msg_NNDealReq:// 发牌请求
 			builder = gameBiz.dealProcess(messageInfoReq, ctx);
 			break;
+		case msg_StakeReq:// 下注请求
+			builder = gameBiz.stakeProcess(messageInfoReq, ctx);
+			break;
+		case msg_NNShowCardsReq:// 开牌
+			builder = gameBiz.showCardsProcess(messageInfoReq, ctx);
 		case msg_DisbandReq:// 玩家请求解散房间
 			// TODO
 			break;

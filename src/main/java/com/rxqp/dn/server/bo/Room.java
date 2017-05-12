@@ -2,8 +2,6 @@ package com.rxqp.dn.server.bo;
 
 import java.util.List;
 
-import com.rxqp.dn.common.enums.PokersTypeEnum;
-
 public class Room {
 
 	private Integer roomId;
@@ -13,7 +11,6 @@ public class Room {
 	private Integer remainderGames;// 还剩几盘
 	private Integer currentPlayerId;// 当前出牌玩家
 	private Integer type;// 1表示房主出房费，2表示进入房间者均摊房费
-	private PokersTypeEnum prePokersType;// 当前牌局中当前一轮出牌中，前一个玩家出牌的类型
 	private List<Integer> prePokerIds;// 当前牌局中当前一轮出牌中，前一个玩家出牌的ID集合
 	private Integer prePlayerId = -1;// 上一个出牌的玩家ID
 	private Integer variablePoints;// 赖子点数
@@ -75,14 +72,6 @@ public class Room {
 
 	public void setType(Integer type) {
 		this.type = type;
-	}
-
-	public PokersTypeEnum getPrePokersType() {
-		return prePokersType;
-	}
-
-	public void setPrePokersType(PokersTypeEnum prePokersType) {
-		this.prePokersType = prePokersType;
 	}
 
 	public List<Integer> getPrePokerIds() {
