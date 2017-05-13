@@ -81,6 +81,7 @@ public class RoomBizImpl implements IRoomBiz {
 					player.setRoomId(roomId);
 					player.setOnPlay(true);
 					player.setOrder(1);// 创建房间的人座位顺序为1
+					player.setIsBanker(true);// 庄家
 					CommonData.putPlayerIdToPlayer(playerId, player);
 				}
 			}
@@ -119,8 +120,9 @@ public class RoomBizImpl implements IRoomBiz {
 			List<Player> players = new ArrayList<Player>();
 			players.add(player);
 			room.setPlayers(players);
-			room.setRemainderGames(games);
+			room.setTotalGames(games);
 			room.setType(type);
+			room.setBankerId(playerId);// 第一盘房主为庄家
 			CommonData.putRoomIdToRoom(roomId, room);
 		}
 		return roomId;
@@ -136,6 +138,13 @@ public class RoomBizImpl implements IRoomBiz {
 
 		EntryNNRoomReq req = messageInfoReq.getEntryNNRoomReq();
 		Integer roomId = req.getRoomId();
+		Room room = CommonData.getRoomByRoomId(roomId);
+		if (room.getIsStartGame()) {// 已经开始游戏，则不容许再进入
+			messageInfo = commonBiz.setMessageInfo(
+					MessageConstants.ENTRY_ROOM_ERROR_TYPE_4002,
+					MessageConstants.ENTRY_ROOM_ERROR_MSG_4002);
+			return messageInfo;
+		}
 		Integer playerId = req.getPlayerId();
 		List<Player> players;
 		try {

@@ -7,13 +7,16 @@ public class Room {
 	private Integer roomId;
 	private List<Player> players;
 	private Integer multiple = 1;// 倍率,1倍为底
-	private Integer playedGames;// 一共玩几盘
-	private Integer remainderGames;// 还剩几盘
+	private Integer playedGames = 0;// 已经玩了几盘
+	private Integer totalGames = 0;// 一共几盘
 	private Integer currentPlayerId;// 当前出牌玩家
 	private Integer type;// 1表示房主出房费，2表示进入房间者均摊房费
 	private List<Integer> prePokerIds;// 当前牌局中当前一轮出牌中，前一个玩家出牌的ID集合
 	private Integer prePlayerId = -1;// 上一个出牌的玩家ID
 	private Integer variablePoints;// 赖子点数
+	private Boolean isStartGame = false;// 是否已经开始玩游戏
+	private Integer preparedPlayerCnt = 0;// 准备就绪玩家人数
+	private Integer bankerId;// 庄家ID
 
 	public Room() {
 	}
@@ -50,12 +53,12 @@ public class Room {
 		this.playedGames = playedGames;
 	}
 
-	public Integer getRemainderGames() {
-		return remainderGames;
+	public Integer getTotalGames() {
+		return totalGames;
 	}
 
-	public void setRemainderGames(Integer remainderGames) {
-		this.remainderGames = remainderGames;
+	public void setTotalGames(Integer totalGames) {
+		this.totalGames = totalGames;
 	}
 
 	public Integer getCurrentPlayerId() {
@@ -96,6 +99,34 @@ public class Room {
 
 	public void setVariablePoints(Integer variablePoints) {
 		this.variablePoints = variablePoints;
+	}
+
+	public Boolean getIsStartGame() {
+		return isStartGame;
+	}
+
+	public void setIsStartGame(Boolean isStartGame) {
+		this.isStartGame = isStartGame;
+	}
+
+	public Integer getPreparedPlayerCnt() {
+		return preparedPlayerCnt;
+	}
+
+	public void setPreparedPlayerCnt(Integer preparedPlayerCnt) {
+		this.preparedPlayerCnt = preparedPlayerCnt;
+	}
+
+	public synchronized void increasePreparedPlayerCnt() {
+		preparedPlayerCnt++;
+	}
+
+	public Integer getBankerId() {
+		return bankerId;
+	}
+
+	public void setBankerId(Integer bankerId) {
+		this.bankerId = bankerId;
 	}
 
 }

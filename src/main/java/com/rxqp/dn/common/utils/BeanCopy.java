@@ -23,6 +23,7 @@ public class BeanCopy {
 			py.setImgUrl(player.getImgUrl());
 			py.setScore(player.getScore());
 			py.setOrder(player.getOrder());
+			py.setIsDz(player.getIsBanker());// 是否是庄家
 			des.add(py.build());
 		}
 		return des;
@@ -38,6 +39,7 @@ public class BeanCopy {
 		py.setImgUrl(player.getImgUrl());
 		py.setScore(player.getScore());
 		py.setOrder(player.getOrder());
+		py.setIsDz(player.getIsBanker());// 是否是庄家
 		return py.build();
 	}
 

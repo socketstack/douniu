@@ -29,6 +29,9 @@ public class MessageConstants {
 	public static Integer PLAYER_STATE_TYPE_1004 = 1004;
 	public static String PLAYER_STATE_MSG_1004 = "玩家已经登录!";
 
+	public static Integer PLAYER_STATE_TYPE_1005 = 1005;
+	public static String PLAYER_STATE_MSG_1005 = "至少要两个玩家才能开牌!";
+
 	public static Integer CREATE_ROOM_ERROR_TYPE = 3001;
 	public static String CREATE_ROOM_ERROR_MSG = "创建房间失败!";
 
@@ -37,6 +40,9 @@ public class MessageConstants {
 
 	public static Integer ENTRY_ROOM_ERROR_TYPE_4001 = 4001;
 	public static String ENTRY_ROOM_ERROR_MSG_4001 = "房间人数已满!";
+
+	public static Integer ENTRY_ROOM_ERROR_TYPE_4002 = 4002;
+	public static String ENTRY_ROOM_ERROR_MSG_4002 = "该房间已经开始游戏，不能进入!";
 
 	public static Integer THE_ROOM_NO_EXTIST_ERROR_TYPE = 4002;
 	public static String THE_ROOM_NO_EXTIST_ERROR_MSG = "该房间不存在!";

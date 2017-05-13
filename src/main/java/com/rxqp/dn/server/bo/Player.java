@@ -26,6 +26,7 @@ public class Player implements Serializable {
 	private Integer order;// 座位顺序
 	private Integer nextPlayerId;// 按照座位顺序下家玩家ID
 	private Integer betPoints;// 下注分数
+	private Boolean isBanker = false;// 是否是庄家
 
 	public Integer getId() {
 		return id;
@@ -179,6 +180,14 @@ public class Player implements Serializable {
 
 	public void setBetPoints(Integer betPoints) {
 		this.betPoints = betPoints;
+	}
+
+	public Boolean getIsBanker() {
+		return isBanker;
+	}
+
+	public void setIsBanker(Boolean isBanker) {
+		this.isBanker = isBanker;
 	}
 
 	public boolean equals(Player player) {

@@ -33,7 +33,10 @@ public class CoreBizImpl implements ICoreBiz {
 		case msg_EntryNNRoomReq:// 进入房间请求
 			builder = roomBiz.entryRoom(messageInfoReq, ctx);
 			break;
-		case msg_NNDealReq:// 发牌请求
+		case msg_StartNNGameReq:// 开始游戏
+			builder = gameBiz.startNNGame(messageInfoReq, ctx);
+			break;
+		case msg_NNPrepareReq:// 发牌请求
 			builder = gameBiz.dealProcess(messageInfoReq, ctx);
 			break;
 		case msg_StakeReq:// 下注请求
