@@ -6,6 +6,8 @@ import java.io.Serializable;
 import java.net.Socket;
 import java.util.List;
 
+import com.rxqp.dn.protobuf.DdzProto.NNType;
+
 public class Player implements Serializable {
 
 	private static final long serialVersionUID = 5732930012273200036L;
@@ -27,6 +29,7 @@ public class Player implements Serializable {
 	private Integer nextPlayerId;// 按照座位顺序下家玩家ID
 	private Integer betPoints;// 下注分数
 	private Boolean isBanker = false;// 是否是庄家
+	private NNType nntype;// 当前玩家扑克的类型
 
 	public Integer getId() {
 		return id;
@@ -188,6 +191,14 @@ public class Player implements Serializable {
 
 	public void setIsBanker(Boolean isBanker) {
 		this.isBanker = isBanker;
+	}
+
+	public NNType getNntype() {
+		return nntype;
+	}
+
+	public void setNntype(NNType nntype) {
+		this.nntype = nntype;
 	}
 
 	public boolean equals(Player player) {

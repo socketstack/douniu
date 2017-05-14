@@ -50,58 +50,7 @@ public class MessageConstants {
 	public static Integer THE_ROOM_NO_EXTIST_PLAYER_TYPE = 4003;
 	public static String THE_ROOM_NO_EXTIST_PLAYER_MSG = "该房间不存在玩家";
 
-	public static Integer REMAINDER_POKER_NUM_ERROR_TYPE = 5001;
-	public static String REMAINDER_POKER_NUM_ERROR_MSG = "剩余底牌不是三，内部异常！";
-
-	public static Integer DISCARD_TYPE_NO_SAME_TYPE = 6001;
-	public static String DISCARD_TYPE_NO_SAME_MSG = "出牌类型不一样！";
-
-	public static Integer DISCARD_CARDS_IS_NONE_TYPE = 6002;
-	public static String DISCARD_CARDS_IS_NONE_MSG = "出牌为空！";
-
-	public static Integer DISCARD_CARDS_ISNOT_ONE_TYPE = 6003;
-	public static String DISCARD_CARDS_ISNOT_ONE_MSG = "当前玩家出牌不止一张，跟传递的出牌类型不匹配!";
-
-	public static Integer DISCARD_NUM_GREATER_REMAIINDER_NUM_TYPE = 6004;
-	public static String DISCARD_NUM_GREATER_REMAIINDER_NUM_MSG = "出的牌张数大于剩余的牌张数!";
-
-	public static Integer DISCARD_POINT_ISNOT_GREATER_TYPE = 6005;
-	public static String DISCARD_POINT_ISNOT_GREATER_MSG = "出牌的点数没上一家大!";
-
-	public static Integer DISCARD_CARDS_ISNOT_DOUBLE_TYPE = 6006;
-	public static String DISCARD_CARDS_ISNOT_DOUBLE_MSG = "当前玩家出牌不是对子，跟传递的出牌类型不匹配!";
-
-	public static Integer DISCARD_CARDS_ISNOT_DOUBLE_STRAIGHT_TYPE = 6007;
-	public static String DISCARD_CARDS_ISNOT_DOUBLE_STRAIGHT_MSG = "当前玩家出牌不是双顺子，跟传递的出牌类型不匹配!";
-
-	public static Integer DISCARD_CARDS_ISNOT_EQUAL_PREPLAYER_TYPE = 6008;
-	public static String DISCARD_CARDS_ISNOT_EQUAL_PREPLAYER_MSG = "当前玩家出牌张数跟上一家出牌张数不一致!";
-
-	public static Integer DISCARD_CARDS_ISNOT_TRIPLE_STRAIGHT_TYPE = 6009;
-	public static String DISCARD_CARDS_ISNOT_TRIPLE_STRAIGHT_MSG = "当前玩家出牌不是飞机顺子，跟传递的出牌类型不匹配!";
-
-	public static Integer DISCARD_CARDS_ISNOT_SINGLE_STRAIGHT_TYPE = 6010;
-	public static String DISCARD_CARDS_ISNOT_SINGLE_STRAIGHT_MSG = "当前玩家出牌不是单张顺子，跟传递的出牌类型不匹配!";
-
-	public static Integer DISCARD_CARDS_ISNOT_TRIPLE_TYPE = 6011;
-	public static String DISCARD_CARDS_ISNOT_TRIPLE_MSG = "当前玩家出牌不是三张不带的牌，跟传递的出牌类型不匹配!";
-
-	public static Integer DISCARD_CARDS_ISNOT_THREE_AND_ONE_TYPE = 6012;
-	public static String DISCARD_CARDS_ISNOT_THREE_AND_ONE_MSG = "当前玩家出牌不是三带一，跟传递的出牌类型不匹配!";
-
-	public static Integer DISCARD_CARDS_ISNOT_THREE_AND_TWO_TYPE = 6013;
-	public static String DISCARD_CARDS_ISNOT_THREE_AND_TWO_MSG = "当前玩家出牌不是三带二，跟传递的出牌类型不匹配!";
-
-	public static Integer DISCARD_CARDS_ISNOT_FOUR_AND_ONE_TYPE = 6014;
-	public static String DISCARD_CARDS_ISNOT_FOUR_AND_ONE_MSG = "当前玩家出牌不是四带一，跟传递的出牌类型不匹配!";
-
-	public static Integer DISCARD_CARDS_ISNOT_FOUR_BOOM_TYPE = 6015;
-	public static String DISCARD_CARDS_ISNOT_FOUR_BOOM_MSG = "当前玩家出牌不是四张牌的炸弹，跟传递的出牌类型不匹配!";
-
-	public static Integer DISCARD_CARDS_BOOM_ISNOT_GREATER_PREPLAYER_TYPE = 6016;
-	public static String DISCARD_CARDS_BOOM_ISNOT_GREATER_PREPLAYER_MSG = "当前玩家出的炸弹没有上一家大!";
-
-	public static Integer DISCARD_CARDS_ISNOT_JOKER_BOOM_TYPE = 6016;
-	public static String DISCARD_CARDS_ISNOT_JOKER_BOOM_MSG = "当前玩家出牌不是双王炸弹，跟传递的出牌类型不匹配!";
+	public static Integer BANKER_CARDS_ERROR_TYPE = 5001;
+	public static String BANKER_CARDS_ERROR_MSG = "庄家牌有误!";
 
 }

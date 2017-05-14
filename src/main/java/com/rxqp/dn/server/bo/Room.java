@@ -17,6 +17,7 @@ public class Room {
 	private Boolean isStartGame = false;// 是否已经开始玩游戏
 	private Integer preparedPlayerCnt = 0;// 准备就绪玩家人数
 	private Integer bankerId;// 庄家ID
+	private Integer showCardsPlayerCnt = 0;// 已经开牌人数
 
 	public Room() {
 	}
@@ -127,6 +128,18 @@ public class Room {
 
 	public void setBankerId(Integer bankerId) {
 		this.bankerId = bankerId;
+	}
+
+	public Integer getShowCardsPlayerCnt() {
+		return showCardsPlayerCnt;
+	}
+
+	public void setShowCardsPlayerCnt(Integer showCardsPlayerCnt) {
+		this.showCardsPlayerCnt = showCardsPlayerCnt;
+	}
+
+	public synchronized void increaseShowCardsPlayerCnt() {
+		showCardsPlayerCnt++;
 	}
 
 }
