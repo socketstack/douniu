@@ -305,31 +305,31 @@ public class GameBizImpl implements IGameBiz {
 	private NNType getNNType(Player player) {
 		List<Integer> pokerIds = player.getPokerIds();
 		List<Integer> points = new ArrayList<Integer>();
+		if (isBomb(pokerIds)) {// 是否炸弹
+			return NNType.NNT_SPECIAL_BOMEBOME;
+		}
+		if (isFiveFlow(pokerIds)) {// 是否五花牛
+			return NNType.NNT_SPECIAL_NIUHUA;
+		}
 		for (Integer pid : pokerIds) {
 			Integer point = pid % 13;
 			if (point.equals(12)) {// A扑克牌
 				points.add(1);
-			} else if (point.equals(9) || point.equals(10) || point.equals(11)) {// J、Q、K扑克牌,算10点
+			} else if (point > 8) {// J、Q、K扑克牌,算10点
 				points.add(10);
 			} else {
-				points.add(pid);
+				points.add(point + 2);
 			}
 		}
-		if (isBomb(points)) {// 是否炸弹
-			return NNType.NNT_SPECIAL_BOMEBOME;
-		}
-		if (isFiveFlow(points)) {// 是否五花牛
-			return NNType.NNT_SPECIAL_NIUHUA;
-		}
 		List<Integer> otherCnts = new ArrayList<Integer>();
-		Boolean hasNiu = null;
+		Boolean hasNiu = false;
 		for (Integer i = 0; i < points.size(); i++) {
 			Integer a = points.get(i);
 			for (Integer j = i + 1; j < points.size(); j++) {
 				Integer b = points.get(j);
 				for (Integer k = j + 1; k < points.size(); k++) {
 					Integer c = points.get(k);
-					if ((a % 13 + b % 13 + c % 13) % 10 == 0) {// 有牛
+					if ((a + b + c) % 10 == 0) {// 有牛
 						Integer cnt = 0;
 						hasNiu = true;
 						for (Integer n = 0; n < points.size(); n++) {// 算另两张牌点数
@@ -343,8 +343,6 @@ public class GameBizImpl implements IGameBiz {
 						} else {
 							otherCnts.add(niuNum);// 可能存在多种牛的情况，要取最大的值
 						}
-					} else {
-						hasNiu = false;
 					}
 				}
 			}
@@ -352,7 +350,7 @@ public class GameBizImpl implements IGameBiz {
 		if (hasNiu) {
 			Collections.sort(otherCnts);
 			if (otherCnts.size() > 0) {
-				return getNNTypeByNum(otherCnts.get(0));
+				return getNNTypeByNum(otherCnts.get(otherCnts.size() - 1));
 			} else {
 				return getNNTypeByNum(-1);
 			}
@@ -407,15 +405,21 @@ public class GameBizImpl implements IGameBiz {
 	 * @param pokers
 	 * @return
 	 */
-	private Boolean isBomb(List<Integer> pokerIds) {
+	private static Boolean isBomb(List<Integer> pokerIds) {
 		boolean isBomb = false;
-		Collections.sort(pokerIds);
+		List<Integer> points = new ArrayList<Integer>();
+		for (Integer pid : pokerIds) {
+			points.add(pid % 13);
+		}
+		Collections.sort(points);
 		Integer sameCnt = 1;
-		for (int i = 0; i < pokerIds.size() - 1; i++) {
-			Integer pokerId = pokerIds.get(i);
-			Integer pid = pokerIds.get(i + 1);
+		for (int i = 0; i < points.size() - 1; i++) {
+			Integer pokerId = points.get(i);
+			Integer pid = points.get(i + 1);
 			if (pokerId.equals(pid)) {
 				sameCnt++;
+				if (sameCnt == 4)
+					return true;
 			} else {
 				sameCnt = 1;
 			}
