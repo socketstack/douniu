@@ -26,6 +26,7 @@ import com.rxqp.dn.protobuf.DdzProto.NNType;
 import com.rxqp.dn.protobuf.DdzProto.PostNNDealResp;
 import com.rxqp.dn.protobuf.DdzProto.PostNNPrepareResp;
 import com.rxqp.dn.protobuf.DdzProto.PostNNShowCards;
+import com.rxqp.dn.protobuf.DdzProto.PostStakeOver;
 import com.rxqp.dn.protobuf.DdzProto.PostStakeResp;
 import com.rxqp.dn.protobuf.DdzProto.PostStartNNGame;
 import com.rxqp.dn.protobuf.DdzProto.SettlementData;
@@ -37,6 +38,7 @@ import com.rxqp.dn.server.bo.Player;
 import com.rxqp.dn.server.bo.Room;
 import com.rxqp.dn.server.bussiness.biz.ICommonBiz;
 import com.rxqp.dn.server.bussiness.biz.IGameBiz;
+import com.rxqp.dn.server.bussiness.biz.IRoomBiz;
 
 public class GameBizImpl implements IGameBiz {
 
@@ -44,6 +46,8 @@ public class GameBizImpl implements IGameBiz {
 	private static Map<Integer, LinkedList<Integer>> roomIdToPokerIds = new ConcurrentHashMap<Integer, LinkedList<Integer>>();
 
 	private ICommonBiz commonBiz = new CommonBiz();
+
+	private IRoomBiz roomBiz = new RoomBizImpl();
 
 	@Override
 	public Builder dealProcess(MessageInfo messageInfoReq,
@@ -210,22 +214,17 @@ public class GameBizImpl implements IGameBiz {
 		StakeResp.Builder resp = StakeResp.newBuilder();
 		resp.setPoint(point);
 		msgInfo.setStakeResp(resp);
-		List<Player> players = null;
-		try {
-			players = CommonData.getPlayersByIdInSameRoom(playerId);// 获取同一房间其他玩家信息
-		} catch (BusinnessException e) {
-			if (ExcMsgConstants.NO_EXISTS_THE_ROOM_EXC_CODE.equals(e.getCode())) {// 该房间不存在
-				msgInfo = commonBiz.setMessageInfo(
-						MessageConstants.THE_ROOM_NO_EXTIST_ERROR_TYPE,
-						MessageConstants.THE_ROOM_NO_EXTIST_ERROR_MSG);
-				return msgInfo;
-			} else {
-				msgInfo = commonBiz.setMessageInfo(
-						MessageConstants.UNKNOWN_CAUSE_TYPE,
-						MessageConstants.UNKNOWN_CAUSE_MSG);
-				return msgInfo;
-			}
+		// players = CommonData.getPlayersByIdInSameRoom(playerId);//
+		// 获取同一房间其他玩家信息
+		Room room = CommonData.getRoomByRoomId(player.getRoomId());
+		if (room == null) {
+			msgInfo = commonBiz.setMessageInfo(
+					MessageConstants.THE_ROOM_NO_EXTIST_ERROR_TYPE,
+					MessageConstants.THE_ROOM_NO_EXTIST_ERROR_MSG);
+			return msgInfo;
 		}
+		room.increaseStakedPlayerCnt();
+		List<Player> players = room.getPlayers();
 		for (Player pl : players) {
 			MessageInfo.Builder mi = MessageInfo.newBuilder();
 			mi.setMessageId(MESSAGE_ID.msg_PostStakeResp);
@@ -235,6 +234,17 @@ public class GameBizImpl implements IGameBiz {
 			mi.setPostStakeResp(postStake);
 			if (!pl.getId().equals(playerId))
 				pl.getChannel().writeAndFlush(mi.build());
+		}
+		if (room.getStakedPlayerCnt() >= room.getPlayers().size() - 1) {// 通知所有玩家，除了庄家外所有玩家都已经完成下注，可以看牌开牌了
+			for (Player pl : players) {
+				MessageInfo.Builder mi = MessageInfo.newBuilder();
+				mi.setMessageId(MESSAGE_ID.msg_PostStakeOver);
+				PostStakeOver.Builder postStakeOver = PostStakeOver
+						.newBuilder();
+				mi.setPostStakeOver(postStakeOver);
+				if (!pl.getId().equals(playerId))
+					pl.getChannel().writeAndFlush(mi.build());
+			}
 		}
 		return msgInfo;
 	}
@@ -260,7 +270,6 @@ public class GameBizImpl implements IGameBiz {
 		player.setNntype(nntype);
 
 		if (showAll) {// 开牌
-			List<Player> players = null;
 			Room room = CommonData.getRoomByRoomId(player.getRoomId());
 			if (room == null) {
 				msgInfo = commonBiz.setMessageInfo(
@@ -268,7 +277,7 @@ public class GameBizImpl implements IGameBiz {
 						MessageConstants.THE_ROOM_NO_EXTIST_ERROR_MSG);
 				return msgInfo;
 			}
-			players = room.getPlayers();
+			List<Player> players = room.getPlayers();
 
 			for (Player pl : players) {
 				MessageInfo.Builder mi = MessageInfo.newBuilder();
@@ -283,9 +292,15 @@ public class GameBizImpl implements IGameBiz {
 			}
 			room.increaseShowCardsPlayerCnt();// 开牌人数加1
 			if (room.getShowCardsPlayerCnt().equals(room.getPlayers().size())) {// 所有玩家已开牌，则进行结算
+				room.increasePlayedGamesCnt();// 已玩局数加1
 				MessageInfo.Builder mi = buildSettlementData(room);// 计算结算信息
 				for (Player pl : players) {
 					pl.getChannel().writeAndFlush(mi.build());
+				}
+				if (room.getPlayedGames() >= room.getTotalGames()) {// 该房间的房卡局数已经结束
+					roomBiz.removeRoom(room.getRoomId());// 删除该房间信息
+				} else {// 每一小局完了，需要初始化房间对象的相关数据
+					room.init();
 				}
 			}
 			return null;
@@ -310,7 +325,10 @@ public class GameBizImpl implements IGameBiz {
 		MessageInfo.Builder mi = MessageInfo.newBuilder();
 		mi.setMessageId(MESSAGE_ID.msg_SettlementInfo);
 		SettlementInfo.Builder settlementInfo = SettlementInfo.newBuilder();
-		settlementInfo.setIsOver(true);
+		if (room.getPlayedGames() >= room.getTotalGames())
+			settlementInfo.setIsOver(true);
+		else
+			settlementInfo.setIsOver(false);
 		List<Player> players = room.getPlayers();
 		Player banker = CommonData.getPlayerById(room.getBankerId());// 庄家
 		if (banker.getNntype().equals(NNType.NNT_ERROR)) {// 庄家牌类型有误

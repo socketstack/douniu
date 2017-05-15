@@ -13,13 +13,24 @@ public class Room {
 	private Integer type;// 1表示房主出房费，2表示进入房间者均摊房费
 	private List<Integer> prePokerIds;// 当前牌局中当前一轮出牌中，前一个玩家出牌的ID集合
 	private Integer prePlayerId = -1;// 上一个出牌的玩家ID
-	private Integer variablePoints;// 赖子点数
 	private Boolean isStartGame = false;// 是否已经开始玩游戏
 	private Integer preparedPlayerCnt = 0;// 准备就绪玩家人数
+	private Integer stakedPlayerCnt = 0;// 已经下注的玩家人数
 	private Integer bankerId;// 庄家ID
 	private Integer showCardsPlayerCnt = 0;// 已经开牌人数
 
 	public Room() {
+	}
+
+	public void init() {
+		this.multiple = 1;
+		this.playedGames = 0;
+		this.totalGames = 0;
+		this.prePlayerId = -1;
+		this.isStartGame = false;
+		this.preparedPlayerCnt = 0;
+		this.stakedPlayerCnt = 0;
+		this.showCardsPlayerCnt = 0;
 	}
 
 	public Integer getRoomId() {
@@ -94,14 +105,6 @@ public class Room {
 		this.prePlayerId = prePlayerId;
 	}
 
-	public Integer getVariablePoints() {
-		return variablePoints;
-	}
-
-	public void setVariablePoints(Integer variablePoints) {
-		this.variablePoints = variablePoints;
-	}
-
 	public Boolean getIsStartGame() {
 		return isStartGame;
 	}
@@ -142,4 +145,19 @@ public class Room {
 		showCardsPlayerCnt++;
 	}
 
+	public synchronized void increasePlayedGamesCnt() {
+		playedGames++;
+	}
+
+	public Integer getStakedPlayerCnt() {
+		return stakedPlayerCnt;
+	}
+
+	public void setStakedPlayerCnt(Integer stakedPlayerCnt) {
+		this.stakedPlayerCnt = stakedPlayerCnt;
+	}
+
+	public synchronized void increaseStakedPlayerCnt() {
+		stakedPlayerCnt++;
+	}
 }

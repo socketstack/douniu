@@ -225,4 +225,15 @@ public class RoomBizImpl implements IRoomBiz {
 
 		return builder.build();
 	}
+
+	@Override
+	public Boolean removeRoom(Integer roomId) {
+		try {
+			usedRoomIds.remove(roomId);
+			CommonData.removeRoom(roomId);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
 }

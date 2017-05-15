@@ -21,4 +21,13 @@ public interface IRoomBiz {
 	 */
 	public MessageInfo.Builder entryRoom(MessageInfo messageInfoReq,
 			ChannelHandlerContext ctx);
+
+	/**
+	 * 删除房间信息
+	 * 
+	 * @param roomId
+	 * @return
+	 */
+	public Boolean removeRoom(Integer roomId);
+
 }

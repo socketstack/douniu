@@ -99,4 +99,8 @@ public class CommonData {
 			return null;
 		}
 	}
+
+	public static void deleteRoomById(Integer roomId) {
+		roomIdToRoomInfo.remove(roomId);
+	}
 }
