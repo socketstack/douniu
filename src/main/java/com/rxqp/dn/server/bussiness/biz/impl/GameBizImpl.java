@@ -29,8 +29,6 @@ import com.rxqp.dn.protobuf.DdzProto.PostNNShowCards;
 import com.rxqp.dn.protobuf.DdzProto.PostStakeOver;
 import com.rxqp.dn.protobuf.DdzProto.PostStakeResp;
 import com.rxqp.dn.protobuf.DdzProto.PostStartNNGame;
-import com.rxqp.dn.protobuf.DdzProto.SettlementData;
-import com.rxqp.dn.protobuf.DdzProto.SettlementInfo;
 import com.rxqp.dn.protobuf.DdzProto.StakeReq;
 import com.rxqp.dn.protobuf.DdzProto.StakeResp;
 import com.rxqp.dn.protobuf.DdzProto.StartNNGameReq;
@@ -71,8 +69,7 @@ public class GameBizImpl implements IGameBiz {
 				return messageInfo;
 			}
 			room.increasePreparedPlayerCnt();
-			List<Player> players = CommonData
-					.getPlayersByIdInSameRoom(playerId);
+			List<Player> players = room.getPlayers();
 			for (Player pl : players) {
 				MessageInfo.Builder msg = MessageInfo.newBuilder();
 				msg.setMessageId(MESSAGE_ID.msg_PostNNPrepareResp);
@@ -293,11 +290,11 @@ public class GameBizImpl implements IGameBiz {
 			room.increaseShowCardsPlayerCnt();// 开牌人数加1
 			if (room.getShowCardsPlayerCnt().equals(room.getPlayers().size())) {// 所有玩家已开牌，则进行结算
 				room.increasePlayedGamesCnt();// 已玩局数加1
-				MessageInfo.Builder mi = buildSettlementData(room);// 计算结算信息
+				MessageInfo.Builder mi = roomBiz.buildSettlementData(room);// 计算结算信息
 				for (Player pl : players) {
 					pl.getChannel().writeAndFlush(mi.build());
 				}
-				if (room.getPlayedGames() >= room.getTotalGames()) {// 该房间的房卡局数已经结束
+				if (room.getPlayedGames() > room.getTotalGames()) {// 该房间的房卡局数已经结束
 					roomBiz.removeRoom(room.getRoomId());// 删除该房间信息
 				} else {// 每一小局完了，需要初始化房间对象的相关数据
 					room.init();
@@ -312,131 +309,6 @@ public class GameBizImpl implements IGameBiz {
 		resp.setNntype(nntype);
 		msgInfo.setNnShowCardsResp(resp);
 		return msgInfo;
-	}
-
-	/**
-	 * 结算信息
-	 * 
-	 * @param pl
-	 * @param room
-	 * @return
-	 */
-	private Builder buildSettlementData(Room room) {
-		MessageInfo.Builder mi = MessageInfo.newBuilder();
-		mi.setMessageId(MESSAGE_ID.msg_SettlementInfo);
-		SettlementInfo.Builder settlementInfo = SettlementInfo.newBuilder();
-		if (room.getPlayedGames() >= room.getTotalGames())
-			settlementInfo.setIsOver(true);
-		else
-			settlementInfo.setIsOver(false);
-		List<Player> players = room.getPlayers();
-		Player banker = CommonData.getPlayerById(room.getBankerId());// 庄家
-		if (banker.getNntype().equals(NNType.NNT_ERROR)) {// 庄家牌类型有误
-			mi = commonBiz.setMessageInfo(
-					MessageConstants.BANKER_CARDS_ERROR_TYPE,
-					MessageConstants.BANKER_CARDS_ERROR_MSG);
-			return mi;
-		}
-		SettlementData.Builder bankerSettlement = SettlementData.newBuilder();// 庄家的结算信息
-		bankerSettlement.setID(banker.getId());
-		for (Player player : players) {
-			SettlementData.Builder playerSettlement = SettlementData
-					.newBuilder();// 非庄家玩家各自的结算信息
-			playerSettlement.setID(player.getId());
-			if (!player.getIsBanker()) {
-				Integer score = comparePoints(bankerSettlement, banker, player);
-				playerSettlement.setGotscore(score);
-				Integer playerFinalScore = player.getFinalScore() + score;
-				playerSettlement.setFinalscore(playerFinalScore);
-				player.setFinalScore(playerFinalScore);
-				player.setScore(score);
-				if (score > 0) {
-					playerSettlement.setIsWin(true);
-				} else {
-					playerSettlement.setIsWin(false);
-				}
-				settlementInfo.addPlayers(playerSettlement);
-			}
-		}
-		Integer bankerFinalcore = banker.getFinalScore()
-				+ bankerSettlement.getGotscore();
-		bankerSettlement.setFinalscore(bankerFinalcore);
-		banker.setFinalScore(bankerFinalcore);
-		banker.setScore(bankerSettlement.getGotscore());
-		if (bankerSettlement.getGotscore() > 0) {
-			bankerSettlement.setIsWin(true);
-		} else {
-			bankerSettlement.setIsWin(false);
-		}
-		settlementInfo.addPlayers(bankerSettlement);
-		mi.setSettlementInfo(settlementInfo);
-		return mi;
-	}
-
-	/**
-	 * 返回普通玩家得分
-	 * 
-	 * @param bankerSettlement
-	 * @param bankerPlayer
-	 * @param player
-	 * @return
-	 */
-	private Integer comparePoints(SettlementData.Builder bankerSettlement,
-			Player bankerPlayer, Player player) {
-		NNType bankerNntype = bankerPlayer.getNntype();
-		NNType playerNntype = player.getNntype();
-		if (playerNntype.equals(NNType.NNT_ERROR))
-			return 0;
-		if (bankerNntype.getNumber() > playerNntype.getNumber()) {// 如果庄家牌型大
-			int rate = getRateByNNType(bankerNntype);
-			int score = player.getBetPoints() * rate;
-			bankerSettlement
-					.setGotscore(bankerSettlement.getGotscore() + score);
-			return (-1) * score;
-		} else if (bankerNntype.getNumber() < playerNntype.getNumber()) {// 如果普通玩家牌型大
-			int rate = getRateByNNType(playerNntype);
-			int score = player.getBetPoints() * rate;
-			bankerSettlement
-					.setGotscore(bankerSettlement.getGotscore() - score);
-			return score;
-		} else {// 牌型一样
-			List<Integer> bankerPids = bankerPlayer.getPokerIds();
-			List<Integer> playerPids = player.getPokerIds();
-			Integer bankPid = Collections.max(bankerPids);
-			Integer playerPid = Collections.max(playerPids);
-			if (bankPid > playerPid) {// 庄家牌大
-				int rate = getRateByNNType(bankerNntype);
-				int score = player.getBetPoints() * rate;
-				bankerSettlement.setGotscore(bankerSettlement.getGotscore()
-						+ score);
-				return (-1) * score;
-			} else if (bankPid < playerPid) {// 普通玩家牌大
-				int rate = getRateByNNType(playerNntype);
-				int score = player.getBetPoints() * rate;
-				bankerSettlement.setGotscore(bankerSettlement.getGotscore()
-						- score);
-				return score;
-			} else {
-				return 0;
-			}
-		}
-	}
-
-	private int getRateByNNType(NNType nntype) {
-		switch (nntype) {
-		case NNT_SPECIAL_BOMEBOME:
-			return 5;
-		case NNT_SPECIAL_NIUHUA:
-			return 5;
-		case NNT_SPECIAL_NIUNIU:
-			return 4;
-		case NNT_SPECIAL_NIU9:
-			return 3;
-		case NNT_SPECIAL_NIU8:
-			return 2;
-		default:
-			return 1;
-		}
 	}
 
 	/**

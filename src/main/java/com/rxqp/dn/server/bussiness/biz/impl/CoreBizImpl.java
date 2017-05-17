@@ -44,10 +44,11 @@ public class CoreBizImpl implements ICoreBiz {
 			break;
 		case msg_NNShowCardsReq:// 开牌、结算
 			builder = gameBiz.showCardsProcess(messageInfoReq, ctx);
-		case msg_DisbandReq:// 玩家请求解散房间
-			// TODO
 			break;
-		case msg_DisbandCheckReq:// 其他玩家答复解散房间请求
+		case msg_NNDissolutionReq:// 玩家请求解散房间
+			builder = roomBiz.disolutionRoom(messageInfoReq, ctx);
+			break;
+		case msg_NNAnswerDissolutionReq:// 其他玩家答复解散房间请求
 			// TODO
 			break;
 		default:
