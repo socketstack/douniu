@@ -139,6 +139,12 @@ public class RoomBizImpl implements IRoomBiz {
 		EntryNNRoomReq req = messageInfoReq.getEntryNNRoomReq();
 		Integer roomId = req.getRoomId();
 		Room room = CommonData.getRoomByRoomId(roomId);
+		if (room == null) {
+			messageInfo = commonBiz.setMessageInfo(
+					MessageConstants.THE_ROOM_NO_EXTIST_ERROR_TYPE,
+					MessageConstants.THE_ROOM_NO_EXTIST_ERROR_MSG);
+			return messageInfo;
+		}
 		if (room.getIsStartGame()) {// 已经开始游戏，则不容许再进入
 			messageInfo = commonBiz.setMessageInfo(
 					MessageConstants.ENTRY_ROOM_ERROR_TYPE_4002,
@@ -147,21 +153,7 @@ public class RoomBizImpl implements IRoomBiz {
 		}
 		Integer playerId = req.getPlayerId();
 		List<Player> players;
-		try {
-			players = CommonData.getPlayersByRoomId(roomId);
-		} catch (BusinnessException e) {
-			if (ExcMsgConstants.NO_EXISTS_THE_ROOM_EXC_CODE.equals(e.getCode())) {// 该房间不存在
-				messageInfo = commonBiz.setMessageInfo(
-						MessageConstants.THE_ROOM_NO_EXTIST_ERROR_TYPE,
-						MessageConstants.THE_ROOM_NO_EXTIST_ERROR_MSG);
-				return messageInfo;
-			} else {
-				messageInfo = commonBiz.setMessageInfo(
-						MessageConstants.UNKNOWN_CAUSE_TYPE,
-						MessageConstants.UNKNOWN_CAUSE_MSG);
-				return messageInfo;
-			}
-		}
+		players = room.getPlayers();
 		if (players == null) {
 			messageInfo = commonBiz.setMessageInfo(
 					MessageConstants.ENTRY_ROOM_ERROR_TYPE_4000,
@@ -200,6 +192,7 @@ public class RoomBizImpl implements IRoomBiz {
 				RoomInfo.Builder roomInfo = RoomInfo.newBuilder();
 				roomInfo.setRoomId(roomId);
 				roomInfo.addAllPlayers(BeanCopy.playersCopy(players));
+				roomInfo.setTotalGames(room.getTotalGames());
 				entryRoomResp.setRoomInfo(roomInfo);
 				entryRoomResp.setOrder(players.size());// 玩家按先后顺序第N位进入房间，方便前端安排座位顺序
 				// 广播房间里其他玩家

@@ -84,8 +84,7 @@ public class GameBizImpl implements IGameBiz {
 			}
 
 			if (room.getPreparedPlayerCnt().equals(room.getPlayers().size())) {// 所有玩家准备就绪，开始发牌
-				LinkedList<Integer> remainderPokerIds = roomIdToPokerIds
-						.get(player.getRoomId());
+				LinkedList<Integer> remainderPokerIds = initPokers();
 				for (Player pl : players) {
 					DdzProto.MessageInfo mi = shuffleDeal(pl, remainderPokerIds);
 					pl.getChannel().writeAndFlush(mi);
@@ -162,7 +161,7 @@ public class GameBizImpl implements IGameBiz {
 			players = CommonData.getPlayersByIdInSameRoom(roomOwnerId);// 获取同一房间其他玩家信息
 			Player player = CommonData.getPlayerById(roomOwnerId);
 			Room room = CommonData.getRoomByRoomId(player.getRoomId());
-			if (room.getPlayers() == null && room.getPlayers().size() < 2) {// 至少两个玩家才能开牌
+			if (room.getPlayers() == null || room.getPlayers().size() < 2) {// 至少两个玩家才能开牌
 				msgInfo = commonBiz.setMessageInfo(
 						MessageConstants.PLAYER_STATE_TYPE_1005,
 						MessageConstants.PLAYER_STATE_MSG_1005);
@@ -223,6 +222,8 @@ public class GameBizImpl implements IGameBiz {
 					MessageConstants.THE_ROOM_NO_EXTIST_ERROR_MSG);
 			return msgInfo;
 		}
+		player.getChannel().writeAndFlush(msgInfo.build());
+
 		room.increaseStakedPlayerCnt();
 		List<Player> players = room.getPlayers();
 		for (Player pl : players) {
@@ -242,11 +243,10 @@ public class GameBizImpl implements IGameBiz {
 				PostStakeOver.Builder postStakeOver = PostStakeOver
 						.newBuilder();
 				mi.setPostStakeOver(postStakeOver);
-				if (!pl.getId().equals(playerId))
-					pl.getChannel().writeAndFlush(mi.build());
+				pl.getChannel().writeAndFlush(mi.build());
 			}
 		}
-		return msgInfo;
+		return null;
 	}
 
 	/**

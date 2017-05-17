@@ -173,6 +173,26 @@ public final class DdzProto {
      * <code>msg_PostStakeOver = 39;</code>
      */
     msg_PostStakeOver(38, 39),
+    /**
+     * <code>msg_NNDissolutionReq = 40;</code>
+     */
+    msg_NNDissolutionReq(39, 40),
+    /**
+     * <code>msg_PostDissolutionResp = 41;</code>
+     */
+    msg_PostDissolutionResp(40, 41),
+    /**
+     * <code>msg_NNAnswerDissolutionReq = 42;</code>
+     */
+    msg_NNAnswerDissolutionReq(41, 42),
+    /**
+     * <code>msg_PostAnswerDissolutionResult = 43;</code>
+     */
+    msg_PostAnswerDissolutionResult(42, 43),
+    /**
+     * <code>msg_PostDissolutionResult = 44;</code>
+     */
+    msg_PostDissolutionResult(43, 44),
     ;
 
     /**
@@ -335,6 +355,26 @@ public final class DdzProto {
      * <code>msg_PostStakeOver = 39;</code>
      */
     public static final int msg_PostStakeOver_VALUE = 39;
+    /**
+     * <code>msg_NNDissolutionReq = 40;</code>
+     */
+    public static final int msg_NNDissolutionReq_VALUE = 40;
+    /**
+     * <code>msg_PostDissolutionResp = 41;</code>
+     */
+    public static final int msg_PostDissolutionResp_VALUE = 41;
+    /**
+     * <code>msg_NNAnswerDissolutionReq = 42;</code>
+     */
+    public static final int msg_NNAnswerDissolutionReq_VALUE = 42;
+    /**
+     * <code>msg_PostAnswerDissolutionResult = 43;</code>
+     */
+    public static final int msg_PostAnswerDissolutionResult_VALUE = 43;
+    /**
+     * <code>msg_PostDissolutionResult = 44;</code>
+     */
+    public static final int msg_PostDissolutionResult_VALUE = 44;
 
 
     public final int getNumber() { return value; }
@@ -380,6 +420,11 @@ public final class DdzProto {
         case 37: return msg_PostNNShowCards;
         case 38: return msg_PostNNPrepareResp;
         case 39: return msg_PostStakeOver;
+        case 40: return msg_NNDissolutionReq;
+        case 41: return msg_PostDissolutionResp;
+        case 42: return msg_NNAnswerDissolutionReq;
+        case 43: return msg_PostAnswerDissolutionResult;
+        case 44: return msg_PostDissolutionResult;
         default: return null;
       }
     }
@@ -1303,6 +1348,76 @@ public final class DdzProto {
      * <code>optional .netty.PostStakeOver postStakeOver = 40;</code>
      */
     com.rxqp.dn.protobuf.DdzProto.PostStakeOverOrBuilder getPostStakeOverOrBuilder();
+
+    // optional .netty.NNDissolutionReq nnDissolutionReq = 41;
+    /**
+     * <code>optional .netty.NNDissolutionReq nnDissolutionReq = 41;</code>
+     */
+    boolean hasNnDissolutionReq();
+    /**
+     * <code>optional .netty.NNDissolutionReq nnDissolutionReq = 41;</code>
+     */
+    com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq getNnDissolutionReq();
+    /**
+     * <code>optional .netty.NNDissolutionReq nnDissolutionReq = 41;</code>
+     */
+    com.rxqp.dn.protobuf.DdzProto.NNDissolutionReqOrBuilder getNnDissolutionReqOrBuilder();
+
+    // optional .netty.PostDissolutionResp postDissolutionResp = 42;
+    /**
+     * <code>optional .netty.PostDissolutionResp postDissolutionResp = 42;</code>
+     */
+    boolean hasPostDissolutionResp();
+    /**
+     * <code>optional .netty.PostDissolutionResp postDissolutionResp = 42;</code>
+     */
+    com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp getPostDissolutionResp();
+    /**
+     * <code>optional .netty.PostDissolutionResp postDissolutionResp = 42;</code>
+     */
+    com.rxqp.dn.protobuf.DdzProto.PostDissolutionRespOrBuilder getPostDissolutionRespOrBuilder();
+
+    // optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;
+    /**
+     * <code>optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;</code>
+     */
+    boolean hasNnAnswerDissolutionReq();
+    /**
+     * <code>optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;</code>
+     */
+    com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq getNnAnswerDissolutionReq();
+    /**
+     * <code>optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;</code>
+     */
+    com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReqOrBuilder getNnAnswerDissolutionReqOrBuilder();
+
+    // optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;
+    /**
+     * <code>optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;</code>
+     */
+    boolean hasPostAnswerDissolutionResult();
+    /**
+     * <code>optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;</code>
+     */
+    com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult getPostAnswerDissolutionResult();
+    /**
+     * <code>optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;</code>
+     */
+    com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResultOrBuilder getPostAnswerDissolutionResultOrBuilder();
+
+    // optional .netty.PostDissolutionResult postDissolutionResult = 45;
+    /**
+     * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
+     */
+    boolean hasPostDissolutionResult();
+    /**
+     * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
+     */
+    com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult getPostDissolutionResult();
+    /**
+     * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
+     */
+    com.rxqp.dn.protobuf.DdzProto.PostDissolutionResultOrBuilder getPostDissolutionResultOrBuilder();
   }
   /**
    * Protobuf type {@code netty.MessageInfo}
@@ -1872,6 +1987,71 @@ public final class DdzProto {
                 postStakeOver_ = subBuilder.buildPartial();
               }
               bitField1_ |= 0x00000080;
+              break;
+            }
+            case 330: {
+              com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.Builder subBuilder = null;
+              if (((bitField1_ & 0x00000100) == 0x00000100)) {
+                subBuilder = nnDissolutionReq_.toBuilder();
+              }
+              nnDissolutionReq_ = input.readMessage(com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(nnDissolutionReq_);
+                nnDissolutionReq_ = subBuilder.buildPartial();
+              }
+              bitField1_ |= 0x00000100;
+              break;
+            }
+            case 338: {
+              com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.Builder subBuilder = null;
+              if (((bitField1_ & 0x00000200) == 0x00000200)) {
+                subBuilder = postDissolutionResp_.toBuilder();
+              }
+              postDissolutionResp_ = input.readMessage(com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(postDissolutionResp_);
+                postDissolutionResp_ = subBuilder.buildPartial();
+              }
+              bitField1_ |= 0x00000200;
+              break;
+            }
+            case 346: {
+              com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.Builder subBuilder = null;
+              if (((bitField1_ & 0x00000400) == 0x00000400)) {
+                subBuilder = nnAnswerDissolutionReq_.toBuilder();
+              }
+              nnAnswerDissolutionReq_ = input.readMessage(com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(nnAnswerDissolutionReq_);
+                nnAnswerDissolutionReq_ = subBuilder.buildPartial();
+              }
+              bitField1_ |= 0x00000400;
+              break;
+            }
+            case 354: {
+              com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.Builder subBuilder = null;
+              if (((bitField1_ & 0x00000800) == 0x00000800)) {
+                subBuilder = postAnswerDissolutionResult_.toBuilder();
+              }
+              postAnswerDissolutionResult_ = input.readMessage(com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(postAnswerDissolutionResult_);
+                postAnswerDissolutionResult_ = subBuilder.buildPartial();
+              }
+              bitField1_ |= 0x00000800;
+              break;
+            }
+            case 362: {
+              com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.Builder subBuilder = null;
+              if (((bitField1_ & 0x00001000) == 0x00001000)) {
+                subBuilder = postDissolutionResult_.toBuilder();
+              }
+              postDissolutionResult_ = input.readMessage(com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(postDissolutionResult_);
+                postDissolutionResult_ = subBuilder.buildPartial();
+              }
+              bitField1_ |= 0x00001000;
               break;
             }
           }
@@ -2801,6 +2981,116 @@ public final class DdzProto {
       return postStakeOver_;
     }
 
+    // optional .netty.NNDissolutionReq nnDissolutionReq = 41;
+    public static final int NNDISSOLUTIONREQ_FIELD_NUMBER = 41;
+    private com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq nnDissolutionReq_;
+    /**
+     * <code>optional .netty.NNDissolutionReq nnDissolutionReq = 41;</code>
+     */
+    public boolean hasNnDissolutionReq() {
+      return ((bitField1_ & 0x00000100) == 0x00000100);
+    }
+    /**
+     * <code>optional .netty.NNDissolutionReq nnDissolutionReq = 41;</code>
+     */
+    public com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq getNnDissolutionReq() {
+      return nnDissolutionReq_;
+    }
+    /**
+     * <code>optional .netty.NNDissolutionReq nnDissolutionReq = 41;</code>
+     */
+    public com.rxqp.dn.protobuf.DdzProto.NNDissolutionReqOrBuilder getNnDissolutionReqOrBuilder() {
+      return nnDissolutionReq_;
+    }
+
+    // optional .netty.PostDissolutionResp postDissolutionResp = 42;
+    public static final int POSTDISSOLUTIONRESP_FIELD_NUMBER = 42;
+    private com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp postDissolutionResp_;
+    /**
+     * <code>optional .netty.PostDissolutionResp postDissolutionResp = 42;</code>
+     */
+    public boolean hasPostDissolutionResp() {
+      return ((bitField1_ & 0x00000200) == 0x00000200);
+    }
+    /**
+     * <code>optional .netty.PostDissolutionResp postDissolutionResp = 42;</code>
+     */
+    public com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp getPostDissolutionResp() {
+      return postDissolutionResp_;
+    }
+    /**
+     * <code>optional .netty.PostDissolutionResp postDissolutionResp = 42;</code>
+     */
+    public com.rxqp.dn.protobuf.DdzProto.PostDissolutionRespOrBuilder getPostDissolutionRespOrBuilder() {
+      return postDissolutionResp_;
+    }
+
+    // optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;
+    public static final int NNANSWERDISSOLUTIONREQ_FIELD_NUMBER = 43;
+    private com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq nnAnswerDissolutionReq_;
+    /**
+     * <code>optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;</code>
+     */
+    public boolean hasNnAnswerDissolutionReq() {
+      return ((bitField1_ & 0x00000400) == 0x00000400);
+    }
+    /**
+     * <code>optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;</code>
+     */
+    public com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq getNnAnswerDissolutionReq() {
+      return nnAnswerDissolutionReq_;
+    }
+    /**
+     * <code>optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;</code>
+     */
+    public com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReqOrBuilder getNnAnswerDissolutionReqOrBuilder() {
+      return nnAnswerDissolutionReq_;
+    }
+
+    // optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;
+    public static final int POSTANSWERDISSOLUTIONRESULT_FIELD_NUMBER = 44;
+    private com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult postAnswerDissolutionResult_;
+    /**
+     * <code>optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;</code>
+     */
+    public boolean hasPostAnswerDissolutionResult() {
+      return ((bitField1_ & 0x00000800) == 0x00000800);
+    }
+    /**
+     * <code>optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;</code>
+     */
+    public com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult getPostAnswerDissolutionResult() {
+      return postAnswerDissolutionResult_;
+    }
+    /**
+     * <code>optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;</code>
+     */
+    public com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResultOrBuilder getPostAnswerDissolutionResultOrBuilder() {
+      return postAnswerDissolutionResult_;
+    }
+
+    // optional .netty.PostDissolutionResult postDissolutionResult = 45;
+    public static final int POSTDISSOLUTIONRESULT_FIELD_NUMBER = 45;
+    private com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult postDissolutionResult_;
+    /**
+     * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
+     */
+    public boolean hasPostDissolutionResult() {
+      return ((bitField1_ & 0x00001000) == 0x00001000);
+    }
+    /**
+     * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
+     */
+    public com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult getPostDissolutionResult() {
+      return postDissolutionResult_;
+    }
+    /**
+     * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
+     */
+    public com.rxqp.dn.protobuf.DdzProto.PostDissolutionResultOrBuilder getPostDissolutionResultOrBuilder() {
+      return postDissolutionResult_;
+    }
+
     private void initFields() {
       messageId_ = com.rxqp.dn.protobuf.DdzProto.MESSAGE_ID.msg_LoginReq;
       loginReq_ = com.rxqp.dn.protobuf.DdzProto.LoginReq.getDefaultInstance();
@@ -2842,6 +3132,11 @@ public final class DdzProto {
       postNNShowCards_ = com.rxqp.dn.protobuf.DdzProto.PostNNShowCards.getDefaultInstance();
       postNNPrepareResp_ = com.rxqp.dn.protobuf.DdzProto.PostNNPrepareResp.getDefaultInstance();
       postStakeOver_ = com.rxqp.dn.protobuf.DdzProto.PostStakeOver.getDefaultInstance();
+      nnDissolutionReq_ = com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.getDefaultInstance();
+      postDissolutionResp_ = com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.getDefaultInstance();
+      nnAnswerDissolutionReq_ = com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.getDefaultInstance();
+      postAnswerDissolutionResult_ = com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.getDefaultInstance();
+      postDissolutionResult_ = com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3044,6 +3339,30 @@ public final class DdzProto {
           return false;
         }
       }
+      if (hasNnDissolutionReq()) {
+        if (!getNnDissolutionReq().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasPostDissolutionResp()) {
+        if (!getPostDissolutionResp().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasNnAnswerDissolutionReq()) {
+        if (!getNnAnswerDissolutionReq().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasPostAnswerDissolutionResult()) {
+        if (!getPostAnswerDissolutionResult().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -3170,6 +3489,21 @@ public final class DdzProto {
       }
       if (((bitField1_ & 0x00000080) == 0x00000080)) {
         output.writeMessage(40, postStakeOver_);
+      }
+      if (((bitField1_ & 0x00000100) == 0x00000100)) {
+        output.writeMessage(41, nnDissolutionReq_);
+      }
+      if (((bitField1_ & 0x00000200) == 0x00000200)) {
+        output.writeMessage(42, postDissolutionResp_);
+      }
+      if (((bitField1_ & 0x00000400) == 0x00000400)) {
+        output.writeMessage(43, nnAnswerDissolutionReq_);
+      }
+      if (((bitField1_ & 0x00000800) == 0x00000800)) {
+        output.writeMessage(44, postAnswerDissolutionResult_);
+      }
+      if (((bitField1_ & 0x00001000) == 0x00001000)) {
+        output.writeMessage(45, postDissolutionResult_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3340,6 +3674,26 @@ public final class DdzProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(40, postStakeOver_);
       }
+      if (((bitField1_ & 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(41, nnDissolutionReq_);
+      }
+      if (((bitField1_ & 0x00000200) == 0x00000200)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(42, postDissolutionResp_);
+      }
+      if (((bitField1_ & 0x00000400) == 0x00000400)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(43, nnAnswerDissolutionReq_);
+      }
+      if (((bitField1_ & 0x00000800) == 0x00000800)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(44, postAnswerDissolutionResult_);
+      }
+      if (((bitField1_ & 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(45, postDissolutionResult_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -3487,6 +3841,11 @@ public final class DdzProto {
           getPostNNShowCardsFieldBuilder();
           getPostNNPrepareRespFieldBuilder();
           getPostStakeOverFieldBuilder();
+          getNnDissolutionReqFieldBuilder();
+          getPostDissolutionRespFieldBuilder();
+          getNnAnswerDissolutionReqFieldBuilder();
+          getPostAnswerDissolutionResultFieldBuilder();
+          getPostDissolutionResultFieldBuilder();
         }
       }
       private static Builder create() {
@@ -3731,6 +4090,36 @@ public final class DdzProto {
           postStakeOverBuilder_.clear();
         }
         bitField1_ = (bitField1_ & ~0x00000080);
+        if (nnDissolutionReqBuilder_ == null) {
+          nnDissolutionReq_ = com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.getDefaultInstance();
+        } else {
+          nnDissolutionReqBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00000100);
+        if (postDissolutionRespBuilder_ == null) {
+          postDissolutionResp_ = com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.getDefaultInstance();
+        } else {
+          postDissolutionRespBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00000200);
+        if (nnAnswerDissolutionReqBuilder_ == null) {
+          nnAnswerDissolutionReq_ = com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.getDefaultInstance();
+        } else {
+          nnAnswerDissolutionReqBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00000400);
+        if (postAnswerDissolutionResultBuilder_ == null) {
+          postAnswerDissolutionResult_ = com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.getDefaultInstance();
+        } else {
+          postAnswerDissolutionResultBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00000800);
+        if (postDissolutionResultBuilder_ == null) {
+          postDissolutionResult_ = com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.getDefaultInstance();
+        } else {
+          postDissolutionResultBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00001000);
         return this;
       }
 
@@ -4077,6 +4466,46 @@ public final class DdzProto {
         } else {
           result.postStakeOver_ = postStakeOverBuilder_.build();
         }
+        if (((from_bitField1_ & 0x00000100) == 0x00000100)) {
+          to_bitField1_ |= 0x00000100;
+        }
+        if (nnDissolutionReqBuilder_ == null) {
+          result.nnDissolutionReq_ = nnDissolutionReq_;
+        } else {
+          result.nnDissolutionReq_ = nnDissolutionReqBuilder_.build();
+        }
+        if (((from_bitField1_ & 0x00000200) == 0x00000200)) {
+          to_bitField1_ |= 0x00000200;
+        }
+        if (postDissolutionRespBuilder_ == null) {
+          result.postDissolutionResp_ = postDissolutionResp_;
+        } else {
+          result.postDissolutionResp_ = postDissolutionRespBuilder_.build();
+        }
+        if (((from_bitField1_ & 0x00000400) == 0x00000400)) {
+          to_bitField1_ |= 0x00000400;
+        }
+        if (nnAnswerDissolutionReqBuilder_ == null) {
+          result.nnAnswerDissolutionReq_ = nnAnswerDissolutionReq_;
+        } else {
+          result.nnAnswerDissolutionReq_ = nnAnswerDissolutionReqBuilder_.build();
+        }
+        if (((from_bitField1_ & 0x00000800) == 0x00000800)) {
+          to_bitField1_ |= 0x00000800;
+        }
+        if (postAnswerDissolutionResultBuilder_ == null) {
+          result.postAnswerDissolutionResult_ = postAnswerDissolutionResult_;
+        } else {
+          result.postAnswerDissolutionResult_ = postAnswerDissolutionResultBuilder_.build();
+        }
+        if (((from_bitField1_ & 0x00001000) == 0x00001000)) {
+          to_bitField1_ |= 0x00001000;
+        }
+        if (postDissolutionResultBuilder_ == null) {
+          result.postDissolutionResult_ = postDissolutionResult_;
+        } else {
+          result.postDissolutionResult_ = postDissolutionResultBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         result.bitField1_ = to_bitField1_;
         onBuilt();
@@ -4213,6 +4642,21 @@ public final class DdzProto {
         }
         if (other.hasPostStakeOver()) {
           mergePostStakeOver(other.getPostStakeOver());
+        }
+        if (other.hasNnDissolutionReq()) {
+          mergeNnDissolutionReq(other.getNnDissolutionReq());
+        }
+        if (other.hasPostDissolutionResp()) {
+          mergePostDissolutionResp(other.getPostDissolutionResp());
+        }
+        if (other.hasNnAnswerDissolutionReq()) {
+          mergeNnAnswerDissolutionReq(other.getNnAnswerDissolutionReq());
+        }
+        if (other.hasPostAnswerDissolutionResult()) {
+          mergePostAnswerDissolutionResult(other.getPostAnswerDissolutionResult());
+        }
+        if (other.hasPostDissolutionResult()) {
+          mergePostDissolutionResult(other.getPostDissolutionResult());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -4411,6 +4855,30 @@ public final class DdzProto {
         }
         if (hasPostNNPrepareResp()) {
           if (!getPostNNPrepareResp().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasNnDissolutionReq()) {
+          if (!getNnDissolutionReq().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasPostDissolutionResp()) {
+          if (!getPostDissolutionResp().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasNnAnswerDissolutionReq()) {
+          if (!getNnAnswerDissolutionReq().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasPostAnswerDissolutionResult()) {
+          if (!getPostAnswerDissolutionResult().isInitialized()) {
             
             return false;
           }
@@ -9071,6 +9539,591 @@ public final class DdzProto {
           postStakeOver_ = null;
         }
         return postStakeOverBuilder_;
+      }
+
+      // optional .netty.NNDissolutionReq nnDissolutionReq = 41;
+      private com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq nnDissolutionReq_ = com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq, com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.Builder, com.rxqp.dn.protobuf.DdzProto.NNDissolutionReqOrBuilder> nnDissolutionReqBuilder_;
+      /**
+       * <code>optional .netty.NNDissolutionReq nnDissolutionReq = 41;</code>
+       */
+      public boolean hasNnDissolutionReq() {
+        return ((bitField1_ & 0x00000100) == 0x00000100);
+      }
+      /**
+       * <code>optional .netty.NNDissolutionReq nnDissolutionReq = 41;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq getNnDissolutionReq() {
+        if (nnDissolutionReqBuilder_ == null) {
+          return nnDissolutionReq_;
+        } else {
+          return nnDissolutionReqBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .netty.NNDissolutionReq nnDissolutionReq = 41;</code>
+       */
+      public Builder setNnDissolutionReq(com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq value) {
+        if (nnDissolutionReqBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          nnDissolutionReq_ = value;
+          onChanged();
+        } else {
+          nnDissolutionReqBuilder_.setMessage(value);
+        }
+        bitField1_ |= 0x00000100;
+        return this;
+      }
+      /**
+       * <code>optional .netty.NNDissolutionReq nnDissolutionReq = 41;</code>
+       */
+      public Builder setNnDissolutionReq(
+          com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.Builder builderForValue) {
+        if (nnDissolutionReqBuilder_ == null) {
+          nnDissolutionReq_ = builderForValue.build();
+          onChanged();
+        } else {
+          nnDissolutionReqBuilder_.setMessage(builderForValue.build());
+        }
+        bitField1_ |= 0x00000100;
+        return this;
+      }
+      /**
+       * <code>optional .netty.NNDissolutionReq nnDissolutionReq = 41;</code>
+       */
+      public Builder mergeNnDissolutionReq(com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq value) {
+        if (nnDissolutionReqBuilder_ == null) {
+          if (((bitField1_ & 0x00000100) == 0x00000100) &&
+              nnDissolutionReq_ != com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.getDefaultInstance()) {
+            nnDissolutionReq_ =
+              com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.newBuilder(nnDissolutionReq_).mergeFrom(value).buildPartial();
+          } else {
+            nnDissolutionReq_ = value;
+          }
+          onChanged();
+        } else {
+          nnDissolutionReqBuilder_.mergeFrom(value);
+        }
+        bitField1_ |= 0x00000100;
+        return this;
+      }
+      /**
+       * <code>optional .netty.NNDissolutionReq nnDissolutionReq = 41;</code>
+       */
+      public Builder clearNnDissolutionReq() {
+        if (nnDissolutionReqBuilder_ == null) {
+          nnDissolutionReq_ = com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.getDefaultInstance();
+          onChanged();
+        } else {
+          nnDissolutionReqBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00000100);
+        return this;
+      }
+      /**
+       * <code>optional .netty.NNDissolutionReq nnDissolutionReq = 41;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.Builder getNnDissolutionReqBuilder() {
+        bitField1_ |= 0x00000100;
+        onChanged();
+        return getNnDissolutionReqFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .netty.NNDissolutionReq nnDissolutionReq = 41;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.NNDissolutionReqOrBuilder getNnDissolutionReqOrBuilder() {
+        if (nnDissolutionReqBuilder_ != null) {
+          return nnDissolutionReqBuilder_.getMessageOrBuilder();
+        } else {
+          return nnDissolutionReq_;
+        }
+      }
+      /**
+       * <code>optional .netty.NNDissolutionReq nnDissolutionReq = 41;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq, com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.Builder, com.rxqp.dn.protobuf.DdzProto.NNDissolutionReqOrBuilder> 
+          getNnDissolutionReqFieldBuilder() {
+        if (nnDissolutionReqBuilder_ == null) {
+          nnDissolutionReqBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq, com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.Builder, com.rxqp.dn.protobuf.DdzProto.NNDissolutionReqOrBuilder>(
+                  nnDissolutionReq_,
+                  getParentForChildren(),
+                  isClean());
+          nnDissolutionReq_ = null;
+        }
+        return nnDissolutionReqBuilder_;
+      }
+
+      // optional .netty.PostDissolutionResp postDissolutionResp = 42;
+      private com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp postDissolutionResp_ = com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp, com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.Builder, com.rxqp.dn.protobuf.DdzProto.PostDissolutionRespOrBuilder> postDissolutionRespBuilder_;
+      /**
+       * <code>optional .netty.PostDissolutionResp postDissolutionResp = 42;</code>
+       */
+      public boolean hasPostDissolutionResp() {
+        return ((bitField1_ & 0x00000200) == 0x00000200);
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResp postDissolutionResp = 42;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp getPostDissolutionResp() {
+        if (postDissolutionRespBuilder_ == null) {
+          return postDissolutionResp_;
+        } else {
+          return postDissolutionRespBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResp postDissolutionResp = 42;</code>
+       */
+      public Builder setPostDissolutionResp(com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp value) {
+        if (postDissolutionRespBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          postDissolutionResp_ = value;
+          onChanged();
+        } else {
+          postDissolutionRespBuilder_.setMessage(value);
+        }
+        bitField1_ |= 0x00000200;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResp postDissolutionResp = 42;</code>
+       */
+      public Builder setPostDissolutionResp(
+          com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.Builder builderForValue) {
+        if (postDissolutionRespBuilder_ == null) {
+          postDissolutionResp_ = builderForValue.build();
+          onChanged();
+        } else {
+          postDissolutionRespBuilder_.setMessage(builderForValue.build());
+        }
+        bitField1_ |= 0x00000200;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResp postDissolutionResp = 42;</code>
+       */
+      public Builder mergePostDissolutionResp(com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp value) {
+        if (postDissolutionRespBuilder_ == null) {
+          if (((bitField1_ & 0x00000200) == 0x00000200) &&
+              postDissolutionResp_ != com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.getDefaultInstance()) {
+            postDissolutionResp_ =
+              com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.newBuilder(postDissolutionResp_).mergeFrom(value).buildPartial();
+          } else {
+            postDissolutionResp_ = value;
+          }
+          onChanged();
+        } else {
+          postDissolutionRespBuilder_.mergeFrom(value);
+        }
+        bitField1_ |= 0x00000200;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResp postDissolutionResp = 42;</code>
+       */
+      public Builder clearPostDissolutionResp() {
+        if (postDissolutionRespBuilder_ == null) {
+          postDissolutionResp_ = com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.getDefaultInstance();
+          onChanged();
+        } else {
+          postDissolutionRespBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00000200);
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResp postDissolutionResp = 42;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.Builder getPostDissolutionRespBuilder() {
+        bitField1_ |= 0x00000200;
+        onChanged();
+        return getPostDissolutionRespFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResp postDissolutionResp = 42;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.PostDissolutionRespOrBuilder getPostDissolutionRespOrBuilder() {
+        if (postDissolutionRespBuilder_ != null) {
+          return postDissolutionRespBuilder_.getMessageOrBuilder();
+        } else {
+          return postDissolutionResp_;
+        }
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResp postDissolutionResp = 42;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp, com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.Builder, com.rxqp.dn.protobuf.DdzProto.PostDissolutionRespOrBuilder> 
+          getPostDissolutionRespFieldBuilder() {
+        if (postDissolutionRespBuilder_ == null) {
+          postDissolutionRespBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp, com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.Builder, com.rxqp.dn.protobuf.DdzProto.PostDissolutionRespOrBuilder>(
+                  postDissolutionResp_,
+                  getParentForChildren(),
+                  isClean());
+          postDissolutionResp_ = null;
+        }
+        return postDissolutionRespBuilder_;
+      }
+
+      // optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;
+      private com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq nnAnswerDissolutionReq_ = com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq, com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.Builder, com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReqOrBuilder> nnAnswerDissolutionReqBuilder_;
+      /**
+       * <code>optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;</code>
+       */
+      public boolean hasNnAnswerDissolutionReq() {
+        return ((bitField1_ & 0x00000400) == 0x00000400);
+      }
+      /**
+       * <code>optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq getNnAnswerDissolutionReq() {
+        if (nnAnswerDissolutionReqBuilder_ == null) {
+          return nnAnswerDissolutionReq_;
+        } else {
+          return nnAnswerDissolutionReqBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;</code>
+       */
+      public Builder setNnAnswerDissolutionReq(com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq value) {
+        if (nnAnswerDissolutionReqBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          nnAnswerDissolutionReq_ = value;
+          onChanged();
+        } else {
+          nnAnswerDissolutionReqBuilder_.setMessage(value);
+        }
+        bitField1_ |= 0x00000400;
+        return this;
+      }
+      /**
+       * <code>optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;</code>
+       */
+      public Builder setNnAnswerDissolutionReq(
+          com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.Builder builderForValue) {
+        if (nnAnswerDissolutionReqBuilder_ == null) {
+          nnAnswerDissolutionReq_ = builderForValue.build();
+          onChanged();
+        } else {
+          nnAnswerDissolutionReqBuilder_.setMessage(builderForValue.build());
+        }
+        bitField1_ |= 0x00000400;
+        return this;
+      }
+      /**
+       * <code>optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;</code>
+       */
+      public Builder mergeNnAnswerDissolutionReq(com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq value) {
+        if (nnAnswerDissolutionReqBuilder_ == null) {
+          if (((bitField1_ & 0x00000400) == 0x00000400) &&
+              nnAnswerDissolutionReq_ != com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.getDefaultInstance()) {
+            nnAnswerDissolutionReq_ =
+              com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.newBuilder(nnAnswerDissolutionReq_).mergeFrom(value).buildPartial();
+          } else {
+            nnAnswerDissolutionReq_ = value;
+          }
+          onChanged();
+        } else {
+          nnAnswerDissolutionReqBuilder_.mergeFrom(value);
+        }
+        bitField1_ |= 0x00000400;
+        return this;
+      }
+      /**
+       * <code>optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;</code>
+       */
+      public Builder clearNnAnswerDissolutionReq() {
+        if (nnAnswerDissolutionReqBuilder_ == null) {
+          nnAnswerDissolutionReq_ = com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.getDefaultInstance();
+          onChanged();
+        } else {
+          nnAnswerDissolutionReqBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00000400);
+        return this;
+      }
+      /**
+       * <code>optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.Builder getNnAnswerDissolutionReqBuilder() {
+        bitField1_ |= 0x00000400;
+        onChanged();
+        return getNnAnswerDissolutionReqFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReqOrBuilder getNnAnswerDissolutionReqOrBuilder() {
+        if (nnAnswerDissolutionReqBuilder_ != null) {
+          return nnAnswerDissolutionReqBuilder_.getMessageOrBuilder();
+        } else {
+          return nnAnswerDissolutionReq_;
+        }
+      }
+      /**
+       * <code>optional .netty.NNAnswerDissolutionReq nnAnswerDissolutionReq = 43;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq, com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.Builder, com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReqOrBuilder> 
+          getNnAnswerDissolutionReqFieldBuilder() {
+        if (nnAnswerDissolutionReqBuilder_ == null) {
+          nnAnswerDissolutionReqBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq, com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.Builder, com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReqOrBuilder>(
+                  nnAnswerDissolutionReq_,
+                  getParentForChildren(),
+                  isClean());
+          nnAnswerDissolutionReq_ = null;
+        }
+        return nnAnswerDissolutionReqBuilder_;
+      }
+
+      // optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;
+      private com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult postAnswerDissolutionResult_ = com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult, com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.Builder, com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResultOrBuilder> postAnswerDissolutionResultBuilder_;
+      /**
+       * <code>optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;</code>
+       */
+      public boolean hasPostAnswerDissolutionResult() {
+        return ((bitField1_ & 0x00000800) == 0x00000800);
+      }
+      /**
+       * <code>optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult getPostAnswerDissolutionResult() {
+        if (postAnswerDissolutionResultBuilder_ == null) {
+          return postAnswerDissolutionResult_;
+        } else {
+          return postAnswerDissolutionResultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;</code>
+       */
+      public Builder setPostAnswerDissolutionResult(com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult value) {
+        if (postAnswerDissolutionResultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          postAnswerDissolutionResult_ = value;
+          onChanged();
+        } else {
+          postAnswerDissolutionResultBuilder_.setMessage(value);
+        }
+        bitField1_ |= 0x00000800;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;</code>
+       */
+      public Builder setPostAnswerDissolutionResult(
+          com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.Builder builderForValue) {
+        if (postAnswerDissolutionResultBuilder_ == null) {
+          postAnswerDissolutionResult_ = builderForValue.build();
+          onChanged();
+        } else {
+          postAnswerDissolutionResultBuilder_.setMessage(builderForValue.build());
+        }
+        bitField1_ |= 0x00000800;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;</code>
+       */
+      public Builder mergePostAnswerDissolutionResult(com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult value) {
+        if (postAnswerDissolutionResultBuilder_ == null) {
+          if (((bitField1_ & 0x00000800) == 0x00000800) &&
+              postAnswerDissolutionResult_ != com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.getDefaultInstance()) {
+            postAnswerDissolutionResult_ =
+              com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.newBuilder(postAnswerDissolutionResult_).mergeFrom(value).buildPartial();
+          } else {
+            postAnswerDissolutionResult_ = value;
+          }
+          onChanged();
+        } else {
+          postAnswerDissolutionResultBuilder_.mergeFrom(value);
+        }
+        bitField1_ |= 0x00000800;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;</code>
+       */
+      public Builder clearPostAnswerDissolutionResult() {
+        if (postAnswerDissolutionResultBuilder_ == null) {
+          postAnswerDissolutionResult_ = com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.getDefaultInstance();
+          onChanged();
+        } else {
+          postAnswerDissolutionResultBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00000800);
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.Builder getPostAnswerDissolutionResultBuilder() {
+        bitField1_ |= 0x00000800;
+        onChanged();
+        return getPostAnswerDissolutionResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResultOrBuilder getPostAnswerDissolutionResultOrBuilder() {
+        if (postAnswerDissolutionResultBuilder_ != null) {
+          return postAnswerDissolutionResultBuilder_.getMessageOrBuilder();
+        } else {
+          return postAnswerDissolutionResult_;
+        }
+      }
+      /**
+       * <code>optional .netty.PostAnswerDissolutionResult PostAnswerDissolutionResult = 44;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult, com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.Builder, com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResultOrBuilder> 
+          getPostAnswerDissolutionResultFieldBuilder() {
+        if (postAnswerDissolutionResultBuilder_ == null) {
+          postAnswerDissolutionResultBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult, com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.Builder, com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResultOrBuilder>(
+                  postAnswerDissolutionResult_,
+                  getParentForChildren(),
+                  isClean());
+          postAnswerDissolutionResult_ = null;
+        }
+        return postAnswerDissolutionResultBuilder_;
+      }
+
+      // optional .netty.PostDissolutionResult postDissolutionResult = 45;
+      private com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult postDissolutionResult_ = com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult, com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.Builder, com.rxqp.dn.protobuf.DdzProto.PostDissolutionResultOrBuilder> postDissolutionResultBuilder_;
+      /**
+       * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
+       */
+      public boolean hasPostDissolutionResult() {
+        return ((bitField1_ & 0x00001000) == 0x00001000);
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult getPostDissolutionResult() {
+        if (postDissolutionResultBuilder_ == null) {
+          return postDissolutionResult_;
+        } else {
+          return postDissolutionResultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
+       */
+      public Builder setPostDissolutionResult(com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult value) {
+        if (postDissolutionResultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          postDissolutionResult_ = value;
+          onChanged();
+        } else {
+          postDissolutionResultBuilder_.setMessage(value);
+        }
+        bitField1_ |= 0x00001000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
+       */
+      public Builder setPostDissolutionResult(
+          com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.Builder builderForValue) {
+        if (postDissolutionResultBuilder_ == null) {
+          postDissolutionResult_ = builderForValue.build();
+          onChanged();
+        } else {
+          postDissolutionResultBuilder_.setMessage(builderForValue.build());
+        }
+        bitField1_ |= 0x00001000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
+       */
+      public Builder mergePostDissolutionResult(com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult value) {
+        if (postDissolutionResultBuilder_ == null) {
+          if (((bitField1_ & 0x00001000) == 0x00001000) &&
+              postDissolutionResult_ != com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.getDefaultInstance()) {
+            postDissolutionResult_ =
+              com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.newBuilder(postDissolutionResult_).mergeFrom(value).buildPartial();
+          } else {
+            postDissolutionResult_ = value;
+          }
+          onChanged();
+        } else {
+          postDissolutionResultBuilder_.mergeFrom(value);
+        }
+        bitField1_ |= 0x00001000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
+       */
+      public Builder clearPostDissolutionResult() {
+        if (postDissolutionResultBuilder_ == null) {
+          postDissolutionResult_ = com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.getDefaultInstance();
+          onChanged();
+        } else {
+          postDissolutionResultBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00001000);
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.Builder getPostDissolutionResultBuilder() {
+        bitField1_ |= 0x00001000;
+        onChanged();
+        return getPostDissolutionResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.PostDissolutionResultOrBuilder getPostDissolutionResultOrBuilder() {
+        if (postDissolutionResultBuilder_ != null) {
+          return postDissolutionResultBuilder_.getMessageOrBuilder();
+        } else {
+          return postDissolutionResult_;
+        }
+      }
+      /**
+       * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult, com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.Builder, com.rxqp.dn.protobuf.DdzProto.PostDissolutionResultOrBuilder> 
+          getPostDissolutionResultFieldBuilder() {
+        if (postDissolutionResultBuilder_ == null) {
+          postDissolutionResultBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult, com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.Builder, com.rxqp.dn.protobuf.DdzProto.PostDissolutionResultOrBuilder>(
+                  postDissolutionResult_,
+                  getParentForChildren(),
+                  isClean());
+          postDissolutionResult_ = null;
+        }
+        return postDissolutionResultBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:netty.MessageInfo)
@@ -34937,6 +35990,2149 @@ public final class DdzProto {
     // @@protoc_insertion_point(class_scope:netty.PostStakeOver)
   }
 
+  public interface NNDissolutionReqOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int32 playerId = 1;
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    boolean hasPlayerId();
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    int getPlayerId();
+  }
+  /**
+   * Protobuf type {@code netty.NNDissolutionReq}
+   *
+   * <pre>
+   *41、解散房间请求
+   * </pre>
+   */
+  public static final class NNDissolutionReq extends
+      com.google.protobuf.GeneratedMessage
+      implements NNDissolutionReqOrBuilder {
+    // Use NNDissolutionReq.newBuilder() to construct.
+    private NNDissolutionReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private NNDissolutionReq(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final NNDissolutionReq defaultInstance;
+    public static NNDissolutionReq getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public NNDissolutionReq getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private NNDissolutionReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_NNDissolutionReq_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_NNDissolutionReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.class, com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<NNDissolutionReq> PARSER =
+        new com.google.protobuf.AbstractParser<NNDissolutionReq>() {
+      public NNDissolutionReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new NNDissolutionReq(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NNDissolutionReq> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int32 playerId = 1;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerId_;
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    public int getPlayerId() {
+      return playerId_;
+    }
+
+    private void initFields() {
+      playerId_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasPlayerId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, playerId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, playerId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code netty.NNDissolutionReq}
+     *
+     * <pre>
+     *41、解散房间请求
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.rxqp.dn.protobuf.DdzProto.NNDissolutionReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_NNDissolutionReq_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_NNDissolutionReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.class, com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.Builder.class);
+      }
+
+      // Construct using com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        playerId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_NNDissolutionReq_descriptor;
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq getDefaultInstanceForType() {
+        return com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.getDefaultInstance();
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq build() {
+        com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq buildPartial() {
+        com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq result = new com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.playerId_ = playerId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq) {
+          return mergeFrom((com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq other) {
+        if (other == com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasPlayerId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int32 playerId = 1;
+      private int playerId_ ;
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public int getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public Builder setPlayerId(int value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:netty.NNDissolutionReq)
+    }
+
+    static {
+      defaultInstance = new NNDissolutionReq(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:netty.NNDissolutionReq)
+  }
+
+  public interface PostDissolutionRespOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int32 playerid = 1;
+    /**
+     * <code>required int32 playerid = 1;</code>
+     */
+    boolean hasPlayerid();
+    /**
+     * <code>required int32 playerid = 1;</code>
+     */
+    int getPlayerid();
+  }
+  /**
+   * Protobuf type {@code netty.PostDissolutionResp}
+   *
+   * <pre>
+   *42、广播解散房间
+   * </pre>
+   */
+  public static final class PostDissolutionResp extends
+      com.google.protobuf.GeneratedMessage
+      implements PostDissolutionRespOrBuilder {
+    // Use PostDissolutionResp.newBuilder() to construct.
+    private PostDissolutionResp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private PostDissolutionResp(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final PostDissolutionResp defaultInstance;
+    public static PostDissolutionResp getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public PostDissolutionResp getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PostDissolutionResp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerid_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostDissolutionResp_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostDissolutionResp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.class, com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<PostDissolutionResp> PARSER =
+        new com.google.protobuf.AbstractParser<PostDissolutionResp>() {
+      public PostDissolutionResp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PostDissolutionResp(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PostDissolutionResp> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int32 playerid = 1;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerid_;
+    /**
+     * <code>required int32 playerid = 1;</code>
+     */
+    public boolean hasPlayerid() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int32 playerid = 1;</code>
+     */
+    public int getPlayerid() {
+      return playerid_;
+    }
+
+    private void initFields() {
+      playerid_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasPlayerid()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, playerid_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, playerid_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code netty.PostDissolutionResp}
+     *
+     * <pre>
+     *42、广播解散房间
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.rxqp.dn.protobuf.DdzProto.PostDissolutionRespOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostDissolutionResp_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostDissolutionResp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.class, com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.Builder.class);
+      }
+
+      // Construct using com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        playerid_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostDissolutionResp_descriptor;
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp getDefaultInstanceForType() {
+        return com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.getDefaultInstance();
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp build() {
+        com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp buildPartial() {
+        com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp result = new com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.playerid_ = playerid_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp) {
+          return mergeFrom((com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp other) {
+        if (other == com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp.getDefaultInstance()) return this;
+        if (other.hasPlayerid()) {
+          setPlayerid(other.getPlayerid());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasPlayerid()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int32 playerid = 1;
+      private int playerid_ ;
+      /**
+       * <code>required int32 playerid = 1;</code>
+       */
+      public boolean hasPlayerid() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int32 playerid = 1;</code>
+       */
+      public int getPlayerid() {
+        return playerid_;
+      }
+      /**
+       * <code>required int32 playerid = 1;</code>
+       */
+      public Builder setPlayerid(int value) {
+        bitField0_ |= 0x00000001;
+        playerid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 playerid = 1;</code>
+       */
+      public Builder clearPlayerid() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:netty.PostDissolutionResp)
+    }
+
+    static {
+      defaultInstance = new PostDissolutionResp(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:netty.PostDissolutionResp)
+  }
+
+  public interface NNAnswerDissolutionReqOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int32 playerId = 1;
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    boolean hasPlayerId();
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    int getPlayerId();
+
+    // required bool isAgree = 2;
+    /**
+     * <code>required bool isAgree = 2;</code>
+     */
+    boolean hasIsAgree();
+    /**
+     * <code>required bool isAgree = 2;</code>
+     */
+    boolean getIsAgree();
+  }
+  /**
+   * Protobuf type {@code netty.NNAnswerDissolutionReq}
+   *
+   * <pre>
+   *43、解散房间玩家应答,isAgree:1表示同意 2：表示不同意
+   * </pre>
+   */
+  public static final class NNAnswerDissolutionReq extends
+      com.google.protobuf.GeneratedMessage
+      implements NNAnswerDissolutionReqOrBuilder {
+    // Use NNAnswerDissolutionReq.newBuilder() to construct.
+    private NNAnswerDissolutionReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private NNAnswerDissolutionReq(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final NNAnswerDissolutionReq defaultInstance;
+    public static NNAnswerDissolutionReq getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public NNAnswerDissolutionReq getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private NNAnswerDissolutionReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              isAgree_ = input.readBool();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_NNAnswerDissolutionReq_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_NNAnswerDissolutionReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.class, com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<NNAnswerDissolutionReq> PARSER =
+        new com.google.protobuf.AbstractParser<NNAnswerDissolutionReq>() {
+      public NNAnswerDissolutionReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new NNAnswerDissolutionReq(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NNAnswerDissolutionReq> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int32 playerId = 1;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerId_;
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    public int getPlayerId() {
+      return playerId_;
+    }
+
+    // required bool isAgree = 2;
+    public static final int ISAGREE_FIELD_NUMBER = 2;
+    private boolean isAgree_;
+    /**
+     * <code>required bool isAgree = 2;</code>
+     */
+    public boolean hasIsAgree() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required bool isAgree = 2;</code>
+     */
+    public boolean getIsAgree() {
+      return isAgree_;
+    }
+
+    private void initFields() {
+      playerId_ = 0;
+      isAgree_ = false;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasPlayerId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasIsAgree()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, playerId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBool(2, isAgree_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, playerId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, isAgree_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code netty.NNAnswerDissolutionReq}
+     *
+     * <pre>
+     *43、解散房间玩家应答,isAgree:1表示同意 2：表示不同意
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_NNAnswerDissolutionReq_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_NNAnswerDissolutionReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.class, com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.Builder.class);
+      }
+
+      // Construct using com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        playerId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        isAgree_ = false;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_NNAnswerDissolutionReq_descriptor;
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq getDefaultInstanceForType() {
+        return com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.getDefaultInstance();
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq build() {
+        com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq buildPartial() {
+        com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq result = new com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.playerId_ = playerId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.isAgree_ = isAgree_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq) {
+          return mergeFrom((com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq other) {
+        if (other == com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        if (other.hasIsAgree()) {
+          setIsAgree(other.getIsAgree());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasPlayerId()) {
+          
+          return false;
+        }
+        if (!hasIsAgree()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int32 playerId = 1;
+      private int playerId_ ;
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public int getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public Builder setPlayerId(int value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // required bool isAgree = 2;
+      private boolean isAgree_ ;
+      /**
+       * <code>required bool isAgree = 2;</code>
+       */
+      public boolean hasIsAgree() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required bool isAgree = 2;</code>
+       */
+      public boolean getIsAgree() {
+        return isAgree_;
+      }
+      /**
+       * <code>required bool isAgree = 2;</code>
+       */
+      public Builder setIsAgree(boolean value) {
+        bitField0_ |= 0x00000002;
+        isAgree_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bool isAgree = 2;</code>
+       */
+      public Builder clearIsAgree() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        isAgree_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:netty.NNAnswerDissolutionReq)
+    }
+
+    static {
+      defaultInstance = new NNAnswerDissolutionReq(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:netty.NNAnswerDissolutionReq)
+  }
+
+  public interface PostAnswerDissolutionResultOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int32 agreeCnt = 1;
+    /**
+     * <code>required int32 agreeCnt = 1;</code>
+     */
+    boolean hasAgreeCnt();
+    /**
+     * <code>required int32 agreeCnt = 1;</code>
+     */
+    int getAgreeCnt();
+
+    // required int32 disagreeCnt = 2;
+    /**
+     * <code>required int32 disagreeCnt = 2;</code>
+     */
+    boolean hasDisagreeCnt();
+    /**
+     * <code>required int32 disagreeCnt = 2;</code>
+     */
+    int getDisagreeCnt();
+  }
+  /**
+   * Protobuf type {@code netty.PostAnswerDissolutionResult}
+   *
+   * <pre>
+   *44、agreeCnt:同意解散人数 disagreeCnt:不同意解散人数
+   * </pre>
+   */
+  public static final class PostAnswerDissolutionResult extends
+      com.google.protobuf.GeneratedMessage
+      implements PostAnswerDissolutionResultOrBuilder {
+    // Use PostAnswerDissolutionResult.newBuilder() to construct.
+    private PostAnswerDissolutionResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private PostAnswerDissolutionResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final PostAnswerDissolutionResult defaultInstance;
+    public static PostAnswerDissolutionResult getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public PostAnswerDissolutionResult getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PostAnswerDissolutionResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              agreeCnt_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              disagreeCnt_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostAnswerDissolutionResult_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostAnswerDissolutionResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.class, com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<PostAnswerDissolutionResult> PARSER =
+        new com.google.protobuf.AbstractParser<PostAnswerDissolutionResult>() {
+      public PostAnswerDissolutionResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PostAnswerDissolutionResult(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PostAnswerDissolutionResult> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int32 agreeCnt = 1;
+    public static final int AGREECNT_FIELD_NUMBER = 1;
+    private int agreeCnt_;
+    /**
+     * <code>required int32 agreeCnt = 1;</code>
+     */
+    public boolean hasAgreeCnt() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int32 agreeCnt = 1;</code>
+     */
+    public int getAgreeCnt() {
+      return agreeCnt_;
+    }
+
+    // required int32 disagreeCnt = 2;
+    public static final int DISAGREECNT_FIELD_NUMBER = 2;
+    private int disagreeCnt_;
+    /**
+     * <code>required int32 disagreeCnt = 2;</code>
+     */
+    public boolean hasDisagreeCnt() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required int32 disagreeCnt = 2;</code>
+     */
+    public int getDisagreeCnt() {
+      return disagreeCnt_;
+    }
+
+    private void initFields() {
+      agreeCnt_ = 0;
+      disagreeCnt_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasAgreeCnt()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasDisagreeCnt()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, agreeCnt_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, disagreeCnt_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, agreeCnt_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, disagreeCnt_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code netty.PostAnswerDissolutionResult}
+     *
+     * <pre>
+     *44、agreeCnt:同意解散人数 disagreeCnt:不同意解散人数
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostAnswerDissolutionResult_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostAnswerDissolutionResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.class, com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.Builder.class);
+      }
+
+      // Construct using com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        agreeCnt_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        disagreeCnt_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostAnswerDissolutionResult_descriptor;
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult getDefaultInstanceForType() {
+        return com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.getDefaultInstance();
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult build() {
+        com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult buildPartial() {
+        com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult result = new com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.agreeCnt_ = agreeCnt_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.disagreeCnt_ = disagreeCnt_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult) {
+          return mergeFrom((com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult other) {
+        if (other == com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.getDefaultInstance()) return this;
+        if (other.hasAgreeCnt()) {
+          setAgreeCnt(other.getAgreeCnt());
+        }
+        if (other.hasDisagreeCnt()) {
+          setDisagreeCnt(other.getDisagreeCnt());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasAgreeCnt()) {
+          
+          return false;
+        }
+        if (!hasDisagreeCnt()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int32 agreeCnt = 1;
+      private int agreeCnt_ ;
+      /**
+       * <code>required int32 agreeCnt = 1;</code>
+       */
+      public boolean hasAgreeCnt() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int32 agreeCnt = 1;</code>
+       */
+      public int getAgreeCnt() {
+        return agreeCnt_;
+      }
+      /**
+       * <code>required int32 agreeCnt = 1;</code>
+       */
+      public Builder setAgreeCnt(int value) {
+        bitField0_ |= 0x00000001;
+        agreeCnt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 agreeCnt = 1;</code>
+       */
+      public Builder clearAgreeCnt() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        agreeCnt_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // required int32 disagreeCnt = 2;
+      private int disagreeCnt_ ;
+      /**
+       * <code>required int32 disagreeCnt = 2;</code>
+       */
+      public boolean hasDisagreeCnt() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required int32 disagreeCnt = 2;</code>
+       */
+      public int getDisagreeCnt() {
+        return disagreeCnt_;
+      }
+      /**
+       * <code>required int32 disagreeCnt = 2;</code>
+       */
+      public Builder setDisagreeCnt(int value) {
+        bitField0_ |= 0x00000002;
+        disagreeCnt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 disagreeCnt = 2;</code>
+       */
+      public Builder clearDisagreeCnt() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        disagreeCnt_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:netty.PostAnswerDissolutionResult)
+    }
+
+    static {
+      defaultInstance = new PostAnswerDissolutionResult(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:netty.PostAnswerDissolutionResult)
+  }
+
+  public interface PostDissolutionResultOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code netty.PostDissolutionResult}
+   *
+   * <pre>
+   *45、广播解散房间成功
+   * </pre>
+   */
+  public static final class PostDissolutionResult extends
+      com.google.protobuf.GeneratedMessage
+      implements PostDissolutionResultOrBuilder {
+    // Use PostDissolutionResult.newBuilder() to construct.
+    private PostDissolutionResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private PostDissolutionResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final PostDissolutionResult defaultInstance;
+    public static PostDissolutionResult getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public PostDissolutionResult getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PostDissolutionResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostDissolutionResult_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostDissolutionResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.class, com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<PostDissolutionResult> PARSER =
+        new com.google.protobuf.AbstractParser<PostDissolutionResult>() {
+      public PostDissolutionResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PostDissolutionResult(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PostDissolutionResult> getParserForType() {
+      return PARSER;
+    }
+
+    private void initFields() {
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code netty.PostDissolutionResult}
+     *
+     * <pre>
+     *45、广播解散房间成功
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.rxqp.dn.protobuf.DdzProto.PostDissolutionResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostDissolutionResult_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostDissolutionResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.class, com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.Builder.class);
+      }
+
+      // Construct using com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostDissolutionResult_descriptor;
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult getDefaultInstanceForType() {
+        return com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.getDefaultInstance();
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult build() {
+        com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult buildPartial() {
+        com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult result = new com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult) {
+          return mergeFrom((com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult other) {
+        if (other == com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:netty.PostDissolutionResult)
+    }
+
+    static {
+      defaultInstance = new PostDissolutionResult(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:netty.PostDissolutionResult)
+  }
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_netty_MessageInfo_descriptor;
   private static
@@ -35157,6 +38353,31 @@ public final class DdzProto {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_netty_PostStakeOver_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_netty_NNDissolutionReq_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_netty_NNDissolutionReq_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_netty_PostDissolutionResp_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_netty_PostDissolutionResp_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_netty_NNAnswerDissolutionReq_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_netty_NNAnswerDissolutionReq_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_netty_PostAnswerDissolutionResult_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_netty_PostAnswerDissolutionResult_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_netty_PostDissolutionResult_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_netty_PostDissolutionResult_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -35166,7 +38387,7 @@ public final class DdzProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021MessageInfo.proto\022\005netty\"\333\r\n\013MessageIn" +
+      "\n\021MessageInfo.proto\022\005netty\"\214\020\n\013MessageIn" +
       "fo\022$\n\tmessageId\030\001 \002(\0162\021.netty.MESSAGE_ID" +
       "\022!\n\010loginReq\030\002 \001(\0132\017.netty.LoginReq\022#\n\tl" +
       "oginResp\030\003 \001(\0132\020.netty.LoginResp\022+\n\rcrea" +
@@ -35210,102 +38431,119 @@ public final class DdzProto {
       "\017postNNShowCards\030& \001(\0132\026.netty.PostNNSho" +
       "wCards\0223\n\021postNNPrepareResp\030\' \001(\0132\030.nett" +
       "y.PostNNPrepareResp\022+\n\rpostStakeOver\030( \001" +
-      "(\0132\024.netty.PostStakeOver\"9\n\010LoginReq\022-\n\016" +
-      "playerBaseInfo\030\001 \002(\0132\025.netty.PlayerBaseI" +
-      "nfo\"y\n\016PlayerBaseInfo\022\n\n\002ID\030\001 \002(\005\022\014\n\004nam" +
-      "e\030\002 \002(\t\022\016\n\006imgUrl\030\003 \001(\t\022\017\n\007cardNum\030\004 \001(\t" +
-      "\022\r\n\005token\030\005 \001(\t\022\r\n\005appid\030\006 \001(\t\022\016\n\006appKey" +
-      "\030\007 \001(\t\"\013\n\tLoginResp\">\n\rCreateRoomReq\022\r\n\005",
-      "games\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\022\020\n\010playerId\030\003 " +
-      "\002(\005\" \n\016CreateRoomResp\022\016\n\006roomId\030\002 \002(\005\"0\n" +
-      "\014EntryRoomReq\022\016\n\006roomId\030\001 \002(\005\022\020\n\010playerI" +
-      "d\030\003 \002(\005\"A\n\rEntryRoomResp\022!\n\010roomInfo\030\002 \002" +
-      "(\0132\017.netty.RoomInfo\022\r\n\005order\030\003 \002(\005\".\n\rPo" +
-      "stEntryRoom\022\035\n\006player\030\001 \002(\0132\r.netty.Play" +
-      "er\"\216\001\n\010RoomInfo\022\016\n\006roomId\030\001 \002(\005\022\036\n\007playe" +
-      "rs\030\002 \003(\0132\r.netty.Player\022\020\n\010multiple\030\003 \001(" +
-      "\005\022\023\n\013playedGames\030\004 \001(\005\022\022\n\ntotalGames\030\005 \001" +
-      "(\005\022\027\n\017currentPlayerId\030\006 \001(\005\"^\n\006Player\022\n\n",
-      "\002ID\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\016\n\006imgUrl\030\003 \001(\t\022" +
-      "\r\n\005score\030\004 \002(\005\022\014\n\004isDz\030\005 \002(\010\022\r\n\005order\030\006 " +
-      "\001(\005\"\"\n\005Poker\022\n\n\002ID\030\001 \002(\005\022\r\n\005isOut\030\002 \002(\010\"" +
-      "/\n\nDisbandReq\022\017\n\007groupId\030\001 \002(\005\022\020\n\010player" +
-      "Id\030\002 \002(\005\"\r\n\013PostDisband\" \n\017DisbandCheckR" +
-      "eq\022\r\n\005agree\030\001 \002(\010\"\022\n\020PostDisbandCheck\"Q\n" +
-      "\016SettlementData\022\n\n\002ID\030\001 \002(\005\022\020\n\010gotscore\030" +
-      "\002 \002(\005\022\022\n\nfinalscore\030\003 \002(\005\022\r\n\005isWin\030\004 \002(\010" +
-      "\"H\n\016SettlementInfo\022&\n\007players\030\001 \003(\0132\025.ne" +
-      "tty.SettlementData\022\016\n\006isOver\030\002 \002(\010\"[\n\nDi",
-      "scardReq\022\020\n\010playerId\030\001 \002(\005\022\017\n\007cardIds\030\002 " +
-      "\003(\005\022\027\n\017variableCardIds\030\003 \003(\005\022\021\n\tcardsTyp" +
-      "e\030\004 \002(\005\"\227\001\n\013PostDiscard\022\020\n\010playerId\030\001 \002(" +
-      "\005\022\017\n\007cardIds\030\002 \003(\005\022\027\n\017variableCardIds\030\003 " +
-      "\003(\005\022\032\n\022remainderPokersNum\030\004 \002(\005\022\033\n\023nextD" +
-      "iscardPlayerId\030\005 \002(\005\022\023\n\013mustDiscard\030\006 \002(" +
-      "\010\"\033\n\007DealReq\022\020\n\010playerId\030\001 \002(\005\"o\n\010DealRe" +
-      "sp\022\020\n\010playerId\030\001 \002(\005\022\034\n\006pokers\030\002 \003(\0132\014.n" +
-      "etty.Poker\022!\n\010roomInfo\030\003 \001(\0132\017.netty.Roo" +
-      "mInfo\022\020\n\010grabHost\030\004 \002(\005\"-\n\013GrabHostReq\022\020",
-      "\n\010playerId\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\"\222\001\n\020PostG" +
-      "rabHostResp\022\014\n\004type\030\001 \002(\005\022\020\n\010playerId\030\002 " +
-      "\002(\005\022\024\n\014hostPlayerId\030\003 \001(\005\022\034\n\006pokers\030\004 \003(" +
-      "\0132\014.netty.Poker\022\020\n\010variable\030\005 \001(\005\022\030\n\020nex" +
-      "tGrabPlayerId\030\006 \001(\005\"(\n\007MsgInfo\022\014\n\004type\030\001" +
-      " \002(\005\022\017\n\007message\030\002 \002(\t\"\016\n\014PostDealOver\"@\n" +
-      "\017CreateNNRoomReq\022\r\n\005games\030\001 \002(\005\022\014\n\004type\030" +
-      "\002 \002(\005\022\020\n\010playerId\030\003 \002(\005\"\"\n\020CreateNNRoomR" +
-      "esp\022\016\n\006roomId\030\002 \002(\005\"2\n\016EntryNNRoomReq\022\016\n" +
-      "\006roomId\030\001 \002(\005\022\020\n\010playerId\030\003 \002(\005\"C\n\017Entry",
-      "NNRoomResp\022!\n\010roomInfo\030\002 \002(\0132\017.netty.Roo" +
-      "mInfo\022\r\n\005order\030\003 \002(\005\"0\n\017PostNNEntryRoom\022" +
-      "\035\n\006player\030\001 \002(\0132\r.netty.Player\"\"\n\016StartN" +
-      "NGameReq\022\020\n\010playerid\030\001 \002(\005\"\021\n\017StartNNGam" +
-      "eResp\"\021\n\017PostStartNNGame\" \n\014NNPrepareReq" +
-      "\022\020\n\010playerId\030\001 \002(\005\"m\n\016PostNNDealResp\022\020\n\010" +
-      "playerId\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022\023\n\013played" +
-      "Games\030\003 \001(\005\022\022\n\ntotalGames\030\004 \001(\005\022\020\n\010isBan" +
-      "ker\030\005 \001(\010\"+\n\010StakeReq\022\020\n\010playerid\030\001 \002(\005\022" +
-      "\r\n\005point\030\002 \002(\005\"\032\n\tStakeResp\022\r\n\005point\030\001 \002",
-      "(\005\"0\n\rPostStakeResp\022\020\n\010playerid\030\001 \002(\005\022\r\n" +
-      "\005point\030\002 \002(\005\"3\n\016NNShowCardsReq\022\020\n\010player" +
-      "id\030\001 \002(\005\022\017\n\007showAll\030\002 \002(\010\"R\n\017NNShowCards" +
-      "Resp\022\020\n\010playerId\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022\035" +
-      "\n\006nntype\030\003 \002(\0162\r.netty.NNType\"R\n\017PostNNS" +
-      "howCards\022\020\n\010playerId\030\001 \002(\005\022\016\n\006pokers\030\002 \003" +
-      "(\005\022\035\n\006nntype\030\003 \002(\0162\r.netty.NNType\"%\n\021Pos" +
-      "tNNPrepareResp\022\020\n\010playerId\030\001 \002(\005\"\017\n\rPost" +
-      "StakeOver*\367\006\n\nMESSAGE_ID\022\020\n\014msg_LoginReq" +
-      "\020\001\022\021\n\rmsg_LoginResp\020\002\022\025\n\021msg_CreateRoomR",
-      "eq\020\003\022\026\n\022msg_CreateRoomResp\020\004\022\024\n\020msg_Entr" +
-      "yRoomReq\020\005\022\025\n\021msg_EntryRoomResp\020\006\022\025\n\021msg" +
-      "_PostEntryRoom\020\007\022\016\n\nmsg_Player\020\010\022\022\n\016msg_" +
-      "DisbandReq\020\t\022\023\n\017msg_PostDisband\020\n\022\027\n\023msg" +
-      "_DisbandCheckReq\020\013\022\030\n\024msg_PostDisbandChe" +
-      "ck\020\014\022\026\n\022msg_SettlementInfo\020\r\022\022\n\016msg_Disc" +
-      "ardReq\020\016\022\023\n\017msg_PostDiscard\020\017\022\017\n\013msg_Dea" +
-      "lReq\020\020\022\020\n\014msg_DealResp\020\021\022\023\n\017msg_GrabHost" +
-      "Req\020\022\022\030\n\024msg_PostGrabHostResp\020\023\022\017\n\013msg_M" +
-      "sgInfo\020\024\022\024\n\020msg_PostDealOver\020\025\022\027\n\023msg_Cr",
-      "eateNNRoomReq\020\026\022\030\n\024msg_CreateNNRoomResp\020" +
-      "\027\022\026\n\022msg_EntryNNRoomReq\020\030\022\027\n\023msg_EntryNN" +
-      "RoomResp\020\031\022\027\n\023msg_PostNNEntryRoom\020\032\022\026\n\022m" +
-      "sg_StartNNGameReq\020\033\022\027\n\023msg_StartNNGameRe" +
-      "sp\020\034\022\027\n\023msg_PostStartNNGame\020\035\022\024\n\020msg_NNP" +
-      "repareReq\020\036\022\026\n\022msg_PostNNDealResp\020\037\022\020\n\014m" +
-      "sg_StakeReq\020 \022\021\n\rmsg_StakeResp\020!\022\025\n\021msg_" +
-      "PostStakeResp\020\"\022\026\n\022msg_NNShowCardsReq\020#\022" +
-      "\027\n\023msg_NNShowCardsResp\020$\022\027\n\023msg_PostNNSh" +
-      "owCards\020%\022\031\n\025msg_PostNNPrepareResp\020&\022\025\n\021",
-      "msg_PostStakeOver\020\'*\265\002\n\006NNType\022\r\n\tNNT_ER" +
-      "ROR\020\000\022\014\n\010NNT_NONE\020\001\022\024\n\020NNT_SPECIAL_NIU1\020" +
-      "\002\022\024\n\020NNT_SPECIAL_NIU2\020\003\022\024\n\020NNT_SPECIAL_N" +
-      "IU3\020\004\022\024\n\020NNT_SPECIAL_NIU4\020\005\022\024\n\020NNT_SPECI" +
-      "AL_NIU5\020\006\022\024\n\020NNT_SPECIAL_NIU6\020\007\022\024\n\020NNT_S" +
-      "PECIAL_NIU7\020\010\022\024\n\020NNT_SPECIAL_NIU8\020\t\022\024\n\020N" +
-      "NT_SPECIAL_NIU9\020\n\022\026\n\022NNT_SPECIAL_NIUNIU\020" +
-      "\013\022\026\n\022NNT_SPECIAL_NIUHUA\020\014\022\030\n\024NNT_SPECIAL" +
-      "_BOMEBOME\020\rB \n\024com.rxqp.dn.protobufB\010Ddz" +
-      "Proto"
+      "(\0132\024.netty.PostStakeOver\0221\n\020nnDissolutio" +
+      "nReq\030) \001(\0132\027.netty.NNDissolutionReq\0227\n\023p" +
+      "ostDissolutionResp\030* \001(\0132\032.netty.PostDis" +
+      "solutionResp\022=\n\026nnAnswerDissolutionReq\030+" +
+      " \001(\0132\035.netty.NNAnswerDissolutionReq\022G\n\033P" +
+      "ostAnswerDissolutionResult\030, \001(\0132\".netty",
+      ".PostAnswerDissolutionResult\022;\n\025postDiss" +
+      "olutionResult\030- \001(\0132\034.netty.PostDissolut" +
+      "ionResult\"9\n\010LoginReq\022-\n\016playerBaseInfo\030" +
+      "\001 \002(\0132\025.netty.PlayerBaseInfo\"y\n\016PlayerBa" +
+      "seInfo\022\n\n\002ID\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\016\n\006imgU" +
+      "rl\030\003 \001(\t\022\017\n\007cardNum\030\004 \001(\t\022\r\n\005token\030\005 \001(\t" +
+      "\022\r\n\005appid\030\006 \001(\t\022\016\n\006appKey\030\007 \001(\t\"\013\n\tLogin" +
+      "Resp\">\n\rCreateRoomReq\022\r\n\005games\030\001 \002(\005\022\014\n\004" +
+      "type\030\002 \002(\005\022\020\n\010playerId\030\003 \002(\005\" \n\016CreateRo" +
+      "omResp\022\016\n\006roomId\030\002 \002(\005\"0\n\014EntryRoomReq\022\016",
+      "\n\006roomId\030\001 \002(\005\022\020\n\010playerId\030\003 \002(\005\"A\n\rEntr" +
+      "yRoomResp\022!\n\010roomInfo\030\002 \002(\0132\017.netty.Room" +
+      "Info\022\r\n\005order\030\003 \002(\005\".\n\rPostEntryRoom\022\035\n\006" +
+      "player\030\001 \002(\0132\r.netty.Player\"\216\001\n\010RoomInfo" +
+      "\022\016\n\006roomId\030\001 \002(\005\022\036\n\007players\030\002 \003(\0132\r.nett" +
+      "y.Player\022\020\n\010multiple\030\003 \001(\005\022\023\n\013playedGame" +
+      "s\030\004 \001(\005\022\022\n\ntotalGames\030\005 \001(\005\022\027\n\017currentPl" +
+      "ayerId\030\006 \001(\005\"^\n\006Player\022\n\n\002ID\030\001 \002(\005\022\014\n\004na" +
+      "me\030\002 \002(\t\022\016\n\006imgUrl\030\003 \001(\t\022\r\n\005score\030\004 \002(\005\022" +
+      "\014\n\004isDz\030\005 \002(\010\022\r\n\005order\030\006 \001(\005\"\"\n\005Poker\022\n\n",
+      "\002ID\030\001 \002(\005\022\r\n\005isOut\030\002 \002(\010\"/\n\nDisbandReq\022\017" +
+      "\n\007groupId\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\"\r\n\013Pos" +
+      "tDisband\" \n\017DisbandCheckReq\022\r\n\005agree\030\001 \002" +
+      "(\010\"\022\n\020PostDisbandCheck\"Q\n\016SettlementData" +
+      "\022\n\n\002ID\030\001 \002(\005\022\020\n\010gotscore\030\002 \002(\005\022\022\n\nfinals" +
+      "core\030\003 \002(\005\022\r\n\005isWin\030\004 \002(\010\"H\n\016SettlementI" +
+      "nfo\022&\n\007players\030\001 \003(\0132\025.netty.SettlementD" +
+      "ata\022\016\n\006isOver\030\002 \002(\010\"[\n\nDiscardReq\022\020\n\010pla" +
+      "yerId\030\001 \002(\005\022\017\n\007cardIds\030\002 \003(\005\022\027\n\017variable" +
+      "CardIds\030\003 \003(\005\022\021\n\tcardsType\030\004 \002(\005\"\227\001\n\013Pos",
+      "tDiscard\022\020\n\010playerId\030\001 \002(\005\022\017\n\007cardIds\030\002 " +
+      "\003(\005\022\027\n\017variableCardIds\030\003 \003(\005\022\032\n\022remainde" +
+      "rPokersNum\030\004 \002(\005\022\033\n\023nextDiscardPlayerId\030" +
+      "\005 \002(\005\022\023\n\013mustDiscard\030\006 \002(\010\"\033\n\007DealReq\022\020\n" +
+      "\010playerId\030\001 \002(\005\"o\n\010DealResp\022\020\n\010playerId\030" +
+      "\001 \002(\005\022\034\n\006pokers\030\002 \003(\0132\014.netty.Poker\022!\n\010r" +
+      "oomInfo\030\003 \001(\0132\017.netty.RoomInfo\022\020\n\010grabHo" +
+      "st\030\004 \002(\005\"-\n\013GrabHostReq\022\020\n\010playerId\030\001 \002(" +
+      "\005\022\014\n\004type\030\002 \002(\005\"\222\001\n\020PostGrabHostResp\022\014\n\004" +
+      "type\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\022\024\n\014hostPlay",
+      "erId\030\003 \001(\005\022\034\n\006pokers\030\004 \003(\0132\014.netty.Poker" +
+      "\022\020\n\010variable\030\005 \001(\005\022\030\n\020nextGrabPlayerId\030\006" +
+      " \001(\005\"(\n\007MsgInfo\022\014\n\004type\030\001 \002(\005\022\017\n\007message" +
+      "\030\002 \002(\t\"\016\n\014PostDealOver\"@\n\017CreateNNRoomRe" +
+      "q\022\r\n\005games\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\022\020\n\010player" +
+      "Id\030\003 \002(\005\"\"\n\020CreateNNRoomResp\022\016\n\006roomId\030\002" +
+      " \002(\005\"2\n\016EntryNNRoomReq\022\016\n\006roomId\030\001 \002(\005\022\020" +
+      "\n\010playerId\030\003 \002(\005\"C\n\017EntryNNRoomResp\022!\n\010r" +
+      "oomInfo\030\002 \002(\0132\017.netty.RoomInfo\022\r\n\005order\030" +
+      "\003 \002(\005\"0\n\017PostNNEntryRoom\022\035\n\006player\030\001 \002(\013",
+      "2\r.netty.Player\"\"\n\016StartNNGameReq\022\020\n\010pla" +
+      "yerid\030\001 \002(\005\"\021\n\017StartNNGameResp\"\021\n\017PostSt" +
+      "artNNGame\" \n\014NNPrepareReq\022\020\n\010playerId\030\001 " +
+      "\002(\005\"m\n\016PostNNDealResp\022\020\n\010playerId\030\001 \002(\005\022" +
+      "\016\n\006pokers\030\002 \003(\005\022\023\n\013playedGames\030\003 \001(\005\022\022\n\n" +
+      "totalGames\030\004 \001(\005\022\020\n\010isBanker\030\005 \001(\010\"+\n\010St" +
+      "akeReq\022\020\n\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(\005\"" +
+      "\032\n\tStakeResp\022\r\n\005point\030\001 \002(\005\"0\n\rPostStake" +
+      "Resp\022\020\n\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(\005\"3\n" +
+      "\016NNShowCardsReq\022\020\n\010playerid\030\001 \002(\005\022\017\n\007sho",
+      "wAll\030\002 \002(\010\"R\n\017NNShowCardsResp\022\020\n\010playerI" +
+      "d\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030\003 \002(\0162" +
+      "\r.netty.NNType\"R\n\017PostNNShowCards\022\020\n\010pla" +
+      "yerId\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030\003 " +
+      "\002(\0162\r.netty.NNType\"%\n\021PostNNPrepareResp\022" +
+      "\020\n\010playerId\030\001 \002(\005\"\017\n\rPostStakeOver\"$\n\020NN" +
+      "DissolutionReq\022\020\n\010playerId\030\001 \002(\005\"\'\n\023Post" +
+      "DissolutionResp\022\020\n\010playerid\030\001 \002(\005\";\n\026NNA" +
+      "nswerDissolutionReq\022\020\n\010playerId\030\001 \002(\005\022\017\n" +
+      "\007isAgree\030\002 \002(\010\"D\n\033PostAnswerDissolutionR",
+      "esult\022\020\n\010agreeCnt\030\001 \002(\005\022\023\n\013disagreeCnt\030\002" +
+      " \002(\005\"\027\n\025PostDissolutionResult*\222\010\n\nMESSAG" +
+      "E_ID\022\020\n\014msg_LoginReq\020\001\022\021\n\rmsg_LoginResp\020" +
+      "\002\022\025\n\021msg_CreateRoomReq\020\003\022\026\n\022msg_CreateRo" +
+      "omResp\020\004\022\024\n\020msg_EntryRoomReq\020\005\022\025\n\021msg_En" +
+      "tryRoomResp\020\006\022\025\n\021msg_PostEntryRoom\020\007\022\016\n\n" +
+      "msg_Player\020\010\022\022\n\016msg_DisbandReq\020\t\022\023\n\017msg_" +
+      "PostDisband\020\n\022\027\n\023msg_DisbandCheckReq\020\013\022\030" +
+      "\n\024msg_PostDisbandCheck\020\014\022\026\n\022msg_Settleme" +
+      "ntInfo\020\r\022\022\n\016msg_DiscardReq\020\016\022\023\n\017msg_Post",
+      "Discard\020\017\022\017\n\013msg_DealReq\020\020\022\020\n\014msg_DealRe" +
+      "sp\020\021\022\023\n\017msg_GrabHostReq\020\022\022\030\n\024msg_PostGra" +
+      "bHostResp\020\023\022\017\n\013msg_MsgInfo\020\024\022\024\n\020msg_Post" +
+      "DealOver\020\025\022\027\n\023msg_CreateNNRoomReq\020\026\022\030\n\024m" +
+      "sg_CreateNNRoomResp\020\027\022\026\n\022msg_EntryNNRoom" +
+      "Req\020\030\022\027\n\023msg_EntryNNRoomResp\020\031\022\027\n\023msg_Po" +
+      "stNNEntryRoom\020\032\022\026\n\022msg_StartNNGameReq\020\033\022" +
+      "\027\n\023msg_StartNNGameResp\020\034\022\027\n\023msg_PostStar" +
+      "tNNGame\020\035\022\024\n\020msg_NNPrepareReq\020\036\022\026\n\022msg_P" +
+      "ostNNDealResp\020\037\022\020\n\014msg_StakeReq\020 \022\021\n\rmsg",
+      "_StakeResp\020!\022\025\n\021msg_PostStakeResp\020\"\022\026\n\022m" +
+      "sg_NNShowCardsReq\020#\022\027\n\023msg_NNShowCardsRe" +
+      "sp\020$\022\027\n\023msg_PostNNShowCards\020%\022\031\n\025msg_Pos" +
+      "tNNPrepareResp\020&\022\025\n\021msg_PostStakeOver\020\'\022" +
+      "\030\n\024msg_NNDissolutionReq\020(\022\033\n\027msg_PostDis" +
+      "solutionResp\020)\022\036\n\032msg_NNAnswerDissolutio" +
+      "nReq\020*\022#\n\037msg_PostAnswerDissolutionResul" +
+      "t\020+\022\035\n\031msg_PostDissolutionResult\020,*\265\002\n\006N" +
+      "NType\022\r\n\tNNT_ERROR\020\000\022\014\n\010NNT_NONE\020\001\022\024\n\020NN" +
+      "T_SPECIAL_NIU1\020\002\022\024\n\020NNT_SPECIAL_NIU2\020\003\022\024",
+      "\n\020NNT_SPECIAL_NIU3\020\004\022\024\n\020NNT_SPECIAL_NIU4" +
+      "\020\005\022\024\n\020NNT_SPECIAL_NIU5\020\006\022\024\n\020NNT_SPECIAL_" +
+      "NIU6\020\007\022\024\n\020NNT_SPECIAL_NIU7\020\010\022\024\n\020NNT_SPEC" +
+      "IAL_NIU8\020\t\022\024\n\020NNT_SPECIAL_NIU9\020\n\022\026\n\022NNT_" +
+      "SPECIAL_NIUNIU\020\013\022\026\n\022NNT_SPECIAL_NIUHUA\020\014" +
+      "\022\030\n\024NNT_SPECIAL_BOMEBOME\020\rB \n\024com.rxqp.d" +
+      "n.protobufB\010DdzProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -35317,7 +38555,7 @@ public final class DdzProto {
           internal_static_netty_MessageInfo_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_MessageInfo_descriptor,
-              new java.lang.String[] { "MessageId", "LoginReq", "LoginResp", "CreateRoomReq", "CreateRoomResp", "EntryRoomReq", "EntryRoomResp", "PostEntryRoom", "Player", "DisbandReq", "PostDisband", "DisbandCheckReq", "PostDisbandCheck", "SettlementInfo", "DiscardReq", "PostDiscard", "DealReq", "DealResp", "GrabHostReq", "MsgInfo", "PostGrabHostResp", "PostDealOver", "CreateNNRoomReq", "CreateNNRoomResp", "EntryNNRoomReq", "EntryNNRoomResp", "PostNNEntryRoom", "StartNNGame", "StartNNgameResp", "PostStartNNGame", "NnPrepareReq", "NnDealResp", "StakeReq", "StakeResp", "PostStakeResp", "NnShowCardsReq", "NnShowCardsResp", "PostNNShowCards", "PostNNPrepareResp", "PostStakeOver", });
+              new java.lang.String[] { "MessageId", "LoginReq", "LoginResp", "CreateRoomReq", "CreateRoomResp", "EntryRoomReq", "EntryRoomResp", "PostEntryRoom", "Player", "DisbandReq", "PostDisband", "DisbandCheckReq", "PostDisbandCheck", "SettlementInfo", "DiscardReq", "PostDiscard", "DealReq", "DealResp", "GrabHostReq", "MsgInfo", "PostGrabHostResp", "PostDealOver", "CreateNNRoomReq", "CreateNNRoomResp", "EntryNNRoomReq", "EntryNNRoomResp", "PostNNEntryRoom", "StartNNGame", "StartNNgameResp", "PostStartNNGame", "NnPrepareReq", "NnDealResp", "StakeReq", "StakeResp", "PostStakeResp", "NnShowCardsReq", "NnShowCardsResp", "PostNNShowCards", "PostNNPrepareResp", "PostStakeOver", "NnDissolutionReq", "PostDissolutionResp", "NnAnswerDissolutionReq", "PostAnswerDissolutionResult", "PostDissolutionResult", });
           internal_static_netty_LoginReq_descriptor =
             getDescriptor().getMessageTypes().get(1);
           internal_static_netty_LoginReq_fieldAccessorTable = new
@@ -35575,6 +38813,36 @@ public final class DdzProto {
           internal_static_netty_PostStakeOver_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_PostStakeOver_descriptor,
+              new java.lang.String[] { });
+          internal_static_netty_NNDissolutionReq_descriptor =
+            getDescriptor().getMessageTypes().get(44);
+          internal_static_netty_NNDissolutionReq_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_netty_NNDissolutionReq_descriptor,
+              new java.lang.String[] { "PlayerId", });
+          internal_static_netty_PostDissolutionResp_descriptor =
+            getDescriptor().getMessageTypes().get(45);
+          internal_static_netty_PostDissolutionResp_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_netty_PostDissolutionResp_descriptor,
+              new java.lang.String[] { "Playerid", });
+          internal_static_netty_NNAnswerDissolutionReq_descriptor =
+            getDescriptor().getMessageTypes().get(46);
+          internal_static_netty_NNAnswerDissolutionReq_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_netty_NNAnswerDissolutionReq_descriptor,
+              new java.lang.String[] { "PlayerId", "IsAgree", });
+          internal_static_netty_PostAnswerDissolutionResult_descriptor =
+            getDescriptor().getMessageTypes().get(47);
+          internal_static_netty_PostAnswerDissolutionResult_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_netty_PostAnswerDissolutionResult_descriptor,
+              new java.lang.String[] { "AgreeCnt", "DisagreeCnt", });
+          internal_static_netty_PostDissolutionResult_descriptor =
+            getDescriptor().getMessageTypes().get(48);
+          internal_static_netty_PostDissolutionResult_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_netty_PostDissolutionResult_descriptor,
               new java.lang.String[] { });
           return null;
         }

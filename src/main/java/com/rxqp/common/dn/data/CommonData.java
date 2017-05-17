@@ -43,7 +43,7 @@ public class CommonData {
 					ExcMsgConstants.NO_EXISTS_THE_ROOM_EXC_CODE,
 					ExcMsgConstants.NO_EXISTS_THE_ROOM_EXC_MSG);
 		}
-		return roomIdToRoomInfo.get(roomId).getPlayers();
+		return room.getPlayers();
 	}
 
 	public static void putPlayersIntoRoom(Integer roomId, List<Player> players)

@@ -24,8 +24,6 @@ public class Room {
 
 	public void init() {
 		this.multiple = 1;
-		this.playedGames = 0;
-		this.totalGames = 0;
 		this.prePlayerId = -1;
 		this.isStartGame = false;
 		this.preparedPlayerCnt = 0;
