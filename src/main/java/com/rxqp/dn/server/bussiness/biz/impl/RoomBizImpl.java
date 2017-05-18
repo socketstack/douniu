@@ -252,6 +252,12 @@ public class RoomBizImpl implements IRoomBiz {
 			List<Player> players = CommonData.getPlayersByRoomId(roomId);
 			for (Player player : players) {
 				player.setOnPlay(false);
+				player.setPokerIds(null);
+				player.setRoomId(-1);
+				player.setScore(0);
+				player.setFinalScore(0);
+				player.setBetPoints(0);
+				player.setNntype(null);
 			}
 			CommonData.removeRoom(roomId);
 			return true;
@@ -364,7 +370,7 @@ public class RoomBizImpl implements IRoomBiz {
 		MessageInfo.Builder mi = MessageInfo.newBuilder();
 		mi.setMessageId(MESSAGE_ID.msg_SettlementInfo);
 		SettlementInfo.Builder settlementInfo = SettlementInfo.newBuilder();
-		if (room.getPlayedGames() >= room.getTotalGames())
+		if (room.getPlayedGames() > room.getTotalGames())
 			settlementInfo.setIsOver(true);
 		else
 			settlementInfo.setIsOver(false);
