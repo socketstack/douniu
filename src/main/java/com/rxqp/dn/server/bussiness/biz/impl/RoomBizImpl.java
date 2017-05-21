@@ -26,6 +26,7 @@ import com.rxqp.dn.protobuf.DdzProto.MessageInfo.Builder;
 import com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq;
 import com.rxqp.dn.protobuf.DdzProto.NNDissolutionReq;
 import com.rxqp.dn.protobuf.DdzProto.NNType;
+import com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult;
 import com.rxqp.dn.protobuf.DdzProto.PostDissolutionResp;
 import com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult;
 import com.rxqp.dn.protobuf.DdzProto.PostNNEntryRoom;
@@ -334,6 +335,27 @@ public class RoomBizImpl implements IRoomBiz {
 		}
 		if (isAgree) {
 			room.increaseAgreeDissolutionCnt();
+		} else {
+			room.increaseDisAgreeDissolutionCnt();
+		}
+
+		List<Player> players = room.getPlayers();
+		// 广播其所有玩家，目前多少玩家同意解散房间，多少玩家不同意
+		if (CollectionUtils.isNotEmpty(players)) {
+			MessageInfo.Builder postMsgInfo = MessageInfo.newBuilder();
+			postMsgInfo
+					.setMessageId(MESSAGE_ID.msg_PostAnswerDissolutionResult);
+			PostAnswerDissolutionResult.Builder postAnswerDissolutionResult = PostAnswerDissolutionResult
+					.newBuilder();
+			postAnswerDissolutionResult.setAgreeCnt(room
+					.getAgreeDissolutionCnt());
+			postAnswerDissolutionResult.setDisagreeCnt(room
+					.getDisAgreeDissolutionCnt());
+			postMsgInfo
+					.setPostAnswerDissolutionResult(postAnswerDissolutionResult);
+			for (Player pl : players) {
+				pl.getChannel().writeAndFlush(postMsgInfo.build());
+			}
 		}
 
 		Integer playerCnt = room.getPlayers().size();
@@ -348,7 +370,6 @@ public class RoomBizImpl implements IRoomBiz {
 			}
 		}
 		if (isSuccess) {
-			List<Player> players = room.getPlayers();
 			// 广播其他玩家有玩家请求解散房间
 			if (CollectionUtils.isNotEmpty(players)) {
 				MessageInfo.Builder postMsgInfo = MessageInfo.newBuilder();
