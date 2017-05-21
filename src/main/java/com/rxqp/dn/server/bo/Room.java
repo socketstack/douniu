@@ -7,7 +7,7 @@ public class Room {
 	private Integer roomId;
 	private List<Player> players;
 	private Integer multiple = 1;// 倍率,1倍为底
-	private Integer playedGames = 9;// 已经玩了几盘
+	private Integer playedGames = 1;// 已经玩了几盘
 	private Integer totalGames = 0;// 一共几盘
 	private Integer currentPlayerId;// 当前出牌玩家
 	private Integer type;// 1表示房主出房费，2表示进入房间者均摊房费
