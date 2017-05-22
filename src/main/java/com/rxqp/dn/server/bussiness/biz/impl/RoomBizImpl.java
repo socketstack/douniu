@@ -177,7 +177,7 @@ public class RoomBizImpl implements IRoomBiz {
 					MessageConstants.ENTRY_ROOM_ERROR_TYPE_4000,
 					MessageConstants.ENTRY_ROOM_ERROR_MSG_4000);
 			return messageInfo;
-		} else if (players.size() > 5) {// 斗牛每一房间最多5个玩家
+		} else if (players.size() > 4) {// 斗牛每一房间最多5个玩家
 			messageInfo = commonBiz.setMessageInfo(
 					MessageConstants.ENTRY_ROOM_ERROR_TYPE_4001,
 					MessageConstants.ENTRY_ROOM_ERROR_MSG_4001);
@@ -288,6 +288,8 @@ public class RoomBizImpl implements IRoomBiz {
 					MessageConstants.THE_ROOM_NO_EXTIST_ERROR_MSG);
 			return messageInfo;
 		}
+		room.setAgreeDissolutionCnt(1);
+		room.setDisAgreeDissolutionCnt(0);
 		List<Player> players = room.getPlayers();
 		// 广播其他玩家有玩家请求解散房间
 		if (CollectionUtils.isNotEmpty(players)) {
