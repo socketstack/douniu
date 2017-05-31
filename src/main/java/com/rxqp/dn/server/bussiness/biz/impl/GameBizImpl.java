@@ -26,9 +26,11 @@ import com.rxqp.dn.protobuf.DdzProto.NNType;
 import com.rxqp.dn.protobuf.DdzProto.PostNNDealResp;
 import com.rxqp.dn.protobuf.DdzProto.PostNNPrepareResp;
 import com.rxqp.dn.protobuf.DdzProto.PostNNShowCards;
+import com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp;
 import com.rxqp.dn.protobuf.DdzProto.PostStakeOver;
 import com.rxqp.dn.protobuf.DdzProto.PostStakeResp;
 import com.rxqp.dn.protobuf.DdzProto.PostStartNNGame;
+import com.rxqp.dn.protobuf.DdzProto.SendSoundReq;
 import com.rxqp.dn.protobuf.DdzProto.StakeReq;
 import com.rxqp.dn.protobuf.DdzProto.StakeResp;
 import com.rxqp.dn.protobuf.DdzProto.StartNNGameReq;
@@ -468,5 +470,21 @@ public class GameBizImpl implements IGameBiz {
 			remainderPokerIds.remove(s);
 		}
 		return pokerIds;
+	}
+
+	@Override
+	public Builder sendSoundProccess(MessageInfo messageInfoReq,
+			ChannelHandlerContext ctx) {
+		MessageInfo.Builder messageInfo = MessageInfo.newBuilder();
+		messageInfo.setMessageId(MESSAGE_ID.msg_PostSendSoundResp);
+		SendSoundReq req = messageInfoReq.getSendSoundReq();
+		Integer playerId = req.getPlayerId();
+		Integer soundId = req.getSoundId();
+		PostSendSoundResp.Builder postSendSoundResp = PostSendSoundResp
+				.newBuilder();
+		postSendSoundResp.setPlayerId(playerId);
+		postSendSoundResp.setSoundId(soundId);
+		messageInfo.setPostSendSoundResp(postSendSoundResp);
+		return messageInfo;
 	}
 }

@@ -7,7 +7,7 @@ public class Room {
 	private Integer roomId;
 	private List<Player> players;
 	private Integer multiple = 1;// 倍率,1倍为底
-	private Integer playedGames = 9;// 已经玩了几盘
+	private Integer playedGames = 1;// 已经玩了几盘
 	private Integer totalGames = 0;// 一共几盘
 	private Integer currentPlayerId;// 当前出牌玩家
 	private Integer type;// 1表示房主出房费，2表示进入房间者均摊房费
@@ -19,6 +19,7 @@ public class Room {
 	private Integer bankerId;// 庄家ID
 	private Integer showCardsPlayerCnt = 0;// 已经开牌人数
 	private Integer agreeDissolutionCnt = 1;// 同意解散房间人数,发起人是同意的
+	private Integer disAgreeDissolutionCnt = 0;// 不同意解散房间人数
 
 	public Room() {
 	}
@@ -30,7 +31,8 @@ public class Room {
 		this.preparedPlayerCnt = 0;
 		this.stakedPlayerCnt = 0;
 		this.showCardsPlayerCnt = 0;
-		agreeDissolutionCnt = 1;
+		this.agreeDissolutionCnt = 1;
+		this.disAgreeDissolutionCnt = 0;
 	}
 
 	public Integer getRoomId() {
@@ -171,6 +173,18 @@ public class Room {
 
 	public synchronized void increaseAgreeDissolutionCnt() {
 		agreeDissolutionCnt++;
+	}
+
+	public Integer getDisAgreeDissolutionCnt() {
+		return disAgreeDissolutionCnt;
+	}
+
+	public void setDisAgreeDissolutionCnt(Integer disAgreeDissolutionCnt) {
+		this.disAgreeDissolutionCnt = disAgreeDissolutionCnt;
+	}
+
+	public synchronized void increaseDisAgreeDissolutionCnt() {
+		disAgreeDissolutionCnt++;
 	}
 
 }

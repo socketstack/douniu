@@ -45,4 +45,10 @@ public interface IGameBiz {
 	 */
 	public Builder showCardsProcess(MessageInfo messageInfoReq,
 			ChannelHandlerContext ctx);
+
+	/**
+	 * 发送语音
+	 */
+	public Builder sendSoundProccess(MessageInfo messageInfoReq,
+			ChannelHandlerContext ctx);
 }

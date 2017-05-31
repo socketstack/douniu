@@ -49,7 +49,10 @@ public class CoreBizImpl implements ICoreBiz {
 			builder = roomBiz.disolutionRoom(messageInfoReq, ctx);
 			break;
 		case msg_NNAnswerDissolutionReq:// 其他玩家答复解散房间请求
-			// TODO
+			builder = roomBiz.answerDissolution(messageInfoReq, ctx);
+			break;
+		case msg_SendSoundReq:// 请求发送语音
+			builder = gameBiz.sendSoundProccess(messageInfoReq, ctx);
 			break;
 		default:
 			System.out.println("default");

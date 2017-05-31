@@ -193,6 +193,18 @@ public final class DdzProto {
      * <code>msg_PostDissolutionResult = 44;</code>
      */
     msg_PostDissolutionResult(43, 44),
+    /**
+     * <code>msg_SendSoundReq = 45;</code>
+     *
+     * <pre>
+     * 语音相关
+     * </pre>
+     */
+    msg_SendSoundReq(44, 45),
+    /**
+     * <code>msg_PostSendSoundResp = 46;</code>
+     */
+    msg_PostSendSoundResp(45, 46),
     ;
 
     /**
@@ -375,6 +387,18 @@ public final class DdzProto {
      * <code>msg_PostDissolutionResult = 44;</code>
      */
     public static final int msg_PostDissolutionResult_VALUE = 44;
+    /**
+     * <code>msg_SendSoundReq = 45;</code>
+     *
+     * <pre>
+     * 语音相关
+     * </pre>
+     */
+    public static final int msg_SendSoundReq_VALUE = 45;
+    /**
+     * <code>msg_PostSendSoundResp = 46;</code>
+     */
+    public static final int msg_PostSendSoundResp_VALUE = 46;
 
 
     public final int getNumber() { return value; }
@@ -425,6 +449,8 @@ public final class DdzProto {
         case 42: return msg_NNAnswerDissolutionReq;
         case 43: return msg_PostAnswerDissolutionResult;
         case 44: return msg_PostDissolutionResult;
+        case 45: return msg_SendSoundReq;
+        case 46: return msg_PostSendSoundResp;
         default: return null;
       }
     }
@@ -1418,6 +1444,46 @@ public final class DdzProto {
      * <code>optional .netty.PostDissolutionResult postDissolutionResult = 45;</code>
      */
     com.rxqp.dn.protobuf.DdzProto.PostDissolutionResultOrBuilder getPostDissolutionResultOrBuilder();
+
+    // optional .netty.SendSoundReq sendSoundReq = 46;
+    /**
+     * <code>optional .netty.SendSoundReq sendSoundReq = 46;</code>
+     *
+     * <pre>
+     * 语音相关
+     * </pre>
+     */
+    boolean hasSendSoundReq();
+    /**
+     * <code>optional .netty.SendSoundReq sendSoundReq = 46;</code>
+     *
+     * <pre>
+     * 语音相关
+     * </pre>
+     */
+    com.rxqp.dn.protobuf.DdzProto.SendSoundReq getSendSoundReq();
+    /**
+     * <code>optional .netty.SendSoundReq sendSoundReq = 46;</code>
+     *
+     * <pre>
+     * 语音相关
+     * </pre>
+     */
+    com.rxqp.dn.protobuf.DdzProto.SendSoundReqOrBuilder getSendSoundReqOrBuilder();
+
+    // optional .netty.PostSendSoundResp postSendSoundResp = 47;
+    /**
+     * <code>optional .netty.PostSendSoundResp postSendSoundResp = 47;</code>
+     */
+    boolean hasPostSendSoundResp();
+    /**
+     * <code>optional .netty.PostSendSoundResp postSendSoundResp = 47;</code>
+     */
+    com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp getPostSendSoundResp();
+    /**
+     * <code>optional .netty.PostSendSoundResp postSendSoundResp = 47;</code>
+     */
+    com.rxqp.dn.protobuf.DdzProto.PostSendSoundRespOrBuilder getPostSendSoundRespOrBuilder();
   }
   /**
    * Protobuf type {@code netty.MessageInfo}
@@ -2052,6 +2118,32 @@ public final class DdzProto {
                 postDissolutionResult_ = subBuilder.buildPartial();
               }
               bitField1_ |= 0x00001000;
+              break;
+            }
+            case 370: {
+              com.rxqp.dn.protobuf.DdzProto.SendSoundReq.Builder subBuilder = null;
+              if (((bitField1_ & 0x00002000) == 0x00002000)) {
+                subBuilder = sendSoundReq_.toBuilder();
+              }
+              sendSoundReq_ = input.readMessage(com.rxqp.dn.protobuf.DdzProto.SendSoundReq.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sendSoundReq_);
+                sendSoundReq_ = subBuilder.buildPartial();
+              }
+              bitField1_ |= 0x00002000;
+              break;
+            }
+            case 378: {
+              com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.Builder subBuilder = null;
+              if (((bitField1_ & 0x00004000) == 0x00004000)) {
+                subBuilder = postSendSoundResp_.toBuilder();
+              }
+              postSendSoundResp_ = input.readMessage(com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(postSendSoundResp_);
+                postSendSoundResp_ = subBuilder.buildPartial();
+              }
+              bitField1_ |= 0x00004000;
               break;
             }
           }
@@ -3091,6 +3183,62 @@ public final class DdzProto {
       return postDissolutionResult_;
     }
 
+    // optional .netty.SendSoundReq sendSoundReq = 46;
+    public static final int SENDSOUNDREQ_FIELD_NUMBER = 46;
+    private com.rxqp.dn.protobuf.DdzProto.SendSoundReq sendSoundReq_;
+    /**
+     * <code>optional .netty.SendSoundReq sendSoundReq = 46;</code>
+     *
+     * <pre>
+     * 语音相关
+     * </pre>
+     */
+    public boolean hasSendSoundReq() {
+      return ((bitField1_ & 0x00002000) == 0x00002000);
+    }
+    /**
+     * <code>optional .netty.SendSoundReq sendSoundReq = 46;</code>
+     *
+     * <pre>
+     * 语音相关
+     * </pre>
+     */
+    public com.rxqp.dn.protobuf.DdzProto.SendSoundReq getSendSoundReq() {
+      return sendSoundReq_;
+    }
+    /**
+     * <code>optional .netty.SendSoundReq sendSoundReq = 46;</code>
+     *
+     * <pre>
+     * 语音相关
+     * </pre>
+     */
+    public com.rxqp.dn.protobuf.DdzProto.SendSoundReqOrBuilder getSendSoundReqOrBuilder() {
+      return sendSoundReq_;
+    }
+
+    // optional .netty.PostSendSoundResp postSendSoundResp = 47;
+    public static final int POSTSENDSOUNDRESP_FIELD_NUMBER = 47;
+    private com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp postSendSoundResp_;
+    /**
+     * <code>optional .netty.PostSendSoundResp postSendSoundResp = 47;</code>
+     */
+    public boolean hasPostSendSoundResp() {
+      return ((bitField1_ & 0x00004000) == 0x00004000);
+    }
+    /**
+     * <code>optional .netty.PostSendSoundResp postSendSoundResp = 47;</code>
+     */
+    public com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp getPostSendSoundResp() {
+      return postSendSoundResp_;
+    }
+    /**
+     * <code>optional .netty.PostSendSoundResp postSendSoundResp = 47;</code>
+     */
+    public com.rxqp.dn.protobuf.DdzProto.PostSendSoundRespOrBuilder getPostSendSoundRespOrBuilder() {
+      return postSendSoundResp_;
+    }
+
     private void initFields() {
       messageId_ = com.rxqp.dn.protobuf.DdzProto.MESSAGE_ID.msg_LoginReq;
       loginReq_ = com.rxqp.dn.protobuf.DdzProto.LoginReq.getDefaultInstance();
@@ -3137,6 +3285,8 @@ public final class DdzProto {
       nnAnswerDissolutionReq_ = com.rxqp.dn.protobuf.DdzProto.NNAnswerDissolutionReq.getDefaultInstance();
       postAnswerDissolutionResult_ = com.rxqp.dn.protobuf.DdzProto.PostAnswerDissolutionResult.getDefaultInstance();
       postDissolutionResult_ = com.rxqp.dn.protobuf.DdzProto.PostDissolutionResult.getDefaultInstance();
+      sendSoundReq_ = com.rxqp.dn.protobuf.DdzProto.SendSoundReq.getDefaultInstance();
+      postSendSoundResp_ = com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3363,6 +3513,18 @@ public final class DdzProto {
           return false;
         }
       }
+      if (hasSendSoundReq()) {
+        if (!getSendSoundReq().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasPostSendSoundResp()) {
+        if (!getPostSendSoundResp().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -3504,6 +3666,12 @@ public final class DdzProto {
       }
       if (((bitField1_ & 0x00001000) == 0x00001000)) {
         output.writeMessage(45, postDissolutionResult_);
+      }
+      if (((bitField1_ & 0x00002000) == 0x00002000)) {
+        output.writeMessage(46, sendSoundReq_);
+      }
+      if (((bitField1_ & 0x00004000) == 0x00004000)) {
+        output.writeMessage(47, postSendSoundResp_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3694,6 +3862,14 @@ public final class DdzProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(45, postDissolutionResult_);
       }
+      if (((bitField1_ & 0x00002000) == 0x00002000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(46, sendSoundReq_);
+      }
+      if (((bitField1_ & 0x00004000) == 0x00004000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(47, postSendSoundResp_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -3846,6 +4022,8 @@ public final class DdzProto {
           getNnAnswerDissolutionReqFieldBuilder();
           getPostAnswerDissolutionResultFieldBuilder();
           getPostDissolutionResultFieldBuilder();
+          getSendSoundReqFieldBuilder();
+          getPostSendSoundRespFieldBuilder();
         }
       }
       private static Builder create() {
@@ -4120,6 +4298,18 @@ public final class DdzProto {
           postDissolutionResultBuilder_.clear();
         }
         bitField1_ = (bitField1_ & ~0x00001000);
+        if (sendSoundReqBuilder_ == null) {
+          sendSoundReq_ = com.rxqp.dn.protobuf.DdzProto.SendSoundReq.getDefaultInstance();
+        } else {
+          sendSoundReqBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00002000);
+        if (postSendSoundRespBuilder_ == null) {
+          postSendSoundResp_ = com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.getDefaultInstance();
+        } else {
+          postSendSoundRespBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00004000);
         return this;
       }
 
@@ -4506,6 +4696,22 @@ public final class DdzProto {
         } else {
           result.postDissolutionResult_ = postDissolutionResultBuilder_.build();
         }
+        if (((from_bitField1_ & 0x00002000) == 0x00002000)) {
+          to_bitField1_ |= 0x00002000;
+        }
+        if (sendSoundReqBuilder_ == null) {
+          result.sendSoundReq_ = sendSoundReq_;
+        } else {
+          result.sendSoundReq_ = sendSoundReqBuilder_.build();
+        }
+        if (((from_bitField1_ & 0x00004000) == 0x00004000)) {
+          to_bitField1_ |= 0x00004000;
+        }
+        if (postSendSoundRespBuilder_ == null) {
+          result.postSendSoundResp_ = postSendSoundResp_;
+        } else {
+          result.postSendSoundResp_ = postSendSoundRespBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         result.bitField1_ = to_bitField1_;
         onBuilt();
@@ -4657,6 +4863,12 @@ public final class DdzProto {
         }
         if (other.hasPostDissolutionResult()) {
           mergePostDissolutionResult(other.getPostDissolutionResult());
+        }
+        if (other.hasSendSoundReq()) {
+          mergeSendSoundReq(other.getSendSoundReq());
+        }
+        if (other.hasPostSendSoundResp()) {
+          mergePostSendSoundResp(other.getPostSendSoundResp());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -4879,6 +5091,18 @@ public final class DdzProto {
         }
         if (hasPostAnswerDissolutionResult()) {
           if (!getPostAnswerDissolutionResult().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasSendSoundReq()) {
+          if (!getSendSoundReq().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasPostSendSoundResp()) {
+          if (!getPostSendSoundResp().isInitialized()) {
             
             return false;
           }
@@ -10124,6 +10348,276 @@ public final class DdzProto {
           postDissolutionResult_ = null;
         }
         return postDissolutionResultBuilder_;
+      }
+
+      // optional .netty.SendSoundReq sendSoundReq = 46;
+      private com.rxqp.dn.protobuf.DdzProto.SendSoundReq sendSoundReq_ = com.rxqp.dn.protobuf.DdzProto.SendSoundReq.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.dn.protobuf.DdzProto.SendSoundReq, com.rxqp.dn.protobuf.DdzProto.SendSoundReq.Builder, com.rxqp.dn.protobuf.DdzProto.SendSoundReqOrBuilder> sendSoundReqBuilder_;
+      /**
+       * <code>optional .netty.SendSoundReq sendSoundReq = 46;</code>
+       *
+       * <pre>
+       * 语音相关
+       * </pre>
+       */
+      public boolean hasSendSoundReq() {
+        return ((bitField1_ & 0x00002000) == 0x00002000);
+      }
+      /**
+       * <code>optional .netty.SendSoundReq sendSoundReq = 46;</code>
+       *
+       * <pre>
+       * 语音相关
+       * </pre>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.SendSoundReq getSendSoundReq() {
+        if (sendSoundReqBuilder_ == null) {
+          return sendSoundReq_;
+        } else {
+          return sendSoundReqBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .netty.SendSoundReq sendSoundReq = 46;</code>
+       *
+       * <pre>
+       * 语音相关
+       * </pre>
+       */
+      public Builder setSendSoundReq(com.rxqp.dn.protobuf.DdzProto.SendSoundReq value) {
+        if (sendSoundReqBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sendSoundReq_ = value;
+          onChanged();
+        } else {
+          sendSoundReqBuilder_.setMessage(value);
+        }
+        bitField1_ |= 0x00002000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.SendSoundReq sendSoundReq = 46;</code>
+       *
+       * <pre>
+       * 语音相关
+       * </pre>
+       */
+      public Builder setSendSoundReq(
+          com.rxqp.dn.protobuf.DdzProto.SendSoundReq.Builder builderForValue) {
+        if (sendSoundReqBuilder_ == null) {
+          sendSoundReq_ = builderForValue.build();
+          onChanged();
+        } else {
+          sendSoundReqBuilder_.setMessage(builderForValue.build());
+        }
+        bitField1_ |= 0x00002000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.SendSoundReq sendSoundReq = 46;</code>
+       *
+       * <pre>
+       * 语音相关
+       * </pre>
+       */
+      public Builder mergeSendSoundReq(com.rxqp.dn.protobuf.DdzProto.SendSoundReq value) {
+        if (sendSoundReqBuilder_ == null) {
+          if (((bitField1_ & 0x00002000) == 0x00002000) &&
+              sendSoundReq_ != com.rxqp.dn.protobuf.DdzProto.SendSoundReq.getDefaultInstance()) {
+            sendSoundReq_ =
+              com.rxqp.dn.protobuf.DdzProto.SendSoundReq.newBuilder(sendSoundReq_).mergeFrom(value).buildPartial();
+          } else {
+            sendSoundReq_ = value;
+          }
+          onChanged();
+        } else {
+          sendSoundReqBuilder_.mergeFrom(value);
+        }
+        bitField1_ |= 0x00002000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.SendSoundReq sendSoundReq = 46;</code>
+       *
+       * <pre>
+       * 语音相关
+       * </pre>
+       */
+      public Builder clearSendSoundReq() {
+        if (sendSoundReqBuilder_ == null) {
+          sendSoundReq_ = com.rxqp.dn.protobuf.DdzProto.SendSoundReq.getDefaultInstance();
+          onChanged();
+        } else {
+          sendSoundReqBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00002000);
+        return this;
+      }
+      /**
+       * <code>optional .netty.SendSoundReq sendSoundReq = 46;</code>
+       *
+       * <pre>
+       * 语音相关
+       * </pre>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.SendSoundReq.Builder getSendSoundReqBuilder() {
+        bitField1_ |= 0x00002000;
+        onChanged();
+        return getSendSoundReqFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .netty.SendSoundReq sendSoundReq = 46;</code>
+       *
+       * <pre>
+       * 语音相关
+       * </pre>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.SendSoundReqOrBuilder getSendSoundReqOrBuilder() {
+        if (sendSoundReqBuilder_ != null) {
+          return sendSoundReqBuilder_.getMessageOrBuilder();
+        } else {
+          return sendSoundReq_;
+        }
+      }
+      /**
+       * <code>optional .netty.SendSoundReq sendSoundReq = 46;</code>
+       *
+       * <pre>
+       * 语音相关
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.dn.protobuf.DdzProto.SendSoundReq, com.rxqp.dn.protobuf.DdzProto.SendSoundReq.Builder, com.rxqp.dn.protobuf.DdzProto.SendSoundReqOrBuilder> 
+          getSendSoundReqFieldBuilder() {
+        if (sendSoundReqBuilder_ == null) {
+          sendSoundReqBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.rxqp.dn.protobuf.DdzProto.SendSoundReq, com.rxqp.dn.protobuf.DdzProto.SendSoundReq.Builder, com.rxqp.dn.protobuf.DdzProto.SendSoundReqOrBuilder>(
+                  sendSoundReq_,
+                  getParentForChildren(),
+                  isClean());
+          sendSoundReq_ = null;
+        }
+        return sendSoundReqBuilder_;
+      }
+
+      // optional .netty.PostSendSoundResp postSendSoundResp = 47;
+      private com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp postSendSoundResp_ = com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp, com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.Builder, com.rxqp.dn.protobuf.DdzProto.PostSendSoundRespOrBuilder> postSendSoundRespBuilder_;
+      /**
+       * <code>optional .netty.PostSendSoundResp postSendSoundResp = 47;</code>
+       */
+      public boolean hasPostSendSoundResp() {
+        return ((bitField1_ & 0x00004000) == 0x00004000);
+      }
+      /**
+       * <code>optional .netty.PostSendSoundResp postSendSoundResp = 47;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp getPostSendSoundResp() {
+        if (postSendSoundRespBuilder_ == null) {
+          return postSendSoundResp_;
+        } else {
+          return postSendSoundRespBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .netty.PostSendSoundResp postSendSoundResp = 47;</code>
+       */
+      public Builder setPostSendSoundResp(com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp value) {
+        if (postSendSoundRespBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          postSendSoundResp_ = value;
+          onChanged();
+        } else {
+          postSendSoundRespBuilder_.setMessage(value);
+        }
+        bitField1_ |= 0x00004000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostSendSoundResp postSendSoundResp = 47;</code>
+       */
+      public Builder setPostSendSoundResp(
+          com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.Builder builderForValue) {
+        if (postSendSoundRespBuilder_ == null) {
+          postSendSoundResp_ = builderForValue.build();
+          onChanged();
+        } else {
+          postSendSoundRespBuilder_.setMessage(builderForValue.build());
+        }
+        bitField1_ |= 0x00004000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostSendSoundResp postSendSoundResp = 47;</code>
+       */
+      public Builder mergePostSendSoundResp(com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp value) {
+        if (postSendSoundRespBuilder_ == null) {
+          if (((bitField1_ & 0x00004000) == 0x00004000) &&
+              postSendSoundResp_ != com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.getDefaultInstance()) {
+            postSendSoundResp_ =
+              com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.newBuilder(postSendSoundResp_).mergeFrom(value).buildPartial();
+          } else {
+            postSendSoundResp_ = value;
+          }
+          onChanged();
+        } else {
+          postSendSoundRespBuilder_.mergeFrom(value);
+        }
+        bitField1_ |= 0x00004000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostSendSoundResp postSendSoundResp = 47;</code>
+       */
+      public Builder clearPostSendSoundResp() {
+        if (postSendSoundRespBuilder_ == null) {
+          postSendSoundResp_ = com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.getDefaultInstance();
+          onChanged();
+        } else {
+          postSendSoundRespBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00004000);
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostSendSoundResp postSendSoundResp = 47;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.Builder getPostSendSoundRespBuilder() {
+        bitField1_ |= 0x00004000;
+        onChanged();
+        return getPostSendSoundRespFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .netty.PostSendSoundResp postSendSoundResp = 47;</code>
+       */
+      public com.rxqp.dn.protobuf.DdzProto.PostSendSoundRespOrBuilder getPostSendSoundRespOrBuilder() {
+        if (postSendSoundRespBuilder_ != null) {
+          return postSendSoundRespBuilder_.getMessageOrBuilder();
+        } else {
+          return postSendSoundResp_;
+        }
+      }
+      /**
+       * <code>optional .netty.PostSendSoundResp postSendSoundResp = 47;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp, com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.Builder, com.rxqp.dn.protobuf.DdzProto.PostSendSoundRespOrBuilder> 
+          getPostSendSoundRespFieldBuilder() {
+        if (postSendSoundRespBuilder_ == null) {
+          postSendSoundRespBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp, com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.Builder, com.rxqp.dn.protobuf.DdzProto.PostSendSoundRespOrBuilder>(
+                  postSendSoundResp_,
+                  getParentForChildren(),
+                  isClean());
+          postSendSoundResp_ = null;
+        }
+        return postSendSoundRespBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:netty.MessageInfo)
@@ -38133,6 +38627,1136 @@ public final class DdzProto {
     // @@protoc_insertion_point(class_scope:netty.PostDissolutionResult)
   }
 
+  public interface SendSoundReqOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int32 playerId = 1;
+    /**
+     * <code>required int32 playerId = 1;</code>
+     *
+     * <pre>
+     * 玩家id
+     * </pre>
+     */
+    boolean hasPlayerId();
+    /**
+     * <code>required int32 playerId = 1;</code>
+     *
+     * <pre>
+     * 玩家id
+     * </pre>
+     */
+    int getPlayerId();
+
+    // required int32 soundId = 2;
+    /**
+     * <code>required int32 soundId = 2;</code>
+     *
+     * <pre>
+     * 播放语音id
+     * </pre>
+     */
+    boolean hasSoundId();
+    /**
+     * <code>required int32 soundId = 2;</code>
+     *
+     * <pre>
+     * 播放语音id
+     * </pre>
+     */
+    int getSoundId();
+  }
+  /**
+   * Protobuf type {@code netty.SendSoundReq}
+   *
+   * <pre>
+   * 46、请求发送语音
+   * </pre>
+   */
+  public static final class SendSoundReq extends
+      com.google.protobuf.GeneratedMessage
+      implements SendSoundReqOrBuilder {
+    // Use SendSoundReq.newBuilder() to construct.
+    private SendSoundReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private SendSoundReq(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final SendSoundReq defaultInstance;
+    public static SendSoundReq getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public SendSoundReq getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SendSoundReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              soundId_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_SendSoundReq_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_SendSoundReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.rxqp.dn.protobuf.DdzProto.SendSoundReq.class, com.rxqp.dn.protobuf.DdzProto.SendSoundReq.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<SendSoundReq> PARSER =
+        new com.google.protobuf.AbstractParser<SendSoundReq>() {
+      public SendSoundReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SendSoundReq(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SendSoundReq> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int32 playerId = 1;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerId_;
+    /**
+     * <code>required int32 playerId = 1;</code>
+     *
+     * <pre>
+     * 玩家id
+     * </pre>
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int32 playerId = 1;</code>
+     *
+     * <pre>
+     * 玩家id
+     * </pre>
+     */
+    public int getPlayerId() {
+      return playerId_;
+    }
+
+    // required int32 soundId = 2;
+    public static final int SOUNDID_FIELD_NUMBER = 2;
+    private int soundId_;
+    /**
+     * <code>required int32 soundId = 2;</code>
+     *
+     * <pre>
+     * 播放语音id
+     * </pre>
+     */
+    public boolean hasSoundId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required int32 soundId = 2;</code>
+     *
+     * <pre>
+     * 播放语音id
+     * </pre>
+     */
+    public int getSoundId() {
+      return soundId_;
+    }
+
+    private void initFields() {
+      playerId_ = 0;
+      soundId_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasPlayerId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasSoundId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, playerId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, soundId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, playerId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, soundId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.rxqp.dn.protobuf.DdzProto.SendSoundReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.SendSoundReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.SendSoundReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.SendSoundReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.SendSoundReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.SendSoundReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.SendSoundReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.SendSoundReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.SendSoundReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.SendSoundReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.rxqp.dn.protobuf.DdzProto.SendSoundReq prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code netty.SendSoundReq}
+     *
+     * <pre>
+     * 46、请求发送语音
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.rxqp.dn.protobuf.DdzProto.SendSoundReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_SendSoundReq_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_SendSoundReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.rxqp.dn.protobuf.DdzProto.SendSoundReq.class, com.rxqp.dn.protobuf.DdzProto.SendSoundReq.Builder.class);
+      }
+
+      // Construct using com.rxqp.dn.protobuf.DdzProto.SendSoundReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        playerId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        soundId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_SendSoundReq_descriptor;
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.SendSoundReq getDefaultInstanceForType() {
+        return com.rxqp.dn.protobuf.DdzProto.SendSoundReq.getDefaultInstance();
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.SendSoundReq build() {
+        com.rxqp.dn.protobuf.DdzProto.SendSoundReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.SendSoundReq buildPartial() {
+        com.rxqp.dn.protobuf.DdzProto.SendSoundReq result = new com.rxqp.dn.protobuf.DdzProto.SendSoundReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.playerId_ = playerId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.soundId_ = soundId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.rxqp.dn.protobuf.DdzProto.SendSoundReq) {
+          return mergeFrom((com.rxqp.dn.protobuf.DdzProto.SendSoundReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.rxqp.dn.protobuf.DdzProto.SendSoundReq other) {
+        if (other == com.rxqp.dn.protobuf.DdzProto.SendSoundReq.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        if (other.hasSoundId()) {
+          setSoundId(other.getSoundId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasPlayerId()) {
+          
+          return false;
+        }
+        if (!hasSoundId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.rxqp.dn.protobuf.DdzProto.SendSoundReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.rxqp.dn.protobuf.DdzProto.SendSoundReq) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int32 playerId = 1;
+      private int playerId_ ;
+      /**
+       * <code>required int32 playerId = 1;</code>
+       *
+       * <pre>
+       * 玩家id
+       * </pre>
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       *
+       * <pre>
+       * 玩家id
+       * </pre>
+       */
+      public int getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       *
+       * <pre>
+       * 玩家id
+       * </pre>
+       */
+      public Builder setPlayerId(int value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       *
+       * <pre>
+       * 玩家id
+       * </pre>
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // required int32 soundId = 2;
+      private int soundId_ ;
+      /**
+       * <code>required int32 soundId = 2;</code>
+       *
+       * <pre>
+       * 播放语音id
+       * </pre>
+       */
+      public boolean hasSoundId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required int32 soundId = 2;</code>
+       *
+       * <pre>
+       * 播放语音id
+       * </pre>
+       */
+      public int getSoundId() {
+        return soundId_;
+      }
+      /**
+       * <code>required int32 soundId = 2;</code>
+       *
+       * <pre>
+       * 播放语音id
+       * </pre>
+       */
+      public Builder setSoundId(int value) {
+        bitField0_ |= 0x00000002;
+        soundId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 soundId = 2;</code>
+       *
+       * <pre>
+       * 播放语音id
+       * </pre>
+       */
+      public Builder clearSoundId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        soundId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:netty.SendSoundReq)
+    }
+
+    static {
+      defaultInstance = new SendSoundReq(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:netty.SendSoundReq)
+  }
+
+  public interface PostSendSoundRespOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int32 playerId = 1;
+    /**
+     * <code>required int32 playerId = 1;</code>
+     *
+     * <pre>
+     * 玩家id
+     * </pre>
+     */
+    boolean hasPlayerId();
+    /**
+     * <code>required int32 playerId = 1;</code>
+     *
+     * <pre>
+     * 玩家id
+     * </pre>
+     */
+    int getPlayerId();
+
+    // required int32 soundId = 2;
+    /**
+     * <code>required int32 soundId = 2;</code>
+     *
+     * <pre>
+     * 播放语音id
+     * </pre>
+     */
+    boolean hasSoundId();
+    /**
+     * <code>required int32 soundId = 2;</code>
+     *
+     * <pre>
+     * 播放语音id
+     * </pre>
+     */
+    int getSoundId();
+  }
+  /**
+   * Protobuf type {@code netty.PostSendSoundResp}
+   *
+   * <pre>
+   * 47、广播发送语音
+   * </pre>
+   */
+  public static final class PostSendSoundResp extends
+      com.google.protobuf.GeneratedMessage
+      implements PostSendSoundRespOrBuilder {
+    // Use PostSendSoundResp.newBuilder() to construct.
+    private PostSendSoundResp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private PostSendSoundResp(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final PostSendSoundResp defaultInstance;
+    public static PostSendSoundResp getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public PostSendSoundResp getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PostSendSoundResp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              soundId_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostSendSoundResp_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostSendSoundResp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.class, com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<PostSendSoundResp> PARSER =
+        new com.google.protobuf.AbstractParser<PostSendSoundResp>() {
+      public PostSendSoundResp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PostSendSoundResp(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PostSendSoundResp> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int32 playerId = 1;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerId_;
+    /**
+     * <code>required int32 playerId = 1;</code>
+     *
+     * <pre>
+     * 玩家id
+     * </pre>
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int32 playerId = 1;</code>
+     *
+     * <pre>
+     * 玩家id
+     * </pre>
+     */
+    public int getPlayerId() {
+      return playerId_;
+    }
+
+    // required int32 soundId = 2;
+    public static final int SOUNDID_FIELD_NUMBER = 2;
+    private int soundId_;
+    /**
+     * <code>required int32 soundId = 2;</code>
+     *
+     * <pre>
+     * 播放语音id
+     * </pre>
+     */
+    public boolean hasSoundId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required int32 soundId = 2;</code>
+     *
+     * <pre>
+     * 播放语音id
+     * </pre>
+     */
+    public int getSoundId() {
+      return soundId_;
+    }
+
+    private void initFields() {
+      playerId_ = 0;
+      soundId_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasPlayerId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasSoundId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, playerId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, soundId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, playerId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, soundId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code netty.PostSendSoundResp}
+     *
+     * <pre>
+     * 47、广播发送语音
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.rxqp.dn.protobuf.DdzProto.PostSendSoundRespOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostSendSoundResp_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostSendSoundResp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.class, com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.Builder.class);
+      }
+
+      // Construct using com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        playerId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        soundId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.rxqp.dn.protobuf.DdzProto.internal_static_netty_PostSendSoundResp_descriptor;
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp getDefaultInstanceForType() {
+        return com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.getDefaultInstance();
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp build() {
+        com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp buildPartial() {
+        com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp result = new com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.playerId_ = playerId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.soundId_ = soundId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp) {
+          return mergeFrom((com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp other) {
+        if (other == com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        if (other.hasSoundId()) {
+          setSoundId(other.getSoundId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasPlayerId()) {
+          
+          return false;
+        }
+        if (!hasSoundId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.rxqp.dn.protobuf.DdzProto.PostSendSoundResp) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int32 playerId = 1;
+      private int playerId_ ;
+      /**
+       * <code>required int32 playerId = 1;</code>
+       *
+       * <pre>
+       * 玩家id
+       * </pre>
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       *
+       * <pre>
+       * 玩家id
+       * </pre>
+       */
+      public int getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       *
+       * <pre>
+       * 玩家id
+       * </pre>
+       */
+      public Builder setPlayerId(int value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       *
+       * <pre>
+       * 玩家id
+       * </pre>
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // required int32 soundId = 2;
+      private int soundId_ ;
+      /**
+       * <code>required int32 soundId = 2;</code>
+       *
+       * <pre>
+       * 播放语音id
+       * </pre>
+       */
+      public boolean hasSoundId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required int32 soundId = 2;</code>
+       *
+       * <pre>
+       * 播放语音id
+       * </pre>
+       */
+      public int getSoundId() {
+        return soundId_;
+      }
+      /**
+       * <code>required int32 soundId = 2;</code>
+       *
+       * <pre>
+       * 播放语音id
+       * </pre>
+       */
+      public Builder setSoundId(int value) {
+        bitField0_ |= 0x00000002;
+        soundId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 soundId = 2;</code>
+       *
+       * <pre>
+       * 播放语音id
+       * </pre>
+       */
+      public Builder clearSoundId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        soundId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:netty.PostSendSoundResp)
+    }
+
+    static {
+      defaultInstance = new PostSendSoundResp(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:netty.PostSendSoundResp)
+  }
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_netty_MessageInfo_descriptor;
   private static
@@ -38378,6 +40002,16 @@ public final class DdzProto {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_netty_PostDissolutionResult_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_netty_SendSoundReq_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_netty_SendSoundReq_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_netty_PostSendSoundResp_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_netty_PostSendSoundResp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -38387,7 +40021,7 @@ public final class DdzProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021MessageInfo.proto\022\005netty\"\214\020\n\013MessageIn" +
+      "\n\021MessageInfo.proto\022\005netty\"\354\020\n\013MessageIn" +
       "fo\022$\n\tmessageId\030\001 \002(\0162\021.netty.MESSAGE_ID" +
       "\022!\n\010loginReq\030\002 \001(\0132\017.netty.LoginReq\022#\n\tl" +
       "oginResp\030\003 \001(\0132\020.netty.LoginResp\022+\n\rcrea" +
@@ -38439,111 +40073,117 @@ public final class DdzProto {
       "ostAnswerDissolutionResult\030, \001(\0132\".netty",
       ".PostAnswerDissolutionResult\022;\n\025postDiss" +
       "olutionResult\030- \001(\0132\034.netty.PostDissolut" +
-      "ionResult\"9\n\010LoginReq\022-\n\016playerBaseInfo\030" +
-      "\001 \002(\0132\025.netty.PlayerBaseInfo\"y\n\016PlayerBa" +
-      "seInfo\022\n\n\002ID\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\016\n\006imgU" +
-      "rl\030\003 \001(\t\022\017\n\007cardNum\030\004 \001(\t\022\r\n\005token\030\005 \001(\t" +
-      "\022\r\n\005appid\030\006 \001(\t\022\016\n\006appKey\030\007 \001(\t\"\013\n\tLogin" +
-      "Resp\">\n\rCreateRoomReq\022\r\n\005games\030\001 \002(\005\022\014\n\004" +
-      "type\030\002 \002(\005\022\020\n\010playerId\030\003 \002(\005\" \n\016CreateRo" +
-      "omResp\022\016\n\006roomId\030\002 \002(\005\"0\n\014EntryRoomReq\022\016",
-      "\n\006roomId\030\001 \002(\005\022\020\n\010playerId\030\003 \002(\005\"A\n\rEntr" +
-      "yRoomResp\022!\n\010roomInfo\030\002 \002(\0132\017.netty.Room" +
-      "Info\022\r\n\005order\030\003 \002(\005\".\n\rPostEntryRoom\022\035\n\006" +
-      "player\030\001 \002(\0132\r.netty.Player\"\216\001\n\010RoomInfo" +
-      "\022\016\n\006roomId\030\001 \002(\005\022\036\n\007players\030\002 \003(\0132\r.nett" +
-      "y.Player\022\020\n\010multiple\030\003 \001(\005\022\023\n\013playedGame" +
-      "s\030\004 \001(\005\022\022\n\ntotalGames\030\005 \001(\005\022\027\n\017currentPl" +
-      "ayerId\030\006 \001(\005\"^\n\006Player\022\n\n\002ID\030\001 \002(\005\022\014\n\004na" +
-      "me\030\002 \002(\t\022\016\n\006imgUrl\030\003 \001(\t\022\r\n\005score\030\004 \002(\005\022" +
-      "\014\n\004isDz\030\005 \002(\010\022\r\n\005order\030\006 \001(\005\"\"\n\005Poker\022\n\n",
-      "\002ID\030\001 \002(\005\022\r\n\005isOut\030\002 \002(\010\"/\n\nDisbandReq\022\017" +
-      "\n\007groupId\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\"\r\n\013Pos" +
-      "tDisband\" \n\017DisbandCheckReq\022\r\n\005agree\030\001 \002" +
-      "(\010\"\022\n\020PostDisbandCheck\"Q\n\016SettlementData" +
-      "\022\n\n\002ID\030\001 \002(\005\022\020\n\010gotscore\030\002 \002(\005\022\022\n\nfinals" +
-      "core\030\003 \002(\005\022\r\n\005isWin\030\004 \002(\010\"H\n\016SettlementI" +
-      "nfo\022&\n\007players\030\001 \003(\0132\025.netty.SettlementD" +
-      "ata\022\016\n\006isOver\030\002 \002(\010\"[\n\nDiscardReq\022\020\n\010pla" +
-      "yerId\030\001 \002(\005\022\017\n\007cardIds\030\002 \003(\005\022\027\n\017variable" +
-      "CardIds\030\003 \003(\005\022\021\n\tcardsType\030\004 \002(\005\"\227\001\n\013Pos",
-      "tDiscard\022\020\n\010playerId\030\001 \002(\005\022\017\n\007cardIds\030\002 " +
-      "\003(\005\022\027\n\017variableCardIds\030\003 \003(\005\022\032\n\022remainde" +
-      "rPokersNum\030\004 \002(\005\022\033\n\023nextDiscardPlayerId\030" +
-      "\005 \002(\005\022\023\n\013mustDiscard\030\006 \002(\010\"\033\n\007DealReq\022\020\n" +
-      "\010playerId\030\001 \002(\005\"o\n\010DealResp\022\020\n\010playerId\030" +
-      "\001 \002(\005\022\034\n\006pokers\030\002 \003(\0132\014.netty.Poker\022!\n\010r" +
-      "oomInfo\030\003 \001(\0132\017.netty.RoomInfo\022\020\n\010grabHo" +
-      "st\030\004 \002(\005\"-\n\013GrabHostReq\022\020\n\010playerId\030\001 \002(" +
-      "\005\022\014\n\004type\030\002 \002(\005\"\222\001\n\020PostGrabHostResp\022\014\n\004" +
-      "type\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\022\024\n\014hostPlay",
-      "erId\030\003 \001(\005\022\034\n\006pokers\030\004 \003(\0132\014.netty.Poker" +
-      "\022\020\n\010variable\030\005 \001(\005\022\030\n\020nextGrabPlayerId\030\006" +
-      " \001(\005\"(\n\007MsgInfo\022\014\n\004type\030\001 \002(\005\022\017\n\007message" +
-      "\030\002 \002(\t\"\016\n\014PostDealOver\"@\n\017CreateNNRoomRe" +
-      "q\022\r\n\005games\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\022\020\n\010player" +
-      "Id\030\003 \002(\005\"\"\n\020CreateNNRoomResp\022\016\n\006roomId\030\002" +
-      " \002(\005\"2\n\016EntryNNRoomReq\022\016\n\006roomId\030\001 \002(\005\022\020" +
-      "\n\010playerId\030\003 \002(\005\"C\n\017EntryNNRoomResp\022!\n\010r" +
-      "oomInfo\030\002 \002(\0132\017.netty.RoomInfo\022\r\n\005order\030" +
-      "\003 \002(\005\"0\n\017PostNNEntryRoom\022\035\n\006player\030\001 \002(\013",
-      "2\r.netty.Player\"\"\n\016StartNNGameReq\022\020\n\010pla" +
-      "yerid\030\001 \002(\005\"\021\n\017StartNNGameResp\"\021\n\017PostSt" +
-      "artNNGame\" \n\014NNPrepareReq\022\020\n\010playerId\030\001 " +
-      "\002(\005\"m\n\016PostNNDealResp\022\020\n\010playerId\030\001 \002(\005\022" +
-      "\016\n\006pokers\030\002 \003(\005\022\023\n\013playedGames\030\003 \001(\005\022\022\n\n" +
-      "totalGames\030\004 \001(\005\022\020\n\010isBanker\030\005 \001(\010\"+\n\010St" +
-      "akeReq\022\020\n\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(\005\"" +
-      "\032\n\tStakeResp\022\r\n\005point\030\001 \002(\005\"0\n\rPostStake" +
-      "Resp\022\020\n\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(\005\"3\n" +
-      "\016NNShowCardsReq\022\020\n\010playerid\030\001 \002(\005\022\017\n\007sho",
-      "wAll\030\002 \002(\010\"R\n\017NNShowCardsResp\022\020\n\010playerI" +
-      "d\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030\003 \002(\0162" +
-      "\r.netty.NNType\"R\n\017PostNNShowCards\022\020\n\010pla" +
-      "yerId\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030\003 " +
-      "\002(\0162\r.netty.NNType\"%\n\021PostNNPrepareResp\022" +
-      "\020\n\010playerId\030\001 \002(\005\"\017\n\rPostStakeOver\"$\n\020NN" +
-      "DissolutionReq\022\020\n\010playerId\030\001 \002(\005\"\'\n\023Post" +
-      "DissolutionResp\022\020\n\010playerid\030\001 \002(\005\";\n\026NNA" +
-      "nswerDissolutionReq\022\020\n\010playerId\030\001 \002(\005\022\017\n" +
-      "\007isAgree\030\002 \002(\010\"D\n\033PostAnswerDissolutionR",
-      "esult\022\020\n\010agreeCnt\030\001 \002(\005\022\023\n\013disagreeCnt\030\002" +
-      " \002(\005\"\027\n\025PostDissolutionResult*\222\010\n\nMESSAG" +
-      "E_ID\022\020\n\014msg_LoginReq\020\001\022\021\n\rmsg_LoginResp\020" +
-      "\002\022\025\n\021msg_CreateRoomReq\020\003\022\026\n\022msg_CreateRo" +
-      "omResp\020\004\022\024\n\020msg_EntryRoomReq\020\005\022\025\n\021msg_En" +
-      "tryRoomResp\020\006\022\025\n\021msg_PostEntryRoom\020\007\022\016\n\n" +
-      "msg_Player\020\010\022\022\n\016msg_DisbandReq\020\t\022\023\n\017msg_" +
-      "PostDisband\020\n\022\027\n\023msg_DisbandCheckReq\020\013\022\030" +
-      "\n\024msg_PostDisbandCheck\020\014\022\026\n\022msg_Settleme" +
-      "ntInfo\020\r\022\022\n\016msg_DiscardReq\020\016\022\023\n\017msg_Post",
-      "Discard\020\017\022\017\n\013msg_DealReq\020\020\022\020\n\014msg_DealRe" +
-      "sp\020\021\022\023\n\017msg_GrabHostReq\020\022\022\030\n\024msg_PostGra" +
-      "bHostResp\020\023\022\017\n\013msg_MsgInfo\020\024\022\024\n\020msg_Post" +
-      "DealOver\020\025\022\027\n\023msg_CreateNNRoomReq\020\026\022\030\n\024m" +
-      "sg_CreateNNRoomResp\020\027\022\026\n\022msg_EntryNNRoom" +
-      "Req\020\030\022\027\n\023msg_EntryNNRoomResp\020\031\022\027\n\023msg_Po" +
-      "stNNEntryRoom\020\032\022\026\n\022msg_StartNNGameReq\020\033\022" +
-      "\027\n\023msg_StartNNGameResp\020\034\022\027\n\023msg_PostStar" +
-      "tNNGame\020\035\022\024\n\020msg_NNPrepareReq\020\036\022\026\n\022msg_P" +
-      "ostNNDealResp\020\037\022\020\n\014msg_StakeReq\020 \022\021\n\rmsg",
-      "_StakeResp\020!\022\025\n\021msg_PostStakeResp\020\"\022\026\n\022m" +
-      "sg_NNShowCardsReq\020#\022\027\n\023msg_NNShowCardsRe" +
-      "sp\020$\022\027\n\023msg_PostNNShowCards\020%\022\031\n\025msg_Pos" +
-      "tNNPrepareResp\020&\022\025\n\021msg_PostStakeOver\020\'\022" +
-      "\030\n\024msg_NNDissolutionReq\020(\022\033\n\027msg_PostDis" +
-      "solutionResp\020)\022\036\n\032msg_NNAnswerDissolutio" +
-      "nReq\020*\022#\n\037msg_PostAnswerDissolutionResul" +
-      "t\020+\022\035\n\031msg_PostDissolutionResult\020,*\265\002\n\006N" +
-      "NType\022\r\n\tNNT_ERROR\020\000\022\014\n\010NNT_NONE\020\001\022\024\n\020NN" +
-      "T_SPECIAL_NIU1\020\002\022\024\n\020NNT_SPECIAL_NIU2\020\003\022\024",
-      "\n\020NNT_SPECIAL_NIU3\020\004\022\024\n\020NNT_SPECIAL_NIU4" +
-      "\020\005\022\024\n\020NNT_SPECIAL_NIU5\020\006\022\024\n\020NNT_SPECIAL_" +
-      "NIU6\020\007\022\024\n\020NNT_SPECIAL_NIU7\020\010\022\024\n\020NNT_SPEC" +
-      "IAL_NIU8\020\t\022\024\n\020NNT_SPECIAL_NIU9\020\n\022\026\n\022NNT_" +
-      "SPECIAL_NIUNIU\020\013\022\026\n\022NNT_SPECIAL_NIUHUA\020\014" +
-      "\022\030\n\024NNT_SPECIAL_BOMEBOME\020\rB \n\024com.rxqp.d" +
-      "n.protobufB\010DdzProto"
+      "ionResult\022)\n\014sendSoundReq\030. \001(\0132\023.netty." +
+      "SendSoundReq\0223\n\021postSendSoundResp\030/ \001(\0132" +
+      "\030.netty.PostSendSoundResp\"9\n\010LoginReq\022-\n" +
+      "\016playerBaseInfo\030\001 \002(\0132\025.netty.PlayerBase" +
+      "Info\"y\n\016PlayerBaseInfo\022\n\n\002ID\030\001 \002(\005\022\014\n\004na" +
+      "me\030\002 \002(\t\022\016\n\006imgUrl\030\003 \001(\t\022\017\n\007cardNum\030\004 \001(" +
+      "\t\022\r\n\005token\030\005 \001(\t\022\r\n\005appid\030\006 \001(\t\022\016\n\006appKe" +
+      "y\030\007 \001(\t\"\013\n\tLoginResp\">\n\rCreateRoomReq\022\r\n",
+      "\005games\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\022\020\n\010playerId\030\003" +
+      " \002(\005\" \n\016CreateRoomResp\022\016\n\006roomId\030\002 \002(\005\"0" +
+      "\n\014EntryRoomReq\022\016\n\006roomId\030\001 \002(\005\022\020\n\010player" +
+      "Id\030\003 \002(\005\"A\n\rEntryRoomResp\022!\n\010roomInfo\030\002 " +
+      "\002(\0132\017.netty.RoomInfo\022\r\n\005order\030\003 \002(\005\".\n\rP" +
+      "ostEntryRoom\022\035\n\006player\030\001 \002(\0132\r.netty.Pla" +
+      "yer\"\216\001\n\010RoomInfo\022\016\n\006roomId\030\001 \002(\005\022\036\n\007play" +
+      "ers\030\002 \003(\0132\r.netty.Player\022\020\n\010multiple\030\003 \001" +
+      "(\005\022\023\n\013playedGames\030\004 \001(\005\022\022\n\ntotalGames\030\005 " +
+      "\001(\005\022\027\n\017currentPlayerId\030\006 \001(\005\"^\n\006Player\022\n",
+      "\n\002ID\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\016\n\006imgUrl\030\003 \001(\t" +
+      "\022\r\n\005score\030\004 \002(\005\022\014\n\004isDz\030\005 \002(\010\022\r\n\005order\030\006" +
+      " \001(\005\"\"\n\005Poker\022\n\n\002ID\030\001 \002(\005\022\r\n\005isOut\030\002 \002(\010" +
+      "\"/\n\nDisbandReq\022\017\n\007groupId\030\001 \002(\005\022\020\n\010playe" +
+      "rId\030\002 \002(\005\"\r\n\013PostDisband\" \n\017DisbandCheck" +
+      "Req\022\r\n\005agree\030\001 \002(\010\"\022\n\020PostDisbandCheck\"Q" +
+      "\n\016SettlementData\022\n\n\002ID\030\001 \002(\005\022\020\n\010gotscore" +
+      "\030\002 \002(\005\022\022\n\nfinalscore\030\003 \002(\005\022\r\n\005isWin\030\004 \002(" +
+      "\010\"H\n\016SettlementInfo\022&\n\007players\030\001 \003(\0132\025.n" +
+      "etty.SettlementData\022\016\n\006isOver\030\002 \002(\010\"[\n\nD",
+      "iscardReq\022\020\n\010playerId\030\001 \002(\005\022\017\n\007cardIds\030\002" +
+      " \003(\005\022\027\n\017variableCardIds\030\003 \003(\005\022\021\n\tcardsTy" +
+      "pe\030\004 \002(\005\"\227\001\n\013PostDiscard\022\020\n\010playerId\030\001 \002" +
+      "(\005\022\017\n\007cardIds\030\002 \003(\005\022\027\n\017variableCardIds\030\003" +
+      " \003(\005\022\032\n\022remainderPokersNum\030\004 \002(\005\022\033\n\023next" +
+      "DiscardPlayerId\030\005 \002(\005\022\023\n\013mustDiscard\030\006 \002" +
+      "(\010\"\033\n\007DealReq\022\020\n\010playerId\030\001 \002(\005\"o\n\010DealR" +
+      "esp\022\020\n\010playerId\030\001 \002(\005\022\034\n\006pokers\030\002 \003(\0132\014." +
+      "netty.Poker\022!\n\010roomInfo\030\003 \001(\0132\017.netty.Ro" +
+      "omInfo\022\020\n\010grabHost\030\004 \002(\005\"-\n\013GrabHostReq\022",
+      "\020\n\010playerId\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\"\222\001\n\020Post" +
+      "GrabHostResp\022\014\n\004type\030\001 \002(\005\022\020\n\010playerId\030\002" +
+      " \002(\005\022\024\n\014hostPlayerId\030\003 \001(\005\022\034\n\006pokers\030\004 \003" +
+      "(\0132\014.netty.Poker\022\020\n\010variable\030\005 \001(\005\022\030\n\020ne" +
+      "xtGrabPlayerId\030\006 \001(\005\"(\n\007MsgInfo\022\014\n\004type\030" +
+      "\001 \002(\005\022\017\n\007message\030\002 \002(\t\"\016\n\014PostDealOver\"@" +
+      "\n\017CreateNNRoomReq\022\r\n\005games\030\001 \002(\005\022\014\n\004type" +
+      "\030\002 \002(\005\022\020\n\010playerId\030\003 \002(\005\"\"\n\020CreateNNRoom" +
+      "Resp\022\016\n\006roomId\030\002 \002(\005\"2\n\016EntryNNRoomReq\022\016" +
+      "\n\006roomId\030\001 \002(\005\022\020\n\010playerId\030\003 \002(\005\"C\n\017Entr",
+      "yNNRoomResp\022!\n\010roomInfo\030\002 \002(\0132\017.netty.Ro" +
+      "omInfo\022\r\n\005order\030\003 \002(\005\"0\n\017PostNNEntryRoom" +
+      "\022\035\n\006player\030\001 \002(\0132\r.netty.Player\"\"\n\016Start" +
+      "NNGameReq\022\020\n\010playerid\030\001 \002(\005\"\021\n\017StartNNGa" +
+      "meResp\"\021\n\017PostStartNNGame\" \n\014NNPrepareRe" +
+      "q\022\020\n\010playerId\030\001 \002(\005\"m\n\016PostNNDealResp\022\020\n" +
+      "\010playerId\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022\023\n\013playe" +
+      "dGames\030\003 \001(\005\022\022\n\ntotalGames\030\004 \001(\005\022\020\n\010isBa" +
+      "nker\030\005 \001(\010\"+\n\010StakeReq\022\020\n\010playerid\030\001 \002(\005" +
+      "\022\r\n\005point\030\002 \002(\005\"\032\n\tStakeResp\022\r\n\005point\030\001 ",
+      "\002(\005\"0\n\rPostStakeResp\022\020\n\010playerid\030\001 \002(\005\022\r" +
+      "\n\005point\030\002 \002(\005\"3\n\016NNShowCardsReq\022\020\n\010playe" +
+      "rid\030\001 \002(\005\022\017\n\007showAll\030\002 \002(\010\"R\n\017NNShowCard" +
+      "sResp\022\020\n\010playerId\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022" +
+      "\035\n\006nntype\030\003 \002(\0162\r.netty.NNType\"R\n\017PostNN" +
+      "ShowCards\022\020\n\010playerId\030\001 \002(\005\022\016\n\006pokers\030\002 " +
+      "\003(\005\022\035\n\006nntype\030\003 \002(\0162\r.netty.NNType\"%\n\021Po" +
+      "stNNPrepareResp\022\020\n\010playerId\030\001 \002(\005\"\017\n\rPos" +
+      "tStakeOver\"$\n\020NNDissolutionReq\022\020\n\010player" +
+      "Id\030\001 \002(\005\"\'\n\023PostDissolutionResp\022\020\n\010playe",
+      "rid\030\001 \002(\005\";\n\026NNAnswerDissolutionReq\022\020\n\010p" +
+      "layerId\030\001 \002(\005\022\017\n\007isAgree\030\002 \002(\010\"D\n\033PostAn" +
+      "swerDissolutionResult\022\020\n\010agreeCnt\030\001 \002(\005\022" +
+      "\023\n\013disagreeCnt\030\002 \002(\005\"\027\n\025PostDissolutionR" +
+      "esult\"1\n\014SendSoundReq\022\020\n\010playerId\030\001 \002(\005\022" +
+      "\017\n\007soundId\030\002 \002(\005\"6\n\021PostSendSoundResp\022\020\n" +
+      "\010playerId\030\001 \002(\005\022\017\n\007soundId\030\002 \002(\005*\303\010\n\nMES" +
+      "SAGE_ID\022\020\n\014msg_LoginReq\020\001\022\021\n\rmsg_LoginRe" +
+      "sp\020\002\022\025\n\021msg_CreateRoomReq\020\003\022\026\n\022msg_Creat" +
+      "eRoomResp\020\004\022\024\n\020msg_EntryRoomReq\020\005\022\025\n\021msg",
+      "_EntryRoomResp\020\006\022\025\n\021msg_PostEntryRoom\020\007\022" +
+      "\016\n\nmsg_Player\020\010\022\022\n\016msg_DisbandReq\020\t\022\023\n\017m" +
+      "sg_PostDisband\020\n\022\027\n\023msg_DisbandCheckReq\020" +
+      "\013\022\030\n\024msg_PostDisbandCheck\020\014\022\026\n\022msg_Settl" +
+      "ementInfo\020\r\022\022\n\016msg_DiscardReq\020\016\022\023\n\017msg_P" +
+      "ostDiscard\020\017\022\017\n\013msg_DealReq\020\020\022\020\n\014msg_Dea" +
+      "lResp\020\021\022\023\n\017msg_GrabHostReq\020\022\022\030\n\024msg_Post" +
+      "GrabHostResp\020\023\022\017\n\013msg_MsgInfo\020\024\022\024\n\020msg_P" +
+      "ostDealOver\020\025\022\027\n\023msg_CreateNNRoomReq\020\026\022\030" +
+      "\n\024msg_CreateNNRoomResp\020\027\022\026\n\022msg_EntryNNR",
+      "oomReq\020\030\022\027\n\023msg_EntryNNRoomResp\020\031\022\027\n\023msg" +
+      "_PostNNEntryRoom\020\032\022\026\n\022msg_StartNNGameReq" +
+      "\020\033\022\027\n\023msg_StartNNGameResp\020\034\022\027\n\023msg_PostS" +
+      "tartNNGame\020\035\022\024\n\020msg_NNPrepareReq\020\036\022\026\n\022ms" +
+      "g_PostNNDealResp\020\037\022\020\n\014msg_StakeReq\020 \022\021\n\r" +
+      "msg_StakeResp\020!\022\025\n\021msg_PostStakeResp\020\"\022\026" +
+      "\n\022msg_NNShowCardsReq\020#\022\027\n\023msg_NNShowCard" +
+      "sResp\020$\022\027\n\023msg_PostNNShowCards\020%\022\031\n\025msg_" +
+      "PostNNPrepareResp\020&\022\025\n\021msg_PostStakeOver" +
+      "\020\'\022\030\n\024msg_NNDissolutionReq\020(\022\033\n\027msg_Post",
+      "DissolutionResp\020)\022\036\n\032msg_NNAnswerDissolu" +
+      "tionReq\020*\022#\n\037msg_PostAnswerDissolutionRe" +
+      "sult\020+\022\035\n\031msg_PostDissolutionResult\020,\022\024\n" +
+      "\020msg_SendSoundReq\020-\022\031\n\025msg_PostSendSound" +
+      "Resp\020.*\265\002\n\006NNType\022\r\n\tNNT_ERROR\020\000\022\014\n\010NNT_" +
+      "NONE\020\001\022\024\n\020NNT_SPECIAL_NIU1\020\002\022\024\n\020NNT_SPEC" +
+      "IAL_NIU2\020\003\022\024\n\020NNT_SPECIAL_NIU3\020\004\022\024\n\020NNT_" +
+      "SPECIAL_NIU4\020\005\022\024\n\020NNT_SPECIAL_NIU5\020\006\022\024\n\020" +
+      "NNT_SPECIAL_NIU6\020\007\022\024\n\020NNT_SPECIAL_NIU7\020\010" +
+      "\022\024\n\020NNT_SPECIAL_NIU8\020\t\022\024\n\020NNT_SPECIAL_NI",
+      "U9\020\n\022\026\n\022NNT_SPECIAL_NIUNIU\020\013\022\026\n\022NNT_SPEC" +
+      "IAL_NIUHUA\020\014\022\030\n\024NNT_SPECIAL_BOMEBOME\020\rB " +
+      "\n\024com.rxqp.dn.protobufB\010DdzProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -38555,7 +40195,7 @@ public final class DdzProto {
           internal_static_netty_MessageInfo_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_MessageInfo_descriptor,
-              new java.lang.String[] { "MessageId", "LoginReq", "LoginResp", "CreateRoomReq", "CreateRoomResp", "EntryRoomReq", "EntryRoomResp", "PostEntryRoom", "Player", "DisbandReq", "PostDisband", "DisbandCheckReq", "PostDisbandCheck", "SettlementInfo", "DiscardReq", "PostDiscard", "DealReq", "DealResp", "GrabHostReq", "MsgInfo", "PostGrabHostResp", "PostDealOver", "CreateNNRoomReq", "CreateNNRoomResp", "EntryNNRoomReq", "EntryNNRoomResp", "PostNNEntryRoom", "StartNNGame", "StartNNgameResp", "PostStartNNGame", "NnPrepareReq", "NnDealResp", "StakeReq", "StakeResp", "PostStakeResp", "NnShowCardsReq", "NnShowCardsResp", "PostNNShowCards", "PostNNPrepareResp", "PostStakeOver", "NnDissolutionReq", "PostDissolutionResp", "NnAnswerDissolutionReq", "PostAnswerDissolutionResult", "PostDissolutionResult", });
+              new java.lang.String[] { "MessageId", "LoginReq", "LoginResp", "CreateRoomReq", "CreateRoomResp", "EntryRoomReq", "EntryRoomResp", "PostEntryRoom", "Player", "DisbandReq", "PostDisband", "DisbandCheckReq", "PostDisbandCheck", "SettlementInfo", "DiscardReq", "PostDiscard", "DealReq", "DealResp", "GrabHostReq", "MsgInfo", "PostGrabHostResp", "PostDealOver", "CreateNNRoomReq", "CreateNNRoomResp", "EntryNNRoomReq", "EntryNNRoomResp", "PostNNEntryRoom", "StartNNGame", "StartNNgameResp", "PostStartNNGame", "NnPrepareReq", "NnDealResp", "StakeReq", "StakeResp", "PostStakeResp", "NnShowCardsReq", "NnShowCardsResp", "PostNNShowCards", "PostNNPrepareResp", "PostStakeOver", "NnDissolutionReq", "PostDissolutionResp", "NnAnswerDissolutionReq", "PostAnswerDissolutionResult", "PostDissolutionResult", "SendSoundReq", "PostSendSoundResp", });
           internal_static_netty_LoginReq_descriptor =
             getDescriptor().getMessageTypes().get(1);
           internal_static_netty_LoginReq_fieldAccessorTable = new
@@ -38844,6 +40484,18 @@ public final class DdzProto {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_PostDissolutionResult_descriptor,
               new java.lang.String[] { });
+          internal_static_netty_SendSoundReq_descriptor =
+            getDescriptor().getMessageTypes().get(49);
+          internal_static_netty_SendSoundReq_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_netty_SendSoundReq_descriptor,
+              new java.lang.String[] { "PlayerId", "SoundId", });
+          internal_static_netty_PostSendSoundResp_descriptor =
+            getDescriptor().getMessageTypes().get(50);
+          internal_static_netty_PostSendSoundResp_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_netty_PostSendSoundResp_descriptor,
+              new java.lang.String[] { "PlayerId", "SoundId", });
           return null;
         }
       };
