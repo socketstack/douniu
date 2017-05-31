@@ -5,7 +5,7 @@
   <artifactId>douniu</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>game Maven Webapp</name>
+  <name>douniu</name>
   <url>http://maven.apache.org</url>
   
   <properties>

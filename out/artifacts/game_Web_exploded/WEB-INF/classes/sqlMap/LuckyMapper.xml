@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--   
+    namespace：必须与对应的接口全类名一致  
+    id:必须与对应接口的某个对应的方法名一致  
+      
+ -->
+<mapper namespace="cn.plxpl.wx.dao.ILuckyDao">
+	<resultMap type="cn.plxpl.wx.entity.LuckyVoucherType" id="LuckyVoucherTypeMap">
+		<result property="id" column="id" />
+        <result property="luckyVoucherType" column="luckyVoucherType" />
+        <result property="discountRate" column="discountRate" />
+        <result property="voucherTotal" column="voucherTotal" />
+        <result property="ticketTotal" column="ticketTotal" />
+        <result property="freeTicketNum" column="freeTicketNum" />
+        <result property="createTime" column="createTime" />
+        <result property="isValid" column="isValid" />
+        <result property="residualQuantity" column="residualQuantity" />
+        <result property="comment" column="comment" />
+	</resultMap>
+
+	<resultMap type="cn.plxpl.wx.entity.LuckyVoucherParam" id="LuckyVoucherParamResultMap">
+		<result property="id" column="id" />
+        <result property="paramName" column="paramName" />
+        <result property="value" column="value" />
+        <result property="comment" column="comment" />
+	</resultMap>
+
+	<resultMap type="cn.plxpl.wx.entity.LuckyVoucher" id="LuckyVoucherMap">
+		<result property="id" column="id" />
+        <result property="luckVoucherTypeId" column="luckVoucherTypeId" />
+        <result property="tradeinfoId" column="tradeinfoId" />
+        <result property="OriginalTotalPrice" column="OriginalTotalPrice" />
+        <result property="discountTotalPrice" column="discountTotalPrice" />
+        <result property="createTime" column="createTime" />
+        <result property="updateTime" column="updateTime" />
+        <result property="isValid" column="isValid" />
+        <result property="openId" column="openId" />
+        <result property="isUsed" column="isUsed" />
+        <result property="luckyCode" column="luckyCode" />
+	</resultMap>
+
+	<resultMap type="cn.plxpl.wx.entity.bo.LvAndLvtBo" id="lvAndLvtMap">
+		<result property="luckVoucherId" column="luckVoucherId" />
+        <result property="luckVoucherTypeId" column="luckVoucherTypeId" />
+        <result property="tradeinfoId" column="tradeinfoId" />
+        <result property="createTime" column="createTime" />
+        <result property="comment" column="comment" />
+	</resultMap>
+
+	<sql id="type_base_column_list">id,luckyVoucherType,discountRate,voucherTotal,ticketTotal,
+		freeTicketNum,createTime,isValid,residualQuantity,comment</sql>
+
+	<sql id="param_base_column_list">id,paramName,value,comment</sql>
+
+	<sql id="base_column_list">id,luckVoucherTypeId,tradeinfoId,OriginalTotalPrice,discountTotalPrice,
+		createTime,updateTime,isValid,openId,isUsed,luckyCode</sql>
+
+	<select id="queryLuckyVoucherTypes" resultMap="LuckyVoucherTypeMap">
+		select
+		<include refid="type_base_column_list"></include>
+		from lucky_voucher_type where isValid=0
+	</select>
+
+	<select id="queryLuckyVoucherById" resultMap="LuckyVoucherTypeMap">
+		select
+		<include refid="type_base_column_list"></include>
+		from lucky_voucher_type where isValid=0 and id=#{id}
+	</select>
+
+	<select id="queryLuckyVoucherParams" resultMap="LuckyVoucherParamResultMap">
+		select
+		<include refid="param_base_column_list"></include>
+		from lucky_voucher_param
+	</select>
+
+	<select id="queryLuckyDrawTimesTodayByOpenId" resultType="int">
+		select count(1) from lucky_voucher where openId=#{openId} and 
+			createTime <![CDATA[>=]]> #{startTime} and createTime <![CDATA[<]]> #{endTime}
+	</select>
+
+	<insert id="insertLuckyVoucher">
+		insert into lucky_voucher(luckVoucherTypeId,openId,luckyCode,createTime) values(#{luckVoucherTypeId},#{openId},#{luckyCode},#{createTime})
+	</insert>
+
+	<select id="queryLuckyVoucherCnt" resultType="int">
+		select count(1) from lucky_voucher where openId=#{openId} and 
+			createTime <![CDATA[>=]]> #{startTime} and createTime <![CDATA[<]]> #{endTime} and luckVoucherTypeId != -1
+	</select>
+
+	<select id="queryLuckyVouchersByOpenId" resultMap="lvAndLvtMap">
+		select 
+			lv.id luckVoucherId,lvt.id luckVoucherTypeId,
+			lv.tradeinfoId tradeinfoId,lv.createTime createTime,
+			lvt.comment comment,lv.luckyCode luckyCode
+		from lucky_voucher lv, lucky_voucher_type lvt 
+		where lv.openId=#{openId} and 
+			lv.createTime <![CDATA[>=]]> #{startTime} and 
+			lv.createTime <![CDATA[<]]> #{endTime} and 
+			lv.luckVoucherTypeId != -1 and
+			lv.isUsed = 0 and
+			lv.luckVoucherTypeId = lvt.id		
+	</select>
+
+	<update id="updateLuckyVoucherState">
+		update lucky_voucher set isUsed = 1 where id = #{id}
+	</update>
+</mapper>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+    <beans xmlns="http://www.springframework.org/schema/beans"  
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+        xmlns:aop="http://www.springframework.org/schema/aop"  
+        xmlns:tx="http://www.springframework.org/schema/tx"  
+        xmlns:context="http://www.springframework.org/schema/context" 
+        xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:util="http://www.springframework.org/schema/util"
+        xmlns:jdbc="http://www.springframework.org/schema/jdbc" 
+        xsi:schemaLocation="http://www.springframework.org/schema/beans   
+                            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+                            http://www.springframework.org/schema/aop   
+                            http://www.springframework.org/schema/aop/spring-aop-3.0.xsd  
+                            http://www.springframework.org/schema/tx   
+                            http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
+                            http://www.springframework.org/schema/context  
+                            http://www.springframework.org/schema/context/spring-context-3.0.xsd"  
+        default-lazy-init="false" default-autowire="byName">  
+          
+        <!-- 返回的json数据的编码  -->
+   	   <bean id="jsonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"> 
+        	<property name="supportedMediaTypes"> 
+            	<list> 
+            	  <value>text/html;charset=UTF-8</value>    
+<!--                  <value>text/plain;charset=UTF-8</value>-->
+<!--              	  <value>application/json</value> -->
+          	  </list> 
+       	   </property> 
+   	   </bean> 
+ 	
+ 		<bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter" >
+    		 <property name="supportedMediaTypes">   
+                     <list>   
+                         <value>text/html;charset=UTF-8</value>    
+<!--                         <value>text/plain;charset=UTF-8</value>-->
+<!--                         <value>application/json;charset=UTF-8</value>-->
+                     </list>   
+             </property> 
+   		</bean>
+   		
+        <!-- 处理json数据转换的 -->
+ 		<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+	        <property name="messageConverters">
+	            <list>
+	                <ref bean="stringHttpMessageConverter" />
+	                <ref bean="jsonHttpMessageConverter" />
+	            </list>
+	        </property>
+    	</bean>
+    	
+        <!-- 组件扫描  start-->  
+        <context:component-scan base-package="cn.plxpl"/>
+        
+        <!-- ②：启动Spring MVC的注解功能，完成请求和注解POJO的映射-->
+<!--   		<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>-->
+         
+    	<!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->
+   		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property name="prefix" value="/WEB-INF/jsp/" />
+			<property name="suffix" value=".jsp" />
+		</bean>
+          
+        <!-- 读取*.properties配置信息 -->  
+        <bean id="propertyConfigurer"  
+            class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
+            <property name="locations">  
+                <list>  
+                    <value>classpath:jdbc.properties</value>  
+                </list>  
+            </property>  
+        </bean>  
+                   
+        <!-- 数据源 -->  
+<!--        <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">  -->
+<!--            <property name="driverClassName" value="${jdbc.driver}" />  -->
+<!--            <property name="initialSize" value="10" />  -->
+<!--            <property name="maxActive" value="40" />  -->
+<!--            <property name="maxIdle" value="5" />  -->
+<!--            <property name="password" value="${jdbc.password}" />  -->
+<!--            <property name="username" value="${jdbc.username}" />  -->
+<!--            <property name="url" value="${jdbc.url}" />  -->
+<!--        </bean>  -->
+      
+        <!-- spring的ibatis 配置 -->  
+<!--        <bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">-->
+<!--			<property name="configLocation">-->
+<!--				<value>classpath:sqlMapConfig.xml</value>-->
+<!--			</property>-->
+<!--		</bean>-->
+		
+      	<!-- Spring iBatis Template -->
+<!-- 		<bean id="sqlMapClientTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate">-->
+<!-- 			<property name="sqlMapClient">-->
+<!--   				<ref local="sqlMapClient" />-->
+<!--  			</property>-->
+<!-- 		</bean>-->
+		
+		<!-- dataSource 配置 -->  
+	    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">  
+	        <!-- 基本属性 url、user、password -->  
+<!--	        <property name="url" value="jdbc:mysql://115.29.44.92:3306/plxpl"/>  -->
+<!--	        <property name="username" value="root"/>  -->
+<!--	        <property name="password" value="mengfanfei"/>  -->
+	        
+	        <property name="url" value="jdbc:mysql://localhost:3306/plxpl"/>  
+	        <property name="username" value="root"/>  
+	        <property name="password" value="123456"/>  
+	  
+	        <!-- 配置初始化大小、最小、最大 -->  
+	        <property name="initialSize" value="10"/>  
+	        <property name="minIdle" value="1"/>  
+	        <property name="maxActive" value="20"/>  
+	  
+	        <!-- 配置获取连接等待超时的时间 -->  
+	        <property name="maxWait" value="60000"/>  
+	  
+	        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->  
+	        <property name="timeBetweenEvictionRunsMillis" value="60000"/>  
+	  
+	        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->  
+	        <property name="minEvictableIdleTimeMillis" value="300000"/>  
+	  
+	        <property name="validationQuery" value="SELECT 'x'"/>  
+	        <property name="testWhileIdle" value="true"/>  
+	        <property name="testOnBorrow" value="false"/>  
+	        <property name="testOnReturn" value="false"/>  
+	  
+	        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->  
+	        <property name="poolPreparedStatements" value="false"/>  
+	        <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>  
+	  
+	        <!-- 配置监控统计拦截的filters -->  
+	        <property name="filters" value="stat"/>  
+	    </bean>  
+	  
+	    <!-- mybatis文件配置，扫描所有mapper文件 -->  
+	    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" p:dataSource-ref="dataSource"  
+	          p:configLocation="classpath:mybatis-config.xml"  
+	          p:mapperLocations="classpath:sqlMap/*.xml"/>  
+	  
+	    <!-- spring与mybatis整合配置，扫描所有dao -->  
+	    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:basePackage="cn.plxpl.wx.dao"  
+	          p:sqlSessionFactoryBeanName="sqlSessionFactory"/>  
+ 		
+ 		<!--  spring事务管理 方法一   -->       
+        <bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">  
+           <property name="transactionManager">  
+                    <ref local="transactionManager"/>  
+           </property>  
+ 	    </bean>	    
+ 	     <!-- 声明式事务控制  -->        
+        <bean id="transactionManager"  
+            class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+            <property name="dataSource" ref="dataSource" />  
+        <!--     <property name="defaultAutoCommit" value="true"></property> -->
+        </bean>        
+       <!--  指定事务切入点  -->
+        <aop:config>  
+            <aop:pointcut id="serviceOperation" 
+            expression="execution(* cn.plxpl.service.*.*(..))" />  
+            <aop:advisor pointcut-ref="serviceOperation" advice-ref="txAdvice" />  
+        </aop:config>        
+      	<!-- 定义事务配置    -->  
+        <tx:advice id="txAdvice" transaction-manager="transactionManager">  
+            <tx:attributes>  
+                <tx:method name="addOrg*" rollback-for="Exception" />
+                <tx:method name="updateOrg*" rollback-for="Exception" /> 
+                <tx:method name="deleteOrg*" rollback-for="Exception" />  
+                <tx:method name="selfDisciplineEvaluate" rollback-for="Exception" /> 
+                <tx:method name="disciplineEvaluate" rollback-for="Exception" /> 
+                <tx:method name="selfTeamEvaluate" rollback-for="Exception" />                                    
+                <tx:method name="teamEvaluate" rollback-for="Exception" />
+                <tx:method name="deleteProjectType" rollback-for="Exception" /> 
+                <tx:method name="deleteProjectSpecial" rollback-for="Exception" />             
+            </tx:attributes>  
+        </tx:advice>
+ 		
+ 		<!-- SpringMVC上传文件时,需配置MultipartResolver处理器 -->
+	    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	        <!-- 指定所上传文件的总大小不能超过10MB......注意maxUploadSize属性的限制不是针对单个文件,而是所有文件的容量之和 -->
+	        <property name="maxUploadSize" value="10000000"/>
+	    </bean>
+	     
+	    <!-- SpringMVC在超出上传文件限制时,会抛出org.springframework.web.multipart.MaxUploadSizeExceededException -->
+	    <!-- 该异常是SpringMVC在检查上传的文件信息时抛出来的,而且此时还没有进入到Controller方法中 -->
+	    <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+	        <property name="exceptionMappings">
+	            <props>
+	                <!-- 遇到MaxUploadSizeExceededException异常时,自动跳转到/WEB-INF/jsp/error_fileupload.jsp页面 -->
+	                <prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">error</prop>
+	            </props>
+	        </property>
+	    </bean>
+ 		
+    </beans>  

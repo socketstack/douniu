@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<!--   
+    namespace：必须与对应的接口全类名一致  
+    id:必须与对应接口的某个对应的方法名一致  
+      
+ -->  
+<mapper namespace="cn.plxpl.wx.dao.ITradeDao">  
+      
+    <sql id="tradeInfo_basi">ID,outTradeNo,totalFee,timeStart,timeExpire,productId,openId,
+    			createTime,updateTime,prePayId,state,name,phone,count,luckyVoucherId from tradeinfo
+    </sql>
+    
+    <insert id="save" useGeneratedKeys="true" keyProperty="id" parameterType="cn.plxpl.wx.entity.TradeInfo">  
+        insert into tradeInfo(outTradeNo,totalFee,timeStart,timeExpire,productId,openId,createTime,updateTime,prePayId,name,phone,count,luckyVoucherId) 
+        	values
+        	(#{outTradeNo},#{totalFee},#{timeStart},#{timeExpire},#{productId},#{openId},#{createTime},#{updateTime},#{prePayId},#{name},#{phone},#{count},#{luckyVoucherId})
+    </insert>  
+      
+    <update id="update" parameterType="cn.plxpl.wx.entity.TradeInfo">  
+        update tradeInfo 
+        	set 
+        		outTradeNo=#{outTradeNo},
+        		totalFee=#{totalFee},
+        		timeStart=#{timeStart},
+        		timeExpire=#{timeExpire},
+        		productId=#{productId},
+        		openId=#{openId},
+        		createTime=#{createTime},
+        		updateTime=#{updateTime},
+        		prePayId=#{prePayId}
+        		where id=#{id}  
+    </update> 
+    
+    <update id="updatePayResp" parameterType="cn.plxpl.wx.entity.TradeInfo">  
+        update tradeInfo 
+        	set 
+        		timeEnd=#{time_end},
+        		<if test="state!=null and state!=''">
+					state=#{state},
+				</if>
+				<if test="err_code!=null and err_code!=''">
+					errCode=#{err_code},
+				</if>
+				<if test="err_code_des!=null and err_code_des!=''">
+					errCodeDes=#{err_code_des},
+				</if>
+				<if test="device_info!=null and device_info!=''">
+					deviceInfo=#{device_info},
+				</if>
+        		transactionId=#{transaction_id}
+        	where outTradeNo=#{out_trade_no}  
+    </update> 
+    
+    <update id="updatePayState" parameterType="cn.plxpl.wx.entity.TradeInfo">  
+        update tradeInfo 
+        	set 
+				state=#{state} and updateTime=#{updateTime}
+        	where ID=#{id}  
+    </update>   
+      
+    <delete id="delete" parameterType="int">  
+        delete from products where ID=#{id}  
+    </delete>  
+      
+     <!-- mybsits_config中配置的alias类别名,也可直接配置resultType为类路劲 -->    
+    <select id="findById" parameterType="int" resultType="cn.plxpl.wx.entity.TradeInfo">  
+        select
+        	<include refid="tradeInfo_basi"></include>
+        where id=#{id}  
+    </select>  
+    
+    
+    <select id="findByOutTradeNo" parameterType="int" resultType="cn.plxpl.wx.entity.TradeInfo">  
+        select ID,outTradeNo,totalFee,timeStart,timeExpire,productId,openId,createTime,updateTime,prePayId,state,name,phone,count from tradeInfo where outTradeNo=#{outTradeNo}  
+    </select>  
+      
+    <select id="findAll" resultType="cn.plxpl.wx.entity.TradeInfo">  
+        select ID,outTradeNo,totalFee,timeStart,timeExpire,productId,openId,createTime,updateTime,prePayId,state,name,phone,count 
+        from tradeInfo order by createTime desc
+    </select>  
+    
+    <select id="getTradeInfoByOpenid" parameterType="String" resultType="cn.plxpl.wx.entity.TradeInfo">  
+        select ID,outTradeNo,totalFee,timeStart,timeExpire,productId,openId,createTime,updateTime,prePayId,state,name,phone,count 
+        from tradeInfo where openId=#{openid} order by createTime desc 
+    </select> 
+    
+    <select id="getTradeInfoByCondition" parameterType="cn.plxpl.wx.condition.TradeInfoCondition" resultType="cn.plxpl.wx.entity.TradeInfo">  
+        select ID,outTradeNo,totalFee,timeStart,timeExpire,productId,openId,createTime,updateTime,prePayId,state,name,phone,count 
+        	from tradeInfo 
+        	where 
+        	1=1
+        	<if test="name!=null and name!=''">
+				and	name like concat('%', '${name}', '%')
+			</if>
+        	<if test="phone!=null and phone!=''">
+				and	phone=#{phone}
+			</if>
+			<if test="startTime!=null and startTime!=''">
+				and	<![CDATA[createTime >= #{startTime}]]>
+			</if>
+			<if test="endTime!=null and endTime!=''">
+				and	<![CDATA[createTime <= #{endTime}]]>
+			</if>
+				order by createTime desc
+				limit #{startRow},#{rows}
+    </select> 
+    
+    <select id="getTradeInfosTotalByCondition" parameterType="cn.plxpl.wx.condition.TradeInfoCondition" resultType="int">  
+        select count(1)	from tradeInfo 
+        	where 
+        	1=1
+        	<if test="name!=null and name!=''">
+				and	name like concat('%', '${name}', '%')
+			</if>
+        	<if test="phone!=null and phone!=''">
+				and	phone=#{phone}
+			</if>
+			<if test="startTime!=null and startTime!=''">
+				and	<![CDATA[createTime >= #{startTime}]]>
+			</if>
+			<if test="endTime!=null and endTime!=''">
+				and	<![CDATA[createTime <= #{endTime}]]>
+			</if>
+    </select> 
+      
+</mapper>  

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<!--   
+    namespace：必须与对应的接口全类名一致  
+    id:必须与对应接口的某个对应的方法名一致  
+      
+ -->  
+<mapper namespace="cn.plxpl.wx.dao.IProductDao">  
+      
+    <insert id="save" parameterType="cn.plxpl.wx.entity.Product">  
+        insert into products(name,body,detail,attach,price,imgSrc) values(#{name},#{body},#{detail},#{attach},#{price},#{imgSrc})  
+    </insert>  
+      
+    <update id="update" parameterType="cn.plxpl.wx.entity.Product">  
+        update products set name=#{name},body=#{body},detail=#{detail},attach=#{attach},price=#{price},imgSrc=#{imgSrc} where id=#{id}  
+    </update>  
+      
+    <delete id="delete" parameterType="int">  
+        delete from products where ID=#{id}  
+    </delete>  
+      
+     <!-- mybsits_config中配置的alias类别名,也可直接配置resultType为类路劲 -->    
+    <select id="findById" parameterType="int" resultType="cn.plxpl.wx.entity.Product">  
+        select ID,name,body,detail,attach,price,imgSrc from products where id=#{id}  
+    </select>  
+      
+    <select id="findAll" resultType="cn.plxpl.wx.entity.Product">  
+        select ID,name,body,detail,attach,price,imgSrc from products  
+    </select>  
+    
+    <select id="countAll" resultType="int">  
+        select count(1) from products  
+    </select>  
+    
+    <select id="queryProductsByBasicCondition" parameterType="cn.plxpl.wx.condition.BasicCondition" resultType="cn.plxpl.wx.entity.Product">
+    	select ID,name,body,detail,attach,price,imgSrc 
+    	from products 
+    	limit #{startRow},#{rows}
+    </select>
+      
+</mapper>  
