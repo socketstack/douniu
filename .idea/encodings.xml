@@ -2,12 +2,16 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/WeixinUtil.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/../plxpl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/message/req/BaseMessage.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/message/req/LinkMessage.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/message/req/VoiceMessage.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/thread/TokenThread.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/util/CommonUtil.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/util/Constants.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/util/MyX509TrustManager.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/util/WeixinUtil.java" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
