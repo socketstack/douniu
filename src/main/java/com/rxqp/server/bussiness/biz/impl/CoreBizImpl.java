@@ -54,6 +54,9 @@ public class CoreBizImpl implements ICoreBiz {
 		case msg_SendSoundReq:// 请求发送语音
 			builder = gameBiz.sendSoundProccess(messageInfoReq, ctx);
 			break;
+		case msg_SignOutReq://退出通知
+			builder = loginBiz.deletPlayerByPlayerid(messageInfoReq, ctx);
+			break;
 		default:
 			System.out.println("default");
 			break;

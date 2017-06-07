@@ -18,7 +18,7 @@
         default-lazy-init="false" default-autowire="byName">  
           
         <!-- 返回的json数据的编码  -->
-   	   <bean id="jsonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"> 
+   	   <bean id="jsonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
         	<property name="supportedMediaTypes"> 
             	<list> 
             	  <value>text/html;charset=UTF-8</value>    

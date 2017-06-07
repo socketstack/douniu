@@ -1,13 +1,13 @@
 package com.rxqp.common.data;
 
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 import com.rxqp.common.constants.ExcMsgConstants;
 import com.rxqp.common.exception.BusinnessException;
 import com.rxqp.server.bo.Player;
 import com.rxqp.server.bo.Room;
+
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class CommonData {
 
@@ -17,6 +17,8 @@ public class CommonData {
 	private static Map<Integer, Room> roomIdToRoomInfo = new ConcurrentHashMap<Integer, Room>();
 	// 玩家ID与玩家对象映射
 	private static Map<Integer, Player> playerIdToPlayer = new ConcurrentHashMap<Integer, Player>();
+	//channelID to playerId
+	private static Map<Integer,Integer> channelIdToPlayerId = new ConcurrentHashMap<Integer, Integer>();
 
 	// public static List<Player> getPlayersByRoomId(Integer roomId) {
 	// return roomidToPlayers.get(roomId);
@@ -98,6 +100,18 @@ public class CommonData {
 		} else {
 			return null;
 		}
+	}
+
+	public static void putChannelIdToPlayerId(Integer channelId,Integer playerId){
+		channelIdToPlayerId.put(channelId,playerId);
+	}
+
+	public static  void removeChannelId(Integer channelId){
+		channelIdToPlayerId.remove(channelId);
+	}
+
+	public static Integer getPlayerIdByChannelId(Integer channelId){
+		return channelIdToPlayerId.get(channelId);
 	}
 
 	public static void deleteRoomById(Integer roomId) {

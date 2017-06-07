@@ -1,42 +1,22 @@
 package com.rxqp.server.bussiness.biz.impl;
 
-import com.rxqp.server.bo.Player;
-import com.rxqp.server.bussiness.biz.ICommonBiz;
-import com.rxqp.server.bussiness.biz.IRoomBiz;
-import io.netty.channel.ChannelHandlerContext;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
-import org.apache.commons.collections.CollectionUtils;
-import org.springframework.stereotype.Service;
-
 import com.rxqp.common.constants.ExcMsgConstants;
 import com.rxqp.common.constants.MessageConstants;
 import com.rxqp.common.data.CommonData;
-import com.rxqp.utils.BeanCopy;
 import com.rxqp.common.exception.BusinnessException;
 import com.rxqp.protobuf.DdzProto;
-import com.rxqp.protobuf.DdzProto.CreateNNRoomReq;
-import com.rxqp.protobuf.DdzProto.EntryNNRoomReq;
-import com.rxqp.protobuf.DdzProto.EntryNNRoomResp;
-import com.rxqp.protobuf.DdzProto.MESSAGE_ID;
-import com.rxqp.protobuf.DdzProto.MessageInfo;
+import com.rxqp.protobuf.DdzProto.*;
 import com.rxqp.protobuf.DdzProto.MessageInfo.Builder;
-import com.rxqp.protobuf.DdzProto.NNAnswerDissolutionReq;
-import com.rxqp.protobuf.DdzProto.NNDissolutionReq;
-import com.rxqp.protobuf.DdzProto.NNType;
-import com.rxqp.protobuf.DdzProto.PostAnswerDissolutionResult;
-import com.rxqp.protobuf.DdzProto.PostDissolutionResp;
-import com.rxqp.protobuf.DdzProto.PostDissolutionResult;
-import com.rxqp.protobuf.DdzProto.PostNNEntryRoom;
-import com.rxqp.protobuf.DdzProto.RoomInfo;
-import com.rxqp.protobuf.DdzProto.SettlementData;
-import com.rxqp.protobuf.DdzProto.SettlementInfo;
+import com.rxqp.server.bo.Player;
 import com.rxqp.server.bo.Room;
+import com.rxqp.server.bussiness.biz.ICommonBiz;
+import com.rxqp.server.bussiness.biz.IRoomBiz;
+import com.rxqp.utils.BeanCopy;
+import io.netty.channel.ChannelHandlerContext;
+import org.apache.commons.collections.CollectionUtils;
+import org.springframework.stereotype.Service;
+
+import java.util.*;
 
 @Service
 public class RoomBizImpl implements IRoomBiz {
@@ -62,7 +42,7 @@ public class RoomBizImpl implements IRoomBiz {
 
 			Integer roomId = -1;
 			Player player = CommonData.getPlayerById(playerId);
-			if (!player.getIsland()) {// 该玩家未登陆
+			if (player ==null || !player.getIsland()) {// 该玩家未登陆
 				messageInfo = commonBiz.setMessageInfo(
 						MessageConstants.PLAYER_NO_LOGIN_TYPE_1001,
 						MessageConstants.PLAYER_NO_LOGIN_MSG_1001);

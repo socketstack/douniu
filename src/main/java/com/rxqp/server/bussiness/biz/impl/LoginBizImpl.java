@@ -8,16 +8,20 @@ import com.rxqp.model.WeixinUserInfo;
 import com.rxqp.protobuf.DdzProto;
 import com.rxqp.protobuf.DdzProto.*;
 import com.rxqp.server.bo.Player;
+import com.rxqp.server.bo.Room;
 import com.rxqp.server.bussiness.biz.ICommonBiz;
 import com.rxqp.server.bussiness.biz.ILoginBiz;
 import com.rxqp.utils.CommonUtils;
 import com.rxqp.utils.WeixinUtil;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import net.sf.json.JSONObject;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
-import javax.xml.registry.infomodel.User;
+import java.util.Iterator;
+import java.util.List;
 
 @Service
 public class LoginBizImpl implements ILoginBiz {
@@ -40,46 +44,142 @@ public class LoginBizImpl implements ILoginBiz {
 	public MessageInfo.Builder login(MessageInfo messageInfoReq,
 			ChannelHandlerContext ctx) {
 		LoginReq loginReq = messageInfoReq.getLoginReq();
-		String token = loginReq.getToken();
-		PlayerBaseInfo playerBaseInfo = getUserInfoByToken(token);
-		Integer playerId = playerBaseInfo.getID();
-		Player player = CommonData.getPlayerById(playerId);
-		if (player != null) {
-			MessageInfo.Builder msgInfo = MessageInfo.newBuilder();
-			msgInfo = commonBiz.setMessageInfo(
-					MessageConstants.PLAYER_STATE_TYPE_1004,
-					MessageConstants.PLAYER_STATE_MSG_1004);
-			return msgInfo;
-		} else {
-			player = new Player();
-		}
-		String name = playerBaseInfo.getName();
-
-		// TODO
-		player.setId(playerId);
-		player.setName(name);
-		player.setChannel(ctx.channel());
-		player.setIsland(true);
-		CommonData.putPlayerIdToPlayer(playerId, player);
-		// TODO
-		boolean isSuccess = true;// 登录成功
 		MessageInfo.Builder messageInfo = MessageInfo.newBuilder();
-		if (isSuccess) {
-			DdzProto.LoginResp.Builder loginResp = DdzProto.LoginResp
-					.newBuilder();
-			messageInfo.setMessageId(MESSAGE_ID.msg_LoginResp);
-			loginResp.setPlayerBaseInfo(playerBaseInfo);
-			messageInfo.setLoginResp(loginResp);
-		} else {
-			messageInfo.setMessageId(MESSAGE_ID.msg_MsgInfo);
-			MsgInfo.Builder msgInfo = MsgInfo.newBuilder();
-			String error = MessageConstants.LOGIN_ERROR_MSG_1003;// 错误信息
-			msgInfo.setType(MessageConstants.LOGIN_ERROR_TYPE_1003);
-			msgInfo.setMessage(error);
-			messageInfo.setMsgInfo(msgInfo);
-		}
+		try{
+			String token = loginReq.getToken();
+			PlayerBaseInfo playerBaseInfo;
+			Integer playerId;
+			if(StringUtils.isNotBlank(token)){
+				playerBaseInfo = getUserInfoByToken(token);
+			}else{
+				playerId = loginReq.getPlayerid();
+				playerBaseInfo = getUserInfoByPlayerId(playerId);
+			}
 
+			if (playerBaseInfo==null){
+				MessageInfo.Builder msgInfo = MessageInfo.newBuilder();
+				msgInfo = commonBiz.setMessageInfo(
+						MessageConstants.PLAYER_STATE_TYPE_1006,
+						MessageConstants.PLAYER_STATE_MSG_1006);
+				return msgInfo;
+			}
+
+
+			playerId = playerBaseInfo.getID();
+			Player player = CommonData.getPlayerById(playerId);
+			if (player != null) {
+				MessageInfo.Builder msgInfo = MessageInfo.newBuilder();
+				msgInfo = commonBiz.setMessageInfo(
+						MessageConstants.PLAYER_STATE_TYPE_1004,
+						MessageConstants.PLAYER_STATE_MSG_1004);
+				return msgInfo;
+			} else {
+				player = new Player();
+			}
+			String name = playerBaseInfo.getName();
+
+			//
+			player.setId(playerId);
+			player.setName(name);
+			player.setChannel(ctx.channel());
+			player.setIsland(true);
+			CommonData.putPlayerIdToPlayer(playerId, player);
+			CommonData.putChannelIdToPlayerId(player.getChannel().hashCode(),playerId);
+			//
+			boolean isSuccess = true;// 登录成功
+			if (isSuccess) {
+				DdzProto.LoginResp.Builder loginResp = DdzProto.LoginResp
+						.newBuilder();
+				messageInfo.setMessageId(MESSAGE_ID.msg_LoginResp);
+				loginResp.setPlayerBaseInfo(playerBaseInfo);
+				messageInfo.setLoginResp(loginResp);
+			} else {
+				messageInfo.setMessageId(MESSAGE_ID.msg_MsgInfo);
+				MsgInfo.Builder msgInfo = MsgInfo.newBuilder();
+				String error = MessageConstants.LOGIN_ERROR_MSG_1003;// 错误信息
+				msgInfo.setType(MessageConstants.LOGIN_ERROR_TYPE_1003);
+				msgInfo.setMessage(error);
+				messageInfo.setMsgInfo(msgInfo);
+			}
+		}catch (Exception e){
+			System.out.println("~~~~~~~~~"+e);
+		}
 		return messageInfo;
+	}
+
+	public void deletPlayerByChannelId(Channel channel){
+		if (channel != null){
+			Integer playerId = CommonData.getPlayerIdByChannelId(channel.hashCode());
+			if (playerId!=null){
+				CommonData.removePlayer(playerId);
+				Player player = CommonData.getPlayerById(playerId);
+				if(player!=null){
+					Room room = CommonData.getRoomByRoomId(player.getRoomId());
+					if (room!=null){
+						List<Player> pls = room.getPlayers();
+						if(CollectionUtils.isNotEmpty(pls)){
+							Iterator<Player> itr = pls.iterator();
+							while (itr.hasNext()){
+								Player pl = itr.next();
+								if(pl.getId().equals(playerId)){
+									itr.remove();
+								}
+							}
+						}
+					}
+				}
+				CommonData.removeChannelId(channel.hashCode());
+			}
+		}
+	}
+
+	@Override
+	public MessageInfo.Builder deletPlayerByPlayerid(MessageInfo messageInfoReq, ChannelHandlerContext ctx) {
+		SignOutReq signOutReq = messageInfoReq.getSignOutReq();
+		Integer playerId = signOutReq.getPlayerid();
+		if (playerId!=null){
+			CommonData.removePlayer(playerId);
+			Player player = CommonData.getPlayerById(playerId);
+			if(player!=null){
+				Channel channel = player.getChannel();
+				Room room = CommonData.getRoomByRoomId(player.getRoomId());
+				if (room!=null){
+					List<Player> pls = room.getPlayers();
+					Iterator<Player> itr = pls.iterator();
+					while (itr.hasNext()){
+						Player pl = itr.next();
+						if(pl.getId().equals(playerId)){
+							itr.remove();
+						}
+					}
+				}
+				if (channel!=null)
+					CommonData.removeChannelId(channel.hashCode());
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * 根据playerId获取用户微信基本信息
+	 * @param playerId
+	 * @return
+	 */
+	private PlayerBaseInfo getUserInfoByPlayerId(Integer playerId){
+		PlayerBaseInfo.Builder player = PlayerBaseInfo.newBuilder();
+
+		String url = WeixinConstants.getPlayerByPlayeridUrl;
+		url = url.replace("PLAYERID", playerId.toString());
+		JSONObject obj = CommonUtils.sendGet(url);
+		if (obj != null){
+			player.setID(obj.getInt("id"));
+			player.setName(obj.getString("name"));
+			player.setImgUrl(obj.getString("imgUrl"));
+//			player.setCardNum(obj.getInt("cardNum"));
+		}else{
+			return null;
+		}
+		return player.build();
 	}
 
 	/**
@@ -94,29 +194,39 @@ public class LoginBizImpl implements ILoginBiz {
 			String openid = accessTokenOpenId.getOpenid();
 			String access_token = accessTokenOpenId.getAccess_token();
 			WeixinUserInfo weixinUserInfo = getWeixinUserInfo(access_token,openid);
-//			Player pl = getPlayerByOpenid(openid);
-			player.setID((int)(Math.random()*9+1)*100000);
+			Player pl = getPlayerByOpenid(weixinUserInfo);
+			if (pl==null)
+				return null;
+			player.setID(pl.getId());
 			player.setName(weixinUserInfo.getName());
 			player.setImgUrl(weixinUserInfo.getHeadImgUrl());
+		}else{
+			return null;
 		}
 
 		return player.build();
 	}
 
-	private Player getPlayerByOpenid(String openId){
+	private Player getPlayerByOpenid(WeixinUserInfo weixinUserInfo){
+		String openid = weixinUserInfo.getOpneid();
 		String url = WeixinConstants.getPlayerByOpenidUrl;
-		url = url.replace("TOKEN", openId);
-		JSONObject obj = WeixinUtil.httpRequest(url, "POST", null);
+		url = url.replace("OPENID", openid);
+		JSONObject obj = CommonUtils.sendGet(url);
 		Player player = new Player();
 		if (obj == null){
 			String url1 = WeixinConstants.addUserWithOpenid;
-			url1 = url1.replace("OPENID", openId);
-			JSONObject obj1 = WeixinUtil.httpRequest(url1, "POST", null);
+			url1 = url1.replace("OPENID", openid);
+			url1 = url1.replace("NAME", weixinUserInfo.getName());
+			url1 = url1.replace("IMG_URL", weixinUserInfo.getHeadImgUrl());
+			JSONObject obj1 = CommonUtils.sendGet(url1);
+			if(obj1==null)
+				return null;
 			player.setId(obj1.getInt("id"));
 			return player;
+		}else{
+			player.setId(obj.getInt("id"));
+			return player;
 		}
-		player.setId(obj.getInt("id"));
-		return player;
 	}
 
 	private WeixinUserInfo getWeixinUserInfo(String access_token,String openid){
@@ -164,4 +274,5 @@ public class LoginBizImpl implements ILoginBiz {
 			return accessTokenOpenId;
 		}
 	}
+
 }

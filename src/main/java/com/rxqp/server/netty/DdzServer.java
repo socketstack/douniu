@@ -1,5 +1,11 @@
 package com.rxqp.server.netty;
 
+import com.rxqp.server.netty.handler.DdzOutServerHandler;
+import com.rxqp.server.netty.handler.DdzServerHandler;
+import com.rxqp.server.netty.handler.MyOutboundHandler;
+import com.rxqp.server.netty.handler.OutHandler;
+import com.rxqp.server.netty.message.MessageProtobufDecode;
+import com.rxqp.server.netty.message.MessageProtobufEncode;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -10,16 +16,9 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
-
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Service;
-
-import com.rxqp.server.netty.handler.DdzOutServerHandler;
-import com.rxqp.server.netty.handler.DdzServerHandler;
-import com.rxqp.server.netty.handler.OutHandler;
-import com.rxqp.server.netty.message.MessageProtobufDecode;
-import com.rxqp.server.netty.message.MessageProtobufEncode;
 
 @Service
 public class DdzServer implements ApplicationListener<ContextRefreshedEvent> {
@@ -56,6 +55,7 @@ public class DdzServer implements ApplicationListener<ContextRefreshedEvent> {
 							// ch.pipeline().addLast(
 							// new ProtobufVarint32LengthFieldPrepender());
 							// ch.pipeline().addLast(new ProtobufEncoder());
+							ch.pipeline().addLast(new MyOutboundHandler());
 							ch.pipeline().addLast(new MessageProtobufDecode());
 							ch.pipeline().addLast(new MessageProtobufEncode());
 							ch.pipeline().addLast(new DdzOutServerHandler());

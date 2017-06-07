@@ -32,6 +32,9 @@ public class MessageConstants {
 	public static Integer PLAYER_STATE_TYPE_1005 = 1005;
 	public static String PLAYER_STATE_MSG_1005 = "至少要两个玩家才能开牌!";
 
+	public static Integer PLAYER_STATE_TYPE_1006 = 1006;
+	public static String PLAYER_STATE_MSG_1006 = "用户不存在!";
+
 	public static Integer CREATE_ROOM_ERROR_TYPE = 3001;
 	public static String CREATE_ROOM_ERROR_MSG = "创建房间失败!";
 

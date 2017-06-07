@@ -31,8 +31,17 @@ public class WeixinConstants {
 
     public static String getOAuthAccessToken = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&secret=SECRET&code=CODE&grant_type=authorization_code";
 
-    public static String getPlayerByOpenidUrl = "http://localhost:8080/getPlayerByOpenid.do?openid=OPENID";
-    public static String addUserWithOpenid = "http://localhost:8080/addUser.do?openid=OPENID";
+    //****************************************测试环境***************************************************
+//    public static String getPlayerByOpenidUrl = "http://localhost:8081/getPlayerByOpenid.do?openid=OPENID";
+//    public static String getPlayerByPlayeridUrl = "http://localhost:8081/getPlayerByPlayerid.do?playerid=PLAYERID";
+//    public static String addUserWithOpenid = "http://localhost:8081/addUser.do?openid=OPENID&name=NAME&imgUrl=IMG_URL";
+    //****************************************测试环境***************************************************
+
+    //****************************************线上环境***************************************************
+    public static String getPlayerByOpenidUrl = "http://139.129.98.110:8090/game_service/getPlayerByOpenid.do?openid=OPENID";
+    public static String getPlayerByPlayeridUrl = "http://139.129.98.110:8090/game_service/getPlayerByPlayerid.do?playerid=PLAYERID";
+    public static String addUserWithOpenid = "http://139.129.98.110:8090/game_service/addUser.do?openid=OPENID&name=NAME&imgUrl=IMG_URL";
+    //****************************************线上环境***************************************************
 
     public static String getWXUserInfoUrl = "https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID";
     // ///////////// OAuth2.0 用户授权认证////////////////////
