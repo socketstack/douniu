@@ -83,6 +83,7 @@ public class LoginBizImpl implements ILoginBiz {
 			player.setName(name);
 			player.setChannel(ctx.channel());
 			player.setIsland(true);
+			player.setImgUrl(playerBaseInfo.getImgUrl());
 			CommonData.putPlayerIdToPlayer(playerId, player);
 			CommonData.putChannelIdToPlayerId(player.getChannel().hashCode(),playerId);
 			//
