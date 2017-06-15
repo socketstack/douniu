@@ -33,6 +33,10 @@ public class CommonData {
 	// roomidToPlayers.remove(roomId);
 	// }
 
+	public static Map<Integer, Room> getAllRoom(){
+		return roomIdToRoomInfo;
+	}
+
 	public static Room getRoomByRoomId(Integer roomId) {
 		return roomIdToRoomInfo.get(roomId);
 	}

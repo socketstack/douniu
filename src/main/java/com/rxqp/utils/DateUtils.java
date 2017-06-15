@@ -76,6 +76,10 @@ public class DateUtils {
 		return diffDays;
 	}
 
+	public static long getDiffTime(Date date1,Date date2){
+		return date1.getTime() - date2.getTime();
+	}
+
 	public static void main(String[] args) {
 		// System.out.println(dateToStr(getSomeDayToToday(0),
 		// "yyyy-MM-dd 00:00:00"));

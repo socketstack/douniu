@@ -1,5 +1,6 @@
 package com.rxqp.server.netty.handler;
 
+import com.rxqp.Task.CleanRoomTask;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelOutboundHandlerAdapter;
 import io.netty.channel.ChannelPromise;
@@ -23,6 +24,8 @@ public class OutHandler extends ChannelOutboundHandlerAdapter {
 			ChannelPromise promise) throws Exception {
 		// TODO Auto-generated method stub
 		super.bind(ctx, localAddress, promise);
+		CleanRoomTask task = new CleanRoomTask();
+		task.cleanRoomTask(task);
 		System.out
 				.println("<<<<<<<<<<<<<<< server bind success >>>>>>>>>>>>>>>>");
 	}

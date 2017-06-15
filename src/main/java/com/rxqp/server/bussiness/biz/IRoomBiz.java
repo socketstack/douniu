@@ -60,4 +60,6 @@ public interface IRoomBiz {
 	 */
 	public Builder buildSettlementData(Room room);
 
+	public MessageInfo.Builder reEntryRoom(MessageInfo messageInfoReq,ChannelHandlerContext ctx);
+
 }

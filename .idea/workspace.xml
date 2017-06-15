@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1aede53d-6e4f-4b8e-b0cf-5a0aa662b41b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/Task/CleanRoomTask.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../game_service/.idea/artifacts/game_service_war.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../game_service/.idea/artifacts/game_service_war_exploded.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../game_service/.idea/compiler.xml" />
@@ -75,6 +76,12 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../game_service/.idea/libraries/Maven__xpp3_xpp3_min_1_1_4c.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../game_service/game_service.iml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../game_service/src/main/webapp/js/is.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/jdbc.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/sqlMap/LuckyMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/sqlMap/ProductMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/sqlMap/TradeInfoMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/sqlMap/User.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/sqlMapConfig.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../game_service/.classpath" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../game_service/.project" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../game_service/.settings/org.eclipse.core.resources.prefs" afterPath="" />
@@ -101,13 +108,214 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../plxpl/delSvn.bat" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../plxpl/hs_err_pid12884.log" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../plxpl/hs_err_pid9472.log" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/cn/plxpl/action/MainAction.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/cn/plxpl/action/MainAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/constants/MessageConstants.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/constants/MessageConstants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/data/CommonData.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/data/CommonData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomResp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomResp$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomResp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomResp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomResp$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomResp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealResp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealResp$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealResp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandCheckReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandCheckReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandCheckReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandCheckReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandCheckReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandCheckReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DiscardReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DiscardReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DiscardReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DiscardReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DiscardReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DiscardReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomResp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomResp$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomResp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomRespOrBuilder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomResp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomResp$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomResp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$GrabHostReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$GrabHostReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$GrabHostReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$GrabHostReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$GrabHostReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$GrabHostReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReqOrBuilder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginResp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginResp$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginResp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginRespOrBuilder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MESSAGE_ID$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MESSAGE_ID$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MESSAGE_ID.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MESSAGE_ID.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfo$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfo$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfo$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfo$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfo.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfoOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfoOrBuilder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MsgInfo$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MsgInfo$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MsgInfo$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MsgInfo$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MsgInfo.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MsgInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNAnswerDissolutionReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNAnswerDissolutionReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNAnswerDissolutionReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNAnswerDissolutionReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNAnswerDissolutionReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNAnswerDissolutionReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNDissolutionReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNDissolutionReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNDissolutionReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNDissolutionReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNDissolutionReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNDissolutionReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNPrepareReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNPrepareReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNPrepareReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNPrepareReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNPrepareReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNPrepareReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsResp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsResp$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsResp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNType$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNType$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNType.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Player$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Player$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Player$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Player$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Player.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerBaseInfo$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerBaseInfo$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerBaseInfo$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerBaseInfo$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerBaseInfo.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerBaseInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerOrBuilder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Poker$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Poker$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Poker$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Poker$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Poker.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Poker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostAnswerDissolutionResult$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostAnswerDissolutionResult$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostAnswerDissolutionResult$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostAnswerDissolutionResult$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostAnswerDissolutionResult.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostAnswerDissolutionResult.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDealOver$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDealOver$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDealOver$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDealOver$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDealOver.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDealOver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisband$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisband$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisband$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisband$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisband.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisband.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandCheck$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandCheck$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandCheck$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandCheck$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandCheck.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandCheck.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDiscard$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDiscard$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDiscard$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDiscard$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDiscard.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDiscard.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResp$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResult$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResult$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResult$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResult$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResult.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResult.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostEntryRoom$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostEntryRoom$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostEntryRoom$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostEntryRoom$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostEntryRoom.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostEntryRoom.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostGrabHostResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostGrabHostResp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostGrabHostResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostGrabHostResp$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostGrabHostResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostGrabHostResp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealResp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealResp$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealResp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealRespOrBuilder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNEntryRoom$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNEntryRoom$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNEntryRoom$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNEntryRoom$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNEntryRoom.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNEntryRoom.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNPrepareResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNPrepareResp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNPrepareResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNPrepareResp$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNPrepareResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNPrepareResp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNShowCards$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNShowCards$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNShowCards$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNShowCards$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNShowCards.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNShowCards.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostSendSoundResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostSendSoundResp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostSendSoundResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostSendSoundResp$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostSendSoundResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostSendSoundResp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeOver$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeOver$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeOver$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeOver$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeOver.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeOver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeResp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeResp$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeResp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStartNNGame$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStartNNGame$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStartNNGame$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStartNNGame$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStartNNGame.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStartNNGame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$RoomInfo$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$RoomInfo$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$RoomInfo$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$RoomInfo$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$RoomInfo.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$RoomInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SendSoundReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SendSoundReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SendSoundReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SendSoundReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SendSoundReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SendSoundReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementData$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementData$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementData$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementData$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementData.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementInfo$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementInfo$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementInfo$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementInfo$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementInfo.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SignOutReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SignOutReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SignOutReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SignOutReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SignOutReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SignOutReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeResp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeResp$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeResp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameReq$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameReq$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameReq.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameResp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameResp$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameResp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bo/Player.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bo/Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bo/Room.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bo/Room.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/ILoginBiz.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/ILoginBiz.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/IRoomBiz.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/IRoomBiz.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/CoreBizImpl$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/CoreBizImpl$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/GameBizImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/GameBizImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/RoomBizImpl$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/RoomBizImpl$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/DdzServer$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/DdzServer$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/DdzServer.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/DdzServer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/handler/DdzServerHandler.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/handler/DdzServerHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/handler/MyOutboundHandler.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/handler/MyOutboundHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/handler/OutHandler.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/handler/OutHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/CommonUtils$1$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/CommonUtils$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/CommonUtils$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/CommonUtils$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/CommonUtils.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/CommonUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/DateUtils.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/DateUtils.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../game_service/target/classes/com/rxqp/controller/LoginController.class" afterPath="$PROJECT_DIR$/../game_service/target/classes/com/rxqp/controller/LoginController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../game_service/target/classes/com/rxqp/dao/IUserDao.class" afterPath="$PROJECT_DIR$/../game_service/target/classes/com/rxqp/dao/IUserDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../game_service/target/classes/com/rxqp/model/User.class" afterPath="$PROJECT_DIR$/../game_service/target/classes/com/rxqp/model/User.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../game_service/target/classes/com/rxqp/service/IUserService.class" afterPath="$PROJECT_DIR$/../game_service/target/classes/com/rxqp/service/IUserService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../game_service/target/classes/com/rxqp/service/impl/UserService.class" afterPath="$PROJECT_DIR$/../game_service/target/classes/com/rxqp/service/impl/UserService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/MessageConstants.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/MessageConstants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/common/data/CommonData.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/common/data/CommonData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/protobuf/DdzProto.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/protobuf/DdzProto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Player.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Room.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Room.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/IRoomBiz.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/IRoomBiz.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/GameBizImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/GameBizImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/OutHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/OutHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/utils/DateUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/utils/DateUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/controller/LoginController.java" afterPath="$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/controller/LoginController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/dao/IUserDao.java" afterPath="$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/dao/IUserDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/model/User.java" afterPath="$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/model/User.java" />
@@ -203,11 +411,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="LoginBizImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginBizImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="96" column="20" lean-forward="true" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
+            <state relative-caret-position="189">
+              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -215,14 +423,60 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CoreBizImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java">
+      <file leaf-file-name="CleanRoomTask.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/Task/CleanRoomTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="33" lean-forward="false" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+            <state relative-caret-position="246">
+              <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DateUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/DateUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2025">
+              <caret line="79" column="49" lean-forward="false" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OutHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/OutHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="25" column="47" lean-forward="false" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameBizImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/GameBizImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2241">
+              <caret line="121" column="37" lean-forward="false" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoreBizImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -230,22 +484,54 @@
       <file leaf-file-name="RoomBizImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5238">
-              <caret line="210" column="56" lean-forward="false" selection-start-line="210" selection-start-column="56" selection-end-line="210" selection-end-column="56" />
+            <state relative-caret-position="201">
+              <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommonData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/common/data/CommonData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1458">
+              <caret line="65" column="23" lean-forward="false" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="false" />
+                <element signature="e#1267#1268#0" expanded="false" />
+                <element signature="e#1309#1310#0" expanded="false" />
+                <element signature="e#2126#2127#0" expanded="false" />
+                <element signature="e#2170#2171#0" expanded="false" />
+                <element signature="e#2246#2247#0" expanded="false" />
+                <element signature="e#2291#2292#0" expanded="false" />
+                <element signature="e#2345#2346#0" expanded="false" />
+                <element signature="e#2385#2386#0" expanded="false" />
+                <element signature="e#2451#2452#0" expanded="false" />
+                <element signature="e#2492#2493#0" expanded="false" />
+                <element signature="e#3268#3269#0" expanded="false" />
+                <element signature="e#3312#3313#0" expanded="false" />
+                <element signature="e#3379#3380#0" expanded="false" />
+                <element signature="e#3427#3428#0" expanded="false" />
+                <element signature="e#3481#3482#0" expanded="false" />
+                <element signature="e#3519#3520#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BeanCopy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/BeanCopy.java">
+      <file leaf-file-name="DdzServerHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/DdzServerHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="38" column="41" lean-forward="false" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+            <state relative-caret-position="756">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="false" />
+                <element signature="e#1006#1007#0" expanded="false" />
+                <element signature="e#1024#1025#0" expanded="false" />
+                <element signature="e#1355#1356#0" expanded="false" />
+                <element signature="e#1385#1386#0" expanded="false" />
+                <element signature="e#1442#1443#0" expanded="false" />
+                <element signature="e#1472#1473#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -262,10 +548,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DateFormate</find>
-      <find>formatTime</find>
-      <find>httpRequest</find>
-      <find>getOpenid</find>
       <find>https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&amp;secret=SECRET&amp;code=CODE&amp;grant_type=authorization_code</find>
       <find>OAuthScopeBasic</find>
       <find>scope</find>
@@ -292,6 +574,10 @@
       <find>System.out.println</find>
       <find>4002</find>
       <find>INACTIVE</find>
+      <find>1001</find>
+      <find>setIsland</find>
+      <find>\&lt;\&lt;\&lt;\&lt;\&lt;\&lt;\&lt;\&lt;\&lt;\&lt;\&lt;\&lt;\&lt;\&lt;\&lt; server bind success \&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\&gt;\n</find>
+      <find>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; server bind success &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</find>
     </findStrings>
     <replaceStrings>
       <replace>http://cvtabt.natappfree.cc</replace>
@@ -315,10 +601,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/dn/model/AccessToken.java" />
-        <option value="$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/entity/AccessToken.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/dn/model/JsApiTicket.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/common/dn/constants/WeixinContstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/dn/common/utils/WeixinUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/dn/common/utils/DateUtils.java" />
         <option value="$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/util/CommonUtil.java" />
@@ -335,37 +617,41 @@
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/model/AccessToken.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/model/JsApiTicket.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CommonBiz.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/GameBizImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/IGroupBiz.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/IRoomBiz.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/DdzOutServerHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/message/MessageProtobufDecode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/message/MessageProtobufEncode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/utils/DateUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/utils/MyX509TrustManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/utils/XmlConverUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/utils/BeanCopy.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/WeixinContstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/model/AccessTokenOpenId.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Player.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/common/data/CommonData.java" />
-        <option value="$PROJECT_DIR$/../test/test/src/com/mff/test/test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/utils/WeixinUtil.java" />
         <option value="$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/dao/IUserDao.java" />
         <option value="$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/service/impl/UserService.java" />
         <option value="$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/../game_service/src/main/resources/sqlMap/User.xml" />
         <option value="$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/MessageConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/WeixinConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/utils/CommonUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/ILoginBiz.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/MyOutboundHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/DdzServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/DdzServerHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/protobuf/DdzProto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/ILoginBiz.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/IRoomBiz.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/MessageConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/GameBizImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Room.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/OutHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/common/data/CommonData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/utils/DateUtils.java" />
+        <option value="$PROJECT_DIR$/../test/test/src/com/mff/test/test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/Task/CleanRoomTask.java" />
       </list>
     </option>
   </component>
@@ -517,10 +803,39 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="douniu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="douniu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="douniu" />
@@ -707,6 +1022,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="douniu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="douniu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -726,6 +1055,88 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="douniu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="douniu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="douniu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="douniu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rxqp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="douniu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="douniu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rxqp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Task" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -781,85 +1192,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="douniu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="douniu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rxqp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="biz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="douniu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="douniu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rxqp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="biz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
+              <option name="myItemId" value="protobuf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1654,9 +1992,9 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.CommonUtils" />
-        <item index="1" class="java.lang.String" itemvalue="Application.LoginBizImpl" />
-        <item index="2" class="java.lang.String" itemvalue="Application.test" />
+        <item index="0" class="java.lang.String" itemvalue="Application.test" />
+        <item index="1" class="java.lang.String" itemvalue="Application.CommonUtils" />
+        <item index="2" class="java.lang.String" itemvalue="Application.LoginBizImpl" />
       </list>
     </recent_temporary>
   </component>
@@ -1692,12 +2030,16 @@
       <workItem from="1496843123049" duration="8558000" />
       <workItem from="1496906176963" duration="1247000" />
       <workItem from="1497075396109" duration="8343000" />
-      <workItem from="1497166665527" duration="314000" />
+      <workItem from="1497166665527" duration="14043000" />
+      <workItem from="1497247146425" duration="8395000" />
+      <workItem from="1497335407587" duration="1804000" />
+      <workItem from="1497453319876" duration="6573000" />
+      <workItem from="1497539745256" duration="1275000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110503000" />
+    <option name="totallyTimeSpent" value="142279000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1709,23 +2051,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20518358" sideWeight="0.49107143" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20518358" sideWeight="0.49107143" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18358532" sideWeight="0.4931677" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26943845" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19654427" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32991362" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2857143" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45838508" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1734,19 +2078,18 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28322983" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2548596" sideWeight="0.4924406" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26079914" sideWeight="0.4924406" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18682505" sideWeight="0.50643086" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18682505" sideWeight="0.5075594" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.20518358" sideWeight="0.5089286" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45962733" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1762,11 +2105,11 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18358532" sideWeight="0.4931677" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26943845" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19654427" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32991362" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2857143" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35652173" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1780,7 +2123,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45962733" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2548596" sideWeight="0.4924406" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26079914" sideWeight="0.4924406" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18682505" sideWeight="0.50643086" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1890,7 +2233,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java</url>
-          <line>37</line>
+          <line>38</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
@@ -1908,7 +2251,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java</url>
-          <line>45</line>
+          <line>46</line>
           <properties />
           <option name="timeStamp" value="31" />
         </line-breakpoint>
@@ -1917,12 +2260,6 @@
           <line>379</line>
           <properties />
           <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/DdzServerHandler.java</url>
-          <line>18</line>
-          <properties />
-          <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/MyOutboundHandler.java</url>
@@ -1938,21 +2275,51 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/DdzServerHandler.java</url>
-          <line>48</line>
-          <properties />
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/DdzServerHandler.java</url>
           <line>36</line>
           <properties />
           <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java</url>
+          <line>127</line>
+          <properties />
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java</url>
+          <line>456</line>
+          <properties />
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java</url>
+          <line>57</line>
+          <properties />
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java</url>
+          <line>131</line>
+          <properties />
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="42" />
+      <option name="time" value="49" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1961,62 +2328,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/DateUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/MyX509TrustManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/XmlConverUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/service/IPayService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-297">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/util/CommonUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="199" column="5" lean-forward="true" selection-start-line="199" selection-start-column="5" selection-end-line="199" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/plxpl_Web_exploded/logs/output.log.5">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="6623" column="43" lean-forward="false" selection-start-line="6623" selection-start-column="43" selection-end-line="6623" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/util/WeixinUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="50" column="40" lean-forward="false" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/CommonConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/WeixinContstants.java" />
     <entry file="file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/util/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2051,90 +2362,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#978#979#0" expanded="false" />
-            <element signature="e#994#995#0" expanded="false" />
-            <element signature="e#1028#1029#0" expanded="false" />
-            <element signature="e#1047#1048#0" expanded="false" />
-            <element signature="e#1075#1076#0" expanded="false" />
-            <element signature="e#1093#1094#0" expanded="false" />
-            <element signature="e#1130#1131#0" expanded="false" />
-            <element signature="e#1153#1154#0" expanded="false" />
-            <element signature="e#1184#1185#0" expanded="false" />
-            <element signature="e#1204#1205#0" expanded="false" />
-            <element signature="e#1246#1247#0" expanded="false" />
-            <element signature="e#1273#1274#0" expanded="false" />
-            <element signature="e#1305#1306#0" expanded="false" />
-            <element signature="e#1326#1327#0" expanded="false" />
-            <element signature="e#1370#1371#0" expanded="false" />
-            <element signature="e#1399#1400#0" expanded="false" />
-            <element signature="e#1429#1430#0" expanded="false" />
-            <element signature="e#1449#1450#0" expanded="false" />
-            <element signature="e#1490#1491#0" expanded="false" />
-            <element signature="e#1517#1518#0" expanded="false" />
-            <element signature="e#1854#1855#0" expanded="false" />
-            <element signature="e#1868#1869#0" expanded="false" />
-            <element signature="e#2050#2051#0" expanded="false" />
-            <element signature="e#2070#2071#0" expanded="false" />
-            <element signature="e#2112#2113#0" expanded="false" />
-            <element signature="e#2139#2140#0" expanded="false" />
-            <element signature="e#2171#2172#0" expanded="false" />
-            <element signature="e#2192#2193#0" expanded="false" />
-            <element signature="e#2236#2237#0" expanded="false" />
-            <element signature="e#2265#2266#0" expanded="false" />
-            <element signature="e#2296#2297#0" expanded="false" />
-            <element signature="e#2316#2317#0" expanded="false" />
-            <element signature="e#2358#2359#0" expanded="false" />
-            <element signature="e#2385#2386#0" expanded="false" />
-            <element signature="e#2415#2416#0" expanded="false" />
-            <element signature="e#2435#2436#0" expanded="false" />
-            <element signature="e#2476#2477#0" expanded="false" />
-            <element signature="e#2503#2504#0" expanded="false" />
-            <element signature="e#2533#2534#0" expanded="false" />
-            <element signature="e#2552#2553#0" expanded="false" />
-            <element signature="e#2592#2593#0" expanded="false" />
-            <element signature="e#2617#2618#0" expanded="false" />
-            <element signature="e#2652#2653#0" expanded="false" />
-            <element signature="e#2676#2677#0" expanded="false" />
-            <element signature="e#2726#2727#0" expanded="false" />
-            <element signature="e#2761#2762#0" expanded="false" />
-            <element signature="e#2791#2792#0" expanded="false" />
-            <element signature="e#2810#2811#0" expanded="false" />
-            <element signature="e#2850#2851#0" expanded="false" />
-            <element signature="e#2875#2876#0" expanded="false" />
-            <element signature="e#2912#2913#0" expanded="false" />
-            <element signature="e#2938#2939#0" expanded="false" />
-            <element signature="e#2992#2993#0" expanded="false" />
-            <element signature="e#3031#3032#0" expanded="false" />
-            <element signature="e#3065#3066#0" expanded="false" />
-            <element signature="e#3088#3089#0" expanded="false" />
-            <element signature="e#3127#3128#0" expanded="false" />
-            <element signature="e#3149#3150#0" expanded="false" />
-            <element signature="e#3201#3202#0" expanded="false" />
-            <element signature="e#3232#3233#0" expanded="false" />
-            <element signature="e#3280#3281#0" expanded="false" />
-            <element signature="e#3313#3314#0" expanded="false" />
-            <element signature="e#3346#3347#0" expanded="false" />
-            <element signature="e#3368#3369#0" expanded="false" />
-            <element signature="e#3414#3415#0" expanded="false" />
-            <element signature="e#3445#3446#0" expanded="false" />
-            <element signature="e#3475#3476#0" expanded="false" />
-            <element signature="e#3495#3496#0" expanded="false" />
-            <element signature="e#3536#3537#0" expanded="false" />
-            <element signature="e#3563#3564#0" expanded="false" />
-            <element signature="e#3837#3838#0" expanded="false" />
-            <element signature="e#3868#3869#0" expanded="false" />
-            <element signature="e#3942#3943#0" expanded="false" />
-            <element signature="e#3991#3992#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2174,13 +2401,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../test/test/src/com/mff/test/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -2267,13 +2487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/ILoginBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="22" column="45" lean-forward="false" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/WeixinUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -2286,28 +2499,6 @@
         <state relative-caret-position="27">
           <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/common/data/CommonData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="69" column="42" lean-forward="false" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1188#1189#0" expanded="false" />
-            <element signature="e#1230#1231#0" expanded="false" />
-            <element signature="e#1952#1953#0" expanded="false" />
-            <element signature="e#1990#1991#0" expanded="false" />
-            <element signature="e#2266#2267#0" expanded="false" />
-            <element signature="e#2306#2307#0" expanded="false" />
-            <element signature="e#2372#2373#0" expanded="false" />
-            <element signature="e#2413#2414#0" expanded="false" />
-            <element signature="e#3300#3301#0" expanded="false" />
-            <element signature="e#3348#3349#0" expanded="false" />
-            <element signature="e#3402#3403#0" expanded="false" />
-            <element signature="e#3440#3441#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2349,21 +2540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/DdzServerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="38" column="32" lean-forward="false" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/OutHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/DdzOutServerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -2379,34 +2555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/DdzServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="48" column="50" lean-forward="true" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/protobuf/DdzProto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="118" column="4" lean-forward="false" selection-start-line="118" selection-start-column="4" selection-end-line="118" selection-end-column="4" />
-          <folding>
-            <marker date="1496769578587" expanded="true" signature="1418448:1418691" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="33" lean-forward="false" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/BeanCopy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="864">
@@ -2417,31 +2565,284 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/MessageProtoConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5238">
-          <caret line="210" column="56" lean-forward="false" selection-start-line="210" selection-start-column="56" selection-end-line="210" selection-end-column="56" />
+        <state relative-caret-position="108">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/ExcMsgConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/CommonConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/DdzServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1161">
+          <caret line="61" column="61" lean-forward="false" selection-start-line="61" selection-start-column="61" selection-end-line="61" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/protobuf/DdzProto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="12329" column="28" lean-forward="false" selection-start-line="12329" selection-start-column="28" selection-end-line="12329" selection-end-column="28" />
+          <folding>
+            <marker date="1497540674630" expanded="false" signature="1435090:1435310" ph="(root) → {" />
+            <marker date="1497540674630" expanded="true" signature="1538766:1539018" ph="{...}" />
+            <marker date="1497540674630" expanded="true" signature="1538775:1539018" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/ILoginBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="23" column="65" lean-forward="true" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/IRoomBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="62" column="69" lean-forward="false" selection-start-line="62" selection-start-column="55" selection-end-line="62" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/MessageConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="42" lean-forward="false" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1019#1020#0" expanded="false" />
+            <element signature="e#1035#1036#0" expanded="false" />
+            <element signature="e#1069#1070#0" expanded="false" />
+            <element signature="e#1088#1089#0" expanded="false" />
+            <element signature="e#1116#1117#0" expanded="false" />
+            <element signature="e#1134#1135#0" expanded="false" />
+            <element signature="e#1171#1172#0" expanded="false" />
+            <element signature="e#1194#1195#0" expanded="false" />
+            <element signature="e#1225#1226#0" expanded="false" />
+            <element signature="e#1245#1246#0" expanded="false" />
+            <element signature="e#1287#1288#0" expanded="false" />
+            <element signature="e#1314#1315#0" expanded="false" />
+            <element signature="e#1346#1347#0" expanded="false" />
+            <element signature="e#1367#1368#0" expanded="false" />
+            <element signature="e#1411#1412#0" expanded="false" />
+            <element signature="e#1440#1441#0" expanded="false" />
+            <element signature="e#1470#1471#0" expanded="false" />
+            <element signature="e#1490#1491#0" expanded="false" />
+            <element signature="e#1531#1532#0" expanded="false" />
+            <element signature="e#1558#1559#0" expanded="false" />
+            <element signature="e#1895#1896#0" expanded="false" />
+            <element signature="e#1909#1910#0" expanded="false" />
+            <element signature="e#2091#2092#0" expanded="false" />
+            <element signature="e#2111#2112#0" expanded="false" />
+            <element signature="e#2153#2154#0" expanded="false" />
+            <element signature="e#2180#2181#0" expanded="false" />
+            <element signature="e#2212#2213#0" expanded="false" />
+            <element signature="e#2233#2234#0" expanded="false" />
+            <element signature="e#2277#2278#0" expanded="false" />
+            <element signature="e#2306#2307#0" expanded="false" />
+            <element signature="e#2337#2338#0" expanded="false" />
+            <element signature="e#2357#2358#0" expanded="false" />
+            <element signature="e#2399#2400#0" expanded="false" />
+            <element signature="e#2426#2427#0" expanded="false" />
+            <element signature="e#2456#2457#0" expanded="false" />
+            <element signature="e#2476#2477#0" expanded="false" />
+            <element signature="e#2517#2518#0" expanded="false" />
+            <element signature="e#2544#2545#0" expanded="false" />
+            <element signature="e#2574#2575#0" expanded="false" />
+            <element signature="e#2593#2594#0" expanded="false" />
+            <element signature="e#2633#2634#0" expanded="false" />
+            <element signature="e#2658#2659#0" expanded="false" />
+            <element signature="e#2693#2694#0" expanded="false" />
+            <element signature="e#2717#2718#0" expanded="false" />
+            <element signature="e#2767#2768#0" expanded="false" />
+            <element signature="e#2802#2803#0" expanded="false" />
+            <element signature="e#2832#2833#0" expanded="false" />
+            <element signature="e#2851#2852#0" expanded="false" />
+            <element signature="e#2891#2892#0" expanded="false" />
+            <element signature="e#2916#2917#0" expanded="false" />
+            <element signature="e#2953#2954#0" expanded="false" />
+            <element signature="e#2979#2980#0" expanded="false" />
+            <element signature="e#3033#3034#0" expanded="false" />
+            <element signature="e#3072#3073#0" expanded="false" />
+            <element signature="e#3106#3107#0" expanded="false" />
+            <element signature="e#3129#3130#0" expanded="false" />
+            <element signature="e#3168#3169#0" expanded="false" />
+            <element signature="e#3190#3191#0" expanded="false" />
+            <element signature="e#3242#3243#0" expanded="false" />
+            <element signature="e#3273#3274#0" expanded="false" />
+            <element signature="e#3321#3322#0" expanded="false" />
+            <element signature="e#3354#3355#0" expanded="false" />
+            <element signature="e#3387#3388#0" expanded="false" />
+            <element signature="e#3409#3410#0" expanded="false" />
+            <element signature="e#3455#3456#0" expanded="false" />
+            <element signature="e#3486#3487#0" expanded="false" />
+            <element signature="e#3516#3517#0" expanded="false" />
+            <element signature="e#3536#3537#0" expanded="false" />
+            <element signature="e#3577#3578#0" expanded="false" />
+            <element signature="e#3604#3605#0" expanded="false" />
+            <element signature="e#3635#3636#0" expanded="false" />
+            <element signature="e#3657#3658#0" expanded="false" />
+            <element signature="e#3699#3700#0" expanded="false" />
+            <element signature="e#3723#3724#0" expanded="false" />
+            <element signature="e#3997#3998#0" expanded="false" />
+            <element signature="e#4028#4029#0" expanded="false" />
+            <element signature="e#4102#4103#0" expanded="false" />
+            <element signature="e#4151#4152#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Room.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="191" column="44" lean-forward="false" selection-start-line="191" selection-start-column="44" selection-end-line="191" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4261#4262#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/GameBizImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2241">
+          <caret line="121" column="37" lean-forward="false" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/MessageConstants.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/DdzServerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="46" column="48" lean-forward="false" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
-          <folding />
+        <state relative-caret-position="756">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1006#1007#0" expanded="false" />
+            <element signature="e#1024#1025#0" expanded="false" />
+            <element signature="e#1355#1356#0" expanded="false" />
+            <element signature="e#1385#1386#0" expanded="false" />
+            <element signature="e#1442#1443#0" expanded="false" />
+            <element signature="e#1472#1473#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/OutHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="25" column="47" lean-forward="false" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/DateUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2025">
+          <caret line="79" column="49" lean-forward="false" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/common/data/CommonData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1458">
+          <caret line="65" column="23" lean-forward="false" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1267#1268#0" expanded="false" />
+            <element signature="e#1309#1310#0" expanded="false" />
+            <element signature="e#2126#2127#0" expanded="false" />
+            <element signature="e#2170#2171#0" expanded="false" />
+            <element signature="e#2246#2247#0" expanded="false" />
+            <element signature="e#2291#2292#0" expanded="false" />
+            <element signature="e#2345#2346#0" expanded="false" />
+            <element signature="e#2385#2386#0" expanded="false" />
+            <element signature="e#2451#2452#0" expanded="false" />
+            <element signature="e#2492#2493#0" expanded="false" />
+            <element signature="e#3268#3269#0" expanded="false" />
+            <element signature="e#3312#3313#0" expanded="false" />
+            <element signature="e#3379#3380#0" expanded="false" />
+            <element signature="e#3427#3428#0" expanded="false" />
+            <element signature="e#3481#3482#0" expanded="false" />
+            <element signature="e#3519#3520#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../test/test/src/com/mff/test/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="17" column="43" lean-forward="false" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/Task/CleanRoomTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="96" column="20" lean-forward="true" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
+        <state relative-caret-position="189">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

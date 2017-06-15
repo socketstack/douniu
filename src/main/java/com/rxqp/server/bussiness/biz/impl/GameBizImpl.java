@@ -119,10 +119,7 @@ public class GameBizImpl implements IGameBiz {
 		postDealResp.addAllPokers(pokerIds);
 		postDealResp.setPlayedGames(room.getPlayedGames());
 		postDealResp.setTotalGames(room.getTotalGames());
-		if (player.getId().equals(room.getBankerId()))// 是否庄家
-			postDealResp.setIsBanker(true);
-		else
-			postDealResp.setIsBanker(false);
+		postDealResp.setBankerId(room.getBankerId());//设置庄家ID
 		messageInfo.setNnDealResp(postDealResp);
 
 		return messageInfo.build();

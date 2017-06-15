@@ -187,12 +187,6 @@ public class RoomBizImpl implements IRoomBiz {
 						MessageConstants.PLAYER_NO_LOGIN_MSG_1001);
 				return messageInfo;
 			}
-			if (player.getOnPlay()) {// 改玩家玩牌中
-				messageInfo = commonBiz.setMessageInfo(
-						MessageConstants.PLAYER_PLAYING_TYPE,
-						MessageConstants.PLAYER_PLAYING_MSG);
-				return messageInfo;
-			}
 			player.setRoomId(roomId);
 			player.setOnPlay(true);
 			player.setOrder(players.size() + 1);// 玩家按先后顺序第N位进入房间，方便前端安排座位顺序
@@ -456,6 +450,97 @@ public class RoomBizImpl implements IRoomBiz {
 		settlementInfo.addPlayers(bankerSettlement);
 		mi.setSettlementInfo(settlementInfo);
 		return mi;
+	}
+
+	@Override
+	public Builder reEntryRoom(MessageInfo messageInfoReq, ChannelHandlerContext ctx) {
+		MessageInfo.Builder messageInfo = MessageInfo.newBuilder();
+		messageInfo.setMessageId(MESSAGE_ID.msg_EntryNNRoomResp);
+
+		EntryNNRoomResp.Builder entryRoomResp = EntryNNRoomResp.newBuilder();
+
+		ReEntryNNRoomReq req = messageInfoReq.getReEntryNNRoomReq();
+		Integer roomId = req.getRoomId();
+		Room room = CommonData.getRoomByRoomId(roomId);
+		if (room == null) {
+			messageInfo = commonBiz.setMessageInfo(
+					MessageConstants.THE_ROOM_NO_EXTIST_ERROR_TYPE,
+					MessageConstants.THE_ROOM_NO_EXTIST_ERROR_MSG);
+			return messageInfo;
+		}
+		Integer playerId = req.getPlayerId();
+		List<Player> players;
+		players = room.getPlayers();
+		if (CollectionUtils.isEmpty(players)){
+			messageInfo = commonBiz.setMessageInfo(
+					MessageConstants.THE_ROOM_NO_EXTIST_PLAYER_TYPE,
+					MessageConstants.THE_ROOM_NO_EXTIST_PLAYER_MSG);
+			return messageInfo;
+		}
+		boolean isInTheRoom = false;
+		int onLineCnt = 0;//该房间在线人数
+		for (Player pl:players){
+			if(pl.getId().equals(playerId)){
+				isInTheRoom = true;//判断该玩家原来是否在该房间
+			}
+			if (pl.getOnline()){
+				onLineCnt++;
+			}
+		}
+		if (onLineCnt == players.size()){//如果所有玩家又重新就位，则第一位玩家离线时间重置，否则过二十分钟，该房间自动解散
+			room.setFirtPlayerOffLineTime(null);
+		}
+		if(!isInTheRoom){
+			messageInfo = commonBiz.setMessageInfo(
+					MessageConstants.ENTRY_ROOM_ERROR_TYPE_4004,
+					MessageConstants.ENTRY_ROOM_ERROR_MSG_4004);
+			return messageInfo;
+		}
+
+		Player player = CommonData.getPlayerById(playerId);
+		if (player == null || !player.getIsland()) {
+			messageInfo = commonBiz.setMessageInfo(
+					MessageConstants.PLAYER_NO_LOGIN_TYPE_1001,
+					MessageConstants.PLAYER_NO_LOGIN_MSG_1001);
+			return messageInfo;
+		}
+
+		if (!player.getIsland()) {// 该玩家未登陆
+			messageInfo = commonBiz.setMessageInfo(
+					MessageConstants.PLAYER_NO_LOGIN_TYPE_1001,
+					MessageConstants.PLAYER_NO_LOGIN_MSG_1001);
+			return messageInfo;
+		}
+		player.setRoomId(roomId);
+		player.setOnPlay(true);//游戏中
+		player.setOnline(true);//在线
+		CommonData.putPlayerIdToPlayer(playerId, player);
+		RoomInfo.Builder roomInfo = RoomInfo.newBuilder();
+		roomInfo.setRoomId(roomId);
+		roomInfo.addAllPlayers(BeanCopy.playersCopy(players));
+		roomInfo.setTotalGames(room.getTotalGames());
+		entryRoomResp.setRoomInfo(roomInfo);
+		entryRoomResp.setOrder(player.getOrder());
+		// 广播房间里其他玩家,离线玩家已经上线
+		for (Player py : players) {
+			if (py.getId().equals(playerId))// 自己不用通知
+				continue;
+			py.getChannel().writeAndFlush(setPostReEntryRoom(player));
+		}
+
+		messageInfo.setEntryNNRoomResp(entryRoomResp);
+		return messageInfo;
+	}
+
+	//广播通知其他玩家，离线玩家已经上线
+	private MessageInfo setPostReEntryRoom(Player player) {
+		MessageInfo.Builder builder = MessageInfo.newBuilder();
+		builder.setMessageId(MESSAGE_ID.msg_PostPlayerOnline);
+		PostPlayerOnline.Builder postPlayerOnline = PostPlayerOnline.newBuilder();
+		postPlayerOnline.setPlayerId(player.getId());
+		builder.setPostPlayerOnline(postPlayerOnline.build());
+
+		return builder.build();
 	}
 
 	/**

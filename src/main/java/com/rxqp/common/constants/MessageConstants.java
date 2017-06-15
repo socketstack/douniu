@@ -53,6 +53,9 @@ public class MessageConstants {
 	public static Integer THE_ROOM_NO_EXTIST_PLAYER_TYPE = 4003;
 	public static String THE_ROOM_NO_EXTIST_PLAYER_MSG = "该房间不存在玩家";
 
+	public static Integer ENTRY_ROOM_ERROR_TYPE_4004 = 4004;
+	public static String ENTRY_ROOM_ERROR_MSG_4004 = "进错房间!";
+
 	public static Integer BANKER_CARDS_ERROR_TYPE = 5001;
 	public static String BANKER_CARDS_ERROR_MSG = "庄家牌有误!";
 

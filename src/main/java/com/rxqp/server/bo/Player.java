@@ -18,6 +18,7 @@ public class Player implements Serializable {
 	private Socket socket;
 	private Boolean island = false;// 是否登录
 	private Boolean onPlay = false;// 是否正在玩牌中
+	private Boolean isOnline = false;//是否在线
 	private Integer groupId;
 	private Channel channel;
 	private Integer roomId;
@@ -192,6 +193,14 @@ public class Player implements Serializable {
 
 	public void setNntype(NNType nntype) {
 		this.nntype = nntype;
+	}
+
+	public Boolean getOnline() {
+		return isOnline;
+	}
+
+	public void setOnline(Boolean online) {
+		isOnline = online;
 	}
 
 	public boolean equals(Player player) {

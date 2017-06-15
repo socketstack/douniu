@@ -207,8 +207,36 @@ public final class DdzProto {
     msg_PostSendSoundResp(45, 46),
     /**
      * <code>msg_SignOutReq = 47;</code>
+     *
+     * <pre>
+     * 退出游戏
+     * </pre>
      */
     msg_SignOutReq(46, 47),
+    /**
+     * <code>msg_ReEntryNNRoomReq = 48;</code>
+     *
+     * <pre>
+     *客户端异常退出后，再进入之前游戏房间请求
+     * </pre>
+     */
+    msg_ReEntryNNRoomReq(47, 48),
+    /**
+     * <code>msg_PostUnusualQuit = 49;</code>
+     */
+    msg_PostUnusualQuit(48, 49),
+    /**
+     * <code>msg_PostPlayerOnline = 50;</code>
+     *
+     * <pre>
+     * 断线重连后，广播上线消息给房间其他玩家
+     * </pre>
+     */
+    msg_PostPlayerOnline(49, 50),
+    /**
+     * <code>msg_PostPlayerOffline = 51;</code>
+     */
+    msg_PostPlayerOffline(50, 51),
     ;
 
     /**
@@ -405,8 +433,36 @@ public final class DdzProto {
     public static final int msg_PostSendSoundResp_VALUE = 46;
     /**
      * <code>msg_SignOutReq = 47;</code>
+     *
+     * <pre>
+     * 退出游戏
+     * </pre>
      */
     public static final int msg_SignOutReq_VALUE = 47;
+    /**
+     * <code>msg_ReEntryNNRoomReq = 48;</code>
+     *
+     * <pre>
+     *客户端异常退出后，再进入之前游戏房间请求
+     * </pre>
+     */
+    public static final int msg_ReEntryNNRoomReq_VALUE = 48;
+    /**
+     * <code>msg_PostUnusualQuit = 49;</code>
+     */
+    public static final int msg_PostUnusualQuit_VALUE = 49;
+    /**
+     * <code>msg_PostPlayerOnline = 50;</code>
+     *
+     * <pre>
+     * 断线重连后，广播上线消息给房间其他玩家
+     * </pre>
+     */
+    public static final int msg_PostPlayerOnline_VALUE = 50;
+    /**
+     * <code>msg_PostPlayerOffline = 51;</code>
+     */
+    public static final int msg_PostPlayerOffline_VALUE = 51;
 
 
     public final int getNumber() { return value; }
@@ -460,6 +516,10 @@ public final class DdzProto {
         case 45: return msg_SendSoundReq;
         case 46: return msg_PostSendSoundResp;
         case 47: return msg_SignOutReq;
+        case 48: return msg_ReEntryNNRoomReq;
+        case 49: return msg_PostUnusualQuit;
+        case 50: return msg_PostPlayerOnline;
+        case 51: return msg_PostPlayerOffline;
         default: return null;
       }
     }
@@ -811,6 +871,178 @@ public final class DdzProto {
     }
 
     // @@protoc_insertion_point(enum_scope:netty.NNType)
+  }
+
+  /**
+   * Protobuf enum {@code netty.OfflineStatus}
+   *
+   * <pre>
+   *---------------------------------
+   * 断线重连进入游戏后，状态
+   *---------------------------------
+   * </pre>
+   */
+  public enum OfflineStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>STATUS_CREATE_ROOM = 0;</code>
+     *
+     * <pre>
+     * 创建房间
+     * </pre>
+     */
+    STATUS_CREATE_ROOM(0, 0),
+    /**
+     * <code>STATUS_ENTER_ROOM = 1;</code>
+     *
+     * <pre>
+     * 进入房间
+     * </pre>
+     */
+    STATUS_ENTER_ROOM(1, 1),
+    /**
+     * <code>STATUS_BEGIN_PREPARE = 2;</code>
+     *
+     * <pre>
+     * 进入准备状态
+     * </pre>
+     */
+    STATUS_BEGIN_PREPARE(2, 2),
+    /**
+     * <code>STATUS_FINISH_PREPARE = 3;</code>
+     *
+     * <pre>
+     * 准备完毕自动发牌
+     * </pre>
+     */
+    STATUS_FINISH_PREPARE(3, 3),
+    /**
+     * <code>STATUS_BEGIN_STAKE = 4;</code>
+     *
+     * <pre>
+     * 准备下注
+     * </pre>
+     */
+    STATUS_BEGIN_STAKE(4, 4),
+    /**
+     * <code>STATUS_BEGIN_SHOWCARDS = 5;</code>
+     *
+     * <pre>
+     * 准备开牌
+     * </pre>
+     */
+    STATUS_BEGIN_SHOWCARDS(5, 5),
+    ;
+
+    /**
+     * <code>STATUS_CREATE_ROOM = 0;</code>
+     *
+     * <pre>
+     * 创建房间
+     * </pre>
+     */
+    public static final int STATUS_CREATE_ROOM_VALUE = 0;
+    /**
+     * <code>STATUS_ENTER_ROOM = 1;</code>
+     *
+     * <pre>
+     * 进入房间
+     * </pre>
+     */
+    public static final int STATUS_ENTER_ROOM_VALUE = 1;
+    /**
+     * <code>STATUS_BEGIN_PREPARE = 2;</code>
+     *
+     * <pre>
+     * 进入准备状态
+     * </pre>
+     */
+    public static final int STATUS_BEGIN_PREPARE_VALUE = 2;
+    /**
+     * <code>STATUS_FINISH_PREPARE = 3;</code>
+     *
+     * <pre>
+     * 准备完毕自动发牌
+     * </pre>
+     */
+    public static final int STATUS_FINISH_PREPARE_VALUE = 3;
+    /**
+     * <code>STATUS_BEGIN_STAKE = 4;</code>
+     *
+     * <pre>
+     * 准备下注
+     * </pre>
+     */
+    public static final int STATUS_BEGIN_STAKE_VALUE = 4;
+    /**
+     * <code>STATUS_BEGIN_SHOWCARDS = 5;</code>
+     *
+     * <pre>
+     * 准备开牌
+     * </pre>
+     */
+    public static final int STATUS_BEGIN_SHOWCARDS_VALUE = 5;
+
+
+    public final int getNumber() { return value; }
+
+    public static OfflineStatus valueOf(int value) {
+      switch (value) {
+        case 0: return STATUS_CREATE_ROOM;
+        case 1: return STATUS_ENTER_ROOM;
+        case 2: return STATUS_BEGIN_PREPARE;
+        case 3: return STATUS_FINISH_PREPARE;
+        case 4: return STATUS_BEGIN_STAKE;
+        case 5: return STATUS_BEGIN_SHOWCARDS;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OfflineStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<OfflineStatus>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<OfflineStatus>() {
+            public OfflineStatus findValueByNumber(int number) {
+              return OfflineStatus.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.rxqp.protobuf.DdzProto.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final OfflineStatus[] VALUES = values();
+
+    public static OfflineStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private OfflineStatus(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:netty.OfflineStatus)
   }
 
   public interface MessageInfoOrBuilder
@@ -1497,16 +1729,84 @@ public final class DdzProto {
     // optional .netty.SignOutReq signOutReq = 48;
     /**
      * <code>optional .netty.SignOutReq signOutReq = 48;</code>
+     *
+     * <pre>
+     * 退出游戏
+     * </pre>
      */
     boolean hasSignOutReq();
     /**
      * <code>optional .netty.SignOutReq signOutReq = 48;</code>
+     *
+     * <pre>
+     * 退出游戏
+     * </pre>
      */
     com.rxqp.protobuf.DdzProto.SignOutReq getSignOutReq();
     /**
      * <code>optional .netty.SignOutReq signOutReq = 48;</code>
+     *
+     * <pre>
+     * 退出游戏
+     * </pre>
      */
     com.rxqp.protobuf.DdzProto.SignOutReqOrBuilder getSignOutReqOrBuilder();
+
+    // optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;
+    /**
+     * <code>optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;</code>
+     */
+    boolean hasReEntryNNRoomReq();
+    /**
+     * <code>optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;</code>
+     */
+    com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq getReEntryNNRoomReq();
+    /**
+     * <code>optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;</code>
+     */
+    com.rxqp.protobuf.DdzProto.ReEntryNNRoomReqOrBuilder getReEntryNNRoomReqOrBuilder();
+
+    // optional .netty.PostUnusualQuit postUnusualQuit = 50;
+    /**
+     * <code>optional .netty.PostUnusualQuit postUnusualQuit = 50;</code>
+     */
+    boolean hasPostUnusualQuit();
+    /**
+     * <code>optional .netty.PostUnusualQuit postUnusualQuit = 50;</code>
+     */
+    com.rxqp.protobuf.DdzProto.PostUnusualQuit getPostUnusualQuit();
+    /**
+     * <code>optional .netty.PostUnusualQuit postUnusualQuit = 50;</code>
+     */
+    com.rxqp.protobuf.DdzProto.PostUnusualQuitOrBuilder getPostUnusualQuitOrBuilder();
+
+    // optional .netty.PostPlayerOnline postPlayerOnline = 51;
+    /**
+     * <code>optional .netty.PostPlayerOnline postPlayerOnline = 51;</code>
+     */
+    boolean hasPostPlayerOnline();
+    /**
+     * <code>optional .netty.PostPlayerOnline postPlayerOnline = 51;</code>
+     */
+    com.rxqp.protobuf.DdzProto.PostPlayerOnline getPostPlayerOnline();
+    /**
+     * <code>optional .netty.PostPlayerOnline postPlayerOnline = 51;</code>
+     */
+    com.rxqp.protobuf.DdzProto.PostPlayerOnlineOrBuilder getPostPlayerOnlineOrBuilder();
+
+    // optional .netty.PostPlayerOffline postPlayerOffline = 52;
+    /**
+     * <code>optional .netty.PostPlayerOffline postPlayerOffline = 52;</code>
+     */
+    boolean hasPostPlayerOffline();
+    /**
+     * <code>optional .netty.PostPlayerOffline postPlayerOffline = 52;</code>
+     */
+    com.rxqp.protobuf.DdzProto.PostPlayerOffline getPostPlayerOffline();
+    /**
+     * <code>optional .netty.PostPlayerOffline postPlayerOffline = 52;</code>
+     */
+    com.rxqp.protobuf.DdzProto.PostPlayerOfflineOrBuilder getPostPlayerOfflineOrBuilder();
   }
   /**
    * Protobuf type {@code netty.MessageInfo}
@@ -2180,6 +2480,58 @@ public final class DdzProto {
                 signOutReq_ = subBuilder.buildPartial();
               }
               bitField1_ |= 0x00008000;
+              break;
+            }
+            case 394: {
+              com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.Builder subBuilder = null;
+              if (((bitField1_ & 0x00010000) == 0x00010000)) {
+                subBuilder = reEntryNNRoomReq_.toBuilder();
+              }
+              reEntryNNRoomReq_ = input.readMessage(com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(reEntryNNRoomReq_);
+                reEntryNNRoomReq_ = subBuilder.buildPartial();
+              }
+              bitField1_ |= 0x00010000;
+              break;
+            }
+            case 402: {
+              com.rxqp.protobuf.DdzProto.PostUnusualQuit.Builder subBuilder = null;
+              if (((bitField1_ & 0x00020000) == 0x00020000)) {
+                subBuilder = postUnusualQuit_.toBuilder();
+              }
+              postUnusualQuit_ = input.readMessage(com.rxqp.protobuf.DdzProto.PostUnusualQuit.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(postUnusualQuit_);
+                postUnusualQuit_ = subBuilder.buildPartial();
+              }
+              bitField1_ |= 0x00020000;
+              break;
+            }
+            case 410: {
+              com.rxqp.protobuf.DdzProto.PostPlayerOnline.Builder subBuilder = null;
+              if (((bitField1_ & 0x00040000) == 0x00040000)) {
+                subBuilder = postPlayerOnline_.toBuilder();
+              }
+              postPlayerOnline_ = input.readMessage(com.rxqp.protobuf.DdzProto.PostPlayerOnline.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(postPlayerOnline_);
+                postPlayerOnline_ = subBuilder.buildPartial();
+              }
+              bitField1_ |= 0x00040000;
+              break;
+            }
+            case 418: {
+              com.rxqp.protobuf.DdzProto.PostPlayerOffline.Builder subBuilder = null;
+              if (((bitField1_ & 0x00080000) == 0x00080000)) {
+                subBuilder = postPlayerOffline_.toBuilder();
+              }
+              postPlayerOffline_ = input.readMessage(com.rxqp.protobuf.DdzProto.PostPlayerOffline.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(postPlayerOffline_);
+                postPlayerOffline_ = subBuilder.buildPartial();
+              }
+              bitField1_ |= 0x00080000;
               break;
             }
           }
@@ -3280,21 +3632,121 @@ public final class DdzProto {
     private com.rxqp.protobuf.DdzProto.SignOutReq signOutReq_;
     /**
      * <code>optional .netty.SignOutReq signOutReq = 48;</code>
+     *
+     * <pre>
+     * 退出游戏
+     * </pre>
      */
     public boolean hasSignOutReq() {
       return ((bitField1_ & 0x00008000) == 0x00008000);
     }
     /**
      * <code>optional .netty.SignOutReq signOutReq = 48;</code>
+     *
+     * <pre>
+     * 退出游戏
+     * </pre>
      */
     public com.rxqp.protobuf.DdzProto.SignOutReq getSignOutReq() {
       return signOutReq_;
     }
     /**
      * <code>optional .netty.SignOutReq signOutReq = 48;</code>
+     *
+     * <pre>
+     * 退出游戏
+     * </pre>
      */
     public com.rxqp.protobuf.DdzProto.SignOutReqOrBuilder getSignOutReqOrBuilder() {
       return signOutReq_;
+    }
+
+    // optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;
+    public static final int REENTRYNNROOMREQ_FIELD_NUMBER = 49;
+    private com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq reEntryNNRoomReq_;
+    /**
+     * <code>optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;</code>
+     */
+    public boolean hasReEntryNNRoomReq() {
+      return ((bitField1_ & 0x00010000) == 0x00010000);
+    }
+    /**
+     * <code>optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;</code>
+     */
+    public com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq getReEntryNNRoomReq() {
+      return reEntryNNRoomReq_;
+    }
+    /**
+     * <code>optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;</code>
+     */
+    public com.rxqp.protobuf.DdzProto.ReEntryNNRoomReqOrBuilder getReEntryNNRoomReqOrBuilder() {
+      return reEntryNNRoomReq_;
+    }
+
+    // optional .netty.PostUnusualQuit postUnusualQuit = 50;
+    public static final int POSTUNUSUALQUIT_FIELD_NUMBER = 50;
+    private com.rxqp.protobuf.DdzProto.PostUnusualQuit postUnusualQuit_;
+    /**
+     * <code>optional .netty.PostUnusualQuit postUnusualQuit = 50;</code>
+     */
+    public boolean hasPostUnusualQuit() {
+      return ((bitField1_ & 0x00020000) == 0x00020000);
+    }
+    /**
+     * <code>optional .netty.PostUnusualQuit postUnusualQuit = 50;</code>
+     */
+    public com.rxqp.protobuf.DdzProto.PostUnusualQuit getPostUnusualQuit() {
+      return postUnusualQuit_;
+    }
+    /**
+     * <code>optional .netty.PostUnusualQuit postUnusualQuit = 50;</code>
+     */
+    public com.rxqp.protobuf.DdzProto.PostUnusualQuitOrBuilder getPostUnusualQuitOrBuilder() {
+      return postUnusualQuit_;
+    }
+
+    // optional .netty.PostPlayerOnline postPlayerOnline = 51;
+    public static final int POSTPLAYERONLINE_FIELD_NUMBER = 51;
+    private com.rxqp.protobuf.DdzProto.PostPlayerOnline postPlayerOnline_;
+    /**
+     * <code>optional .netty.PostPlayerOnline postPlayerOnline = 51;</code>
+     */
+    public boolean hasPostPlayerOnline() {
+      return ((bitField1_ & 0x00040000) == 0x00040000);
+    }
+    /**
+     * <code>optional .netty.PostPlayerOnline postPlayerOnline = 51;</code>
+     */
+    public com.rxqp.protobuf.DdzProto.PostPlayerOnline getPostPlayerOnline() {
+      return postPlayerOnline_;
+    }
+    /**
+     * <code>optional .netty.PostPlayerOnline postPlayerOnline = 51;</code>
+     */
+    public com.rxqp.protobuf.DdzProto.PostPlayerOnlineOrBuilder getPostPlayerOnlineOrBuilder() {
+      return postPlayerOnline_;
+    }
+
+    // optional .netty.PostPlayerOffline postPlayerOffline = 52;
+    public static final int POSTPLAYEROFFLINE_FIELD_NUMBER = 52;
+    private com.rxqp.protobuf.DdzProto.PostPlayerOffline postPlayerOffline_;
+    /**
+     * <code>optional .netty.PostPlayerOffline postPlayerOffline = 52;</code>
+     */
+    public boolean hasPostPlayerOffline() {
+      return ((bitField1_ & 0x00080000) == 0x00080000);
+    }
+    /**
+     * <code>optional .netty.PostPlayerOffline postPlayerOffline = 52;</code>
+     */
+    public com.rxqp.protobuf.DdzProto.PostPlayerOffline getPostPlayerOffline() {
+      return postPlayerOffline_;
+    }
+    /**
+     * <code>optional .netty.PostPlayerOffline postPlayerOffline = 52;</code>
+     */
+    public com.rxqp.protobuf.DdzProto.PostPlayerOfflineOrBuilder getPostPlayerOfflineOrBuilder() {
+      return postPlayerOffline_;
     }
 
     private void initFields() {
@@ -3346,6 +3798,10 @@ public final class DdzProto {
       sendSoundReq_ = com.rxqp.protobuf.DdzProto.SendSoundReq.getDefaultInstance();
       postSendSoundResp_ = com.rxqp.protobuf.DdzProto.PostSendSoundResp.getDefaultInstance();
       signOutReq_ = com.rxqp.protobuf.DdzProto.SignOutReq.getDefaultInstance();
+      reEntryNNRoomReq_ = com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.getDefaultInstance();
+      postUnusualQuit_ = com.rxqp.protobuf.DdzProto.PostUnusualQuit.getDefaultInstance();
+      postPlayerOnline_ = com.rxqp.protobuf.DdzProto.PostPlayerOnline.getDefaultInstance();
+      postPlayerOffline_ = com.rxqp.protobuf.DdzProto.PostPlayerOffline.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3596,6 +4052,30 @@ public final class DdzProto {
           return false;
         }
       }
+      if (hasReEntryNNRoomReq()) {
+        if (!getReEntryNNRoomReq().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasPostUnusualQuit()) {
+        if (!getPostUnusualQuit().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasPostPlayerOnline()) {
+        if (!getPostPlayerOnline().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasPostPlayerOffline()) {
+        if (!getPostPlayerOffline().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -3746,6 +4226,18 @@ public final class DdzProto {
       }
       if (((bitField1_ & 0x00008000) == 0x00008000)) {
         output.writeMessage(48, signOutReq_);
+      }
+      if (((bitField1_ & 0x00010000) == 0x00010000)) {
+        output.writeMessage(49, reEntryNNRoomReq_);
+      }
+      if (((bitField1_ & 0x00020000) == 0x00020000)) {
+        output.writeMessage(50, postUnusualQuit_);
+      }
+      if (((bitField1_ & 0x00040000) == 0x00040000)) {
+        output.writeMessage(51, postPlayerOnline_);
+      }
+      if (((bitField1_ & 0x00080000) == 0x00080000)) {
+        output.writeMessage(52, postPlayerOffline_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3948,6 +4440,22 @@ public final class DdzProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(48, signOutReq_);
       }
+      if (((bitField1_ & 0x00010000) == 0x00010000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(49, reEntryNNRoomReq_);
+      }
+      if (((bitField1_ & 0x00020000) == 0x00020000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(50, postUnusualQuit_);
+      }
+      if (((bitField1_ & 0x00040000) == 0x00040000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(51, postPlayerOnline_);
+      }
+      if (((bitField1_ & 0x00080000) == 0x00080000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(52, postPlayerOffline_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -4103,6 +4611,10 @@ public final class DdzProto {
           getSendSoundReqFieldBuilder();
           getPostSendSoundRespFieldBuilder();
           getSignOutReqFieldBuilder();
+          getReEntryNNRoomReqFieldBuilder();
+          getPostUnusualQuitFieldBuilder();
+          getPostPlayerOnlineFieldBuilder();
+          getPostPlayerOfflineFieldBuilder();
         }
       }
       private static Builder create() {
@@ -4395,6 +4907,30 @@ public final class DdzProto {
           signOutReqBuilder_.clear();
         }
         bitField1_ = (bitField1_ & ~0x00008000);
+        if (reEntryNNRoomReqBuilder_ == null) {
+          reEntryNNRoomReq_ = com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.getDefaultInstance();
+        } else {
+          reEntryNNRoomReqBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00010000);
+        if (postUnusualQuitBuilder_ == null) {
+          postUnusualQuit_ = com.rxqp.protobuf.DdzProto.PostUnusualQuit.getDefaultInstance();
+        } else {
+          postUnusualQuitBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00020000);
+        if (postPlayerOnlineBuilder_ == null) {
+          postPlayerOnline_ = com.rxqp.protobuf.DdzProto.PostPlayerOnline.getDefaultInstance();
+        } else {
+          postPlayerOnlineBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00040000);
+        if (postPlayerOfflineBuilder_ == null) {
+          postPlayerOffline_ = com.rxqp.protobuf.DdzProto.PostPlayerOffline.getDefaultInstance();
+        } else {
+          postPlayerOfflineBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00080000);
         return this;
       }
 
@@ -4805,6 +5341,38 @@ public final class DdzProto {
         } else {
           result.signOutReq_ = signOutReqBuilder_.build();
         }
+        if (((from_bitField1_ & 0x00010000) == 0x00010000)) {
+          to_bitField1_ |= 0x00010000;
+        }
+        if (reEntryNNRoomReqBuilder_ == null) {
+          result.reEntryNNRoomReq_ = reEntryNNRoomReq_;
+        } else {
+          result.reEntryNNRoomReq_ = reEntryNNRoomReqBuilder_.build();
+        }
+        if (((from_bitField1_ & 0x00020000) == 0x00020000)) {
+          to_bitField1_ |= 0x00020000;
+        }
+        if (postUnusualQuitBuilder_ == null) {
+          result.postUnusualQuit_ = postUnusualQuit_;
+        } else {
+          result.postUnusualQuit_ = postUnusualQuitBuilder_.build();
+        }
+        if (((from_bitField1_ & 0x00040000) == 0x00040000)) {
+          to_bitField1_ |= 0x00040000;
+        }
+        if (postPlayerOnlineBuilder_ == null) {
+          result.postPlayerOnline_ = postPlayerOnline_;
+        } else {
+          result.postPlayerOnline_ = postPlayerOnlineBuilder_.build();
+        }
+        if (((from_bitField1_ & 0x00080000) == 0x00080000)) {
+          to_bitField1_ |= 0x00080000;
+        }
+        if (postPlayerOfflineBuilder_ == null) {
+          result.postPlayerOffline_ = postPlayerOffline_;
+        } else {
+          result.postPlayerOffline_ = postPlayerOfflineBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         result.bitField1_ = to_bitField1_;
         onBuilt();
@@ -4965,6 +5533,18 @@ public final class DdzProto {
         }
         if (other.hasSignOutReq()) {
           mergeSignOutReq(other.getSignOutReq());
+        }
+        if (other.hasReEntryNNRoomReq()) {
+          mergeReEntryNNRoomReq(other.getReEntryNNRoomReq());
+        }
+        if (other.hasPostUnusualQuit()) {
+          mergePostUnusualQuit(other.getPostUnusualQuit());
+        }
+        if (other.hasPostPlayerOnline()) {
+          mergePostPlayerOnline(other.getPostPlayerOnline());
+        }
+        if (other.hasPostPlayerOffline()) {
+          mergePostPlayerOffline(other.getPostPlayerOffline());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -5211,6 +5791,30 @@ public final class DdzProto {
         }
         if (hasSignOutReq()) {
           if (!getSignOutReq().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasReEntryNNRoomReq()) {
+          if (!getReEntryNNRoomReq().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasPostUnusualQuit()) {
+          if (!getPostUnusualQuit().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasPostPlayerOnline()) {
+          if (!getPostPlayerOnline().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasPostPlayerOffline()) {
+          if (!getPostPlayerOffline().isInitialized()) {
             
             return false;
           }
@@ -10734,12 +11338,20 @@ public final class DdzProto {
           com.rxqp.protobuf.DdzProto.SignOutReq, com.rxqp.protobuf.DdzProto.SignOutReq.Builder, com.rxqp.protobuf.DdzProto.SignOutReqOrBuilder> signOutReqBuilder_;
       /**
        * <code>optional .netty.SignOutReq signOutReq = 48;</code>
+       *
+       * <pre>
+       * 退出游戏
+       * </pre>
        */
       public boolean hasSignOutReq() {
         return ((bitField1_ & 0x00008000) == 0x00008000);
       }
       /**
        * <code>optional .netty.SignOutReq signOutReq = 48;</code>
+       *
+       * <pre>
+       * 退出游戏
+       * </pre>
        */
       public com.rxqp.protobuf.DdzProto.SignOutReq getSignOutReq() {
         if (signOutReqBuilder_ == null) {
@@ -10750,6 +11362,10 @@ public final class DdzProto {
       }
       /**
        * <code>optional .netty.SignOutReq signOutReq = 48;</code>
+       *
+       * <pre>
+       * 退出游戏
+       * </pre>
        */
       public Builder setSignOutReq(com.rxqp.protobuf.DdzProto.SignOutReq value) {
         if (signOutReqBuilder_ == null) {
@@ -10766,6 +11382,10 @@ public final class DdzProto {
       }
       /**
        * <code>optional .netty.SignOutReq signOutReq = 48;</code>
+       *
+       * <pre>
+       * 退出游戏
+       * </pre>
        */
       public Builder setSignOutReq(
           com.rxqp.protobuf.DdzProto.SignOutReq.Builder builderForValue) {
@@ -10780,6 +11400,10 @@ public final class DdzProto {
       }
       /**
        * <code>optional .netty.SignOutReq signOutReq = 48;</code>
+       *
+       * <pre>
+       * 退出游戏
+       * </pre>
        */
       public Builder mergeSignOutReq(com.rxqp.protobuf.DdzProto.SignOutReq value) {
         if (signOutReqBuilder_ == null) {
@@ -10799,6 +11423,10 @@ public final class DdzProto {
       }
       /**
        * <code>optional .netty.SignOutReq signOutReq = 48;</code>
+       *
+       * <pre>
+       * 退出游戏
+       * </pre>
        */
       public Builder clearSignOutReq() {
         if (signOutReqBuilder_ == null) {
@@ -10812,6 +11440,10 @@ public final class DdzProto {
       }
       /**
        * <code>optional .netty.SignOutReq signOutReq = 48;</code>
+       *
+       * <pre>
+       * 退出游戏
+       * </pre>
        */
       public com.rxqp.protobuf.DdzProto.SignOutReq.Builder getSignOutReqBuilder() {
         bitField1_ |= 0x00008000;
@@ -10820,6 +11452,10 @@ public final class DdzProto {
       }
       /**
        * <code>optional .netty.SignOutReq signOutReq = 48;</code>
+       *
+       * <pre>
+       * 退出游戏
+       * </pre>
        */
       public com.rxqp.protobuf.DdzProto.SignOutReqOrBuilder getSignOutReqOrBuilder() {
         if (signOutReqBuilder_ != null) {
@@ -10830,6 +11466,10 @@ public final class DdzProto {
       }
       /**
        * <code>optional .netty.SignOutReq signOutReq = 48;</code>
+       *
+       * <pre>
+       * 退出游戏
+       * </pre>
        */
       private com.google.protobuf.SingleFieldBuilder<
           com.rxqp.protobuf.DdzProto.SignOutReq, com.rxqp.protobuf.DdzProto.SignOutReq.Builder, com.rxqp.protobuf.DdzProto.SignOutReqOrBuilder> 
@@ -10843,6 +11483,474 @@ public final class DdzProto {
           signOutReq_ = null;
         }
         return signOutReqBuilder_;
+      }
+
+      // optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;
+      private com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq reEntryNNRoomReq_ = com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq, com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.Builder, com.rxqp.protobuf.DdzProto.ReEntryNNRoomReqOrBuilder> reEntryNNRoomReqBuilder_;
+      /**
+       * <code>optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;</code>
+       */
+      public boolean hasReEntryNNRoomReq() {
+        return ((bitField1_ & 0x00010000) == 0x00010000);
+      }
+      /**
+       * <code>optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq getReEntryNNRoomReq() {
+        if (reEntryNNRoomReqBuilder_ == null) {
+          return reEntryNNRoomReq_;
+        } else {
+          return reEntryNNRoomReqBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;</code>
+       */
+      public Builder setReEntryNNRoomReq(com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq value) {
+        if (reEntryNNRoomReqBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reEntryNNRoomReq_ = value;
+          onChanged();
+        } else {
+          reEntryNNRoomReqBuilder_.setMessage(value);
+        }
+        bitField1_ |= 0x00010000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;</code>
+       */
+      public Builder setReEntryNNRoomReq(
+          com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.Builder builderForValue) {
+        if (reEntryNNRoomReqBuilder_ == null) {
+          reEntryNNRoomReq_ = builderForValue.build();
+          onChanged();
+        } else {
+          reEntryNNRoomReqBuilder_.setMessage(builderForValue.build());
+        }
+        bitField1_ |= 0x00010000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;</code>
+       */
+      public Builder mergeReEntryNNRoomReq(com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq value) {
+        if (reEntryNNRoomReqBuilder_ == null) {
+          if (((bitField1_ & 0x00010000) == 0x00010000) &&
+              reEntryNNRoomReq_ != com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.getDefaultInstance()) {
+            reEntryNNRoomReq_ =
+              com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.newBuilder(reEntryNNRoomReq_).mergeFrom(value).buildPartial();
+          } else {
+            reEntryNNRoomReq_ = value;
+          }
+          onChanged();
+        } else {
+          reEntryNNRoomReqBuilder_.mergeFrom(value);
+        }
+        bitField1_ |= 0x00010000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;</code>
+       */
+      public Builder clearReEntryNNRoomReq() {
+        if (reEntryNNRoomReqBuilder_ == null) {
+          reEntryNNRoomReq_ = com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.getDefaultInstance();
+          onChanged();
+        } else {
+          reEntryNNRoomReqBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00010000);
+        return this;
+      }
+      /**
+       * <code>optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.Builder getReEntryNNRoomReqBuilder() {
+        bitField1_ |= 0x00010000;
+        onChanged();
+        return getReEntryNNRoomReqFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.ReEntryNNRoomReqOrBuilder getReEntryNNRoomReqOrBuilder() {
+        if (reEntryNNRoomReqBuilder_ != null) {
+          return reEntryNNRoomReqBuilder_.getMessageOrBuilder();
+        } else {
+          return reEntryNNRoomReq_;
+        }
+      }
+      /**
+       * <code>optional .netty.ReEntryNNRoomReq reEntryNNRoomReq = 49;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq, com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.Builder, com.rxqp.protobuf.DdzProto.ReEntryNNRoomReqOrBuilder> 
+          getReEntryNNRoomReqFieldBuilder() {
+        if (reEntryNNRoomReqBuilder_ == null) {
+          reEntryNNRoomReqBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq, com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.Builder, com.rxqp.protobuf.DdzProto.ReEntryNNRoomReqOrBuilder>(
+                  reEntryNNRoomReq_,
+                  getParentForChildren(),
+                  isClean());
+          reEntryNNRoomReq_ = null;
+        }
+        return reEntryNNRoomReqBuilder_;
+      }
+
+      // optional .netty.PostUnusualQuit postUnusualQuit = 50;
+      private com.rxqp.protobuf.DdzProto.PostUnusualQuit postUnusualQuit_ = com.rxqp.protobuf.DdzProto.PostUnusualQuit.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.protobuf.DdzProto.PostUnusualQuit, com.rxqp.protobuf.DdzProto.PostUnusualQuit.Builder, com.rxqp.protobuf.DdzProto.PostUnusualQuitOrBuilder> postUnusualQuitBuilder_;
+      /**
+       * <code>optional .netty.PostUnusualQuit postUnusualQuit = 50;</code>
+       */
+      public boolean hasPostUnusualQuit() {
+        return ((bitField1_ & 0x00020000) == 0x00020000);
+      }
+      /**
+       * <code>optional .netty.PostUnusualQuit postUnusualQuit = 50;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.PostUnusualQuit getPostUnusualQuit() {
+        if (postUnusualQuitBuilder_ == null) {
+          return postUnusualQuit_;
+        } else {
+          return postUnusualQuitBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .netty.PostUnusualQuit postUnusualQuit = 50;</code>
+       */
+      public Builder setPostUnusualQuit(com.rxqp.protobuf.DdzProto.PostUnusualQuit value) {
+        if (postUnusualQuitBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          postUnusualQuit_ = value;
+          onChanged();
+        } else {
+          postUnusualQuitBuilder_.setMessage(value);
+        }
+        bitField1_ |= 0x00020000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostUnusualQuit postUnusualQuit = 50;</code>
+       */
+      public Builder setPostUnusualQuit(
+          com.rxqp.protobuf.DdzProto.PostUnusualQuit.Builder builderForValue) {
+        if (postUnusualQuitBuilder_ == null) {
+          postUnusualQuit_ = builderForValue.build();
+          onChanged();
+        } else {
+          postUnusualQuitBuilder_.setMessage(builderForValue.build());
+        }
+        bitField1_ |= 0x00020000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostUnusualQuit postUnusualQuit = 50;</code>
+       */
+      public Builder mergePostUnusualQuit(com.rxqp.protobuf.DdzProto.PostUnusualQuit value) {
+        if (postUnusualQuitBuilder_ == null) {
+          if (((bitField1_ & 0x00020000) == 0x00020000) &&
+              postUnusualQuit_ != com.rxqp.protobuf.DdzProto.PostUnusualQuit.getDefaultInstance()) {
+            postUnusualQuit_ =
+              com.rxqp.protobuf.DdzProto.PostUnusualQuit.newBuilder(postUnusualQuit_).mergeFrom(value).buildPartial();
+          } else {
+            postUnusualQuit_ = value;
+          }
+          onChanged();
+        } else {
+          postUnusualQuitBuilder_.mergeFrom(value);
+        }
+        bitField1_ |= 0x00020000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostUnusualQuit postUnusualQuit = 50;</code>
+       */
+      public Builder clearPostUnusualQuit() {
+        if (postUnusualQuitBuilder_ == null) {
+          postUnusualQuit_ = com.rxqp.protobuf.DdzProto.PostUnusualQuit.getDefaultInstance();
+          onChanged();
+        } else {
+          postUnusualQuitBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00020000);
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostUnusualQuit postUnusualQuit = 50;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.PostUnusualQuit.Builder getPostUnusualQuitBuilder() {
+        bitField1_ |= 0x00020000;
+        onChanged();
+        return getPostUnusualQuitFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .netty.PostUnusualQuit postUnusualQuit = 50;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.PostUnusualQuitOrBuilder getPostUnusualQuitOrBuilder() {
+        if (postUnusualQuitBuilder_ != null) {
+          return postUnusualQuitBuilder_.getMessageOrBuilder();
+        } else {
+          return postUnusualQuit_;
+        }
+      }
+      /**
+       * <code>optional .netty.PostUnusualQuit postUnusualQuit = 50;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.protobuf.DdzProto.PostUnusualQuit, com.rxqp.protobuf.DdzProto.PostUnusualQuit.Builder, com.rxqp.protobuf.DdzProto.PostUnusualQuitOrBuilder> 
+          getPostUnusualQuitFieldBuilder() {
+        if (postUnusualQuitBuilder_ == null) {
+          postUnusualQuitBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.rxqp.protobuf.DdzProto.PostUnusualQuit, com.rxqp.protobuf.DdzProto.PostUnusualQuit.Builder, com.rxqp.protobuf.DdzProto.PostUnusualQuitOrBuilder>(
+                  postUnusualQuit_,
+                  getParentForChildren(),
+                  isClean());
+          postUnusualQuit_ = null;
+        }
+        return postUnusualQuitBuilder_;
+      }
+
+      // optional .netty.PostPlayerOnline postPlayerOnline = 51;
+      private com.rxqp.protobuf.DdzProto.PostPlayerOnline postPlayerOnline_ = com.rxqp.protobuf.DdzProto.PostPlayerOnline.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.protobuf.DdzProto.PostPlayerOnline, com.rxqp.protobuf.DdzProto.PostPlayerOnline.Builder, com.rxqp.protobuf.DdzProto.PostPlayerOnlineOrBuilder> postPlayerOnlineBuilder_;
+      /**
+       * <code>optional .netty.PostPlayerOnline postPlayerOnline = 51;</code>
+       */
+      public boolean hasPostPlayerOnline() {
+        return ((bitField1_ & 0x00040000) == 0x00040000);
+      }
+      /**
+       * <code>optional .netty.PostPlayerOnline postPlayerOnline = 51;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.PostPlayerOnline getPostPlayerOnline() {
+        if (postPlayerOnlineBuilder_ == null) {
+          return postPlayerOnline_;
+        } else {
+          return postPlayerOnlineBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .netty.PostPlayerOnline postPlayerOnline = 51;</code>
+       */
+      public Builder setPostPlayerOnline(com.rxqp.protobuf.DdzProto.PostPlayerOnline value) {
+        if (postPlayerOnlineBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          postPlayerOnline_ = value;
+          onChanged();
+        } else {
+          postPlayerOnlineBuilder_.setMessage(value);
+        }
+        bitField1_ |= 0x00040000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostPlayerOnline postPlayerOnline = 51;</code>
+       */
+      public Builder setPostPlayerOnline(
+          com.rxqp.protobuf.DdzProto.PostPlayerOnline.Builder builderForValue) {
+        if (postPlayerOnlineBuilder_ == null) {
+          postPlayerOnline_ = builderForValue.build();
+          onChanged();
+        } else {
+          postPlayerOnlineBuilder_.setMessage(builderForValue.build());
+        }
+        bitField1_ |= 0x00040000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostPlayerOnline postPlayerOnline = 51;</code>
+       */
+      public Builder mergePostPlayerOnline(com.rxqp.protobuf.DdzProto.PostPlayerOnline value) {
+        if (postPlayerOnlineBuilder_ == null) {
+          if (((bitField1_ & 0x00040000) == 0x00040000) &&
+              postPlayerOnline_ != com.rxqp.protobuf.DdzProto.PostPlayerOnline.getDefaultInstance()) {
+            postPlayerOnline_ =
+              com.rxqp.protobuf.DdzProto.PostPlayerOnline.newBuilder(postPlayerOnline_).mergeFrom(value).buildPartial();
+          } else {
+            postPlayerOnline_ = value;
+          }
+          onChanged();
+        } else {
+          postPlayerOnlineBuilder_.mergeFrom(value);
+        }
+        bitField1_ |= 0x00040000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostPlayerOnline postPlayerOnline = 51;</code>
+       */
+      public Builder clearPostPlayerOnline() {
+        if (postPlayerOnlineBuilder_ == null) {
+          postPlayerOnline_ = com.rxqp.protobuf.DdzProto.PostPlayerOnline.getDefaultInstance();
+          onChanged();
+        } else {
+          postPlayerOnlineBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00040000);
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostPlayerOnline postPlayerOnline = 51;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.PostPlayerOnline.Builder getPostPlayerOnlineBuilder() {
+        bitField1_ |= 0x00040000;
+        onChanged();
+        return getPostPlayerOnlineFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .netty.PostPlayerOnline postPlayerOnline = 51;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.PostPlayerOnlineOrBuilder getPostPlayerOnlineOrBuilder() {
+        if (postPlayerOnlineBuilder_ != null) {
+          return postPlayerOnlineBuilder_.getMessageOrBuilder();
+        } else {
+          return postPlayerOnline_;
+        }
+      }
+      /**
+       * <code>optional .netty.PostPlayerOnline postPlayerOnline = 51;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.protobuf.DdzProto.PostPlayerOnline, com.rxqp.protobuf.DdzProto.PostPlayerOnline.Builder, com.rxqp.protobuf.DdzProto.PostPlayerOnlineOrBuilder> 
+          getPostPlayerOnlineFieldBuilder() {
+        if (postPlayerOnlineBuilder_ == null) {
+          postPlayerOnlineBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.rxqp.protobuf.DdzProto.PostPlayerOnline, com.rxqp.protobuf.DdzProto.PostPlayerOnline.Builder, com.rxqp.protobuf.DdzProto.PostPlayerOnlineOrBuilder>(
+                  postPlayerOnline_,
+                  getParentForChildren(),
+                  isClean());
+          postPlayerOnline_ = null;
+        }
+        return postPlayerOnlineBuilder_;
+      }
+
+      // optional .netty.PostPlayerOffline postPlayerOffline = 52;
+      private com.rxqp.protobuf.DdzProto.PostPlayerOffline postPlayerOffline_ = com.rxqp.protobuf.DdzProto.PostPlayerOffline.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.protobuf.DdzProto.PostPlayerOffline, com.rxqp.protobuf.DdzProto.PostPlayerOffline.Builder, com.rxqp.protobuf.DdzProto.PostPlayerOfflineOrBuilder> postPlayerOfflineBuilder_;
+      /**
+       * <code>optional .netty.PostPlayerOffline postPlayerOffline = 52;</code>
+       */
+      public boolean hasPostPlayerOffline() {
+        return ((bitField1_ & 0x00080000) == 0x00080000);
+      }
+      /**
+       * <code>optional .netty.PostPlayerOffline postPlayerOffline = 52;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.PostPlayerOffline getPostPlayerOffline() {
+        if (postPlayerOfflineBuilder_ == null) {
+          return postPlayerOffline_;
+        } else {
+          return postPlayerOfflineBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .netty.PostPlayerOffline postPlayerOffline = 52;</code>
+       */
+      public Builder setPostPlayerOffline(com.rxqp.protobuf.DdzProto.PostPlayerOffline value) {
+        if (postPlayerOfflineBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          postPlayerOffline_ = value;
+          onChanged();
+        } else {
+          postPlayerOfflineBuilder_.setMessage(value);
+        }
+        bitField1_ |= 0x00080000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostPlayerOffline postPlayerOffline = 52;</code>
+       */
+      public Builder setPostPlayerOffline(
+          com.rxqp.protobuf.DdzProto.PostPlayerOffline.Builder builderForValue) {
+        if (postPlayerOfflineBuilder_ == null) {
+          postPlayerOffline_ = builderForValue.build();
+          onChanged();
+        } else {
+          postPlayerOfflineBuilder_.setMessage(builderForValue.build());
+        }
+        bitField1_ |= 0x00080000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostPlayerOffline postPlayerOffline = 52;</code>
+       */
+      public Builder mergePostPlayerOffline(com.rxqp.protobuf.DdzProto.PostPlayerOffline value) {
+        if (postPlayerOfflineBuilder_ == null) {
+          if (((bitField1_ & 0x00080000) == 0x00080000) &&
+              postPlayerOffline_ != com.rxqp.protobuf.DdzProto.PostPlayerOffline.getDefaultInstance()) {
+            postPlayerOffline_ =
+              com.rxqp.protobuf.DdzProto.PostPlayerOffline.newBuilder(postPlayerOffline_).mergeFrom(value).buildPartial();
+          } else {
+            postPlayerOffline_ = value;
+          }
+          onChanged();
+        } else {
+          postPlayerOfflineBuilder_.mergeFrom(value);
+        }
+        bitField1_ |= 0x00080000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostPlayerOffline postPlayerOffline = 52;</code>
+       */
+      public Builder clearPostPlayerOffline() {
+        if (postPlayerOfflineBuilder_ == null) {
+          postPlayerOffline_ = com.rxqp.protobuf.DdzProto.PostPlayerOffline.getDefaultInstance();
+          onChanged();
+        } else {
+          postPlayerOfflineBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00080000);
+        return this;
+      }
+      /**
+       * <code>optional .netty.PostPlayerOffline postPlayerOffline = 52;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.PostPlayerOffline.Builder getPostPlayerOfflineBuilder() {
+        bitField1_ |= 0x00080000;
+        onChanged();
+        return getPostPlayerOfflineFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .netty.PostPlayerOffline postPlayerOffline = 52;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.PostPlayerOfflineOrBuilder getPostPlayerOfflineOrBuilder() {
+        if (postPlayerOfflineBuilder_ != null) {
+          return postPlayerOfflineBuilder_.getMessageOrBuilder();
+        } else {
+          return postPlayerOffline_;
+        }
+      }
+      /**
+       * <code>optional .netty.PostPlayerOffline postPlayerOffline = 52;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.protobuf.DdzProto.PostPlayerOffline, com.rxqp.protobuf.DdzProto.PostPlayerOffline.Builder, com.rxqp.protobuf.DdzProto.PostPlayerOfflineOrBuilder> 
+          getPostPlayerOfflineFieldBuilder() {
+        if (postPlayerOfflineBuilder_ == null) {
+          postPlayerOfflineBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.rxqp.protobuf.DdzProto.PostPlayerOffline, com.rxqp.protobuf.DdzProto.PostPlayerOffline.Builder, com.rxqp.protobuf.DdzProto.PostPlayerOfflineOrBuilder>(
+                  postPlayerOffline_,
+                  getParentForChildren(),
+                  isClean());
+          postPlayerOffline_ = null;
+        }
+        return postPlayerOfflineBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:netty.MessageInfo)
@@ -10859,32 +11967,32 @@ public final class DdzProto {
   public interface LoginReqOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
-    // required string token = 1;
+    // required string code = 1;
     /**
-     * <code>required string token = 1;</code>
+     * <code>required string code = 1;</code>
      *
      * <pre>
-     * 微信授权得到的token
+     * 微信授权得到的code
      * </pre>
      */
-    boolean hasToken();
+    boolean hasCode();
     /**
-     * <code>required string token = 1;</code>
+     * <code>required string code = 1;</code>
      *
      * <pre>
-     * 微信授权得到的token
+     * 微信授权得到的code
      * </pre>
      */
-    java.lang.String getToken();
+    java.lang.String getCode();
     /**
-     * <code>required string token = 1;</code>
+     * <code>required string code = 1;</code>
      *
      * <pre>
-     * 微信授权得到的token
+     * 微信授权得到的code
      * </pre>
      */
     com.google.protobuf.ByteString
-        getTokenBytes();
+        getCodeBytes();
 
     // optional int32 playerid = 2;
     /**
@@ -10961,7 +12069,7 @@ public final class DdzProto {
             }
             case 10: {
               bitField0_ |= 0x00000001;
-              token_ = input.readBytes();
+              code_ = input.readBytes();
               break;
             }
             case 16: {
@@ -11009,28 +12117,28 @@ public final class DdzProto {
     }
 
     private int bitField0_;
-    // required string token = 1;
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private java.lang.Object token_;
+    // required string code = 1;
+    public static final int CODE_FIELD_NUMBER = 1;
+    private java.lang.Object code_;
     /**
-     * <code>required string token = 1;</code>
+     * <code>required string code = 1;</code>
      *
      * <pre>
-     * 微信授权得到的token
+     * 微信授权得到的code
      * </pre>
      */
-    public boolean hasToken() {
+    public boolean hasCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required string token = 1;</code>
+     * <code>required string code = 1;</code>
      *
      * <pre>
-     * 微信授权得到的token
+     * 微信授权得到的code
      * </pre>
      */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
+    public java.lang.String getCode() {
+      java.lang.Object ref = code_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -11038,26 +12146,26 @@ public final class DdzProto {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          token_ = s;
+          code_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>required string token = 1;</code>
+     * <code>required string code = 1;</code>
      *
      * <pre>
-     * 微信授权得到的token
+     * 微信授权得到的code
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
+        getCodeBytes() {
+      java.lang.Object ref = code_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        token_ = b;
+        code_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -11089,7 +12197,7 @@ public final class DdzProto {
     }
 
     private void initFields() {
-      token_ = "";
+      code_ = "";
       playerid_ = 0;
     }
     private byte memoizedIsInitialized = -1;
@@ -11097,7 +12205,7 @@ public final class DdzProto {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
 
-      if (!hasToken()) {
+      if (!hasCode()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -11109,7 +12217,7 @@ public final class DdzProto {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getTokenBytes());
+        output.writeBytes(1, getCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(2, playerid_);
@@ -11125,7 +12233,7 @@ public final class DdzProto {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getTokenBytes());
+          .computeBytesSize(1, getCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -11251,7 +12359,7 @@ public final class DdzProto {
 
       public Builder clear() {
         super.clear();
-        token_ = "";
+        code_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
         playerid_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -11286,7 +12394,7 @@ public final class DdzProto {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.token_ = token_;
+        result.code_ = code_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
@@ -11307,9 +12415,9 @@ public final class DdzProto {
 
       public Builder mergeFrom(com.rxqp.protobuf.DdzProto.LoginReq other) {
         if (other == com.rxqp.protobuf.DdzProto.LoginReq.getDefaultInstance()) return this;
-        if (other.hasToken()) {
+        if (other.hasCode()) {
           bitField0_ |= 0x00000001;
-          token_ = other.token_;
+          code_ = other.code_;
           onChanged();
         }
         if (other.hasPlayerid()) {
@@ -11320,7 +12428,7 @@ public final class DdzProto {
       }
 
       public final boolean isInitialized() {
-        if (!hasToken()) {
+        if (!hasCode()) {
           
           return false;
         }
@@ -11346,100 +12454,100 @@ public final class DdzProto {
       }
       private int bitField0_;
 
-      // required string token = 1;
-      private java.lang.Object token_ = "";
+      // required string code = 1;
+      private java.lang.Object code_ = "";
       /**
-       * <code>required string token = 1;</code>
+       * <code>required string code = 1;</code>
        *
        * <pre>
-       * 微信授权得到的token
+       * 微信授权得到的code
        * </pre>
        */
-      public boolean hasToken() {
+      public boolean hasCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required string token = 1;</code>
+       * <code>required string code = 1;</code>
        *
        * <pre>
-       * 微信授权得到的token
+       * 微信授权得到的code
        * </pre>
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
+      public java.lang.String getCode() {
+        java.lang.Object ref = code_;
         if (!(ref instanceof java.lang.String)) {
           java.lang.String s = ((com.google.protobuf.ByteString) ref)
               .toStringUtf8();
-          token_ = s;
+          code_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>required string token = 1;</code>
+       * <code>required string code = 1;</code>
        *
        * <pre>
-       * 微信授权得到的token
+       * 微信授权得到的code
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
+          getCodeBytes() {
+        java.lang.Object ref = code_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          token_ = b;
+          code_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>required string token = 1;</code>
+       * <code>required string code = 1;</code>
        *
        * <pre>
-       * 微信授权得到的token
+       * 微信授权得到的code
        * </pre>
        */
-      public Builder setToken(
+      public Builder setCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000001;
-        token_ = value;
+        code_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string token = 1;</code>
+       * <code>required string code = 1;</code>
        *
        * <pre>
-       * 微信授权得到的token
+       * 微信授权得到的code
        * </pre>
        */
-      public Builder clearToken() {
+      public Builder clearCode() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        token_ = getDefaultInstance().getToken();
+        code_ = getDefaultInstance().getCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string token = 1;</code>
+       * <code>required string code = 1;</code>
        *
        * <pre>
-       * 微信授权得到的token
+       * 微信授权得到的code
        * </pre>
        */
-      public Builder setTokenBytes(
+      public Builder setCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000001;
-        token_ = value;
+        code_ = value;
         onChanged();
         return this;
       }
@@ -12493,6 +13601,69 @@ public final class DdzProto {
      * <code>required .netty.PlayerBaseInfo playerBaseInfo = 1;</code>
      */
     com.rxqp.protobuf.DdzProto.PlayerBaseInfoOrBuilder getPlayerBaseInfoOrBuilder();
+
+    // optional string shareurl = 2;
+    /**
+     * <code>optional string shareurl = 2;</code>
+     *
+     * <pre>
+     * 分享时跳转的连接
+     * </pre>
+     */
+    boolean hasShareurl();
+    /**
+     * <code>optional string shareurl = 2;</code>
+     *
+     * <pre>
+     * 分享时跳转的连接
+     * </pre>
+     */
+    java.lang.String getShareurl();
+    /**
+     * <code>optional string shareurl = 2;</code>
+     *
+     * <pre>
+     * 分享时跳转的连接
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getShareurlBytes();
+
+    // required int32 playerState = 3;
+    /**
+     * <code>required int32 playerState = 3;</code>
+     *
+     * <pre>
+     *玩家状态(0:正常 1:在牛牛游戏中 2:在斗地主游戏中
+     * </pre>
+     */
+    boolean hasPlayerState();
+    /**
+     * <code>required int32 playerState = 3;</code>
+     *
+     * <pre>
+     *玩家状态(0:正常 1:在牛牛游戏中 2:在斗地主游戏中
+     * </pre>
+     */
+    int getPlayerState();
+
+    // optional int32 roomId = 4;
+    /**
+     * <code>optional int32 roomId = 4;</code>
+     *
+     * <pre>
+     *房间id
+     * </pre>
+     */
+    boolean hasRoomId();
+    /**
+     * <code>optional int32 roomId = 4;</code>
+     *
+     * <pre>
+     *房间id
+     * </pre>
+     */
+    int getRoomId();
   }
   /**
    * Protobuf type {@code netty.LoginResp}
@@ -12562,6 +13733,21 @@ public final class DdzProto {
               bitField0_ |= 0x00000001;
               break;
             }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              shareurl_ = input.readBytes();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              playerState_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              roomId_ = input.readInt32();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -12624,8 +13810,114 @@ public final class DdzProto {
       return playerBaseInfo_;
     }
 
+    // optional string shareurl = 2;
+    public static final int SHAREURL_FIELD_NUMBER = 2;
+    private java.lang.Object shareurl_;
+    /**
+     * <code>optional string shareurl = 2;</code>
+     *
+     * <pre>
+     * 分享时跳转的连接
+     * </pre>
+     */
+    public boolean hasShareurl() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string shareurl = 2;</code>
+     *
+     * <pre>
+     * 分享时跳转的连接
+     * </pre>
+     */
+    public java.lang.String getShareurl() {
+      java.lang.Object ref = shareurl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          shareurl_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string shareurl = 2;</code>
+     *
+     * <pre>
+     * 分享时跳转的连接
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getShareurlBytes() {
+      java.lang.Object ref = shareurl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shareurl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required int32 playerState = 3;
+    public static final int PLAYERSTATE_FIELD_NUMBER = 3;
+    private int playerState_;
+    /**
+     * <code>required int32 playerState = 3;</code>
+     *
+     * <pre>
+     *玩家状态(0:正常 1:在牛牛游戏中 2:在斗地主游戏中
+     * </pre>
+     */
+    public boolean hasPlayerState() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required int32 playerState = 3;</code>
+     *
+     * <pre>
+     *玩家状态(0:正常 1:在牛牛游戏中 2:在斗地主游戏中
+     * </pre>
+     */
+    public int getPlayerState() {
+      return playerState_;
+    }
+
+    // optional int32 roomId = 4;
+    public static final int ROOMID_FIELD_NUMBER = 4;
+    private int roomId_;
+    /**
+     * <code>optional int32 roomId = 4;</code>
+     *
+     * <pre>
+     *房间id
+     * </pre>
+     */
+    public boolean hasRoomId() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int32 roomId = 4;</code>
+     *
+     * <pre>
+     *房间id
+     * </pre>
+     */
+    public int getRoomId() {
+      return roomId_;
+    }
+
     private void initFields() {
       playerBaseInfo_ = com.rxqp.protobuf.DdzProto.PlayerBaseInfo.getDefaultInstance();
+      shareurl_ = "";
+      playerState_ = 0;
+      roomId_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -12633,6 +13925,10 @@ public final class DdzProto {
       if (isInitialized != -1) return isInitialized == 1;
 
       if (!hasPlayerBaseInfo()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPlayerState()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -12650,6 +13946,15 @@ public final class DdzProto {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, playerBaseInfo_);
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getShareurlBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, playerState_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt32(4, roomId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -12662,6 +13967,18 @@ public final class DdzProto {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, playerBaseInfo_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getShareurlBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, playerState_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, roomId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -12790,6 +14107,12 @@ public final class DdzProto {
           playerBaseInfoBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
+        shareurl_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        playerState_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        roomId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -12826,6 +14149,18 @@ public final class DdzProto {
         } else {
           result.playerBaseInfo_ = playerBaseInfoBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.shareurl_ = shareurl_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.playerState_ = playerState_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.roomId_ = roomId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -12845,12 +14180,27 @@ public final class DdzProto {
         if (other.hasPlayerBaseInfo()) {
           mergePlayerBaseInfo(other.getPlayerBaseInfo());
         }
+        if (other.hasShareurl()) {
+          bitField0_ |= 0x00000002;
+          shareurl_ = other.shareurl_;
+          onChanged();
+        }
+        if (other.hasPlayerState()) {
+          setPlayerState(other.getPlayerState());
+        }
+        if (other.hasRoomId()) {
+          setRoomId(other.getRoomId());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasPlayerBaseInfo()) {
+          
+          return false;
+        }
+        if (!hasPlayerState()) {
           
           return false;
         }
@@ -12995,6 +14345,202 @@ public final class DdzProto {
           playerBaseInfo_ = null;
         }
         return playerBaseInfoBuilder_;
+      }
+
+      // optional string shareurl = 2;
+      private java.lang.Object shareurl_ = "";
+      /**
+       * <code>optional string shareurl = 2;</code>
+       *
+       * <pre>
+       * 分享时跳转的连接
+       * </pre>
+       */
+      public boolean hasShareurl() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string shareurl = 2;</code>
+       *
+       * <pre>
+       * 分享时跳转的连接
+       * </pre>
+       */
+      public java.lang.String getShareurl() {
+        java.lang.Object ref = shareurl_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          shareurl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string shareurl = 2;</code>
+       *
+       * <pre>
+       * 分享时跳转的连接
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getShareurlBytes() {
+        java.lang.Object ref = shareurl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          shareurl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string shareurl = 2;</code>
+       *
+       * <pre>
+       * 分享时跳转的连接
+       * </pre>
+       */
+      public Builder setShareurl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        shareurl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string shareurl = 2;</code>
+       *
+       * <pre>
+       * 分享时跳转的连接
+       * </pre>
+       */
+      public Builder clearShareurl() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        shareurl_ = getDefaultInstance().getShareurl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string shareurl = 2;</code>
+       *
+       * <pre>
+       * 分享时跳转的连接
+       * </pre>
+       */
+      public Builder setShareurlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        shareurl_ = value;
+        onChanged();
+        return this;
+      }
+
+      // required int32 playerState = 3;
+      private int playerState_ ;
+      /**
+       * <code>required int32 playerState = 3;</code>
+       *
+       * <pre>
+       *玩家状态(0:正常 1:在牛牛游戏中 2:在斗地主游戏中
+       * </pre>
+       */
+      public boolean hasPlayerState() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required int32 playerState = 3;</code>
+       *
+       * <pre>
+       *玩家状态(0:正常 1:在牛牛游戏中 2:在斗地主游戏中
+       * </pre>
+       */
+      public int getPlayerState() {
+        return playerState_;
+      }
+      /**
+       * <code>required int32 playerState = 3;</code>
+       *
+       * <pre>
+       *玩家状态(0:正常 1:在牛牛游戏中 2:在斗地主游戏中
+       * </pre>
+       */
+      public Builder setPlayerState(int value) {
+        bitField0_ |= 0x00000004;
+        playerState_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 playerState = 3;</code>
+       *
+       * <pre>
+       *玩家状态(0:正常 1:在牛牛游戏中 2:在斗地主游戏中
+       * </pre>
+       */
+      public Builder clearPlayerState() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        playerState_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // optional int32 roomId = 4;
+      private int roomId_ ;
+      /**
+       * <code>optional int32 roomId = 4;</code>
+       *
+       * <pre>
+       *房间id
+       * </pre>
+       */
+      public boolean hasRoomId() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int32 roomId = 4;</code>
+       *
+       * <pre>
+       *房间id
+       * </pre>
+       */
+      public int getRoomId() {
+        return roomId_;
+      }
+      /**
+       * <code>optional int32 roomId = 4;</code>
+       *
+       * <pre>
+       *房间id
+       * </pre>
+       */
+      public Builder setRoomId(int value) {
+        bitField0_ |= 0x00000008;
+        roomId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 roomId = 4;</code>
+       *
+       * <pre>
+       *房间id
+       * </pre>
+       */
+      public Builder clearRoomId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        roomId_ = 0;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:netty.LoginResp)
@@ -13601,13 +15147,13 @@ public final class DdzProto {
   public interface CreateRoomRespOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
-    // required int32 roomId = 2;
+    // required int32 roomId = 1;
     /**
-     * <code>required int32 roomId = 2;</code>
+     * <code>required int32 roomId = 1;</code>
      */
     boolean hasRoomId();
     /**
-     * <code>required int32 roomId = 2;</code>
+     * <code>required int32 roomId = 1;</code>
      */
     int getRoomId();
   }
@@ -13666,7 +15212,7 @@ public final class DdzProto {
               }
               break;
             }
-            case 16: {
+            case 8: {
               bitField0_ |= 0x00000001;
               roomId_ = input.readInt32();
               break;
@@ -13711,17 +15257,17 @@ public final class DdzProto {
     }
 
     private int bitField0_;
-    // required int32 roomId = 2;
-    public static final int ROOMID_FIELD_NUMBER = 2;
+    // required int32 roomId = 1;
+    public static final int ROOMID_FIELD_NUMBER = 1;
     private int roomId_;
     /**
-     * <code>required int32 roomId = 2;</code>
+     * <code>required int32 roomId = 1;</code>
      */
     public boolean hasRoomId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required int32 roomId = 2;</code>
+     * <code>required int32 roomId = 1;</code>
      */
     public int getRoomId() {
       return roomId_;
@@ -13747,7 +15293,7 @@ public final class DdzProto {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(2, roomId_);
+        output.writeInt32(1, roomId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -13760,7 +15306,7 @@ public final class DdzProto {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, roomId_);
+          .computeInt32Size(1, roomId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -13966,22 +15512,22 @@ public final class DdzProto {
       }
       private int bitField0_;
 
-      // required int32 roomId = 2;
+      // required int32 roomId = 1;
       private int roomId_ ;
       /**
-       * <code>required int32 roomId = 2;</code>
+       * <code>required int32 roomId = 1;</code>
        */
       public boolean hasRoomId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required int32 roomId = 2;</code>
+       * <code>required int32 roomId = 1;</code>
        */
       public int getRoomId() {
         return roomId_;
       }
       /**
-       * <code>required int32 roomId = 2;</code>
+       * <code>required int32 roomId = 1;</code>
        */
       public Builder setRoomId(int value) {
         bitField0_ |= 0x00000001;
@@ -13990,7 +15536,7 @@ public final class DdzProto {
         return this;
       }
       /**
-       * <code>required int32 roomId = 2;</code>
+       * <code>required int32 roomId = 1;</code>
        */
       public Builder clearRoomId() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -14023,13 +15569,13 @@ public final class DdzProto {
      */
     int getRoomId();
 
-    // required int32 playerId = 3;
+    // required int32 playerId = 2;
     /**
-     * <code>required int32 playerId = 3;</code>
+     * <code>required int32 playerId = 2;</code>
      */
     boolean hasPlayerId();
     /**
-     * <code>required int32 playerId = 3;</code>
+     * <code>required int32 playerId = 2;</code>
      */
     int getPlayerId();
   }
@@ -14093,7 +15639,7 @@ public final class DdzProto {
               roomId_ = input.readInt32();
               break;
             }
-            case 24: {
+            case 16: {
               bitField0_ |= 0x00000002;
               playerId_ = input.readInt32();
               break;
@@ -14154,17 +15700,17 @@ public final class DdzProto {
       return roomId_;
     }
 
-    // required int32 playerId = 3;
-    public static final int PLAYERID_FIELD_NUMBER = 3;
+    // required int32 playerId = 2;
+    public static final int PLAYERID_FIELD_NUMBER = 2;
     private int playerId_;
     /**
-     * <code>required int32 playerId = 3;</code>
+     * <code>required int32 playerId = 2;</code>
      */
     public boolean hasPlayerId() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required int32 playerId = 3;</code>
+     * <code>required int32 playerId = 2;</code>
      */
     public int getPlayerId() {
       return playerId_;
@@ -14198,7 +15744,7 @@ public final class DdzProto {
         output.writeInt32(1, roomId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(3, playerId_);
+        output.writeInt32(2, playerId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -14215,7 +15761,7 @@ public final class DdzProto {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, playerId_);
+          .computeInt32Size(2, playerId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -14467,22 +16013,22 @@ public final class DdzProto {
         return this;
       }
 
-      // required int32 playerId = 3;
+      // required int32 playerId = 2;
       private int playerId_ ;
       /**
-       * <code>required int32 playerId = 3;</code>
+       * <code>required int32 playerId = 2;</code>
        */
       public boolean hasPlayerId() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required int32 playerId = 3;</code>
+       * <code>required int32 playerId = 2;</code>
        */
       public int getPlayerId() {
         return playerId_;
       }
       /**
-       * <code>required int32 playerId = 3;</code>
+       * <code>required int32 playerId = 2;</code>
        */
       public Builder setPlayerId(int value) {
         bitField0_ |= 0x00000002;
@@ -14491,7 +16037,7 @@ public final class DdzProto {
         return this;
       }
       /**
-       * <code>required int32 playerId = 3;</code>
+       * <code>required int32 playerId = 2;</code>
        */
       public Builder clearPlayerId() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -14514,27 +16060,27 @@ public final class DdzProto {
   public interface EntryRoomRespOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
-    // required .netty.RoomInfo roomInfo = 2;
+    // required .netty.RoomInfo roomInfo = 1;
     /**
-     * <code>required .netty.RoomInfo roomInfo = 2;</code>
+     * <code>required .netty.RoomInfo roomInfo = 1;</code>
      */
     boolean hasRoomInfo();
     /**
-     * <code>required .netty.RoomInfo roomInfo = 2;</code>
+     * <code>required .netty.RoomInfo roomInfo = 1;</code>
      */
     com.rxqp.protobuf.DdzProto.RoomInfo getRoomInfo();
     /**
-     * <code>required .netty.RoomInfo roomInfo = 2;</code>
+     * <code>required .netty.RoomInfo roomInfo = 1;</code>
      */
     com.rxqp.protobuf.DdzProto.RoomInfoOrBuilder getRoomInfoOrBuilder();
 
-    // required int32 order = 3;
+    // required int32 order = 2;
     /**
-     * <code>required int32 order = 3;</code>
+     * <code>required int32 order = 2;</code>
      */
     boolean hasOrder();
     /**
-     * <code>required int32 order = 3;</code>
+     * <code>required int32 order = 2;</code>
      */
     int getOrder();
   }
@@ -14593,7 +16139,7 @@ public final class DdzProto {
               }
               break;
             }
-            case 18: {
+            case 10: {
               com.rxqp.protobuf.DdzProto.RoomInfo.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
                 subBuilder = roomInfo_.toBuilder();
@@ -14606,7 +16152,7 @@ public final class DdzProto {
               bitField0_ |= 0x00000001;
               break;
             }
-            case 24: {
+            case 16: {
               bitField0_ |= 0x00000002;
               order_ = input.readInt32();
               break;
@@ -14651,39 +16197,39 @@ public final class DdzProto {
     }
 
     private int bitField0_;
-    // required .netty.RoomInfo roomInfo = 2;
-    public static final int ROOMINFO_FIELD_NUMBER = 2;
+    // required .netty.RoomInfo roomInfo = 1;
+    public static final int ROOMINFO_FIELD_NUMBER = 1;
     private com.rxqp.protobuf.DdzProto.RoomInfo roomInfo_;
     /**
-     * <code>required .netty.RoomInfo roomInfo = 2;</code>
+     * <code>required .netty.RoomInfo roomInfo = 1;</code>
      */
     public boolean hasRoomInfo() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required .netty.RoomInfo roomInfo = 2;</code>
+     * <code>required .netty.RoomInfo roomInfo = 1;</code>
      */
     public com.rxqp.protobuf.DdzProto.RoomInfo getRoomInfo() {
       return roomInfo_;
     }
     /**
-     * <code>required .netty.RoomInfo roomInfo = 2;</code>
+     * <code>required .netty.RoomInfo roomInfo = 1;</code>
      */
     public com.rxqp.protobuf.DdzProto.RoomInfoOrBuilder getRoomInfoOrBuilder() {
       return roomInfo_;
     }
 
-    // required int32 order = 3;
-    public static final int ORDER_FIELD_NUMBER = 3;
+    // required int32 order = 2;
+    public static final int ORDER_FIELD_NUMBER = 2;
     private int order_;
     /**
-     * <code>required int32 order = 3;</code>
+     * <code>required int32 order = 2;</code>
      */
     public boolean hasOrder() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required int32 order = 3;</code>
+     * <code>required int32 order = 2;</code>
      */
     public int getOrder() {
       return order_;
@@ -14718,10 +16264,10 @@ public final class DdzProto {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeMessage(2, roomInfo_);
+        output.writeMessage(1, roomInfo_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(3, order_);
+        output.writeInt32(2, order_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -14734,11 +16280,11 @@ public final class DdzProto {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, roomInfo_);
+          .computeMessageSize(1, roomInfo_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, order_);
+          .computeInt32Size(2, order_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -14970,18 +16516,18 @@ public final class DdzProto {
       }
       private int bitField0_;
 
-      // required .netty.RoomInfo roomInfo = 2;
+      // required .netty.RoomInfo roomInfo = 1;
       private com.rxqp.protobuf.DdzProto.RoomInfo roomInfo_ = com.rxqp.protobuf.DdzProto.RoomInfo.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           com.rxqp.protobuf.DdzProto.RoomInfo, com.rxqp.protobuf.DdzProto.RoomInfo.Builder, com.rxqp.protobuf.DdzProto.RoomInfoOrBuilder> roomInfoBuilder_;
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public boolean hasRoomInfo() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public com.rxqp.protobuf.DdzProto.RoomInfo getRoomInfo() {
         if (roomInfoBuilder_ == null) {
@@ -14991,7 +16537,7 @@ public final class DdzProto {
         }
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public Builder setRoomInfo(com.rxqp.protobuf.DdzProto.RoomInfo value) {
         if (roomInfoBuilder_ == null) {
@@ -15007,7 +16553,7 @@ public final class DdzProto {
         return this;
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public Builder setRoomInfo(
           com.rxqp.protobuf.DdzProto.RoomInfo.Builder builderForValue) {
@@ -15021,7 +16567,7 @@ public final class DdzProto {
         return this;
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public Builder mergeRoomInfo(com.rxqp.protobuf.DdzProto.RoomInfo value) {
         if (roomInfoBuilder_ == null) {
@@ -15040,7 +16586,7 @@ public final class DdzProto {
         return this;
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public Builder clearRoomInfo() {
         if (roomInfoBuilder_ == null) {
@@ -15053,7 +16599,7 @@ public final class DdzProto {
         return this;
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public com.rxqp.protobuf.DdzProto.RoomInfo.Builder getRoomInfoBuilder() {
         bitField0_ |= 0x00000001;
@@ -15061,7 +16607,7 @@ public final class DdzProto {
         return getRoomInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public com.rxqp.protobuf.DdzProto.RoomInfoOrBuilder getRoomInfoOrBuilder() {
         if (roomInfoBuilder_ != null) {
@@ -15071,7 +16617,7 @@ public final class DdzProto {
         }
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           com.rxqp.protobuf.DdzProto.RoomInfo, com.rxqp.protobuf.DdzProto.RoomInfo.Builder, com.rxqp.protobuf.DdzProto.RoomInfoOrBuilder> 
@@ -15087,22 +16633,22 @@ public final class DdzProto {
         return roomInfoBuilder_;
       }
 
-      // required int32 order = 3;
+      // required int32 order = 2;
       private int order_ ;
       /**
-       * <code>required int32 order = 3;</code>
+       * <code>required int32 order = 2;</code>
        */
       public boolean hasOrder() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required int32 order = 3;</code>
+       * <code>required int32 order = 2;</code>
        */
       public int getOrder() {
         return order_;
       }
       /**
-       * <code>required int32 order = 3;</code>
+       * <code>required int32 order = 2;</code>
        */
       public Builder setOrder(int value) {
         bitField0_ |= 0x00000002;
@@ -15111,7 +16657,7 @@ public final class DdzProto {
         return this;
       }
       /**
-       * <code>required int32 order = 3;</code>
+       * <code>required int32 order = 2;</code>
        */
       public Builder clearOrder() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -16852,6 +18398,24 @@ public final class DdzProto {
      * <code>optional int32 order = 6;</code>
      */
     int getOrder();
+
+    // optional bool isOnline = 7;
+    /**
+     * <code>optional bool isOnline = 7;</code>
+     *
+     * <pre>
+     * 玩家是否在线，重进房间时需要
+     * </pre>
+     */
+    boolean hasIsOnline();
+    /**
+     * <code>optional bool isOnline = 7;</code>
+     *
+     * <pre>
+     * 玩家是否在线，重进房间时需要
+     * </pre>
+     */
+    boolean getIsOnline();
   }
   /**
    * Protobuf type {@code netty.Player}
@@ -16936,6 +18500,11 @@ public final class DdzProto {
             case 48: {
               bitField0_ |= 0x00000020;
               order_ = input.readInt32();
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000040;
+              isOnline_ = input.readBool();
               break;
             }
           }
@@ -17136,6 +18705,30 @@ public final class DdzProto {
       return order_;
     }
 
+    // optional bool isOnline = 7;
+    public static final int ISONLINE_FIELD_NUMBER = 7;
+    private boolean isOnline_;
+    /**
+     * <code>optional bool isOnline = 7;</code>
+     *
+     * <pre>
+     * 玩家是否在线，重进房间时需要
+     * </pre>
+     */
+    public boolean hasIsOnline() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional bool isOnline = 7;</code>
+     *
+     * <pre>
+     * 玩家是否在线，重进房间时需要
+     * </pre>
+     */
+    public boolean getIsOnline() {
+      return isOnline_;
+    }
+
     private void initFields() {
       iD_ = 0;
       name_ = "";
@@ -17143,6 +18736,7 @@ public final class DdzProto {
       score_ = 0;
       isDz_ = false;
       order_ = 0;
+      isOnline_ = false;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -17190,6 +18784,9 @@ public final class DdzProto {
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeInt32(6, order_);
       }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBool(7, isOnline_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -17222,6 +18819,10 @@ public final class DdzProto {
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(6, order_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, isOnline_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -17355,6 +18956,8 @@ public final class DdzProto {
         bitField0_ = (bitField0_ & ~0x00000010);
         order_ = 0;
         bitField0_ = (bitField0_ & ~0x00000020);
+        isOnline_ = false;
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -17407,6 +19010,10 @@ public final class DdzProto {
           to_bitField0_ |= 0x00000020;
         }
         result.order_ = order_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.isOnline_ = isOnline_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -17444,6 +19051,9 @@ public final class DdzProto {
         }
         if (other.hasOrder()) {
           setOrder(other.getOrder());
+        }
+        if (other.hasIsOnline()) {
+          setIsOnline(other.getIsOnline());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -17780,6 +19390,55 @@ public final class DdzProto {
       public Builder clearOrder() {
         bitField0_ = (bitField0_ & ~0x00000020);
         order_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // optional bool isOnline = 7;
+      private boolean isOnline_ ;
+      /**
+       * <code>optional bool isOnline = 7;</code>
+       *
+       * <pre>
+       * 玩家是否在线，重进房间时需要
+       * </pre>
+       */
+      public boolean hasIsOnline() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional bool isOnline = 7;</code>
+       *
+       * <pre>
+       * 玩家是否在线，重进房间时需要
+       * </pre>
+       */
+      public boolean getIsOnline() {
+        return isOnline_;
+      }
+      /**
+       * <code>optional bool isOnline = 7;</code>
+       *
+       * <pre>
+       * 玩家是否在线，重进房间时需要
+       * </pre>
+       */
+      public Builder setIsOnline(boolean value) {
+        bitField0_ |= 0x00000040;
+        isOnline_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool isOnline = 7;</code>
+       *
+       * <pre>
+       * 玩家是否在线，重进房间时需要
+       * </pre>
+       */
+      public Builder clearIsOnline() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        isOnline_ = false;
         onChanged();
         return this;
       }
@@ -27284,7 +28943,7 @@ public final class DdzProto {
    * Protobuf type {@code netty.CreateNNRoomReq}
    *
    * <pre>
-   *23、创建牛牛房间请求,type=1表示房费房主出，type=2表示房费AA
+   *23、创建牛牛房间请求,type=1表示房费房主出，type=2表示房费AA，type=3表示房费赢家出
    * </pre>
    */
   public static final class CreateNNRoomReq extends
@@ -27579,7 +29238,7 @@ public final class DdzProto {
      * Protobuf type {@code netty.CreateNNRoomReq}
      *
      * <pre>
-     *23、创建牛牛房间请求,type=1表示房费房主出，type=2表示房费AA
+     *23、创建牛牛房间请求,type=1表示房费房主出，type=2表示房费AA，type=3表示房费赢家出
      * </pre>
      */
     public static final class Builder extends
@@ -28262,13 +29921,13 @@ public final class DdzProto {
      */
     int getRoomId();
 
-    // required int32 playerId = 3;
+    // required int32 playerId = 2;
     /**
-     * <code>required int32 playerId = 3;</code>
+     * <code>required int32 playerId = 2;</code>
      */
     boolean hasPlayerId();
     /**
-     * <code>required int32 playerId = 3;</code>
+     * <code>required int32 playerId = 2;</code>
      */
     int getPlayerId();
   }
@@ -28332,7 +29991,7 @@ public final class DdzProto {
               roomId_ = input.readInt32();
               break;
             }
-            case 24: {
+            case 16: {
               bitField0_ |= 0x00000002;
               playerId_ = input.readInt32();
               break;
@@ -28393,17 +30052,17 @@ public final class DdzProto {
       return roomId_;
     }
 
-    // required int32 playerId = 3;
-    public static final int PLAYERID_FIELD_NUMBER = 3;
+    // required int32 playerId = 2;
+    public static final int PLAYERID_FIELD_NUMBER = 2;
     private int playerId_;
     /**
-     * <code>required int32 playerId = 3;</code>
+     * <code>required int32 playerId = 2;</code>
      */
     public boolean hasPlayerId() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required int32 playerId = 3;</code>
+     * <code>required int32 playerId = 2;</code>
      */
     public int getPlayerId() {
       return playerId_;
@@ -28437,7 +30096,7 @@ public final class DdzProto {
         output.writeInt32(1, roomId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(3, playerId_);
+        output.writeInt32(2, playerId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -28454,7 +30113,7 @@ public final class DdzProto {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, playerId_);
+          .computeInt32Size(2, playerId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -28706,22 +30365,22 @@ public final class DdzProto {
         return this;
       }
 
-      // required int32 playerId = 3;
+      // required int32 playerId = 2;
       private int playerId_ ;
       /**
-       * <code>required int32 playerId = 3;</code>
+       * <code>required int32 playerId = 2;</code>
        */
       public boolean hasPlayerId() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required int32 playerId = 3;</code>
+       * <code>required int32 playerId = 2;</code>
        */
       public int getPlayerId() {
         return playerId_;
       }
       /**
-       * <code>required int32 playerId = 3;</code>
+       * <code>required int32 playerId = 2;</code>
        */
       public Builder setPlayerId(int value) {
         bitField0_ |= 0x00000002;
@@ -28730,7 +30389,7 @@ public final class DdzProto {
         return this;
       }
       /**
-       * <code>required int32 playerId = 3;</code>
+       * <code>required int32 playerId = 2;</code>
        */
       public Builder clearPlayerId() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -28753,29 +30412,39 @@ public final class DdzProto {
   public interface EntryNNRoomRespOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
-    // required .netty.RoomInfo roomInfo = 2;
+    // required .netty.RoomInfo roomInfo = 1;
     /**
-     * <code>required .netty.RoomInfo roomInfo = 2;</code>
+     * <code>required .netty.RoomInfo roomInfo = 1;</code>
      */
     boolean hasRoomInfo();
     /**
-     * <code>required .netty.RoomInfo roomInfo = 2;</code>
+     * <code>required .netty.RoomInfo roomInfo = 1;</code>
      */
     com.rxqp.protobuf.DdzProto.RoomInfo getRoomInfo();
     /**
-     * <code>required .netty.RoomInfo roomInfo = 2;</code>
+     * <code>required .netty.RoomInfo roomInfo = 1;</code>
      */
     com.rxqp.protobuf.DdzProto.RoomInfoOrBuilder getRoomInfoOrBuilder();
 
-    // required int32 order = 3;
+    // required int32 order = 2;
     /**
-     * <code>required int32 order = 3;</code>
+     * <code>required int32 order = 2;</code>
      */
     boolean hasOrder();
     /**
-     * <code>required int32 order = 3;</code>
+     * <code>required int32 order = 2;</code>
      */
     int getOrder();
+
+    // optional .netty.OfflineStatus status = 3;
+    /**
+     * <code>optional .netty.OfflineStatus status = 3;</code>
+     */
+    boolean hasStatus();
+    /**
+     * <code>optional .netty.OfflineStatus status = 3;</code>
+     */
+    com.rxqp.protobuf.DdzProto.OfflineStatus getStatus();
   }
   /**
    * Protobuf type {@code netty.EntryNNRoomResp}
@@ -28832,7 +30501,7 @@ public final class DdzProto {
               }
               break;
             }
-            case 18: {
+            case 10: {
               com.rxqp.protobuf.DdzProto.RoomInfo.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
                 subBuilder = roomInfo_.toBuilder();
@@ -28845,9 +30514,20 @@ public final class DdzProto {
               bitField0_ |= 0x00000001;
               break;
             }
-            case 24: {
+            case 16: {
               bitField0_ |= 0x00000002;
               order_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+              com.rxqp.protobuf.DdzProto.OfflineStatus value = com.rxqp.protobuf.DdzProto.OfflineStatus.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(3, rawValue);
+              } else {
+                bitField0_ |= 0x00000004;
+                status_ = value;
+              }
               break;
             }
           }
@@ -28890,47 +30570,64 @@ public final class DdzProto {
     }
 
     private int bitField0_;
-    // required .netty.RoomInfo roomInfo = 2;
-    public static final int ROOMINFO_FIELD_NUMBER = 2;
+    // required .netty.RoomInfo roomInfo = 1;
+    public static final int ROOMINFO_FIELD_NUMBER = 1;
     private com.rxqp.protobuf.DdzProto.RoomInfo roomInfo_;
     /**
-     * <code>required .netty.RoomInfo roomInfo = 2;</code>
+     * <code>required .netty.RoomInfo roomInfo = 1;</code>
      */
     public boolean hasRoomInfo() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required .netty.RoomInfo roomInfo = 2;</code>
+     * <code>required .netty.RoomInfo roomInfo = 1;</code>
      */
     public com.rxqp.protobuf.DdzProto.RoomInfo getRoomInfo() {
       return roomInfo_;
     }
     /**
-     * <code>required .netty.RoomInfo roomInfo = 2;</code>
+     * <code>required .netty.RoomInfo roomInfo = 1;</code>
      */
     public com.rxqp.protobuf.DdzProto.RoomInfoOrBuilder getRoomInfoOrBuilder() {
       return roomInfo_;
     }
 
-    // required int32 order = 3;
-    public static final int ORDER_FIELD_NUMBER = 3;
+    // required int32 order = 2;
+    public static final int ORDER_FIELD_NUMBER = 2;
     private int order_;
     /**
-     * <code>required int32 order = 3;</code>
+     * <code>required int32 order = 2;</code>
      */
     public boolean hasOrder() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required int32 order = 3;</code>
+     * <code>required int32 order = 2;</code>
      */
     public int getOrder() {
       return order_;
     }
 
+    // optional .netty.OfflineStatus status = 3;
+    public static final int STATUS_FIELD_NUMBER = 3;
+    private com.rxqp.protobuf.DdzProto.OfflineStatus status_;
+    /**
+     * <code>optional .netty.OfflineStatus status = 3;</code>
+     */
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional .netty.OfflineStatus status = 3;</code>
+     */
+    public com.rxqp.protobuf.DdzProto.OfflineStatus getStatus() {
+      return status_;
+    }
+
     private void initFields() {
       roomInfo_ = com.rxqp.protobuf.DdzProto.RoomInfo.getDefaultInstance();
       order_ = 0;
+      status_ = com.rxqp.protobuf.DdzProto.OfflineStatus.STATUS_CREATE_ROOM;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -28957,10 +30654,13 @@ public final class DdzProto {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeMessage(2, roomInfo_);
+        output.writeMessage(1, roomInfo_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(3, order_);
+        output.writeInt32(2, order_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeEnum(3, status_.getNumber());
       }
       getUnknownFields().writeTo(output);
     }
@@ -28973,11 +30673,15 @@ public final class DdzProto {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, roomInfo_);
+          .computeMessageSize(1, roomInfo_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, order_);
+          .computeInt32Size(2, order_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, status_.getNumber());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -29108,6 +30812,8 @@ public final class DdzProto {
         bitField0_ = (bitField0_ & ~0x00000001);
         order_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
+        status_ = com.rxqp.protobuf.DdzProto.OfflineStatus.STATUS_CREATE_ROOM;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -29148,6 +30854,10 @@ public final class DdzProto {
           to_bitField0_ |= 0x00000002;
         }
         result.order_ = order_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.status_ = status_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -29169,6 +30879,9 @@ public final class DdzProto {
         }
         if (other.hasOrder()) {
           setOrder(other.getOrder());
+        }
+        if (other.hasStatus()) {
+          setStatus(other.getStatus());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -29209,18 +30922,18 @@ public final class DdzProto {
       }
       private int bitField0_;
 
-      // required .netty.RoomInfo roomInfo = 2;
+      // required .netty.RoomInfo roomInfo = 1;
       private com.rxqp.protobuf.DdzProto.RoomInfo roomInfo_ = com.rxqp.protobuf.DdzProto.RoomInfo.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           com.rxqp.protobuf.DdzProto.RoomInfo, com.rxqp.protobuf.DdzProto.RoomInfo.Builder, com.rxqp.protobuf.DdzProto.RoomInfoOrBuilder> roomInfoBuilder_;
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public boolean hasRoomInfo() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public com.rxqp.protobuf.DdzProto.RoomInfo getRoomInfo() {
         if (roomInfoBuilder_ == null) {
@@ -29230,7 +30943,7 @@ public final class DdzProto {
         }
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public Builder setRoomInfo(com.rxqp.protobuf.DdzProto.RoomInfo value) {
         if (roomInfoBuilder_ == null) {
@@ -29246,7 +30959,7 @@ public final class DdzProto {
         return this;
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public Builder setRoomInfo(
           com.rxqp.protobuf.DdzProto.RoomInfo.Builder builderForValue) {
@@ -29260,7 +30973,7 @@ public final class DdzProto {
         return this;
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public Builder mergeRoomInfo(com.rxqp.protobuf.DdzProto.RoomInfo value) {
         if (roomInfoBuilder_ == null) {
@@ -29279,7 +30992,7 @@ public final class DdzProto {
         return this;
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public Builder clearRoomInfo() {
         if (roomInfoBuilder_ == null) {
@@ -29292,7 +31005,7 @@ public final class DdzProto {
         return this;
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public com.rxqp.protobuf.DdzProto.RoomInfo.Builder getRoomInfoBuilder() {
         bitField0_ |= 0x00000001;
@@ -29300,7 +31013,7 @@ public final class DdzProto {
         return getRoomInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       public com.rxqp.protobuf.DdzProto.RoomInfoOrBuilder getRoomInfoOrBuilder() {
         if (roomInfoBuilder_ != null) {
@@ -29310,7 +31023,7 @@ public final class DdzProto {
         }
       }
       /**
-       * <code>required .netty.RoomInfo roomInfo = 2;</code>
+       * <code>required .netty.RoomInfo roomInfo = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           com.rxqp.protobuf.DdzProto.RoomInfo, com.rxqp.protobuf.DdzProto.RoomInfo.Builder, com.rxqp.protobuf.DdzProto.RoomInfoOrBuilder> 
@@ -29326,22 +31039,22 @@ public final class DdzProto {
         return roomInfoBuilder_;
       }
 
-      // required int32 order = 3;
+      // required int32 order = 2;
       private int order_ ;
       /**
-       * <code>required int32 order = 3;</code>
+       * <code>required int32 order = 2;</code>
        */
       public boolean hasOrder() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required int32 order = 3;</code>
+       * <code>required int32 order = 2;</code>
        */
       public int getOrder() {
         return order_;
       }
       /**
-       * <code>required int32 order = 3;</code>
+       * <code>required int32 order = 2;</code>
        */
       public Builder setOrder(int value) {
         bitField0_ |= 0x00000002;
@@ -29350,11 +31063,47 @@ public final class DdzProto {
         return this;
       }
       /**
-       * <code>required int32 order = 3;</code>
+       * <code>required int32 order = 2;</code>
        */
       public Builder clearOrder() {
         bitField0_ = (bitField0_ & ~0x00000002);
         order_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // optional .netty.OfflineStatus status = 3;
+      private com.rxqp.protobuf.DdzProto.OfflineStatus status_ = com.rxqp.protobuf.DdzProto.OfflineStatus.STATUS_CREATE_ROOM;
+      /**
+       * <code>optional .netty.OfflineStatus status = 3;</code>
+       */
+      public boolean hasStatus() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .netty.OfflineStatus status = 3;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.OfflineStatus getStatus() {
+        return status_;
+      }
+      /**
+       * <code>optional .netty.OfflineStatus status = 3;</code>
+       */
+      public Builder setStatus(com.rxqp.protobuf.DdzProto.OfflineStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .netty.OfflineStatus status = 3;</code>
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        status_ = com.rxqp.protobuf.DdzProto.OfflineStatus.STATUS_CREATE_ROOM;
         onChanged();
         return this;
       }
@@ -31398,9 +33147,9 @@ public final class DdzProto {
      */
     int getPokers(int index);
 
-    // optional int32 playedGames = 3;
+    // required int32 playedGames = 3;
     /**
-     * <code>optional int32 playedGames = 3;</code>
+     * <code>required int32 playedGames = 3;</code>
      *
      * <pre>
      * 房间已完游戏局数
@@ -31408,7 +33157,7 @@ public final class DdzProto {
      */
     boolean hasPlayedGames();
     /**
-     * <code>optional int32 playedGames = 3;</code>
+     * <code>required int32 playedGames = 3;</code>
      *
      * <pre>
      * 房间已完游戏局数
@@ -31416,9 +33165,9 @@ public final class DdzProto {
      */
     int getPlayedGames();
 
-    // optional int32 totalGames = 4;
+    // required int32 totalGames = 4;
     /**
-     * <code>optional int32 totalGames = 4;</code>
+     * <code>required int32 totalGames = 4;</code>
      *
      * <pre>
      * 房间总局数
@@ -31426,7 +33175,7 @@ public final class DdzProto {
      */
     boolean hasTotalGames();
     /**
-     * <code>optional int32 totalGames = 4;</code>
+     * <code>required int32 totalGames = 4;</code>
      *
      * <pre>
      * 房间总局数
@@ -31434,23 +33183,23 @@ public final class DdzProto {
      */
     int getTotalGames();
 
-    // optional bool isBanker = 5;
+    // required int32 bankerId = 5;
     /**
-     * <code>optional bool isBanker = 5;</code>
+     * <code>required int32 bankerId = 5;</code>
      *
      * <pre>
-     * 是否是庄家
+     * 庄家id
      * </pre>
      */
-    boolean hasIsBanker();
+    boolean hasBankerId();
     /**
-     * <code>optional bool isBanker = 5;</code>
+     * <code>required int32 bankerId = 5;</code>
      *
      * <pre>
-     * 是否是庄家
+     * 庄家id
      * </pre>
      */
-    boolean getIsBanker();
+    int getBankerId();
   }
   /**
    * Protobuf type {@code netty.PostNNDealResp}
@@ -31545,7 +33294,7 @@ public final class DdzProto {
             }
             case 40: {
               bitField0_ |= 0x00000008;
-              isBanker_ = input.readBool();
+              bankerId_ = input.readInt32();
               break;
             }
           }
@@ -31642,11 +33391,11 @@ public final class DdzProto {
       return pokers_.get(index);
     }
 
-    // optional int32 playedGames = 3;
+    // required int32 playedGames = 3;
     public static final int PLAYEDGAMES_FIELD_NUMBER = 3;
     private int playedGames_;
     /**
-     * <code>optional int32 playedGames = 3;</code>
+     * <code>required int32 playedGames = 3;</code>
      *
      * <pre>
      * 房间已完游戏局数
@@ -31656,7 +33405,7 @@ public final class DdzProto {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional int32 playedGames = 3;</code>
+     * <code>required int32 playedGames = 3;</code>
      *
      * <pre>
      * 房间已完游戏局数
@@ -31666,11 +33415,11 @@ public final class DdzProto {
       return playedGames_;
     }
 
-    // optional int32 totalGames = 4;
+    // required int32 totalGames = 4;
     public static final int TOTALGAMES_FIELD_NUMBER = 4;
     private int totalGames_;
     /**
-     * <code>optional int32 totalGames = 4;</code>
+     * <code>required int32 totalGames = 4;</code>
      *
      * <pre>
      * 房间总局数
@@ -31680,7 +33429,7 @@ public final class DdzProto {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional int32 totalGames = 4;</code>
+     * <code>required int32 totalGames = 4;</code>
      *
      * <pre>
      * 房间总局数
@@ -31690,28 +33439,28 @@ public final class DdzProto {
       return totalGames_;
     }
 
-    // optional bool isBanker = 5;
-    public static final int ISBANKER_FIELD_NUMBER = 5;
-    private boolean isBanker_;
+    // required int32 bankerId = 5;
+    public static final int BANKERID_FIELD_NUMBER = 5;
+    private int bankerId_;
     /**
-     * <code>optional bool isBanker = 5;</code>
+     * <code>required int32 bankerId = 5;</code>
      *
      * <pre>
-     * 是否是庄家
+     * 庄家id
      * </pre>
      */
-    public boolean hasIsBanker() {
+    public boolean hasBankerId() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional bool isBanker = 5;</code>
+     * <code>required int32 bankerId = 5;</code>
      *
      * <pre>
-     * 是否是庄家
+     * 庄家id
      * </pre>
      */
-    public boolean getIsBanker() {
-      return isBanker_;
+    public int getBankerId() {
+      return bankerId_;
     }
 
     private void initFields() {
@@ -31719,7 +33468,7 @@ public final class DdzProto {
       pokers_ = java.util.Collections.emptyList();
       playedGames_ = 0;
       totalGames_ = 0;
-      isBanker_ = false;
+      bankerId_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -31727,6 +33476,18 @@ public final class DdzProto {
       if (isInitialized != -1) return isInitialized == 1;
 
       if (!hasPlayerId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPlayedGames()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasTotalGames()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasBankerId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -31750,7 +33511,7 @@ public final class DdzProto {
         output.writeInt32(4, totalGames_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBool(5, isBanker_);
+        output.writeInt32(5, bankerId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -31784,7 +33545,7 @@ public final class DdzProto {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isBanker_);
+          .computeInt32Size(5, bankerId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -31914,7 +33675,7 @@ public final class DdzProto {
         bitField0_ = (bitField0_ & ~0x00000004);
         totalGames_ = 0;
         bitField0_ = (bitField0_ & ~0x00000008);
-        isBanker_ = false;
+        bankerId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
@@ -31964,7 +33725,7 @@ public final class DdzProto {
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.isBanker_ = isBanker_;
+        result.bankerId_ = bankerId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -32000,8 +33761,8 @@ public final class DdzProto {
         if (other.hasTotalGames()) {
           setTotalGames(other.getTotalGames());
         }
-        if (other.hasIsBanker()) {
-          setIsBanker(other.getIsBanker());
+        if (other.hasBankerId()) {
+          setBankerId(other.getBankerId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -32009,6 +33770,18 @@ public final class DdzProto {
 
       public final boolean isInitialized() {
         if (!hasPlayerId()) {
+          
+          return false;
+        }
+        if (!hasPlayedGames()) {
+          
+          return false;
+        }
+        if (!hasTotalGames()) {
+          
+          return false;
+        }
+        if (!hasBankerId()) {
           
           return false;
         }
@@ -32161,10 +33934,10 @@ public final class DdzProto {
         return this;
       }
 
-      // optional int32 playedGames = 3;
+      // required int32 playedGames = 3;
       private int playedGames_ ;
       /**
-       * <code>optional int32 playedGames = 3;</code>
+       * <code>required int32 playedGames = 3;</code>
        *
        * <pre>
        * 房间已完游戏局数
@@ -32174,7 +33947,7 @@ public final class DdzProto {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional int32 playedGames = 3;</code>
+       * <code>required int32 playedGames = 3;</code>
        *
        * <pre>
        * 房间已完游戏局数
@@ -32184,7 +33957,7 @@ public final class DdzProto {
         return playedGames_;
       }
       /**
-       * <code>optional int32 playedGames = 3;</code>
+       * <code>required int32 playedGames = 3;</code>
        *
        * <pre>
        * 房间已完游戏局数
@@ -32197,7 +33970,7 @@ public final class DdzProto {
         return this;
       }
       /**
-       * <code>optional int32 playedGames = 3;</code>
+       * <code>required int32 playedGames = 3;</code>
        *
        * <pre>
        * 房间已完游戏局数
@@ -32210,10 +33983,10 @@ public final class DdzProto {
         return this;
       }
 
-      // optional int32 totalGames = 4;
+      // required int32 totalGames = 4;
       private int totalGames_ ;
       /**
-       * <code>optional int32 totalGames = 4;</code>
+       * <code>required int32 totalGames = 4;</code>
        *
        * <pre>
        * 房间总局数
@@ -32223,7 +33996,7 @@ public final class DdzProto {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional int32 totalGames = 4;</code>
+       * <code>required int32 totalGames = 4;</code>
        *
        * <pre>
        * 房间总局数
@@ -32233,7 +34006,7 @@ public final class DdzProto {
         return totalGames_;
       }
       /**
-       * <code>optional int32 totalGames = 4;</code>
+       * <code>required int32 totalGames = 4;</code>
        *
        * <pre>
        * 房间总局数
@@ -32246,7 +34019,7 @@ public final class DdzProto {
         return this;
       }
       /**
-       * <code>optional int32 totalGames = 4;</code>
+       * <code>required int32 totalGames = 4;</code>
        *
        * <pre>
        * 房间总局数
@@ -32259,51 +34032,51 @@ public final class DdzProto {
         return this;
       }
 
-      // optional bool isBanker = 5;
-      private boolean isBanker_ ;
+      // required int32 bankerId = 5;
+      private int bankerId_ ;
       /**
-       * <code>optional bool isBanker = 5;</code>
+       * <code>required int32 bankerId = 5;</code>
        *
        * <pre>
-       * 是否是庄家
+       * 庄家id
        * </pre>
        */
-      public boolean hasIsBanker() {
+      public boolean hasBankerId() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional bool isBanker = 5;</code>
+       * <code>required int32 bankerId = 5;</code>
        *
        * <pre>
-       * 是否是庄家
+       * 庄家id
        * </pre>
        */
-      public boolean getIsBanker() {
-        return isBanker_;
+      public int getBankerId() {
+        return bankerId_;
       }
       /**
-       * <code>optional bool isBanker = 5;</code>
+       * <code>required int32 bankerId = 5;</code>
        *
        * <pre>
-       * 是否是庄家
+       * 庄家id
        * </pre>
        */
-      public Builder setIsBanker(boolean value) {
+      public Builder setBankerId(int value) {
         bitField0_ |= 0x00000010;
-        isBanker_ = value;
+        bankerId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool isBanker = 5;</code>
+       * <code>required int32 bankerId = 5;</code>
        *
        * <pre>
-       * 是否是庄家
+       * 庄家id
        * </pre>
        */
-      public Builder clearIsBanker() {
+      public Builder clearBankerId() {
         bitField0_ = (bitField0_ & ~0x00000010);
-        isBanker_ = false;
+        bankerId_ = 0;
         onChanged();
         return this;
       }
@@ -39947,7 +41720,7 @@ public final class DdzProto {
    * Protobuf type {@code netty.SignOutReq}
    *
    * <pre>
-   * 48、退出通知
+   * 48、退出游戏
    * </pre>
    */
   public static final class SignOutReq extends
@@ -40176,7 +41949,7 @@ public final class DdzProto {
      * Protobuf type {@code netty.SignOutReq}
      *
      * <pre>
-     * 48、退出通知
+     * 48、退出游戏
      * </pre>
      */
     public static final class Builder extends
@@ -40340,6 +42113,1743 @@ public final class DdzProto {
     }
 
     // @@protoc_insertion_point(class_scope:netty.SignOutReq)
+  }
+
+  public interface ReEntryNNRoomReqOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int32 roomId = 1;
+    /**
+     * <code>required int32 roomId = 1;</code>
+     */
+    boolean hasRoomId();
+    /**
+     * <code>required int32 roomId = 1;</code>
+     */
+    int getRoomId();
+
+    // required int32 playerId = 2;
+    /**
+     * <code>required int32 playerId = 2;</code>
+     */
+    boolean hasPlayerId();
+    /**
+     * <code>required int32 playerId = 2;</code>
+     */
+    int getPlayerId();
+  }
+  /**
+   * Protobuf type {@code netty.ReEntryNNRoomReq}
+   *
+   * <pre>
+   * 49、异常退出游戏后，再进入推出前游戏房间请求
+   * </pre>
+   */
+  public static final class ReEntryNNRoomReq extends
+      com.google.protobuf.GeneratedMessage
+      implements ReEntryNNRoomReqOrBuilder {
+    // Use ReEntryNNRoomReq.newBuilder() to construct.
+    private ReEntryNNRoomReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ReEntryNNRoomReq(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ReEntryNNRoomReq defaultInstance;
+    public static ReEntryNNRoomReq getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ReEntryNNRoomReq getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ReEntryNNRoomReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              roomId_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              playerId_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.rxqp.protobuf.DdzProto.internal_static_netty_ReEntryNNRoomReq_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.rxqp.protobuf.DdzProto.internal_static_netty_ReEntryNNRoomReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.class, com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ReEntryNNRoomReq> PARSER =
+        new com.google.protobuf.AbstractParser<ReEntryNNRoomReq>() {
+      public ReEntryNNRoomReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ReEntryNNRoomReq(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReEntryNNRoomReq> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int32 roomId = 1;
+    public static final int ROOMID_FIELD_NUMBER = 1;
+    private int roomId_;
+    /**
+     * <code>required int32 roomId = 1;</code>
+     */
+    public boolean hasRoomId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int32 roomId = 1;</code>
+     */
+    public int getRoomId() {
+      return roomId_;
+    }
+
+    // required int32 playerId = 2;
+    public static final int PLAYERID_FIELD_NUMBER = 2;
+    private int playerId_;
+    /**
+     * <code>required int32 playerId = 2;</code>
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required int32 playerId = 2;</code>
+     */
+    public int getPlayerId() {
+      return playerId_;
+    }
+
+    private void initFields() {
+      roomId_ = 0;
+      playerId_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasRoomId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPlayerId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, roomId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, playerId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, roomId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, playerId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code netty.ReEntryNNRoomReq}
+     *
+     * <pre>
+     * 49、异常退出游戏后，再进入推出前游戏房间请求
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.rxqp.protobuf.DdzProto.ReEntryNNRoomReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.rxqp.protobuf.DdzProto.internal_static_netty_ReEntryNNRoomReq_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.rxqp.protobuf.DdzProto.internal_static_netty_ReEntryNNRoomReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.class, com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.Builder.class);
+      }
+
+      // Construct using com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        roomId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.rxqp.protobuf.DdzProto.internal_static_netty_ReEntryNNRoomReq_descriptor;
+      }
+
+      public com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq getDefaultInstanceForType() {
+        return com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.getDefaultInstance();
+      }
+
+      public com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq build() {
+        com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq buildPartial() {
+        com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq result = new com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.roomId_ = roomId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.playerId_ = playerId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq) {
+          return mergeFrom((com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq other) {
+        if (other == com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq.getDefaultInstance()) return this;
+        if (other.hasRoomId()) {
+          setRoomId(other.getRoomId());
+        }
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasRoomId()) {
+          
+          return false;
+        }
+        if (!hasPlayerId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.rxqp.protobuf.DdzProto.ReEntryNNRoomReq) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int32 roomId = 1;
+      private int roomId_ ;
+      /**
+       * <code>required int32 roomId = 1;</code>
+       */
+      public boolean hasRoomId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int32 roomId = 1;</code>
+       */
+      public int getRoomId() {
+        return roomId_;
+      }
+      /**
+       * <code>required int32 roomId = 1;</code>
+       */
+      public Builder setRoomId(int value) {
+        bitField0_ |= 0x00000001;
+        roomId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 roomId = 1;</code>
+       */
+      public Builder clearRoomId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        roomId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // required int32 playerId = 2;
+      private int playerId_ ;
+      /**
+       * <code>required int32 playerId = 2;</code>
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required int32 playerId = 2;</code>
+       */
+      public int getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <code>required int32 playerId = 2;</code>
+       */
+      public Builder setPlayerId(int value) {
+        bitField0_ |= 0x00000002;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 playerId = 2;</code>
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        playerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:netty.ReEntryNNRoomReq)
+    }
+
+    static {
+      defaultInstance = new ReEntryNNRoomReq(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:netty.ReEntryNNRoomReq)
+  }
+
+  public interface PostUnusualQuitOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int32 playerId = 1;
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    boolean hasPlayerId();
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    int getPlayerId();
+  }
+  /**
+   * Protobuf type {@code netty.PostUnusualQuit}
+   *
+   * <pre>
+   * 50、广播通知其他玩家，某玩家异常掉线
+   * </pre>
+   */
+  public static final class PostUnusualQuit extends
+      com.google.protobuf.GeneratedMessage
+      implements PostUnusualQuitOrBuilder {
+    // Use PostUnusualQuit.newBuilder() to construct.
+    private PostUnusualQuit(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private PostUnusualQuit(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final PostUnusualQuit defaultInstance;
+    public static PostUnusualQuit getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public PostUnusualQuit getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PostUnusualQuit(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.rxqp.protobuf.DdzProto.internal_static_netty_PostUnusualQuit_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.rxqp.protobuf.DdzProto.internal_static_netty_PostUnusualQuit_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.rxqp.protobuf.DdzProto.PostUnusualQuit.class, com.rxqp.protobuf.DdzProto.PostUnusualQuit.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<PostUnusualQuit> PARSER =
+        new com.google.protobuf.AbstractParser<PostUnusualQuit>() {
+      public PostUnusualQuit parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PostUnusualQuit(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PostUnusualQuit> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int32 playerId = 1;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerId_;
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    public int getPlayerId() {
+      return playerId_;
+    }
+
+    private void initFields() {
+      playerId_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasPlayerId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, playerId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, playerId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.rxqp.protobuf.DdzProto.PostUnusualQuit parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostUnusualQuit parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostUnusualQuit parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostUnusualQuit parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostUnusualQuit parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostUnusualQuit parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostUnusualQuit parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostUnusualQuit parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostUnusualQuit parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostUnusualQuit parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.rxqp.protobuf.DdzProto.PostUnusualQuit prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code netty.PostUnusualQuit}
+     *
+     * <pre>
+     * 50、广播通知其他玩家，某玩家异常掉线
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.rxqp.protobuf.DdzProto.PostUnusualQuitOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.rxqp.protobuf.DdzProto.internal_static_netty_PostUnusualQuit_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.rxqp.protobuf.DdzProto.internal_static_netty_PostUnusualQuit_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.rxqp.protobuf.DdzProto.PostUnusualQuit.class, com.rxqp.protobuf.DdzProto.PostUnusualQuit.Builder.class);
+      }
+
+      // Construct using com.rxqp.protobuf.DdzProto.PostUnusualQuit.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        playerId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.rxqp.protobuf.DdzProto.internal_static_netty_PostUnusualQuit_descriptor;
+      }
+
+      public com.rxqp.protobuf.DdzProto.PostUnusualQuit getDefaultInstanceForType() {
+        return com.rxqp.protobuf.DdzProto.PostUnusualQuit.getDefaultInstance();
+      }
+
+      public com.rxqp.protobuf.DdzProto.PostUnusualQuit build() {
+        com.rxqp.protobuf.DdzProto.PostUnusualQuit result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.rxqp.protobuf.DdzProto.PostUnusualQuit buildPartial() {
+        com.rxqp.protobuf.DdzProto.PostUnusualQuit result = new com.rxqp.protobuf.DdzProto.PostUnusualQuit(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.playerId_ = playerId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.rxqp.protobuf.DdzProto.PostUnusualQuit) {
+          return mergeFrom((com.rxqp.protobuf.DdzProto.PostUnusualQuit)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.rxqp.protobuf.DdzProto.PostUnusualQuit other) {
+        if (other == com.rxqp.protobuf.DdzProto.PostUnusualQuit.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasPlayerId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.rxqp.protobuf.DdzProto.PostUnusualQuit parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.rxqp.protobuf.DdzProto.PostUnusualQuit) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int32 playerId = 1;
+      private int playerId_ ;
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public int getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public Builder setPlayerId(int value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:netty.PostUnusualQuit)
+    }
+
+    static {
+      defaultInstance = new PostUnusualQuit(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:netty.PostUnusualQuit)
+  }
+
+  public interface PostPlayerOnlineOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int32 playerId = 1;
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    boolean hasPlayerId();
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    int getPlayerId();
+  }
+  /**
+   * Protobuf type {@code netty.PostPlayerOnline}
+   *
+   * <pre>
+   * 51、广播通知其他玩家，离线玩家已经上线
+   * </pre>
+   */
+  public static final class PostPlayerOnline extends
+      com.google.protobuf.GeneratedMessage
+      implements PostPlayerOnlineOrBuilder {
+    // Use PostPlayerOnline.newBuilder() to construct.
+    private PostPlayerOnline(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private PostPlayerOnline(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final PostPlayerOnline defaultInstance;
+    public static PostPlayerOnline getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public PostPlayerOnline getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PostPlayerOnline(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.rxqp.protobuf.DdzProto.internal_static_netty_PostPlayerOnline_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.rxqp.protobuf.DdzProto.internal_static_netty_PostPlayerOnline_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.rxqp.protobuf.DdzProto.PostPlayerOnline.class, com.rxqp.protobuf.DdzProto.PostPlayerOnline.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<PostPlayerOnline> PARSER =
+        new com.google.protobuf.AbstractParser<PostPlayerOnline>() {
+      public PostPlayerOnline parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PostPlayerOnline(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PostPlayerOnline> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int32 playerId = 1;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerId_;
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    public int getPlayerId() {
+      return playerId_;
+    }
+
+    private void initFields() {
+      playerId_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasPlayerId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, playerId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, playerId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOnline parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOnline parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOnline parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOnline parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOnline parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOnline parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOnline parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOnline parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOnline parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOnline parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.rxqp.protobuf.DdzProto.PostPlayerOnline prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code netty.PostPlayerOnline}
+     *
+     * <pre>
+     * 51、广播通知其他玩家，离线玩家已经上线
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.rxqp.protobuf.DdzProto.PostPlayerOnlineOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.rxqp.protobuf.DdzProto.internal_static_netty_PostPlayerOnline_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.rxqp.protobuf.DdzProto.internal_static_netty_PostPlayerOnline_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.rxqp.protobuf.DdzProto.PostPlayerOnline.class, com.rxqp.protobuf.DdzProto.PostPlayerOnline.Builder.class);
+      }
+
+      // Construct using com.rxqp.protobuf.DdzProto.PostPlayerOnline.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        playerId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.rxqp.protobuf.DdzProto.internal_static_netty_PostPlayerOnline_descriptor;
+      }
+
+      public com.rxqp.protobuf.DdzProto.PostPlayerOnline getDefaultInstanceForType() {
+        return com.rxqp.protobuf.DdzProto.PostPlayerOnline.getDefaultInstance();
+      }
+
+      public com.rxqp.protobuf.DdzProto.PostPlayerOnline build() {
+        com.rxqp.protobuf.DdzProto.PostPlayerOnline result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.rxqp.protobuf.DdzProto.PostPlayerOnline buildPartial() {
+        com.rxqp.protobuf.DdzProto.PostPlayerOnline result = new com.rxqp.protobuf.DdzProto.PostPlayerOnline(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.playerId_ = playerId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.rxqp.protobuf.DdzProto.PostPlayerOnline) {
+          return mergeFrom((com.rxqp.protobuf.DdzProto.PostPlayerOnline)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.rxqp.protobuf.DdzProto.PostPlayerOnline other) {
+        if (other == com.rxqp.protobuf.DdzProto.PostPlayerOnline.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasPlayerId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.rxqp.protobuf.DdzProto.PostPlayerOnline parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.rxqp.protobuf.DdzProto.PostPlayerOnline) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int32 playerId = 1;
+      private int playerId_ ;
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public int getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public Builder setPlayerId(int value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:netty.PostPlayerOnline)
+    }
+
+    static {
+      defaultInstance = new PostPlayerOnline(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:netty.PostPlayerOnline)
+  }
+
+  public interface PostPlayerOfflineOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int32 playerId = 1;
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    boolean hasPlayerId();
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    int getPlayerId();
+  }
+  /**
+   * Protobuf type {@code netty.PostPlayerOffline}
+   *
+   * <pre>
+   * 52、广播通知其他玩家，离线玩家已经上线
+   * </pre>
+   */
+  public static final class PostPlayerOffline extends
+      com.google.protobuf.GeneratedMessage
+      implements PostPlayerOfflineOrBuilder {
+    // Use PostPlayerOffline.newBuilder() to construct.
+    private PostPlayerOffline(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private PostPlayerOffline(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final PostPlayerOffline defaultInstance;
+    public static PostPlayerOffline getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public PostPlayerOffline getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PostPlayerOffline(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.rxqp.protobuf.DdzProto.internal_static_netty_PostPlayerOffline_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.rxqp.protobuf.DdzProto.internal_static_netty_PostPlayerOffline_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.rxqp.protobuf.DdzProto.PostPlayerOffline.class, com.rxqp.protobuf.DdzProto.PostPlayerOffline.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<PostPlayerOffline> PARSER =
+        new com.google.protobuf.AbstractParser<PostPlayerOffline>() {
+      public PostPlayerOffline parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PostPlayerOffline(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PostPlayerOffline> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int32 playerId = 1;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerId_;
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int32 playerId = 1;</code>
+     */
+    public int getPlayerId() {
+      return playerId_;
+    }
+
+    private void initFields() {
+      playerId_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasPlayerId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, playerId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, playerId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOffline parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOffline parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOffline parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOffline parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOffline parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOffline parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOffline parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOffline parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOffline parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.protobuf.DdzProto.PostPlayerOffline parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.rxqp.protobuf.DdzProto.PostPlayerOffline prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code netty.PostPlayerOffline}
+     *
+     * <pre>
+     * 52、广播通知其他玩家，离线玩家已经上线
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.rxqp.protobuf.DdzProto.PostPlayerOfflineOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.rxqp.protobuf.DdzProto.internal_static_netty_PostPlayerOffline_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.rxqp.protobuf.DdzProto.internal_static_netty_PostPlayerOffline_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.rxqp.protobuf.DdzProto.PostPlayerOffline.class, com.rxqp.protobuf.DdzProto.PostPlayerOffline.Builder.class);
+      }
+
+      // Construct using com.rxqp.protobuf.DdzProto.PostPlayerOffline.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        playerId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.rxqp.protobuf.DdzProto.internal_static_netty_PostPlayerOffline_descriptor;
+      }
+
+      public com.rxqp.protobuf.DdzProto.PostPlayerOffline getDefaultInstanceForType() {
+        return com.rxqp.protobuf.DdzProto.PostPlayerOffline.getDefaultInstance();
+      }
+
+      public com.rxqp.protobuf.DdzProto.PostPlayerOffline build() {
+        com.rxqp.protobuf.DdzProto.PostPlayerOffline result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.rxqp.protobuf.DdzProto.PostPlayerOffline buildPartial() {
+        com.rxqp.protobuf.DdzProto.PostPlayerOffline result = new com.rxqp.protobuf.DdzProto.PostPlayerOffline(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.playerId_ = playerId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.rxqp.protobuf.DdzProto.PostPlayerOffline) {
+          return mergeFrom((com.rxqp.protobuf.DdzProto.PostPlayerOffline)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.rxqp.protobuf.DdzProto.PostPlayerOffline other) {
+        if (other == com.rxqp.protobuf.DdzProto.PostPlayerOffline.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasPlayerId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.rxqp.protobuf.DdzProto.PostPlayerOffline parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.rxqp.protobuf.DdzProto.PostPlayerOffline) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int32 playerId = 1;
+      private int playerId_ ;
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public int getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public Builder setPlayerId(int value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 playerId = 1;</code>
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:netty.PostPlayerOffline)
+    }
+
+    static {
+      defaultInstance = new PostPlayerOffline(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:netty.PostPlayerOffline)
   }
 
   private static com.google.protobuf.Descriptors.Descriptor
@@ -40602,6 +44112,26 @@ public final class DdzProto {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_netty_SignOutReq_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_netty_ReEntryNNRoomReq_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_netty_ReEntryNNRoomReq_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_netty_PostUnusualQuit_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_netty_PostUnusualQuit_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_netty_PostPlayerOnline_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_netty_PostPlayerOnline_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_netty_PostPlayerOffline_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_netty_PostPlayerOffline_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -40611,7 +44141,7 @@ public final class DdzProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021MessageInfo.proto\022\005netty\"\223\021\n\013MessageIn" +
+      "\n\021MessageInfo.proto\022\005netty\"\337\022\n\013MessageIn" +
       "fo\022$\n\tmessageId\030\001 \002(\0162\021.netty.MESSAGE_ID" +
       "\022!\n\010loginReq\030\002 \001(\0132\017.netty.LoginReq\022#\n\tl" +
       "oginResp\030\003 \001(\0132\020.netty.LoginResp\022+\n\rcrea" +
@@ -40666,116 +44196,135 @@ public final class DdzProto {
       "ionResult\022)\n\014sendSoundReq\030. \001(\0132\023.netty." +
       "SendSoundReq\0223\n\021postSendSoundResp\030/ \001(\0132" +
       "\030.netty.PostSendSoundResp\022%\n\nsignOutReq\030" +
-      "0 \001(\0132\021.netty.SignOutReq\"+\n\010LoginReq\022\r\n\005" +
-      "token\030\001 \002(\t\022\020\n\010playerid\030\002 \001(\005\"K\n\016PlayerB" +
-      "aseInfo\022\n\n\002ID\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\016\n\006img" +
-      "Url\030\003 \001(\t\022\017\n\007cardNum\030\004 \001(\005\":\n\tLoginResp\022" +
-      "-\n\016playerBaseInfo\030\001 \002(\0132\025.netty.PlayerBa",
-      "seInfo\">\n\rCreateRoomReq\022\r\n\005games\030\001 \002(\005\022\014" +
-      "\n\004type\030\002 \002(\005\022\020\n\010playerId\030\003 \002(\005\" \n\016Create" +
-      "RoomResp\022\016\n\006roomId\030\002 \002(\005\"0\n\014EntryRoomReq" +
-      "\022\016\n\006roomId\030\001 \002(\005\022\020\n\010playerId\030\003 \002(\005\"A\n\rEn" +
-      "tryRoomResp\022!\n\010roomInfo\030\002 \002(\0132\017.netty.Ro" +
-      "omInfo\022\r\n\005order\030\003 \002(\005\".\n\rPostEntryRoom\022\035" +
-      "\n\006player\030\001 \002(\0132\r.netty.Player\"\216\001\n\010RoomIn" +
-      "fo\022\016\n\006roomId\030\001 \002(\005\022\036\n\007players\030\002 \003(\0132\r.ne" +
-      "tty.Player\022\020\n\010multiple\030\003 \001(\005\022\023\n\013playedGa" +
-      "mes\030\004 \001(\005\022\022\n\ntotalGames\030\005 \001(\005\022\027\n\017current",
-      "PlayerId\030\006 \001(\005\"^\n\006Player\022\n\n\002ID\030\001 \002(\005\022\014\n\004" +
-      "name\030\002 \002(\t\022\016\n\006imgUrl\030\003 \001(\t\022\r\n\005score\030\004 \002(" +
-      "\005\022\014\n\004isDz\030\005 \002(\010\022\r\n\005order\030\006 \001(\005\"\"\n\005Poker\022" +
-      "\n\n\002ID\030\001 \002(\005\022\r\n\005isOut\030\002 \002(\010\"/\n\nDisbandReq" +
-      "\022\017\n\007groupId\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\"\r\n\013P" +
-      "ostDisband\" \n\017DisbandCheckReq\022\r\n\005agree\030\001" +
-      " \002(\010\"\022\n\020PostDisbandCheck\"Q\n\016SettlementDa" +
-      "ta\022\n\n\002ID\030\001 \002(\005\022\020\n\010gotscore\030\002 \002(\005\022\022\n\nfina" +
-      "lscore\030\003 \002(\005\022\r\n\005isWin\030\004 \002(\010\"H\n\016Settlemen" +
-      "tInfo\022&\n\007players\030\001 \003(\0132\025.netty.Settlemen",
-      "tData\022\016\n\006isOver\030\002 \002(\010\"[\n\nDiscardReq\022\020\n\010p" +
-      "layerId\030\001 \002(\005\022\017\n\007cardIds\030\002 \003(\005\022\027\n\017variab" +
-      "leCardIds\030\003 \003(\005\022\021\n\tcardsType\030\004 \002(\005\"\227\001\n\013P" +
-      "ostDiscard\022\020\n\010playerId\030\001 \002(\005\022\017\n\007cardIds\030" +
-      "\002 \003(\005\022\027\n\017variableCardIds\030\003 \003(\005\022\032\n\022remain" +
-      "derPokersNum\030\004 \002(\005\022\033\n\023nextDiscardPlayerI" +
-      "d\030\005 \002(\005\022\023\n\013mustDiscard\030\006 \002(\010\"\033\n\007DealReq\022" +
-      "\020\n\010playerId\030\001 \002(\005\"o\n\010DealResp\022\020\n\010playerI" +
-      "d\030\001 \002(\005\022\034\n\006pokers\030\002 \003(\0132\014.netty.Poker\022!\n" +
-      "\010roomInfo\030\003 \001(\0132\017.netty.RoomInfo\022\020\n\010grab",
-      "Host\030\004 \002(\005\"-\n\013GrabHostReq\022\020\n\010playerId\030\001 " +
-      "\002(\005\022\014\n\004type\030\002 \002(\005\"\222\001\n\020PostGrabHostResp\022\014" +
-      "\n\004type\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\022\024\n\014hostPl" +
-      "ayerId\030\003 \001(\005\022\034\n\006pokers\030\004 \003(\0132\014.netty.Pok" +
-      "er\022\020\n\010variable\030\005 \001(\005\022\030\n\020nextGrabPlayerId" +
-      "\030\006 \001(\005\"(\n\007MsgInfo\022\014\n\004type\030\001 \002(\005\022\017\n\007messa" +
-      "ge\030\002 \002(\t\"\016\n\014PostDealOver\"@\n\017CreateNNRoom" +
-      "Req\022\r\n\005games\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\022\020\n\010play" +
-      "erId\030\003 \002(\005\"\"\n\020CreateNNRoomResp\022\016\n\006roomId" +
-      "\030\002 \002(\005\"2\n\016EntryNNRoomReq\022\016\n\006roomId\030\001 \002(\005",
-      "\022\020\n\010playerId\030\003 \002(\005\"C\n\017EntryNNRoomResp\022!\n" +
-      "\010roomInfo\030\002 \002(\0132\017.netty.RoomInfo\022\r\n\005orde" +
-      "r\030\003 \002(\005\"0\n\017PostNNEntryRoom\022\035\n\006player\030\001 \002" +
-      "(\0132\r.netty.Player\"\"\n\016StartNNGameReq\022\020\n\010p" +
-      "layerid\030\001 \002(\005\"\021\n\017StartNNGameResp\"\021\n\017Post" +
-      "StartNNGame\" \n\014NNPrepareReq\022\020\n\010playerId\030" +
-      "\001 \002(\005\"m\n\016PostNNDealResp\022\020\n\010playerId\030\001 \002(" +
-      "\005\022\016\n\006pokers\030\002 \003(\005\022\023\n\013playedGames\030\003 \001(\005\022\022" +
-      "\n\ntotalGames\030\004 \001(\005\022\020\n\010isBanker\030\005 \001(\010\"+\n\010" +
-      "StakeReq\022\020\n\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(",
-      "\005\"\032\n\tStakeResp\022\r\n\005point\030\001 \002(\005\"0\n\rPostSta" +
-      "keResp\022\020\n\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(\005\"" +
-      "3\n\016NNShowCardsReq\022\020\n\010playerid\030\001 \002(\005\022\017\n\007s" +
-      "howAll\030\002 \002(\010\"R\n\017NNShowCardsResp\022\020\n\010playe" +
-      "rId\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030\003 \002(" +
-      "\0162\r.netty.NNType\"R\n\017PostNNShowCards\022\020\n\010p" +
-      "layerId\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030" +
-      "\003 \002(\0162\r.netty.NNType\"%\n\021PostNNPrepareRes" +
-      "p\022\020\n\010playerId\030\001 \002(\005\"\017\n\rPostStakeOver\"$\n\020" +
-      "NNDissolutionReq\022\020\n\010playerId\030\001 \002(\005\"\'\n\023Po",
-      "stDissolutionResp\022\020\n\010playerid\030\001 \002(\005\";\n\026N" +
-      "NAnswerDissolutionReq\022\020\n\010playerId\030\001 \002(\005\022" +
-      "\017\n\007isAgree\030\002 \002(\010\"D\n\033PostAnswerDissolutio" +
-      "nResult\022\020\n\010agreeCnt\030\001 \002(\005\022\023\n\013disagreeCnt" +
-      "\030\002 \002(\005\"\027\n\025PostDissolutionResult\"1\n\014SendS" +
-      "oundReq\022\020\n\010playerId\030\001 \002(\005\022\017\n\007soundId\030\002 \002" +
-      "(\005\"6\n\021PostSendSoundResp\022\020\n\010playerId\030\001 \002(" +
-      "\005\022\017\n\007soundId\030\002 \002(\005\"\036\n\nSignOutReq\022\020\n\010play" +
-      "erid\030\001 \002(\005*\327\010\n\nMESSAGE_ID\022\020\n\014msg_LoginRe" +
-      "q\020\001\022\021\n\rmsg_LoginResp\020\002\022\025\n\021msg_CreateRoom",
-      "Req\020\003\022\026\n\022msg_CreateRoomResp\020\004\022\024\n\020msg_Ent" +
-      "ryRoomReq\020\005\022\025\n\021msg_EntryRoomResp\020\006\022\025\n\021ms" +
-      "g_PostEntryRoom\020\007\022\016\n\nmsg_Player\020\010\022\022\n\016msg" +
-      "_DisbandReq\020\t\022\023\n\017msg_PostDisband\020\n\022\027\n\023ms" +
-      "g_DisbandCheckReq\020\013\022\030\n\024msg_PostDisbandCh" +
-      "eck\020\014\022\026\n\022msg_SettlementInfo\020\r\022\022\n\016msg_Dis" +
-      "cardReq\020\016\022\023\n\017msg_PostDiscard\020\017\022\017\n\013msg_De" +
-      "alReq\020\020\022\020\n\014msg_DealResp\020\021\022\023\n\017msg_GrabHos" +
-      "tReq\020\022\022\030\n\024msg_PostGrabHostResp\020\023\022\017\n\013msg_" +
-      "MsgInfo\020\024\022\024\n\020msg_PostDealOver\020\025\022\027\n\023msg_C",
-      "reateNNRoomReq\020\026\022\030\n\024msg_CreateNNRoomResp" +
-      "\020\027\022\026\n\022msg_EntryNNRoomReq\020\030\022\027\n\023msg_EntryN" +
-      "NRoomResp\020\031\022\027\n\023msg_PostNNEntryRoom\020\032\022\026\n\022" +
-      "msg_StartNNGameReq\020\033\022\027\n\023msg_StartNNGameR" +
-      "esp\020\034\022\027\n\023msg_PostStartNNGame\020\035\022\024\n\020msg_NN" +
-      "PrepareReq\020\036\022\026\n\022msg_PostNNDealResp\020\037\022\020\n\014" +
-      "msg_StakeReq\020 \022\021\n\rmsg_StakeResp\020!\022\025\n\021msg" +
-      "_PostStakeResp\020\"\022\026\n\022msg_NNShowCardsReq\020#" +
-      "\022\027\n\023msg_NNShowCardsResp\020$\022\027\n\023msg_PostNNS" +
-      "howCards\020%\022\031\n\025msg_PostNNPrepareResp\020&\022\025\n",
-      "\021msg_PostStakeOver\020\'\022\030\n\024msg_NNDissolutio" +
-      "nReq\020(\022\033\n\027msg_PostDissolutionResp\020)\022\036\n\032m" +
-      "sg_NNAnswerDissolutionReq\020*\022#\n\037msg_PostA" +
-      "nswerDissolutionResult\020+\022\035\n\031msg_PostDiss" +
-      "olutionResult\020,\022\024\n\020msg_SendSoundReq\020-\022\031\n" +
-      "\025msg_PostSendSoundResp\020.\022\022\n\016msg_SignOutR" +
-      "eq\020/*\265\002\n\006NNType\022\r\n\tNNT_ERROR\020\000\022\014\n\010NNT_NO" +
-      "NE\020\001\022\024\n\020NNT_SPECIAL_NIU1\020\002\022\024\n\020NNT_SPECIA" +
-      "L_NIU2\020\003\022\024\n\020NNT_SPECIAL_NIU3\020\004\022\024\n\020NNT_SP" +
-      "ECIAL_NIU4\020\005\022\024\n\020NNT_SPECIAL_NIU5\020\006\022\024\n\020NN",
-      "T_SPECIAL_NIU6\020\007\022\024\n\020NNT_SPECIAL_NIU7\020\010\022\024" +
-      "\n\020NNT_SPECIAL_NIU8\020\t\022\024\n\020NNT_SPECIAL_NIU9" +
-      "\020\n\022\026\n\022NNT_SPECIAL_NIUNIU\020\013\022\026\n\022NNT_SPECIA" +
-      "L_NIUHUA\020\014\022\030\n\024NNT_SPECIAL_BOMEBOME\020\rB\035\n\021" +
-      "com.rxqp.protobufB\010DdzProto"
+      "0 \001(\0132\021.netty.SignOutReq\0221\n\020reEntryNNRoo" +
+      "mReq\0301 \001(\0132\027.netty.ReEntryNNRoomReq\022/\n\017p" +
+      "ostUnusualQuit\0302 \001(\0132\026.netty.PostUnusual" +
+      "Quit\0221\n\020postPlayerOnline\0303 \001(\0132\027.netty.P" +
+      "ostPlayerOnline\0223\n\021postPlayerOffline\0304 \001",
+      "(\0132\030.netty.PostPlayerOffline\"*\n\010LoginReq" +
+      "\022\014\n\004code\030\001 \002(\t\022\020\n\010playerid\030\002 \001(\005\"K\n\016Play" +
+      "erBaseInfo\022\n\n\002ID\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\016\n\006" +
+      "imgUrl\030\003 \001(\t\022\017\n\007cardNum\030\004 \001(\005\"q\n\tLoginRe" +
+      "sp\022-\n\016playerBaseInfo\030\001 \002(\0132\025.netty.Playe" +
+      "rBaseInfo\022\020\n\010shareurl\030\002 \001(\t\022\023\n\013playerSta" +
+      "te\030\003 \002(\005\022\016\n\006roomId\030\004 \001(\005\">\n\rCreateRoomRe" +
+      "q\022\r\n\005games\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\022\020\n\010player" +
+      "Id\030\003 \002(\005\" \n\016CreateRoomResp\022\016\n\006roomId\030\001 \002" +
+      "(\005\"0\n\014EntryRoomReq\022\016\n\006roomId\030\001 \002(\005\022\020\n\010pl",
+      "ayerId\030\002 \002(\005\"A\n\rEntryRoomResp\022!\n\010roomInf" +
+      "o\030\001 \002(\0132\017.netty.RoomInfo\022\r\n\005order\030\002 \002(\005\"" +
+      ".\n\rPostEntryRoom\022\035\n\006player\030\001 \002(\0132\r.netty" +
+      ".Player\"\216\001\n\010RoomInfo\022\016\n\006roomId\030\001 \002(\005\022\036\n\007" +
+      "players\030\002 \003(\0132\r.netty.Player\022\020\n\010multiple" +
+      "\030\003 \001(\005\022\023\n\013playedGames\030\004 \001(\005\022\022\n\ntotalGame" +
+      "s\030\005 \001(\005\022\027\n\017currentPlayerId\030\006 \001(\005\"p\n\006Play" +
+      "er\022\n\n\002ID\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\016\n\006imgUrl\030\003" +
+      " \001(\t\022\r\n\005score\030\004 \002(\005\022\014\n\004isDz\030\005 \002(\010\022\r\n\005ord" +
+      "er\030\006 \001(\005\022\020\n\010isOnline\030\007 \001(\010\"\"\n\005Poker\022\n\n\002I",
+      "D\030\001 \002(\005\022\r\n\005isOut\030\002 \002(\010\"/\n\nDisbandReq\022\017\n\007" +
+      "groupId\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\"\r\n\013PostD" +
+      "isband\" \n\017DisbandCheckReq\022\r\n\005agree\030\001 \002(\010" +
+      "\"\022\n\020PostDisbandCheck\"Q\n\016SettlementData\022\n" +
+      "\n\002ID\030\001 \002(\005\022\020\n\010gotscore\030\002 \002(\005\022\022\n\nfinalsco" +
+      "re\030\003 \002(\005\022\r\n\005isWin\030\004 \002(\010\"H\n\016SettlementInf" +
+      "o\022&\n\007players\030\001 \003(\0132\025.netty.SettlementDat" +
+      "a\022\016\n\006isOver\030\002 \002(\010\"[\n\nDiscardReq\022\020\n\010playe" +
+      "rId\030\001 \002(\005\022\017\n\007cardIds\030\002 \003(\005\022\027\n\017variableCa" +
+      "rdIds\030\003 \003(\005\022\021\n\tcardsType\030\004 \002(\005\"\227\001\n\013PostD",
+      "iscard\022\020\n\010playerId\030\001 \002(\005\022\017\n\007cardIds\030\002 \003(" +
+      "\005\022\027\n\017variableCardIds\030\003 \003(\005\022\032\n\022remainderP" +
+      "okersNum\030\004 \002(\005\022\033\n\023nextDiscardPlayerId\030\005 " +
+      "\002(\005\022\023\n\013mustDiscard\030\006 \002(\010\"\033\n\007DealReq\022\020\n\010p" +
+      "layerId\030\001 \002(\005\"o\n\010DealResp\022\020\n\010playerId\030\001 " +
+      "\002(\005\022\034\n\006pokers\030\002 \003(\0132\014.netty.Poker\022!\n\010roo" +
+      "mInfo\030\003 \001(\0132\017.netty.RoomInfo\022\020\n\010grabHost" +
+      "\030\004 \002(\005\"-\n\013GrabHostReq\022\020\n\010playerId\030\001 \002(\005\022" +
+      "\014\n\004type\030\002 \002(\005\"\222\001\n\020PostGrabHostResp\022\014\n\004ty" +
+      "pe\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\022\024\n\014hostPlayer",
+      "Id\030\003 \001(\005\022\034\n\006pokers\030\004 \003(\0132\014.netty.Poker\022\020" +
+      "\n\010variable\030\005 \001(\005\022\030\n\020nextGrabPlayerId\030\006 \001" +
+      "(\005\"(\n\007MsgInfo\022\014\n\004type\030\001 \002(\005\022\017\n\007message\030\002" +
+      " \002(\t\"\016\n\014PostDealOver\"@\n\017CreateNNRoomReq\022" +
+      "\r\n\005games\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\022\020\n\010playerId" +
+      "\030\003 \002(\005\"\"\n\020CreateNNRoomResp\022\016\n\006roomId\030\002 \002" +
+      "(\005\"2\n\016EntryNNRoomReq\022\016\n\006roomId\030\001 \002(\005\022\020\n\010" +
+      "playerId\030\002 \002(\005\"i\n\017EntryNNRoomResp\022!\n\010roo" +
+      "mInfo\030\001 \002(\0132\017.netty.RoomInfo\022\r\n\005order\030\002 " +
+      "\002(\005\022$\n\006status\030\003 \001(\0162\024.netty.OfflineStatu",
+      "s\"0\n\017PostNNEntryRoom\022\035\n\006player\030\001 \002(\0132\r.n" +
+      "etty.Player\"\"\n\016StartNNGameReq\022\020\n\010playeri" +
+      "d\030\001 \002(\005\"\021\n\017StartNNGameResp\"\021\n\017PostStartN" +
+      "NGame\" \n\014NNPrepareReq\022\020\n\010playerId\030\001 \002(\005\"" +
+      "m\n\016PostNNDealResp\022\020\n\010playerId\030\001 \002(\005\022\016\n\006p" +
+      "okers\030\002 \003(\005\022\023\n\013playedGames\030\003 \002(\005\022\022\n\ntota" +
+      "lGames\030\004 \002(\005\022\020\n\010bankerId\030\005 \002(\005\"+\n\010StakeR" +
+      "eq\022\020\n\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(\005\"\032\n\tS" +
+      "takeResp\022\r\n\005point\030\001 \002(\005\"0\n\rPostStakeResp" +
+      "\022\020\n\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(\005\"3\n\016NNS",
+      "howCardsReq\022\020\n\010playerid\030\001 \002(\005\022\017\n\007showAll" +
+      "\030\002 \002(\010\"R\n\017NNShowCardsResp\022\020\n\010playerId\030\001 " +
+      "\002(\005\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030\003 \002(\0162\r.ne" +
+      "tty.NNType\"R\n\017PostNNShowCards\022\020\n\010playerI" +
+      "d\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030\003 \002(\0162" +
+      "\r.netty.NNType\"%\n\021PostNNPrepareResp\022\020\n\010p" +
+      "layerId\030\001 \002(\005\"\017\n\rPostStakeOver\"$\n\020NNDiss" +
+      "olutionReq\022\020\n\010playerId\030\001 \002(\005\"\'\n\023PostDiss" +
+      "olutionResp\022\020\n\010playerid\030\001 \002(\005\";\n\026NNAnswe" +
+      "rDissolutionReq\022\020\n\010playerId\030\001 \002(\005\022\017\n\007isA",
+      "gree\030\002 \002(\010\"D\n\033PostAnswerDissolutionResul" +
+      "t\022\020\n\010agreeCnt\030\001 \002(\005\022\023\n\013disagreeCnt\030\002 \002(\005" +
+      "\"\027\n\025PostDissolutionResult\"1\n\014SendSoundRe" +
+      "q\022\020\n\010playerId\030\001 \002(\005\022\017\n\007soundId\030\002 \002(\005\"6\n\021" +
+      "PostSendSoundResp\022\020\n\010playerId\030\001 \002(\005\022\017\n\007s" +
+      "oundId\030\002 \002(\005\"\036\n\nSignOutReq\022\020\n\010playerid\030\001" +
+      " \002(\005\"4\n\020ReEntryNNRoomReq\022\016\n\006roomId\030\001 \002(\005" +
+      "\022\020\n\010playerId\030\002 \002(\005\"#\n\017PostUnusualQuit\022\020\n" +
+      "\010playerId\030\001 \002(\005\"$\n\020PostPlayerOnline\022\020\n\010p" +
+      "layerId\030\001 \002(\005\"%\n\021PostPlayerOffline\022\020\n\010pl",
+      "ayerId\030\001 \002(\005*\277\t\n\nMESSAGE_ID\022\020\n\014msg_Login" +
+      "Req\020\001\022\021\n\rmsg_LoginResp\020\002\022\025\n\021msg_CreateRo" +
+      "omReq\020\003\022\026\n\022msg_CreateRoomResp\020\004\022\024\n\020msg_E" +
+      "ntryRoomReq\020\005\022\025\n\021msg_EntryRoomResp\020\006\022\025\n\021" +
+      "msg_PostEntryRoom\020\007\022\016\n\nmsg_Player\020\010\022\022\n\016m" +
+      "sg_DisbandReq\020\t\022\023\n\017msg_PostDisband\020\n\022\027\n\023" +
+      "msg_DisbandCheckReq\020\013\022\030\n\024msg_PostDisband" +
+      "Check\020\014\022\026\n\022msg_SettlementInfo\020\r\022\022\n\016msg_D" +
+      "iscardReq\020\016\022\023\n\017msg_PostDiscard\020\017\022\017\n\013msg_" +
+      "DealReq\020\020\022\020\n\014msg_DealResp\020\021\022\023\n\017msg_GrabH",
+      "ostReq\020\022\022\030\n\024msg_PostGrabHostResp\020\023\022\017\n\013ms" +
+      "g_MsgInfo\020\024\022\024\n\020msg_PostDealOver\020\025\022\027\n\023msg" +
+      "_CreateNNRoomReq\020\026\022\030\n\024msg_CreateNNRoomRe" +
+      "sp\020\027\022\026\n\022msg_EntryNNRoomReq\020\030\022\027\n\023msg_Entr" +
+      "yNNRoomResp\020\031\022\027\n\023msg_PostNNEntryRoom\020\032\022\026" +
+      "\n\022msg_StartNNGameReq\020\033\022\027\n\023msg_StartNNGam" +
+      "eResp\020\034\022\027\n\023msg_PostStartNNGame\020\035\022\024\n\020msg_" +
+      "NNPrepareReq\020\036\022\026\n\022msg_PostNNDealResp\020\037\022\020" +
+      "\n\014msg_StakeReq\020 \022\021\n\rmsg_StakeResp\020!\022\025\n\021m" +
+      "sg_PostStakeResp\020\"\022\026\n\022msg_NNShowCardsReq",
+      "\020#\022\027\n\023msg_NNShowCardsResp\020$\022\027\n\023msg_PostN" +
+      "NShowCards\020%\022\031\n\025msg_PostNNPrepareResp\020&\022" +
+      "\025\n\021msg_PostStakeOver\020\'\022\030\n\024msg_NNDissolut" +
+      "ionReq\020(\022\033\n\027msg_PostDissolutionResp\020)\022\036\n" +
+      "\032msg_NNAnswerDissolutionReq\020*\022#\n\037msg_Pos" +
+      "tAnswerDissolutionResult\020+\022\035\n\031msg_PostDi" +
+      "ssolutionResult\020,\022\024\n\020msg_SendSoundReq\020-\022" +
+      "\031\n\025msg_PostSendSoundResp\020.\022\022\n\016msg_SignOu" +
+      "tReq\020/\022\030\n\024msg_ReEntryNNRoomReq\0200\022\027\n\023msg_" +
+      "PostUnusualQuit\0201\022\030\n\024msg_PostPlayerOnlin",
+      "e\0202\022\031\n\025msg_PostPlayerOffline\0203*\265\002\n\006NNTyp" +
+      "e\022\r\n\tNNT_ERROR\020\000\022\014\n\010NNT_NONE\020\001\022\024\n\020NNT_SP" +
+      "ECIAL_NIU1\020\002\022\024\n\020NNT_SPECIAL_NIU2\020\003\022\024\n\020NN" +
+      "T_SPECIAL_NIU3\020\004\022\024\n\020NNT_SPECIAL_NIU4\020\005\022\024" +
+      "\n\020NNT_SPECIAL_NIU5\020\006\022\024\n\020NNT_SPECIAL_NIU6" +
+      "\020\007\022\024\n\020NNT_SPECIAL_NIU7\020\010\022\024\n\020NNT_SPECIAL_" +
+      "NIU8\020\t\022\024\n\020NNT_SPECIAL_NIU9\020\n\022\026\n\022NNT_SPEC" +
+      "IAL_NIUNIU\020\013\022\026\n\022NNT_SPECIAL_NIUHUA\020\014\022\030\n\024" +
+      "NNT_SPECIAL_BOMEBOME\020\r*\247\001\n\rOfflineStatus" +
+      "\022\026\n\022STATUS_CREATE_ROOM\020\000\022\025\n\021STATUS_ENTER",
+      "_ROOM\020\001\022\030\n\024STATUS_BEGIN_PREPARE\020\002\022\031\n\025STA" +
+      "TUS_FINISH_PREPARE\020\003\022\026\n\022STATUS_BEGIN_STA" +
+      "KE\020\004\022\032\n\026STATUS_BEGIN_SHOWCARDS\020\005B\035\n\021com." +
+      "rxqp.protobufB\010DdzProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -40787,13 +44336,13 @@ public final class DdzProto {
           internal_static_netty_MessageInfo_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_MessageInfo_descriptor,
-              new java.lang.String[] { "MessageId", "LoginReq", "LoginResp", "CreateRoomReq", "CreateRoomResp", "EntryRoomReq", "EntryRoomResp", "PostEntryRoom", "Player", "DisbandReq", "PostDisband", "DisbandCheckReq", "PostDisbandCheck", "SettlementInfo", "DiscardReq", "PostDiscard", "DealReq", "DealResp", "GrabHostReq", "MsgInfo", "PostGrabHostResp", "PostDealOver", "CreateNNRoomReq", "CreateNNRoomResp", "EntryNNRoomReq", "EntryNNRoomResp", "PostNNEntryRoom", "StartNNGame", "StartNNgameResp", "PostStartNNGame", "NnPrepareReq", "NnDealResp", "StakeReq", "StakeResp", "PostStakeResp", "NnShowCardsReq", "NnShowCardsResp", "PostNNShowCards", "PostNNPrepareResp", "PostStakeOver", "NnDissolutionReq", "PostDissolutionResp", "NnAnswerDissolutionReq", "PostAnswerDissolutionResult", "PostDissolutionResult", "SendSoundReq", "PostSendSoundResp", "SignOutReq", });
+              new java.lang.String[] { "MessageId", "LoginReq", "LoginResp", "CreateRoomReq", "CreateRoomResp", "EntryRoomReq", "EntryRoomResp", "PostEntryRoom", "Player", "DisbandReq", "PostDisband", "DisbandCheckReq", "PostDisbandCheck", "SettlementInfo", "DiscardReq", "PostDiscard", "DealReq", "DealResp", "GrabHostReq", "MsgInfo", "PostGrabHostResp", "PostDealOver", "CreateNNRoomReq", "CreateNNRoomResp", "EntryNNRoomReq", "EntryNNRoomResp", "PostNNEntryRoom", "StartNNGame", "StartNNgameResp", "PostStartNNGame", "NnPrepareReq", "NnDealResp", "StakeReq", "StakeResp", "PostStakeResp", "NnShowCardsReq", "NnShowCardsResp", "PostNNShowCards", "PostNNPrepareResp", "PostStakeOver", "NnDissolutionReq", "PostDissolutionResp", "NnAnswerDissolutionReq", "PostAnswerDissolutionResult", "PostDissolutionResult", "SendSoundReq", "PostSendSoundResp", "SignOutReq", "ReEntryNNRoomReq", "PostUnusualQuit", "PostPlayerOnline", "PostPlayerOffline", });
           internal_static_netty_LoginReq_descriptor =
             getDescriptor().getMessageTypes().get(1);
           internal_static_netty_LoginReq_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_LoginReq_descriptor,
-              new java.lang.String[] { "Token", "Playerid", });
+              new java.lang.String[] { "Code", "Playerid", });
           internal_static_netty_PlayerBaseInfo_descriptor =
             getDescriptor().getMessageTypes().get(2);
           internal_static_netty_PlayerBaseInfo_fieldAccessorTable = new
@@ -40805,7 +44354,7 @@ public final class DdzProto {
           internal_static_netty_LoginResp_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_LoginResp_descriptor,
-              new java.lang.String[] { "PlayerBaseInfo", });
+              new java.lang.String[] { "PlayerBaseInfo", "Shareurl", "PlayerState", "RoomId", });
           internal_static_netty_CreateRoomReq_descriptor =
             getDescriptor().getMessageTypes().get(4);
           internal_static_netty_CreateRoomReq_fieldAccessorTable = new
@@ -40847,7 +44396,7 @@ public final class DdzProto {
           internal_static_netty_Player_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_Player_descriptor,
-              new java.lang.String[] { "ID", "Name", "ImgUrl", "Score", "IsDz", "Order", });
+              new java.lang.String[] { "ID", "Name", "ImgUrl", "Score", "IsDz", "Order", "IsOnline", });
           internal_static_netty_Poker_descriptor =
             getDescriptor().getMessageTypes().get(11);
           internal_static_netty_Poker_fieldAccessorTable = new
@@ -40961,7 +44510,7 @@ public final class DdzProto {
           internal_static_netty_EntryNNRoomResp_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_EntryNNRoomResp_descriptor,
-              new java.lang.String[] { "RoomInfo", "Order", });
+              new java.lang.String[] { "RoomInfo", "Order", "Status", });
           internal_static_netty_PostNNEntryRoom_descriptor =
             getDescriptor().getMessageTypes().get(30);
           internal_static_netty_PostNNEntryRoom_fieldAccessorTable = new
@@ -40997,7 +44546,7 @@ public final class DdzProto {
           internal_static_netty_PostNNDealResp_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_PostNNDealResp_descriptor,
-              new java.lang.String[] { "PlayerId", "Pokers", "PlayedGames", "TotalGames", "IsBanker", });
+              new java.lang.String[] { "PlayerId", "Pokers", "PlayedGames", "TotalGames", "BankerId", });
           internal_static_netty_StakeReq_descriptor =
             getDescriptor().getMessageTypes().get(36);
           internal_static_netty_StakeReq_fieldAccessorTable = new
@@ -41094,6 +44643,30 @@ public final class DdzProto {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_SignOutReq_descriptor,
               new java.lang.String[] { "Playerid", });
+          internal_static_netty_ReEntryNNRoomReq_descriptor =
+            getDescriptor().getMessageTypes().get(52);
+          internal_static_netty_ReEntryNNRoomReq_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_netty_ReEntryNNRoomReq_descriptor,
+              new java.lang.String[] { "RoomId", "PlayerId", });
+          internal_static_netty_PostUnusualQuit_descriptor =
+            getDescriptor().getMessageTypes().get(53);
+          internal_static_netty_PostUnusualQuit_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_netty_PostUnusualQuit_descriptor,
+              new java.lang.String[] { "PlayerId", });
+          internal_static_netty_PostPlayerOnline_descriptor =
+            getDescriptor().getMessageTypes().get(54);
+          internal_static_netty_PostPlayerOnline_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_netty_PostPlayerOnline_descriptor,
+              new java.lang.String[] { "PlayerId", });
+          internal_static_netty_PostPlayerOffline_descriptor =
+            getDescriptor().getMessageTypes().get(55);
+          internal_static_netty_PostPlayerOffline_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_netty_PostPlayerOffline_descriptor,
+              new java.lang.String[] { "PlayerId", });
           return null;
         }
       };

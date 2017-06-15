@@ -1,5 +1,6 @@
 package com.rxqp.server.bo;
 
+import java.util.Date;
 import java.util.List;
 
 public class Room {
@@ -20,6 +21,7 @@ public class Room {
 	private Integer showCardsPlayerCnt = 0;// 已经开牌人数
 	private Integer agreeDissolutionCnt = 1;// 同意解散房间人数,发起人是同意的
 	private Integer disAgreeDissolutionCnt = 0;// 不同意解散房间人数
+	private Date firtPlayerOffLineTime;//该房间第一位玩家离线时间
 
 	public Room() {
 	}
@@ -187,4 +189,11 @@ public class Room {
 		disAgreeDissolutionCnt++;
 	}
 
+	public Date getFirtPlayerOffLineTime() {
+		return firtPlayerOffLineTime;
+	}
+
+	public void setFirtPlayerOffLineTime(Date firtPlayerOffLineTime) {
+		this.firtPlayerOffLineTime = firtPlayerOffLineTime;
+	}
 }

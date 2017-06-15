@@ -20,6 +20,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -46,11 +47,11 @@ public class LoginBizImpl implements ILoginBiz {
 		LoginReq loginReq = messageInfoReq.getLoginReq();
 		MessageInfo.Builder messageInfo = MessageInfo.newBuilder();
 		try{
-			String token = loginReq.getToken();
+			String code = loginReq.getCode();
 			PlayerBaseInfo playerBaseInfo;
 			Integer playerId;
-			if(StringUtils.isNotBlank(token)){
-				playerBaseInfo = getUserInfoByToken(token);
+			if(StringUtils.isNotBlank(code)){
+				playerBaseInfo = getUserInfoByToken(code);
 			}else{
 				playerId = loginReq.getPlayerid();
 				playerBaseInfo = getUserInfoByPlayerId(playerId);
@@ -67,13 +68,16 @@ public class LoginBizImpl implements ILoginBiz {
 
 			playerId = playerBaseInfo.getID();
 			Player player = CommonData.getPlayerById(playerId);
-			if (player != null) {
+			if (player != null && player.getOnline()) {
 				MessageInfo.Builder msgInfo = MessageInfo.newBuilder();
 				msgInfo = commonBiz.setMessageInfo(
 						MessageConstants.PLAYER_STATE_TYPE_1004,
 						MessageConstants.PLAYER_STATE_MSG_1004);
 				return msgInfo;
-			} else {
+			} else if(player != null && !player.getOnline()){//之前掉线，或者异常退出，现在再次登录
+				player.setOnline(true);//玩家重新登录
+				player.setOnPlay(true);//玩家游戏中
+			}else{
 				player = new Player();
 			}
 			String name = playerBaseInfo.getName();
@@ -82,8 +86,9 @@ public class LoginBizImpl implements ILoginBiz {
 			player.setId(playerId);
 			player.setName(name);
 			player.setChannel(ctx.channel());
-			player.setIsland(true);
+			player.setOnline(true);
 			player.setImgUrl(playerBaseInfo.getImgUrl());
+			player.setIsland(true);
 			CommonData.putPlayerIdToPlayer(playerId, player);
 			CommonData.putChannelIdToPlayerId(player.getChannel().hashCode(),playerId);
 			//
@@ -93,6 +98,13 @@ public class LoginBizImpl implements ILoginBiz {
 						.newBuilder();
 				messageInfo.setMessageId(MESSAGE_ID.msg_LoginResp);
 				loginResp.setPlayerBaseInfo(playerBaseInfo);
+				if(player.getOnPlay()) {
+					loginResp.setPlayerState(1);//斗牛在线状态
+				}else{
+					loginResp.setPlayerState(0);//正常状态
+				}
+				if(player.getRoomId()!=null)
+					loginResp.setRoomId(player.getRoomId());
 				messageInfo.setLoginResp(loginResp);
 			} else {
 				messageInfo.setMessageId(MESSAGE_ID.msg_MsgInfo);
@@ -108,32 +120,47 @@ public class LoginBizImpl implements ILoginBiz {
 		return messageInfo;
 	}
 
+	/**
+	 * 玩家异常退出游戏
+	 * @param channel
+	 */
 	public void deletPlayerByChannelId(Channel channel){
 		if (channel != null){
 			Integer playerId = CommonData.getPlayerIdByChannelId(channel.hashCode());
 			if (playerId!=null){
-				CommonData.removePlayer(playerId);
+//				CommonData.removePlayer(playerId);
 				Player player = CommonData.getPlayerById(playerId);
 				if(player!=null){
+					player.setOnline(false);//用户掉线
 					Room room = CommonData.getRoomByRoomId(player.getRoomId());
 					if (room!=null){
 						List<Player> pls = room.getPlayers();
+						int isNotOnlineCnt = 0;//该房间不在线人数
 						if(CollectionUtils.isNotEmpty(pls)){
 							Iterator<Player> itr = pls.iterator();
 							while (itr.hasNext()){
 								Player pl = itr.next();
-								if(pl.getId().equals(playerId)){
-									itr.remove();
+								if(!pl.getOnline()){
+									isNotOnlineCnt++;
 								}
+							}
+							if(isNotOnlineCnt == 1){//该房间第一位玩家退出房间时间
+								room.setFirtPlayerOffLineTime(new Date());
 							}
 						}
 					}
 				}
-				CommonData.removeChannelId(channel.hashCode());
+//				CommonData.removeChannelId(channel.hashCode());
 			}
 		}
 	}
 
+	/**
+	 * 玩家正常退出游戏
+	 * @param messageInfoReq
+	 * @param ctx
+	 * @return
+	 */
 	@Override
 	public MessageInfo.Builder deletPlayerByPlayerid(MessageInfo messageInfoReq, ChannelHandlerContext ctx) {
 		SignOutReq signOutReq = messageInfoReq.getSignOutReq();
@@ -185,12 +212,12 @@ public class LoginBizImpl implements ILoginBiz {
 
 	/**
 	 * 根据token获取用户微信基本信息
-	 * @param token
+	 * @param code
 	 * @return
 	 */
-	private PlayerBaseInfo getUserInfoByToken(String token){
+	private PlayerBaseInfo getUserInfoByToken(String code){
 		PlayerBaseInfo.Builder player = PlayerBaseInfo.newBuilder();
-		AccessTokenOpenId accessTokenOpenId = getAccessTokenOpenId(token);
+		AccessTokenOpenId accessTokenOpenId = getAccessTokenOpenId(code);
 		if (accessTokenOpenId!=null){
 			String openid = accessTokenOpenId.getOpenid();
 			String access_token = accessTokenOpenId.getAccess_token();
