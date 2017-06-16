@@ -142,6 +142,8 @@ public class LoginBizImpl implements ILoginBiz {
 								Player pl = itr.next();
 								if(!pl.getOnline()){
 									isNotOnlineCnt++;
+								}else{//给在线玩家发送离线通知
+									pl.getChannel().writeAndFlush(getPostOffMessage(player));
 								}
 							}
 							if(isNotOnlineCnt == 1){//该房间第一位玩家退出房间时间
@@ -153,6 +155,16 @@ public class LoginBizImpl implements ILoginBiz {
 //				CommonData.removeChannelId(channel.hashCode());
 			}
 		}
+	}
+
+	private MessageInfo getPostOffMessage(Player player){
+		MessageInfo.Builder postMsgInfo = MessageInfo.newBuilder();
+		postMsgInfo.setMessageId(MESSAGE_ID.msg_PostPlayerOffline);
+		PostPlayerOffline.Builder postPlayerOffline = PostPlayerOffline
+				.newBuilder();
+		postPlayerOffline.setPlayerId(player.getId());
+		postMsgInfo.setPostPlayerOffline(postPlayerOffline);
+		return postMsgInfo.build();
 	}
 
 	/**

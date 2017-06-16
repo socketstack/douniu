@@ -40,6 +40,8 @@ import com.rxqp.server.bussiness.biz.ICommonBiz;
 import com.rxqp.server.bussiness.biz.IGameBiz;
 import com.rxqp.server.bussiness.biz.IRoomBiz;
 
+import static com.rxqp.protobuf.DdzProto.OfflineStatus.*;
+
 public class GameBizImpl implements IGameBiz {
 
 	// 房间号对应待发的扑克牌
@@ -64,6 +66,7 @@ public class GameBizImpl implements IGameBiz {
 				return messageInfo;
 			}
 			Room room = CommonData.getRoomByRoomId(player.getRoomId());
+			player.setOfflineStatus(STATUS_BEGIN_STAKE);
 			if (room == null) {
 				messageInfo = commonBiz.setMessageInfo(
 						MessageConstants.THE_ROOM_NO_EXTIST_ERROR_TYPE,
@@ -186,6 +189,7 @@ public class GameBizImpl implements IGameBiz {
 			postMsgInfo.setPostStartNNGame(postStartNNGame);
 			for (Player pl : players) {
 				pl.getChannel().writeAndFlush(postMsgInfo.build());
+				pl.setOfflineStatus(STATUS_FINISH_PREPARE);
 			}
 		}
 		return null;
@@ -205,6 +209,7 @@ public class GameBizImpl implements IGameBiz {
 
 		Player player = CommonData.getPlayerById(playerId);
 		player.setBetPoints(point);
+		player.setOfflineStatus(STATUS_BEGIN_SHOWCARDS);//下完注，准备开牌中
 
 		StakeResp.Builder resp = StakeResp.newBuilder();
 		resp.setPoint(point);
