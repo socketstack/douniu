@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1aede53d-6e4f-4b8e-b0cf-5a0aa662b41b" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$OfflineStatus$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$OfflineStatus.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../plxpl/.classpath" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../plxpl/.project" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../plxpl/.settings/.jsdtscope" afterPath="" />
@@ -17,47 +19,49 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../plxpl/delSvn.bat" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../plxpl/hs_err_pid12884.log" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../plxpl/hs_err_pid9472.log" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/constants/CommonConstants.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/constants/CommonConstants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/constants/ExcMsgConstants.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/constants/ExcMsgConstants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/constants/MessageConstants.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/constants/MessageConstants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/constants/MessageProtoConstants.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/constants/MessageProtoConstants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/constants/WeixinConstants.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/constants/WeixinConstants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/enums/NNTypeEnum.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/enums/NNTypeEnum.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/exception/BusinnessException.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/common/exception/BusinnessException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/dn/controller/MainController.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/dn/controller/MainController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/model/AccessToken.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/model/AccessToken.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/model/AccessTokenOpenId.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/model/AccessTokenOpenId.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/model/JsApiTicket.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/model/JsApiTicket.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/model/WeixinUserInfo.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/model/WeixinUserInfo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomResp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomResp$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomResp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateNNRoomRespOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomResp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomResp$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomResp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$CreateRoomRespOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealResp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealResp$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealResp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DealRespOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandCheckReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandCheckReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandCheckReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandCheckReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandCheckReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandCheckReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandCheckReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandCheckReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DisbandReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DiscardReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DiscardReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DiscardReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DiscardReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DiscardReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DiscardReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DiscardReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$DiscardReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomResp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomResp$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryNNRoomResp.class" />
@@ -65,200 +69,179 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomResp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomResp$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomResp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$EntryRoomRespOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$GrabHostReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$GrabHostReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$GrabHostReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$GrabHostReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$GrabHostReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$GrabHostReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$GrabHostReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$GrabHostReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginResp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginResp$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginResp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$LoginRespOrBuilder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MESSAGE_ID$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MESSAGE_ID$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MESSAGE_ID.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MESSAGE_ID.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfo$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfo$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfo$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfo$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfo.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfoOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MessageInfoOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MsgInfo$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MsgInfo$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MsgInfo$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MsgInfo$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MsgInfo.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MsgInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MsgInfoOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$MsgInfoOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNAnswerDissolutionReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNAnswerDissolutionReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNAnswerDissolutionReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNAnswerDissolutionReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNAnswerDissolutionReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNAnswerDissolutionReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNAnswerDissolutionReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNAnswerDissolutionReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNDissolutionReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNDissolutionReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNDissolutionReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNDissolutionReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNDissolutionReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNDissolutionReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNDissolutionReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNDissolutionReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNPrepareReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNPrepareReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNPrepareReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNPrepareReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNPrepareReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNPrepareReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNPrepareReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNPrepareReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsResp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsResp$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsResp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNShowCardsRespOrBuilder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNType$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNType$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNType.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$NNType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$OfflineStatus$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$OfflineStatus$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$OfflineStatus.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$OfflineStatus.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Player$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Player$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Player$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Player$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Player.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Player.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerBaseInfo$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerBaseInfo$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerBaseInfo$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerBaseInfo$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerBaseInfo.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerBaseInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerBaseInfoOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerBaseInfoOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PlayerOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Poker$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Poker$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Poker$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Poker$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Poker.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$Poker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PokerOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PokerOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostAnswerDissolutionResult$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostAnswerDissolutionResult$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostAnswerDissolutionResult$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostAnswerDissolutionResult$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostAnswerDissolutionResult.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostAnswerDissolutionResult.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostAnswerDissolutionResultOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostAnswerDissolutionResultOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDealOver$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDealOver$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDealOver$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDealOver$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDealOver.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDealOver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDealOverOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDealOverOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisband$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisband$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisband$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisband$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisband.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisband.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandCheck$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandCheck$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandCheck$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandCheck$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandCheck.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandCheck.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandCheckOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandCheckOrBuilder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDisbandOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDiscard$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDiscard$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDiscard$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDiscard$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDiscard.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDiscard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDiscardOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDiscardOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResp$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionRespOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResult$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResult$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResult$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResult$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResult.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResult.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResultOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostDissolutionResultOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostEntryRoom$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostEntryRoom$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostEntryRoom$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostEntryRoom$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostEntryRoom.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostEntryRoom.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostEntryRoomOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostEntryRoomOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostGrabHostResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostGrabHostResp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostGrabHostResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostGrabHostResp$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostGrabHostResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostGrabHostResp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostGrabHostRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostGrabHostRespOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealResp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealResp$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealResp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNDealRespOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNEntryRoom$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNEntryRoom$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNEntryRoom$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNEntryRoom$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNEntryRoom.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNEntryRoom.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNEntryRoomOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNEntryRoomOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNPrepareResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNPrepareResp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNPrepareResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNPrepareResp$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNPrepareResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNPrepareResp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNPrepareRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNPrepareRespOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNShowCards$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNShowCards$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNShowCards$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNShowCards$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNShowCards.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNShowCards.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNShowCardsOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostNNShowCardsOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOffline$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOffline$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOffline$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOffline$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOffline.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOffline.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOfflineOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOfflineOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOnline$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOnline$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOnline$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOnline$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOnline.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOnline.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOnlineOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostPlayerOnlineOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostSendSoundResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostSendSoundResp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostSendSoundResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostSendSoundResp$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostSendSoundResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostSendSoundResp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostSendSoundRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostSendSoundRespOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeOver$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeOver$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeOver$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeOver$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeOver.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeOver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeOverOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeOverOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeResp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeResp$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeResp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStakeRespOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStartNNGame$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStartNNGame$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStartNNGame$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStartNNGame$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStartNNGame.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStartNNGame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStartNNGameOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostStartNNGameOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostUnusualQuit$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostUnusualQuit$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostUnusualQuit$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostUnusualQuit$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostUnusualQuit.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostUnusualQuit.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostUnusualQuitOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$PostUnusualQuitOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$ReEntryNNRoomReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$ReEntryNNRoomReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$ReEntryNNRoomReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$ReEntryNNRoomReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$ReEntryNNRoomReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$ReEntryNNRoomReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$ReEntryNNRoomReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$ReEntryNNRoomReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$RoomInfo$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$RoomInfo$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$RoomInfo$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$RoomInfo$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$RoomInfo.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$RoomInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$RoomInfoOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$RoomInfoOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SendSoundReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SendSoundReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SendSoundReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SendSoundReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SendSoundReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SendSoundReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SendSoundReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SendSoundReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementData$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementData$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementData$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementData$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementData.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementDataOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementDataOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementInfo$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementInfo$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementInfo$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementInfo$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementInfo.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementInfoOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SettlementInfoOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SignOutReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SignOutReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SignOutReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SignOutReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SignOutReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SignOutReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SignOutReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$SignOutReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeResp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeResp$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeResp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StakeRespOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameReq$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameReq$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameReq$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameReq$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameReq.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameReqOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameReqOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameResp$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameResp$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameResp$Builder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameResp$Builder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameResp.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameResp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameRespOrBuilder.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto$StartNNGameRespOrBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/protobuf/DdzProto.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bo/Group.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bo/Group.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bo/Msg.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bo/Msg.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bo/Player.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bo/Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bo/PokerEntity.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bo/PokerEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/ICommonBiz.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/ICommonBiz.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/ICoreBiz.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/ICoreBiz.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/IGameBiz.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/IGameBiz.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/IGroupBiz.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/IGroupBiz.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/ILoginBiz.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/ILoginBiz.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/IRoomBiz.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/IRoomBiz.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/CommonBiz.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/CommonBiz.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/GameBizImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/GameBizImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/RoomBizImpl$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/RoomBizImpl$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/DdzServer$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/DdzServer$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/DdzServer.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/DdzServer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/handler/DdzOutServerHandler.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/handler/DdzOutServerHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/handler/MyOutboundHandler.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/handler/MyOutboundHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/message/MessageProtobufDecode.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/message/MessageProtobufDecode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/message/MessageProtobufEncode.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/netty/message/MessageProtobufEncode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/utils/ExceptionUtils.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/utils/ExceptionUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/utils/HttpUtils.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/utils/HttpUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/utils/ResponseJsonUtils.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/utils/ResponseJsonUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/utils/StringUtils.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/utils/StringUtils.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/BeanCopy.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/BeanCopy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/99fd0a98-e56f-45e2-99c7-10e5b9db7211.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/99fd0a98-e56f-45e2-99c7-10e5b9db7211.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/CommonUtils$1$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/CommonUtils$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/CommonUtils$1.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/CommonUtils$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/CommonUtils.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/CommonUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/DateUtils.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/DateUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/MyX509TrustManager.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/MyX509TrustManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/WeixinUtil.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/WeixinUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/XmlConverUtil.class" afterPath="$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/utils/XmlConverUtil.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/WeixinConstants.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/WeixinConstants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/protobuf/DdzProto.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/protobuf/DdzProto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Player.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/GameBizImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/GameBizImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/utils/BeanCopy.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/utils/BeanCopy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rxqp/utils/CommonUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/rxqp/utils/CommonUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../plxpl/pom.xml" afterPath="$PROJECT_DIR$/../plxpl/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/action/BackendAction.java" afterPath="$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/action/BackendAction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/action/MainAction.java" afterPath="$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/action/MainAction.java" />
@@ -345,23 +328,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="LoginBizImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java">
+      <file leaf-file-name="CoreBizImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6480">
-              <caret line="262" column="28" lean-forward="false" selection-start-line="261" selection-start-column="12" selection-end-line="262" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="333">
+              <caret line="45" column="37" lean-forward="true" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeixinConstants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/WeixinConstants.java">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1161">
-              <caret line="43" column="127" lean-forward="false" selection-start-line="43" selection-start-column="122" selection-end-line="43" selection-end-column="127" />
+            <state relative-caret-position="27">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -370,43 +351,9 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../game_service/src/main/resources/sqlMap/User.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="837">
-              <caret line="31" column="52" lean-forward="false" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
-              <folding>
-                <marker date="1497630116349" expanded="true" signature="468:559" ph="insert into user... " />
-                <marker date="1497630116349" expanded="true" signature="654:909" ph="update user " />
-                <marker date="1497630116349" expanded="true" signature="1010:1025" ph="update user " />
-                <marker date="1497630116349" expanded="true" signature="1010:1170" ph="update user " />
-                <marker date="1497630116349" expanded="true" signature="1010:1185" ph="update user " />
-                <marker date="1497630116349" expanded="true" signature="1263:1294" ph="delete from " />
-                <marker date="1497630116349" expanded="true" signature="1421:1497" ph="select from user" />
-                <marker date="1497630116349" expanded="true" signature="1624:1708" ph="select from user" />
-                <marker date="1497630116349" expanded="true" signature="1794:1855" ph="select from user" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoreBizImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="33" lean-forward="false" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="405">
+              <caret line="21" column="76" lean-forward="false" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -414,98 +361,75 @@
       <file leaf-file-name="GameBizImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/GameBizImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="278" column="77" lean-forward="false" selection-start-line="278" selection-start-column="77" selection-end-line="278" selection-end-column="77" />
+            <state relative-caret-position="108">
+              <caret line="278" column="72" lean-forward="true" selection-start-line="278" selection-start-column="72" selection-end-line="278" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DdzServerHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/DdzServerHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoomBizImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="539" column="0" lean-forward="false" selection-start-line="539" selection-start-column="0" selection-end-line="539" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <element signature="e#4072#4080#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Room.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Room.java">
+      <file leaf-file-name="BeanCopy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/BeanCopy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1189#1190#0" expanded="false" />
-                <element signature="e#1209#1210#0" expanded="false" />
-                <element signature="e#1251#1252#0" expanded="false" />
-                <element signature="e#1278#1279#0" expanded="false" />
-                <element signature="e#1315#1316#0" expanded="false" />
-                <element signature="e#1336#1337#0" expanded="false" />
-                <element signature="e#1385#1386#0" expanded="false" />
-                <element signature="e#1414#1415#0" expanded="false" />
-                <element signature="e#1447#1448#0" expanded="false" />
-                <element signature="e#1469#1470#0" expanded="false" />
-                <element signature="e#1515#1516#0" expanded="false" />
-                <element signature="e#1546#1547#0" expanded="false" />
-                <element signature="e#1582#1583#0" expanded="false" />
-                <element signature="e#1607#1608#0" expanded="false" />
-                <element signature="e#1659#1660#0" expanded="false" />
-                <element signature="e#1696#1697#0" expanded="false" />
-                <element signature="e#1731#1732#0" expanded="false" />
-                <element signature="e#1755#1756#0" expanded="false" />
-                <element signature="e#1805#1806#0" expanded="false" />
-                <element signature="e#1840#1841#0" expanded="false" />
-                <element signature="e#1880#1881#0" expanded="false" />
-                <element signature="e#1909#1910#0" expanded="false" />
-                <element signature="e#1969#1970#0" expanded="false" />
-                <element signature="e#2014#2015#0" expanded="false" />
-                <element signature="e#2043#2044#0" expanded="false" />
-                <element signature="e#2061#2062#0" expanded="false" />
-                <element signature="e#2099#2100#0" expanded="false" />
-                <element signature="e#2122#2123#0" expanded="false" />
-                <element signature="e#2164#2165#0" expanded="false" />
-                <element signature="e#2189#2190#0" expanded="false" />
-                <element signature="e#2247#2248#0" expanded="false" />
-                <element signature="e#2284#2285#0" expanded="false" />
-                <element signature="e#2320#2321#0" expanded="false" />
-                <element signature="e#2345#2346#0" expanded="false" />
-                <element signature="e#2397#2398#0" expanded="false" />
-                <element signature="e#2434#2435#0" expanded="false" />
-                <element signature="e#2470#2471#0" expanded="false" />
-                <element signature="e#2495#2496#0" expanded="false" />
-                <element signature="e#2547#2548#0" expanded="false" />
-                <element signature="e#2584#2585#0" expanded="false" />
-                <element signature="e#2626#2627#0" expanded="false" />
-                <element signature="e#2657#2658#0" expanded="false" />
-                <element signature="e#2721#2722#0" expanded="false" />
-                <element signature="e#2770#2771#0" expanded="false" />
-                <element signature="e#2827#2828#0" expanded="false" />
-                <element signature="e#2853#2854#0" expanded="false" />
-                <element signature="e#2886#2887#0" expanded="false" />
-                <element signature="e#2908#2909#0" expanded="false" />
-                <element signature="e#2954#2955#0" expanded="false" />
-                <element signature="e#2985#2986#0" expanded="false" />
-                <element signature="e#3028#3029#0" expanded="false" />
-                <element signature="e#3060#3061#0" expanded="false" />
-                <element signature="e#3126#3127#0" expanded="false" />
-                <element signature="e#3177#3178#0" expanded="false" />
-                <element signature="e#3235#3236#0" expanded="false" />
-                <element signature="e#3262#3263#0" expanded="false" />
-                <element signature="e#3316#3317#0" expanded="false" />
-                <element signature="e#3336#3337#0" expanded="false" />
-                <element signature="e#3376#3377#0" expanded="false" />
-                <element signature="e#3405#3406#0" expanded="false" />
-                <element signature="e#3465#3466#0" expanded="false" />
-                <element signature="e#3510#3511#0" expanded="false" />
-                <element signature="e#3565#3566#0" expanded="false" />
-                <element signature="e#3589#3590#0" expanded="false" />
-                <element signature="e#3633#3634#0" expanded="false" />
-                <element signature="e#3666#3667#0" expanded="false" />
-                <element signature="e#3734#3735#0" expanded="false" />
-                <element signature="e#3787#3788#0" expanded="false" />
-                <element signature="e#3846#3847#0" expanded="false" />
-                <element signature="e#3874#3875#0" expanded="false" />
-                <element signature="e#3921#3922#0" expanded="false" />
-                <element signature="e#3957#3958#0" expanded="false" />
-                <element signature="e#4152#4153#0" expanded="false" />
-                <element signature="e#4183#4184#0" expanded="false" />
-                <element signature="e#4226#4227#0" expanded="false" />
-                <element signature="e#4261#4262#0" expanded="false" />
+                <element signature="e#3255#3256#0" expanded="true" />
+                <element signature="e#3278#3279#0" expanded="true" />
+                <element signature="e#3726#3727#0" expanded="true" />
+                <element signature="e#3753#3754#0" expanded="true" />
+                <element signature="e#4331#4332#0" expanded="true" />
+                <element signature="e#4353#4354#0" expanded="true" />
+                <element signature="e#4395#4396#0" expanded="true" />
+                <element signature="e#4419#4420#0" expanded="true" />
+                <element signature="e#4462#4463#0" expanded="true" />
+                <element signature="e#4484#4485#0" expanded="true" />
+                <element signature="e#4540#4541#0" expanded="true" />
+                <element signature="e#4571#4572#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommonUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/CommonUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="235" column="13" lean-forward="false" selection-start-line="235" selection-start-column="13" selection-end-line="235" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -522,13 +446,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>playerId</find>
-      <find>openid</find>
-      <find>playerIdToPlayer</find>
-      <find>8080</find>
-      <find>HttpServletRequest</find>
-      <find>save</find>
-      <find>getUserInfoByPlayerId</find>
       <find>101010</find>
       <find>getWeixinUserInfo</find>
       <find>getPlayerByOpenid</find>
@@ -552,6 +469,13 @@
       <find>NNType</find>
       <find>isStartGame</find>
       <find>isOnline</find>
+      <find>setOfflineStatus</find>
+      <find>STATUS_BEGIN_STAKE</find>
+      <find>PostStartNNGame</find>
+      <find>STATUS_BEGIN_SHOWCARDS</find>
+      <find>StartNNGameReq</find>
+      <find>STATUS_FINISH_PREPAR</find>
+      <find>STATUS_FINISH_PREPARE</find>
     </findStrings>
     <replaceStrings>
       <replace>http://cvtabt.natappfree.cc</replace>
@@ -598,13 +522,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/WeixinContstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/model/AccessTokenOpenId.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/utils/WeixinUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/utils/CommonUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/MyOutboundHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/DdzServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/DdzServerHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/protobuf/DdzProto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/ILoginBiz.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/IRoomBiz.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/MessageConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/OutHandler.java" />
@@ -613,10 +535,7 @@
         <option value="$PROJECT_DIR$/../test/test/src/com/mff/test/test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/Task/CleanRoomTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Room.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/utils/BeanCopy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java" />
         <option value="$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/service/IUserService.java" />
         <option value="$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/controller/UserController.java" />
         <option value="$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/dao/IUserDao.java" />
@@ -625,6 +544,11 @@
         <option value="$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/../game_service/src/main/resources/sqlMap/User.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/common/constants/WeixinConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/utils/CommonUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/utils/BeanCopy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/GameBizImpl.java" />
       </list>
     </option>
@@ -1110,6 +1034,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="douniu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="douniu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1214,7 +1152,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1244,11 +1182,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
+              <option name="myItemId" value="biz" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1278,11 +1216,45 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="constants" />
+              <option name="myItemId" value="biz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="douniu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="douniu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rxqp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protobuf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1323,7 +1295,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.game_service">
+  <component name="RunManager" selected="Tomcat Server.douniu">
     <configuration default="false" name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -2129,12 +2101,12 @@
       <workItem from="1497539745256" duration="4011000" />
       <workItem from="1497594074318" duration="7321000" />
       <workItem from="1497683157722" duration="1061000" />
-      <workItem from="1497785791221" duration="888000" />
+      <workItem from="1497785791221" duration="15712000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154285000" />
+    <option name="totallyTimeSpent" value="169109000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2147,6 +2119,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2161,8 +2134,9 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32991362" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49813664" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41242236" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -2171,20 +2145,57 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28322983" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20464362" sideWeight="0.4924406" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2300216" sideWeight="0.4924406" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18682505" sideWeight="0.50643086" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18682505" sideWeight="0.5075594" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.20518358" sideWeight="0.5089286" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45962733" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20518358" sideWeight="0.49107143" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18358532" sideWeight="0.4931677" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19654427" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32991362" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41242236" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28322983" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.20518358" sideWeight="0.5089286" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45962733" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2300216" sideWeight="0.4924406" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18682505" sideWeight="0.50643086" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18682505" sideWeight="0.5075594" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -2222,187 +2233,63 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/action/WxAction.java</url>
-          <line>330</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/service/impl/PayService.java</url>
-          <line>88</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/service/impl/PayService.java</url>
-          <line>102</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/service/impl/PayService.java</url>
-          <line>150</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/action/WxAction.java</url>
-          <line>239</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/action/WxLuckyAction.java</url>
-          <line>42</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/service/impl/LuckyService.java</url>
-          <line>71</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/action/WxAction.java</url>
-          <line>223</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/service/impl/BaseDataService.java</url>
-          <line>42</line>
-          <properties />
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/action/WxAction.java</url>
-          <line>184</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../plxpl/src/main/java/cn/plxpl/wx/service/impl/BaseDataService.java</url>
-          <line>29</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java</url>
-          <line>38</line>
-          <properties />
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java</url>
-          <line>23</line>
+          <line>60</line>
           <properties />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/controller/LoginController.java</url>
-          <line>48</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java</url>
-          <line>46</line>
-          <properties />
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/CommonUtils.java</url>
-          <line>379</line>
-          <properties />
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/MyOutboundHandler.java</url>
-          <line>12</line>
-          <properties />
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java</url>
-          <line>38</line>
-          <properties />
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/DdzServerHandler.java</url>
-          <line>36</line>
-          <properties />
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java</url>
-          <line>127</line>
-          <properties />
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java</url>
-          <line>47</line>
-          <properties />
-          <option name="timeStamp" value="44" />
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java</url>
           <line>461</line>
           <properties />
-          <option name="timeStamp" value="45" />
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java</url>
-          <line>135</line>
+          <line>539</line>
           <properties />
-          <option name="timeStamp" value="48" />
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java</url>
-          <line>145</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java</url>
+          <line>45</line>
           <properties />
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java</url>
-          <line>160</line>
-          <properties />
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/controller/UserController.java</url>
-          <line>22</line>
-          <properties />
-          <option name="timeStamp" value="52" />
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/GameBizImpl.java</url>
-          <line>278</line>
+          <line>240</line>
           <properties />
-          <option name="timeStamp" value="54" />
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/GameBizImpl.java</url>
+          <line>247</line>
+          <properties />
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="55" />
+      <default-breakpoints>
+        <breakpoint enabled="true" type="javascript-exception">
+          <properties />
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="67" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="roomInfo" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/model/AccessTokenOpenId.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/io/PrintStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -2473,16 +2360,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="32" column="22" lean-forward="false" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/CommonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="380" column="31" lean-forward="true" selection-start-line="380" selection-start-column="31" selection-end-line="380" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2594,62 +2471,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/DdzServerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1006#1007#0" expanded="false" />
-            <element signature="e#1024#1025#0" expanded="false" />
-            <element signature="e#1355#1356#0" expanded="false" />
-            <element signature="e#1385#1386#0" expanded="false" />
-            <element signature="e#1442#1443#0" expanded="false" />
-            <element signature="e#1472#1473#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/artifacts/game_Web_exploded/WEB-INF/classes/com/rxqp/server/bo/Room.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-540">
           <caret line="2" column="47" lean-forward="true" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/protobuf/DdzProto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="19425" column="21" lean-forward="false" selection-start-line="19425" selection-start-column="21" selection-end-line="19425" selection-end-column="21" />
-          <folding>
-            <marker date="1497626435409" expanded="false" signature="1435090:1435310" ph="(root) → {" />
-            <marker date="1497626435409" expanded="true" signature="1546858:1547110" ph="{...}" />
-            <marker date="1497626435409" expanded="true" signature="1546867:1547110" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/BeanCopy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="35" column="44" lean-forward="false" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="526" column="55" lean-forward="true" selection-start-line="526" selection-start-column="55" selection-end-line="526" selection-end-column="55" />
-          <folding>
-            <element signature="e#4173#4181#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -2729,14 +2554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-25">
@@ -2762,26 +2579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="33" lean-forward="false" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2881,21 +2678,114 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/LoginBizImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6480">
-          <caret line="262" column="28" lean-forward="false" selection-start-line="261" selection-start-column="12" selection-end-line="262" selection-end-column="28" />
+        <state relative-caret-position="216">
+          <caret line="48" column="12" lean-forward="true" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="21" column="76" lean-forward="false" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/CommonUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="235" column="13" lean-forward="false" selection-start-line="235" selection-start-column="13" selection-end-line="235" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/protobuf/DdzProto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="66" column="4" lean-forward="false" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/net/URLClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="380" column="0" lean-forward="false" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bo/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="e#3255#3256#0" expanded="true" />
+            <element signature="e#3278#3279#0" expanded="true" />
+            <element signature="e#3726#3727#0" expanded="true" />
+            <element signature="e#3753#3754#0" expanded="true" />
+            <element signature="e#4331#4332#0" expanded="true" />
+            <element signature="e#4353#4354#0" expanded="true" />
+            <element signature="e#4395#4396#0" expanded="true" />
+            <element signature="e#4419#4420#0" expanded="true" />
+            <element signature="e#4462#4463#0" expanded="true" />
+            <element signature="e#4484#4485#0" expanded="true" />
+            <element signature="e#4540#4541#0" expanded="true" />
+            <element signature="e#4571#4572#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../game_service/src/main/java/com/rxqp/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/utils/BeanCopy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/netty/handler/DdzServerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/RoomBizImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="539" column="0" lean-forward="false" selection-start-line="539" selection-start-column="0" selection-end-line="539" selection-end-column="0" />
+          <folding>
+            <element signature="e#4072#4080#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/CoreBizImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="45" column="37" lean-forward="true" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rxqp/server/bussiness/biz/impl/GameBizImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="278" column="77" lean-forward="false" selection-start-line="278" selection-start-column="77" selection-end-line="278" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="108">
+          <caret line="278" column="72" lean-forward="true" selection-start-line="278" selection-start-column="72" selection-end-line="278" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>

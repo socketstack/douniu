@@ -31,7 +31,7 @@ public class Player implements Serializable {
 	private Integer betPoints;// 下注分数
 	private Boolean isBanker = false;// 是否是庄家
 	private NNType nntype;// 当前玩家扑克的类型
-	private DdzProto.OfflineStatus offlineStatus;//断线重连进入游戏后，状态 0;创建房间
+	private DdzProto.NNStatus nnStatus;//断线重连进入游戏后，状态 0;创建房间
 													//1;进入房间 2;进入准备状态 3;准备完毕自动发牌 4;准备下注 5;准备开牌
 
 	private AccessTokenOpenId accessTokenOpenId;//用户微信接口相关信息
@@ -224,11 +224,19 @@ public class Player implements Serializable {
 		this.accessTokenOpenId = accessTokenOpenId;
 	}
 
-	public DdzProto.OfflineStatus getOfflineStatus() {
-		return offlineStatus;
+	public Boolean getBanker() {
+		return isBanker;
 	}
 
-	public void setOfflineStatus(DdzProto.OfflineStatus offlineStatus) {
-		this.offlineStatus = offlineStatus;
+	public void setBanker(Boolean banker) {
+		isBanker = banker;
+	}
+
+	public DdzProto.NNStatus getNnStatus() {
+		return nnStatus;
+	}
+
+	public void setNnStatus(DdzProto.NNStatus nnStatus) {
+		this.nnStatus = nnStatus;
 	}
 }

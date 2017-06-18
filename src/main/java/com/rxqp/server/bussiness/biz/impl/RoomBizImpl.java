@@ -18,8 +18,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-import static com.rxqp.protobuf.DdzProto.OfflineStatus.STATUS_CREATE_ROOM;
-import static com.rxqp.protobuf.DdzProto.OfflineStatus.STATUS_ENTER_ROOM;
+import static com.rxqp.protobuf.DdzProto.NNStatus.*;
 
 @Service
 public class RoomBizImpl implements IRoomBiz {
@@ -83,7 +82,7 @@ public class RoomBizImpl implements IRoomBiz {
 			player.setOnPlay(true);
 			player.setOrder(1);// 创建房间的人座位顺序为1
 			player.setIsBanker(true);// 庄家
-			player.setOfflineStatus(STATUS_CREATE_ROOM);//玩家当前所处状态
+			player.setNnStatus(STATUS_CREATE_ROOM);//玩家当前所处状态
 			CommonData.putPlayerIdToPlayer(playerId, player);
 
 			DdzProto.CreateNNRoomResp.Builder createRoomResp = DdzProto.CreateNNRoomResp
@@ -194,7 +193,7 @@ public class RoomBizImpl implements IRoomBiz {
 			player.setRoomId(roomId);
 			player.setOnPlay(true);
 			player.setOrder(players.size() + 1);// 玩家按先后顺序第N位进入房间，方便前端安排座位顺序
-			player.setOfflineStatus(STATUS_ENTER_ROOM);//玩家处于进入房间状态
+			player.setNnStatus(STATUS_ENTER_ROOM);//玩家处于进入房间状态
 			CommonData.putPlayerIdToPlayer(playerId, player);
 			players.add(player);
 			RoomInfo.Builder roomInfo = RoomInfo.newBuilder();
@@ -427,6 +426,7 @@ public class RoomBizImpl implements IRoomBiz {
 			SettlementData.Builder playerSettlement = SettlementData
 					.newBuilder();// 非庄家玩家各自的结算信息
 			playerSettlement.setID(player.getId());
+			player.setNnStatus(STATUS_PREPARE_NEXT);
 			if (!player.getIsBanker()) {
 				Integer score = comparePoints(bankerSettlement, banker, player);
 				playerSettlement.setGotscore(score);
@@ -529,7 +529,6 @@ public class RoomBizImpl implements IRoomBiz {
 		roomInfo.setBankerId(room.getBankerId());
 		entryRoomResp.setRoomInfo(roomInfo);
 		entryRoomResp.setOrder(player.getOrder());
-		entryRoomResp.setStatus(player.getOfflineStatus());//返回玩家断线前的状态
 		// 广播房间里其他玩家,离线玩家已经上线
 		for (Player py : players) {
 			if (py.getId().equals(playerId))// 自己不用通知

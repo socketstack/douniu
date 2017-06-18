@@ -18,7 +18,7 @@ import org.apache.commons.collections.CollectionUtils;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-import static com.rxqp.protobuf.DdzProto.OfflineStatus.*;
+import static com.rxqp.protobuf.DdzProto.NNStatus.*;
 
 public class GameBizImpl implements IGameBiz {
 
@@ -43,8 +43,8 @@ public class GameBizImpl implements IGameBiz {
 						MessageConstants.PLAYER_NO_LOGIN_MSG_1001);
 				return messageInfo;
 			}
+			player.setNnStatus(STATUS_FINISH_PREPARE);//玩家进入准备完毕的状态
 			Room room = CommonData.getRoomByRoomId(player.getRoomId());
-			player.setOfflineStatus(STATUS_BEGIN_STAKE);
 			if (room == null) {
 				messageInfo = commonBiz.setMessageInfo(
 						MessageConstants.THE_ROOM_NO_EXTIST_ERROR_TYPE,
@@ -60,12 +60,15 @@ public class GameBizImpl implements IGameBiz {
 						.newBuilder();
 				postprepareResp.setPlayerId(playerId);
 				msg.setPostNNPrepareResp(postprepareResp);
+				pl.setPokerIds(null);//清除上一盘的牌
 				pl.getChannel().writeAndFlush(msg.build());
 			}
 
 			if (room.getPreparedPlayerCnt().equals(room.getPlayers().size())) {// 所有玩家准备就绪，开始发牌
 				LinkedList<Integer> remainderPokerIds = initPokers();
 				for (Player pl : players) {
+					if (!pl.getIsBanker())//所有玩家准备就绪，并且发牌，则进入准备下注状态，庄家没有下注这个状态
+						pl.setNnStatus(STATUS_BEGIN_STAKE);
 					DdzProto.MessageInfo mi = shuffleDeal(pl, remainderPokerIds);
 					pl.getChannel().writeAndFlush(mi);
 				}
@@ -167,7 +170,7 @@ public class GameBizImpl implements IGameBiz {
 			postMsgInfo.setPostStartNNGame(postStartNNGame);
 			for (Player pl : players) {
 				pl.getChannel().writeAndFlush(postMsgInfo.build());
-				pl.setOfflineStatus(STATUS_FINISH_PREPARE);
+				pl.setNnStatus(STATUS_BEGIN_PREPARE);
 			}
 		}
 		return null;
@@ -187,7 +190,7 @@ public class GameBizImpl implements IGameBiz {
 
 		Player player = CommonData.getPlayerById(playerId);
 		player.setBetPoints(point);
-		player.setOfflineStatus(STATUS_BEGIN_SHOWCARDS);//下完注，准备开牌中
+		player.setNnStatus(STATUS_BEGIN_SHOWCARDS);//下完注，准备开牌中
 
 		StakeResp.Builder resp = StakeResp.newBuilder();
 		resp.setPoint(point);
@@ -222,6 +225,7 @@ public class GameBizImpl implements IGameBiz {
 				PostStakeOver.Builder postStakeOver = PostStakeOver
 						.newBuilder();
 				mi.setPostStakeOver(postStakeOver);
+				pl.setNnStatus(STATUS_BEGIN_SHOWCARDS);//所有非庄家玩家完成下注步骤，进入准备开牌状态
 				pl.getChannel().writeAndFlush(mi.build());
 			}
 		}
@@ -280,6 +284,7 @@ public class GameBizImpl implements IGameBiz {
 				//~~~~~~~~~~~~~~~~`TODO~~~~~~~~~~~~~~~~~~~~~~~~~~~扣减房卡逻辑
 				MessageInfo.Builder mi = roomBiz.buildSettlementData(room);// 计算结算信息
 				for (Player pl : players) {
+					pl.setPokerIds(null);//结算完毕清除上一盘每个玩家的牌
 					pl.getChannel().writeAndFlush(mi.build());
 				}
 				if (room.getPlayedGames() > room.getTotalGames()) {// 该房间的房卡局数已经结束

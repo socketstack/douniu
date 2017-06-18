@@ -25,6 +25,9 @@ public class BeanCopy {
 			py.setOrder(player.getOrder());
 			py.setIsDz(player.getIsBanker());// 是否是庄家
 			py.setIsOnline(player.getOnline());//是否在线
+			py.setStatus(player.getNnStatus());//玩家当前所处的状态
+			if (player.getBetPoints()!=null)
+				py.setStakepoint(player.getBetPoints());//
 			if (CollectionUtils.isNotEmpty(player.getPokerIds())){
 				py.addAllPokerids(player.getPokerIds());
 			}
@@ -45,6 +48,9 @@ public class BeanCopy {
 		py.setOrder(player.getOrder());
 		py.setIsDz(player.getIsBanker());// 是否是庄家
 		py.setIsOnline(player.getOnline());//是否在线
+		py.setStatus(player.getNnStatus());//玩家当前所处的状态
+		if (player.getBetPoints()!=null)
+			py.setStakepoint(player.getBetPoints());//
 		if (CollectionUtils.isNotEmpty(player.getPokerIds())){
 			py.addAllPokerids(player.getPokerIds());
 		}

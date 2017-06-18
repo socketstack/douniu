@@ -874,139 +874,173 @@ public final class DdzProto {
   }
 
   /**
-   * Protobuf enum {@code netty.OfflineStatus}
+   * Protobuf enum {@code netty.NNStatus}
    *
    * <pre>
    *---------------------------------
-   * 断线重连进入游戏后，状态
+   * 牛牛游戏每个玩家阶段状态
    *---------------------------------
    * </pre>
    */
-  public enum OfflineStatus
+  public enum NNStatus
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>STATUS_CREATE_ROOM = 0;</code>
+     * <code>STATUS_NONE = 0;</code>
+     *
+     * <pre>
+     * 正常进入，非重进
+     * </pre>
+     */
+    STATUS_NONE(0, 0),
+    /**
+     * <code>STATUS_CREATE_ROOM = 1;</code>
      *
      * <pre>
      * 创建房间
      * </pre>
      */
-    STATUS_CREATE_ROOM(0, 0),
+    STATUS_CREATE_ROOM(1, 1),
     /**
-     * <code>STATUS_ENTER_ROOM = 1;</code>
+     * <code>STATUS_ENTER_ROOM = 2;</code>
      *
      * <pre>
      * 进入房间
      * </pre>
      */
-    STATUS_ENTER_ROOM(1, 1),
+    STATUS_ENTER_ROOM(2, 2),
     /**
-     * <code>STATUS_BEGIN_PREPARE = 2;</code>
+     * <code>STATUS_BEGIN_PREPARE = 3;</code>
      *
      * <pre>
      * 进入准备状态
      * </pre>
      */
-    STATUS_BEGIN_PREPARE(2, 2),
+    STATUS_BEGIN_PREPARE(3, 3),
     /**
-     * <code>STATUS_FINISH_PREPARE = 3;</code>
+     * <code>STATUS_FINISH_PREPARE = 4;</code>
      *
      * <pre>
      * 准备完毕自动发牌
      * </pre>
      */
-    STATUS_FINISH_PREPARE(3, 3),
+    STATUS_FINISH_PREPARE(4, 4),
     /**
-     * <code>STATUS_BEGIN_STAKE = 4;</code>
+     * <code>STATUS_BEGIN_STAKE = 5;</code>
      *
      * <pre>
      * 准备下注
      * </pre>
      */
-    STATUS_BEGIN_STAKE(4, 4),
+    STATUS_BEGIN_STAKE(5, 5),
     /**
-     * <code>STATUS_BEGIN_SHOWCARDS = 5;</code>
+     * <code>STATUS_BEGIN_SHOWCARDS = 6;</code>
      *
      * <pre>
      * 准备开牌
      * </pre>
      */
-    STATUS_BEGIN_SHOWCARDS(5, 5),
+    STATUS_BEGIN_SHOWCARDS(6, 6),
+    /**
+     * <code>STATUS_PREPARE_NEXT = 7;</code>
+     *
+     * <pre>
+     * 已经开牌，小局结算完毕，进入下一小局的准备阶段
+     * </pre>
+     */
+    STATUS_PREPARE_NEXT(7, 7),
     ;
 
     /**
-     * <code>STATUS_CREATE_ROOM = 0;</code>
+     * <code>STATUS_NONE = 0;</code>
+     *
+     * <pre>
+     * 正常进入，非重进
+     * </pre>
+     */
+    public static final int STATUS_NONE_VALUE = 0;
+    /**
+     * <code>STATUS_CREATE_ROOM = 1;</code>
      *
      * <pre>
      * 创建房间
      * </pre>
      */
-    public static final int STATUS_CREATE_ROOM_VALUE = 0;
+    public static final int STATUS_CREATE_ROOM_VALUE = 1;
     /**
-     * <code>STATUS_ENTER_ROOM = 1;</code>
+     * <code>STATUS_ENTER_ROOM = 2;</code>
      *
      * <pre>
      * 进入房间
      * </pre>
      */
-    public static final int STATUS_ENTER_ROOM_VALUE = 1;
+    public static final int STATUS_ENTER_ROOM_VALUE = 2;
     /**
-     * <code>STATUS_BEGIN_PREPARE = 2;</code>
+     * <code>STATUS_BEGIN_PREPARE = 3;</code>
      *
      * <pre>
      * 进入准备状态
      * </pre>
      */
-    public static final int STATUS_BEGIN_PREPARE_VALUE = 2;
+    public static final int STATUS_BEGIN_PREPARE_VALUE = 3;
     /**
-     * <code>STATUS_FINISH_PREPARE = 3;</code>
+     * <code>STATUS_FINISH_PREPARE = 4;</code>
      *
      * <pre>
      * 准备完毕自动发牌
      * </pre>
      */
-    public static final int STATUS_FINISH_PREPARE_VALUE = 3;
+    public static final int STATUS_FINISH_PREPARE_VALUE = 4;
     /**
-     * <code>STATUS_BEGIN_STAKE = 4;</code>
+     * <code>STATUS_BEGIN_STAKE = 5;</code>
      *
      * <pre>
      * 准备下注
      * </pre>
      */
-    public static final int STATUS_BEGIN_STAKE_VALUE = 4;
+    public static final int STATUS_BEGIN_STAKE_VALUE = 5;
     /**
-     * <code>STATUS_BEGIN_SHOWCARDS = 5;</code>
+     * <code>STATUS_BEGIN_SHOWCARDS = 6;</code>
      *
      * <pre>
      * 准备开牌
      * </pre>
      */
-    public static final int STATUS_BEGIN_SHOWCARDS_VALUE = 5;
+    public static final int STATUS_BEGIN_SHOWCARDS_VALUE = 6;
+    /**
+     * <code>STATUS_PREPARE_NEXT = 7;</code>
+     *
+     * <pre>
+     * 已经开牌，小局结算完毕，进入下一小局的准备阶段
+     * </pre>
+     */
+    public static final int STATUS_PREPARE_NEXT_VALUE = 7;
 
 
     public final int getNumber() { return value; }
 
-    public static OfflineStatus valueOf(int value) {
+    public static NNStatus valueOf(int value) {
       switch (value) {
-        case 0: return STATUS_CREATE_ROOM;
-        case 1: return STATUS_ENTER_ROOM;
-        case 2: return STATUS_BEGIN_PREPARE;
-        case 3: return STATUS_FINISH_PREPARE;
-        case 4: return STATUS_BEGIN_STAKE;
-        case 5: return STATUS_BEGIN_SHOWCARDS;
+        case 0: return STATUS_NONE;
+        case 1: return STATUS_CREATE_ROOM;
+        case 2: return STATUS_ENTER_ROOM;
+        case 3: return STATUS_BEGIN_PREPARE;
+        case 4: return STATUS_FINISH_PREPARE;
+        case 5: return STATUS_BEGIN_STAKE;
+        case 6: return STATUS_BEGIN_SHOWCARDS;
+        case 7: return STATUS_PREPARE_NEXT;
         default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<OfflineStatus>
+    public static com.google.protobuf.Internal.EnumLiteMap<NNStatus>
         internalGetValueMap() {
       return internalValueMap;
     }
-    private static com.google.protobuf.Internal.EnumLiteMap<OfflineStatus>
+    private static com.google.protobuf.Internal.EnumLiteMap<NNStatus>
         internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<OfflineStatus>() {
-            public OfflineStatus findValueByNumber(int number) {
-              return OfflineStatus.valueOf(number);
+          new com.google.protobuf.Internal.EnumLiteMap<NNStatus>() {
+            public NNStatus findValueByNumber(int number) {
+              return NNStatus.valueOf(number);
             }
           };
 
@@ -1023,9 +1057,9 @@ public final class DdzProto {
       return com.rxqp.protobuf.DdzProto.getDescriptor().getEnumTypes().get(2);
     }
 
-    private static final OfflineStatus[] VALUES = values();
+    private static final NNStatus[] VALUES = values();
 
-    public static OfflineStatus valueOf(
+    public static NNStatus valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
@@ -1037,12 +1071,12 @@ public final class DdzProto {
     private final int index;
     private final int value;
 
-    private OfflineStatus(int index, int value) {
+    private NNStatus(int index, int value) {
       this.index = index;
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:netty.OfflineStatus)
+    // @@protoc_insertion_point(enum_scope:netty.NNStatus)
   }
 
   public interface MessageInfoOrBuilder
@@ -17289,10 +17323,18 @@ public final class DdzProto {
     // optional int32 bankerId = 7;
     /**
      * <code>optional int32 bankerId = 7;</code>
+     *
+     * <pre>
+     * 庄家id
+     * </pre>
      */
     boolean hasBankerId();
     /**
      * <code>optional int32 bankerId = 7;</code>
+     *
+     * <pre>
+     * 庄家id
+     * </pre>
      */
     int getBankerId();
   }
@@ -17553,12 +17595,20 @@ public final class DdzProto {
     private int bankerId_;
     /**
      * <code>optional int32 bankerId = 7;</code>
+     *
+     * <pre>
+     * 庄家id
+     * </pre>
      */
     public boolean hasBankerId() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>optional int32 bankerId = 7;</code>
+     *
+     * <pre>
+     * 庄家id
+     * </pre>
      */
     public int getBankerId() {
       return bankerId_;
@@ -18359,18 +18409,30 @@ public final class DdzProto {
       private int bankerId_ ;
       /**
        * <code>optional int32 bankerId = 7;</code>
+       *
+       * <pre>
+       * 庄家id
+       * </pre>
        */
       public boolean hasBankerId() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <code>optional int32 bankerId = 7;</code>
+       *
+       * <pre>
+       * 庄家id
+       * </pre>
        */
       public int getBankerId() {
         return bankerId_;
       }
       /**
        * <code>optional int32 bankerId = 7;</code>
+       *
+       * <pre>
+       * 庄家id
+       * </pre>
        */
       public Builder setBankerId(int value) {
         bitField0_ |= 0x00000040;
@@ -18380,6 +18442,10 @@ public final class DdzProto {
       }
       /**
        * <code>optional int32 bankerId = 7;</code>
+       *
+       * <pre>
+       * 庄家id
+       * </pre>
        */
       public Builder clearBankerId() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -18523,6 +18589,60 @@ public final class DdzProto {
      * </pre>
      */
     int getPokerids(int index);
+
+    // optional .netty.NNType nntype = 9;
+    /**
+     * <code>optional .netty.NNType nntype = 9;</code>
+     *
+     * <pre>
+     * 如果到了开牌阶段，可能有的玩家已经开牌
+     * </pre>
+     */
+    boolean hasNntype();
+    /**
+     * <code>optional .netty.NNType nntype = 9;</code>
+     *
+     * <pre>
+     * 如果到了开牌阶段，可能有的玩家已经开牌
+     * </pre>
+     */
+    com.rxqp.protobuf.DdzProto.NNType getNntype();
+
+    // optional int32 stakepoint = 10;
+    /**
+     * <code>optional int32 stakepoint = 10;</code>
+     *
+     * <pre>
+     * 下注分数（如果是下注阶段，可能有的玩家已经下注）
+     * </pre>
+     */
+    boolean hasStakepoint();
+    /**
+     * <code>optional int32 stakepoint = 10;</code>
+     *
+     * <pre>
+     * 下注分数（如果是下注阶段，可能有的玩家已经下注）
+     * </pre>
+     */
+    int getStakepoint();
+
+    // optional .netty.NNStatus status = 11;
+    /**
+     * <code>optional .netty.NNStatus status = 11;</code>
+     *
+     * <pre>
+     * 玩家当前状态 （牛牛游戏中的各个阶段状态）
+     * </pre>
+     */
+    boolean hasStatus();
+    /**
+     * <code>optional .netty.NNStatus status = 11;</code>
+     *
+     * <pre>
+     * 玩家当前状态 （牛牛游戏中的各个阶段状态）
+     * </pre>
+     */
+    com.rxqp.protobuf.DdzProto.NNStatus getStatus();
   }
   /**
    * Protobuf type {@code netty.Player}
@@ -18633,6 +18753,33 @@ public final class DdzProto {
                 pokerids_.add(input.readInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+              com.rxqp.protobuf.DdzProto.NNType value = com.rxqp.protobuf.DdzProto.NNType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(9, rawValue);
+              } else {
+                bitField0_ |= 0x00000080;
+                nntype_ = value;
+              }
+              break;
+            }
+            case 80: {
+              bitField0_ |= 0x00000100;
+              stakepoint_ = input.readInt32();
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+              com.rxqp.protobuf.DdzProto.NNStatus value = com.rxqp.protobuf.DdzProto.NNStatus.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(11, rawValue);
+              } else {
+                bitField0_ |= 0x00000200;
+                status_ = value;
+              }
               break;
             }
           }
@@ -18895,6 +19042,78 @@ public final class DdzProto {
       return pokerids_.get(index);
     }
 
+    // optional .netty.NNType nntype = 9;
+    public static final int NNTYPE_FIELD_NUMBER = 9;
+    private com.rxqp.protobuf.DdzProto.NNType nntype_;
+    /**
+     * <code>optional .netty.NNType nntype = 9;</code>
+     *
+     * <pre>
+     * 如果到了开牌阶段，可能有的玩家已经开牌
+     * </pre>
+     */
+    public boolean hasNntype() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional .netty.NNType nntype = 9;</code>
+     *
+     * <pre>
+     * 如果到了开牌阶段，可能有的玩家已经开牌
+     * </pre>
+     */
+    public com.rxqp.protobuf.DdzProto.NNType getNntype() {
+      return nntype_;
+    }
+
+    // optional int32 stakepoint = 10;
+    public static final int STAKEPOINT_FIELD_NUMBER = 10;
+    private int stakepoint_;
+    /**
+     * <code>optional int32 stakepoint = 10;</code>
+     *
+     * <pre>
+     * 下注分数（如果是下注阶段，可能有的玩家已经下注）
+     * </pre>
+     */
+    public boolean hasStakepoint() {
+      return ((bitField0_ & 0x00000100) == 0x00000100);
+    }
+    /**
+     * <code>optional int32 stakepoint = 10;</code>
+     *
+     * <pre>
+     * 下注分数（如果是下注阶段，可能有的玩家已经下注）
+     * </pre>
+     */
+    public int getStakepoint() {
+      return stakepoint_;
+    }
+
+    // optional .netty.NNStatus status = 11;
+    public static final int STATUS_FIELD_NUMBER = 11;
+    private com.rxqp.protobuf.DdzProto.NNStatus status_;
+    /**
+     * <code>optional .netty.NNStatus status = 11;</code>
+     *
+     * <pre>
+     * 玩家当前状态 （牛牛游戏中的各个阶段状态）
+     * </pre>
+     */
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000200) == 0x00000200);
+    }
+    /**
+     * <code>optional .netty.NNStatus status = 11;</code>
+     *
+     * <pre>
+     * 玩家当前状态 （牛牛游戏中的各个阶段状态）
+     * </pre>
+     */
+    public com.rxqp.protobuf.DdzProto.NNStatus getStatus() {
+      return status_;
+    }
+
     private void initFields() {
       iD_ = 0;
       name_ = "";
@@ -18904,6 +19123,9 @@ public final class DdzProto {
       order_ = 0;
       isOnline_ = false;
       pokerids_ = java.util.Collections.emptyList();
+      nntype_ = com.rxqp.protobuf.DdzProto.NNType.NNT_ERROR;
+      stakepoint_ = 0;
+      status_ = com.rxqp.protobuf.DdzProto.NNStatus.STATUS_NONE;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -18957,6 +19179,15 @@ public final class DdzProto {
       for (int i = 0; i < pokerids_.size(); i++) {
         output.writeInt32(8, pokerids_.get(i));
       }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeEnum(9, nntype_.getNumber());
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        output.writeInt32(10, stakepoint_);
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        output.writeEnum(11, status_.getNumber());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -19002,6 +19233,18 @@ public final class DdzProto {
         }
         size += dataSize;
         size += 1 * getPokeridsList().size();
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, nntype_.getNumber());
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, stakepoint_);
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(11, status_.getNumber());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -19139,6 +19382,12 @@ public final class DdzProto {
         bitField0_ = (bitField0_ & ~0x00000040);
         pokerids_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000080);
+        nntype_ = com.rxqp.protobuf.DdzProto.NNType.NNT_ERROR;
+        bitField0_ = (bitField0_ & ~0x00000100);
+        stakepoint_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000200);
+        status_ = com.rxqp.protobuf.DdzProto.NNStatus.STATUS_NONE;
+        bitField0_ = (bitField0_ & ~0x00000400);
         return this;
       }
 
@@ -19200,6 +19449,18 @@ public final class DdzProto {
           bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.pokerids_ = pokerids_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.nntype_ = nntype_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.stakepoint_ = stakepoint_;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000200;
+        }
+        result.status_ = status_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -19250,6 +19511,15 @@ public final class DdzProto {
             pokerids_.addAll(other.pokerids_);
           }
           onChanged();
+        }
+        if (other.hasNntype()) {
+          setNntype(other.getNntype());
+        }
+        if (other.hasStakepoint()) {
+          setStakepoint(other.getStakepoint());
+        }
+        if (other.hasStatus()) {
+          setStatus(other.getStatus());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -19729,6 +19999,159 @@ public final class DdzProto {
       public Builder clearPokerids() {
         pokerids_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+
+      // optional .netty.NNType nntype = 9;
+      private com.rxqp.protobuf.DdzProto.NNType nntype_ = com.rxqp.protobuf.DdzProto.NNType.NNT_ERROR;
+      /**
+       * <code>optional .netty.NNType nntype = 9;</code>
+       *
+       * <pre>
+       * 如果到了开牌阶段，可能有的玩家已经开牌
+       * </pre>
+       */
+      public boolean hasNntype() {
+        return ((bitField0_ & 0x00000100) == 0x00000100);
+      }
+      /**
+       * <code>optional .netty.NNType nntype = 9;</code>
+       *
+       * <pre>
+       * 如果到了开牌阶段，可能有的玩家已经开牌
+       * </pre>
+       */
+      public com.rxqp.protobuf.DdzProto.NNType getNntype() {
+        return nntype_;
+      }
+      /**
+       * <code>optional .netty.NNType nntype = 9;</code>
+       *
+       * <pre>
+       * 如果到了开牌阶段，可能有的玩家已经开牌
+       * </pre>
+       */
+      public Builder setNntype(com.rxqp.protobuf.DdzProto.NNType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000100;
+        nntype_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .netty.NNType nntype = 9;</code>
+       *
+       * <pre>
+       * 如果到了开牌阶段，可能有的玩家已经开牌
+       * </pre>
+       */
+      public Builder clearNntype() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        nntype_ = com.rxqp.protobuf.DdzProto.NNType.NNT_ERROR;
+        onChanged();
+        return this;
+      }
+
+      // optional int32 stakepoint = 10;
+      private int stakepoint_ ;
+      /**
+       * <code>optional int32 stakepoint = 10;</code>
+       *
+       * <pre>
+       * 下注分数（如果是下注阶段，可能有的玩家已经下注）
+       * </pre>
+       */
+      public boolean hasStakepoint() {
+        return ((bitField0_ & 0x00000200) == 0x00000200);
+      }
+      /**
+       * <code>optional int32 stakepoint = 10;</code>
+       *
+       * <pre>
+       * 下注分数（如果是下注阶段，可能有的玩家已经下注）
+       * </pre>
+       */
+      public int getStakepoint() {
+        return stakepoint_;
+      }
+      /**
+       * <code>optional int32 stakepoint = 10;</code>
+       *
+       * <pre>
+       * 下注分数（如果是下注阶段，可能有的玩家已经下注）
+       * </pre>
+       */
+      public Builder setStakepoint(int value) {
+        bitField0_ |= 0x00000200;
+        stakepoint_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 stakepoint = 10;</code>
+       *
+       * <pre>
+       * 下注分数（如果是下注阶段，可能有的玩家已经下注）
+       * </pre>
+       */
+      public Builder clearStakepoint() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        stakepoint_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // optional .netty.NNStatus status = 11;
+      private com.rxqp.protobuf.DdzProto.NNStatus status_ = com.rxqp.protobuf.DdzProto.NNStatus.STATUS_NONE;
+      /**
+       * <code>optional .netty.NNStatus status = 11;</code>
+       *
+       * <pre>
+       * 玩家当前状态 （牛牛游戏中的各个阶段状态）
+       * </pre>
+       */
+      public boolean hasStatus() {
+        return ((bitField0_ & 0x00000400) == 0x00000400);
+      }
+      /**
+       * <code>optional .netty.NNStatus status = 11;</code>
+       *
+       * <pre>
+       * 玩家当前状态 （牛牛游戏中的各个阶段状态）
+       * </pre>
+       */
+      public com.rxqp.protobuf.DdzProto.NNStatus getStatus() {
+        return status_;
+      }
+      /**
+       * <code>optional .netty.NNStatus status = 11;</code>
+       *
+       * <pre>
+       * 玩家当前状态 （牛牛游戏中的各个阶段状态）
+       * </pre>
+       */
+      public Builder setStatus(com.rxqp.protobuf.DdzProto.NNStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000400;
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .netty.NNStatus status = 11;</code>
+       *
+       * <pre>
+       * 玩家当前状态 （牛牛游戏中的各个阶段状态）
+       * </pre>
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        status_ = com.rxqp.protobuf.DdzProto.NNStatus.STATUS_NONE;
         onChanged();
         return this;
       }
@@ -30725,16 +31148,6 @@ public final class DdzProto {
      * <code>required int32 order = 2;</code>
      */
     int getOrder();
-
-    // optional .netty.OfflineStatus status = 3;
-    /**
-     * <code>optional .netty.OfflineStatus status = 3;</code>
-     */
-    boolean hasStatus();
-    /**
-     * <code>optional .netty.OfflineStatus status = 3;</code>
-     */
-    com.rxqp.protobuf.DdzProto.OfflineStatus getStatus();
   }
   /**
    * Protobuf type {@code netty.EntryNNRoomResp}
@@ -30807,17 +31220,6 @@ public final class DdzProto {
             case 16: {
               bitField0_ |= 0x00000002;
               order_ = input.readInt32();
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-              com.rxqp.protobuf.DdzProto.OfflineStatus value = com.rxqp.protobuf.DdzProto.OfflineStatus.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(3, rawValue);
-              } else {
-                bitField0_ |= 0x00000004;
-                status_ = value;
-              }
               break;
             }
           }
@@ -30898,26 +31300,9 @@ public final class DdzProto {
       return order_;
     }
 
-    // optional .netty.OfflineStatus status = 3;
-    public static final int STATUS_FIELD_NUMBER = 3;
-    private com.rxqp.protobuf.DdzProto.OfflineStatus status_;
-    /**
-     * <code>optional .netty.OfflineStatus status = 3;</code>
-     */
-    public boolean hasStatus() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional .netty.OfflineStatus status = 3;</code>
-     */
-    public com.rxqp.protobuf.DdzProto.OfflineStatus getStatus() {
-      return status_;
-    }
-
     private void initFields() {
       roomInfo_ = com.rxqp.protobuf.DdzProto.RoomInfo.getDefaultInstance();
       order_ = 0;
-      status_ = com.rxqp.protobuf.DdzProto.OfflineStatus.STATUS_CREATE_ROOM;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -30949,9 +31334,6 @@ public final class DdzProto {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(2, order_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeEnum(3, status_.getNumber());
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -30968,10 +31350,6 @@ public final class DdzProto {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, order_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, status_.getNumber());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -31102,8 +31480,6 @@ public final class DdzProto {
         bitField0_ = (bitField0_ & ~0x00000001);
         order_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
-        status_ = com.rxqp.protobuf.DdzProto.OfflineStatus.STATUS_CREATE_ROOM;
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -31144,10 +31520,6 @@ public final class DdzProto {
           to_bitField0_ |= 0x00000002;
         }
         result.order_ = order_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.status_ = status_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -31169,9 +31541,6 @@ public final class DdzProto {
         }
         if (other.hasOrder()) {
           setOrder(other.getOrder());
-        }
-        if (other.hasStatus()) {
-          setStatus(other.getStatus());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -31358,42 +31727,6 @@ public final class DdzProto {
       public Builder clearOrder() {
         bitField0_ = (bitField0_ & ~0x00000002);
         order_ = 0;
-        onChanged();
-        return this;
-      }
-
-      // optional .netty.OfflineStatus status = 3;
-      private com.rxqp.protobuf.DdzProto.OfflineStatus status_ = com.rxqp.protobuf.DdzProto.OfflineStatus.STATUS_CREATE_ROOM;
-      /**
-       * <code>optional .netty.OfflineStatus status = 3;</code>
-       */
-      public boolean hasStatus() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional .netty.OfflineStatus status = 3;</code>
-       */
-      public com.rxqp.protobuf.DdzProto.OfflineStatus getStatus() {
-        return status_;
-      }
-      /**
-       * <code>optional .netty.OfflineStatus status = 3;</code>
-       */
-      public Builder setStatus(com.rxqp.protobuf.DdzProto.OfflineStatus value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000004;
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .netty.OfflineStatus status = 3;</code>
-       */
-      public Builder clearStatus() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        status_ = com.rxqp.protobuf.DdzProto.OfflineStatus.STATUS_CREATE_ROOM;
         onChanged();
         return this;
       }
@@ -44508,114 +44841,116 @@ public final class DdzProto {
       "players\030\002 \003(\0132\r.netty.Player\022\020\n\010multiple" +
       "\030\003 \001(\005\022\023\n\013playedGames\030\004 \001(\005\022\022\n\ntotalGame" +
       "s\030\005 \001(\005\022\027\n\017currentPlayerId\030\006 \001(\005\022\020\n\010bank" +
-      "erId\030\007 \001(\005\"\202\001\n\006Player\022\n\n\002ID\030\001 \002(\005\022\014\n\004nam" +
+      "erId\030\007 \001(\005\"\326\001\n\006Player\022\n\n\002ID\030\001 \002(\005\022\014\n\004nam" +
       "e\030\002 \002(\t\022\016\n\006imgUrl\030\003 \001(\t\022\r\n\005score\030\004 \002(\005\022\014" +
       "\n\004isDz\030\005 \002(\010\022\r\n\005order\030\006 \001(\005\022\020\n\010isOnline\030",
-      "\007 \001(\010\022\020\n\010pokerids\030\010 \003(\005\"\"\n\005Poker\022\n\n\002ID\030\001" +
-      " \002(\005\022\r\n\005isOut\030\002 \002(\010\"/\n\nDisbandReq\022\017\n\007gro" +
-      "upId\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\"\r\n\013PostDisb" +
-      "and\" \n\017DisbandCheckReq\022\r\n\005agree\030\001 \002(\010\"\022\n" +
-      "\020PostDisbandCheck\"Q\n\016SettlementData\022\n\n\002I" +
-      "D\030\001 \002(\005\022\020\n\010gotscore\030\002 \002(\005\022\022\n\nfinalscore\030" +
-      "\003 \002(\005\022\r\n\005isWin\030\004 \002(\010\"H\n\016SettlementInfo\022&" +
-      "\n\007players\030\001 \003(\0132\025.netty.SettlementData\022\016" +
-      "\n\006isOver\030\002 \002(\010\"[\n\nDiscardReq\022\020\n\010playerId" +
-      "\030\001 \002(\005\022\017\n\007cardIds\030\002 \003(\005\022\027\n\017variableCardI",
-      "ds\030\003 \003(\005\022\021\n\tcardsType\030\004 \002(\005\"\227\001\n\013PostDisc" +
-      "ard\022\020\n\010playerId\030\001 \002(\005\022\017\n\007cardIds\030\002 \003(\005\022\027" +
-      "\n\017variableCardIds\030\003 \003(\005\022\032\n\022remainderPoke" +
-      "rsNum\030\004 \002(\005\022\033\n\023nextDiscardPlayerId\030\005 \002(\005" +
-      "\022\023\n\013mustDiscard\030\006 \002(\010\"\033\n\007DealReq\022\020\n\010play" +
-      "erId\030\001 \002(\005\"o\n\010DealResp\022\020\n\010playerId\030\001 \002(\005" +
-      "\022\034\n\006pokers\030\002 \003(\0132\014.netty.Poker\022!\n\010roomIn" +
-      "fo\030\003 \001(\0132\017.netty.RoomInfo\022\020\n\010grabHost\030\004 " +
-      "\002(\005\"-\n\013GrabHostReq\022\020\n\010playerId\030\001 \002(\005\022\014\n\004" +
-      "type\030\002 \002(\005\"\222\001\n\020PostGrabHostResp\022\014\n\004type\030",
-      "\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\022\024\n\014hostPlayerId\030" +
-      "\003 \001(\005\022\034\n\006pokers\030\004 \003(\0132\014.netty.Poker\022\020\n\010v" +
-      "ariable\030\005 \001(\005\022\030\n\020nextGrabPlayerId\030\006 \001(\005\"" +
-      "(\n\007MsgInfo\022\014\n\004type\030\001 \002(\005\022\017\n\007message\030\002 \002(" +
-      "\t\"\016\n\014PostDealOver\"@\n\017CreateNNRoomReq\022\r\n\005" +
-      "games\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\022\020\n\010playerId\030\003 " +
-      "\002(\005\"\"\n\020CreateNNRoomResp\022\016\n\006roomId\030\002 \002(\005\"" +
-      "2\n\016EntryNNRoomReq\022\016\n\006roomId\030\001 \002(\005\022\020\n\010pla" +
-      "yerId\030\002 \002(\005\"i\n\017EntryNNRoomResp\022!\n\010roomIn" +
-      "fo\030\001 \002(\0132\017.netty.RoomInfo\022\r\n\005order\030\002 \002(\005",
-      "\022$\n\006status\030\003 \001(\0162\024.netty.OfflineStatus\"0" +
-      "\n\017PostNNEntryRoom\022\035\n\006player\030\001 \002(\0132\r.nett" +
-      "y.Player\"\"\n\016StartNNGameReq\022\020\n\010playerid\030\001" +
-      " \002(\005\"\021\n\017StartNNGameResp\"\021\n\017PostStartNNGa" +
-      "me\" \n\014NNPrepareReq\022\020\n\010playerId\030\001 \002(\005\"m\n\016" +
-      "PostNNDealResp\022\020\n\010playerId\030\001 \002(\005\022\016\n\006poke" +
-      "rs\030\002 \003(\005\022\023\n\013playedGames\030\003 \002(\005\022\022\n\ntotalGa" +
-      "mes\030\004 \002(\005\022\020\n\010bankerId\030\005 \002(\005\"+\n\010StakeReq\022" +
-      "\020\n\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(\005\"\032\n\tStak" +
-      "eResp\022\r\n\005point\030\001 \002(\005\"0\n\rPostStakeResp\022\020\n",
-      "\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(\005\"3\n\016NNShow" +
-      "CardsReq\022\020\n\010playerid\030\001 \002(\005\022\017\n\007showAll\030\002 " +
-      "\002(\010\"R\n\017NNShowCardsResp\022\020\n\010playerId\030\001 \002(\005" +
-      "\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030\003 \002(\0162\r.netty" +
-      ".NNType\"R\n\017PostNNShowCards\022\020\n\010playerId\030\001" +
-      " \002(\005\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030\003 \002(\0162\r.n" +
-      "etty.NNType\"%\n\021PostNNPrepareResp\022\020\n\010play" +
-      "erId\030\001 \002(\005\"\017\n\rPostStakeOver\"$\n\020NNDissolu" +
-      "tionReq\022\020\n\010playerId\030\001 \002(\005\"\'\n\023PostDissolu" +
-      "tionResp\022\020\n\010playerid\030\001 \002(\005\";\n\026NNAnswerDi",
-      "ssolutionReq\022\020\n\010playerId\030\001 \002(\005\022\017\n\007isAgre" +
-      "e\030\002 \002(\010\"D\n\033PostAnswerDissolutionResult\022\020" +
-      "\n\010agreeCnt\030\001 \002(\005\022\023\n\013disagreeCnt\030\002 \002(\005\"\027\n" +
-      "\025PostDissolutionResult\"1\n\014SendSoundReq\022\020" +
-      "\n\010playerId\030\001 \002(\005\022\017\n\007soundId\030\002 \002(\005\"6\n\021Pos" +
-      "tSendSoundResp\022\020\n\010playerId\030\001 \002(\005\022\017\n\007soun" +
-      "dId\030\002 \002(\005\"\036\n\nSignOutReq\022\020\n\010playerid\030\001 \002(" +
-      "\005\"4\n\020ReEntryNNRoomReq\022\016\n\006roomId\030\001 \002(\005\022\020\n" +
-      "\010playerId\030\002 \002(\005\"#\n\017PostUnusualQuit\022\020\n\010pl" +
-      "ayerId\030\001 \002(\005\"$\n\020PostPlayerOnline\022\020\n\010play",
-      "erId\030\001 \002(\005\"%\n\021PostPlayerOffline\022\020\n\010playe" +
-      "rId\030\001 \002(\005*\277\t\n\nMESSAGE_ID\022\020\n\014msg_LoginReq" +
-      "\020\001\022\021\n\rmsg_LoginResp\020\002\022\025\n\021msg_CreateRoomR" +
-      "eq\020\003\022\026\n\022msg_CreateRoomResp\020\004\022\024\n\020msg_Entr" +
-      "yRoomReq\020\005\022\025\n\021msg_EntryRoomResp\020\006\022\025\n\021msg" +
-      "_PostEntryRoom\020\007\022\016\n\nmsg_Player\020\010\022\022\n\016msg_" +
-      "DisbandReq\020\t\022\023\n\017msg_PostDisband\020\n\022\027\n\023msg" +
-      "_DisbandCheckReq\020\013\022\030\n\024msg_PostDisbandChe" +
-      "ck\020\014\022\026\n\022msg_SettlementInfo\020\r\022\022\n\016msg_Disc" +
-      "ardReq\020\016\022\023\n\017msg_PostDiscard\020\017\022\017\n\013msg_Dea",
-      "lReq\020\020\022\020\n\014msg_DealResp\020\021\022\023\n\017msg_GrabHost" +
-      "Req\020\022\022\030\n\024msg_PostGrabHostResp\020\023\022\017\n\013msg_M" +
-      "sgInfo\020\024\022\024\n\020msg_PostDealOver\020\025\022\027\n\023msg_Cr" +
-      "eateNNRoomReq\020\026\022\030\n\024msg_CreateNNRoomResp\020" +
-      "\027\022\026\n\022msg_EntryNNRoomReq\020\030\022\027\n\023msg_EntryNN" +
-      "RoomResp\020\031\022\027\n\023msg_PostNNEntryRoom\020\032\022\026\n\022m" +
-      "sg_StartNNGameReq\020\033\022\027\n\023msg_StartNNGameRe" +
-      "sp\020\034\022\027\n\023msg_PostStartNNGame\020\035\022\024\n\020msg_NNP" +
-      "repareReq\020\036\022\026\n\022msg_PostNNDealResp\020\037\022\020\n\014m" +
-      "sg_StakeReq\020 \022\021\n\rmsg_StakeResp\020!\022\025\n\021msg_",
-      "PostStakeResp\020\"\022\026\n\022msg_NNShowCardsReq\020#\022" +
-      "\027\n\023msg_NNShowCardsResp\020$\022\027\n\023msg_PostNNSh" +
-      "owCards\020%\022\031\n\025msg_PostNNPrepareResp\020&\022\025\n\021" +
-      "msg_PostStakeOver\020\'\022\030\n\024msg_NNDissolution" +
-      "Req\020(\022\033\n\027msg_PostDissolutionResp\020)\022\036\n\032ms" +
-      "g_NNAnswerDissolutionReq\020*\022#\n\037msg_PostAn" +
-      "swerDissolutionResult\020+\022\035\n\031msg_PostDisso" +
-      "lutionResult\020,\022\024\n\020msg_SendSoundReq\020-\022\031\n\025" +
-      "msg_PostSendSoundResp\020.\022\022\n\016msg_SignOutRe" +
-      "q\020/\022\030\n\024msg_ReEntryNNRoomReq\0200\022\027\n\023msg_Pos",
-      "tUnusualQuit\0201\022\030\n\024msg_PostPlayerOnline\0202" +
-      "\022\031\n\025msg_PostPlayerOffline\0203*\265\002\n\006NNType\022\r" +
-      "\n\tNNT_ERROR\020\000\022\014\n\010NNT_NONE\020\001\022\024\n\020NNT_SPECI" +
-      "AL_NIU1\020\002\022\024\n\020NNT_SPECIAL_NIU2\020\003\022\024\n\020NNT_S" +
-      "PECIAL_NIU3\020\004\022\024\n\020NNT_SPECIAL_NIU4\020\005\022\024\n\020N" +
-      "NT_SPECIAL_NIU5\020\006\022\024\n\020NNT_SPECIAL_NIU6\020\007\022" +
-      "\024\n\020NNT_SPECIAL_NIU7\020\010\022\024\n\020NNT_SPECIAL_NIU" +
-      "8\020\t\022\024\n\020NNT_SPECIAL_NIU9\020\n\022\026\n\022NNT_SPECIAL" +
-      "_NIUNIU\020\013\022\026\n\022NNT_SPECIAL_NIUHUA\020\014\022\030\n\024NNT" +
-      "_SPECIAL_BOMEBOME\020\r*\247\001\n\rOfflineStatus\022\026\n",
-      "\022STATUS_CREATE_ROOM\020\000\022\025\n\021STATUS_ENTER_RO" +
-      "OM\020\001\022\030\n\024STATUS_BEGIN_PREPARE\020\002\022\031\n\025STATUS" +
-      "_FINISH_PREPARE\020\003\022\026\n\022STATUS_BEGIN_STAKE\020" +
-      "\004\022\032\n\026STATUS_BEGIN_SHOWCARDS\020\005B\035\n\021com.rxq" +
-      "p.protobufB\010DdzProto"
+      "\007 \001(\010\022\020\n\010pokerids\030\010 \003(\005\022\035\n\006nntype\030\t \001(\0162" +
+      "\r.netty.NNType\022\022\n\nstakepoint\030\n \001(\005\022\037\n\006st" +
+      "atus\030\013 \001(\0162\017.netty.NNStatus\"\"\n\005Poker\022\n\n\002" +
+      "ID\030\001 \002(\005\022\r\n\005isOut\030\002 \002(\010\"/\n\nDisbandReq\022\017\n" +
+      "\007groupId\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\"\r\n\013Post" +
+      "Disband\" \n\017DisbandCheckReq\022\r\n\005agree\030\001 \002(" +
+      "\010\"\022\n\020PostDisbandCheck\"Q\n\016SettlementData\022" +
+      "\n\n\002ID\030\001 \002(\005\022\020\n\010gotscore\030\002 \002(\005\022\022\n\nfinalsc" +
+      "ore\030\003 \002(\005\022\r\n\005isWin\030\004 \002(\010\"H\n\016SettlementIn" +
+      "fo\022&\n\007players\030\001 \003(\0132\025.netty.SettlementDa",
+      "ta\022\016\n\006isOver\030\002 \002(\010\"[\n\nDiscardReq\022\020\n\010play" +
+      "erId\030\001 \002(\005\022\017\n\007cardIds\030\002 \003(\005\022\027\n\017variableC" +
+      "ardIds\030\003 \003(\005\022\021\n\tcardsType\030\004 \002(\005\"\227\001\n\013Post" +
+      "Discard\022\020\n\010playerId\030\001 \002(\005\022\017\n\007cardIds\030\002 \003" +
+      "(\005\022\027\n\017variableCardIds\030\003 \003(\005\022\032\n\022remainder" +
+      "PokersNum\030\004 \002(\005\022\033\n\023nextDiscardPlayerId\030\005" +
+      " \002(\005\022\023\n\013mustDiscard\030\006 \002(\010\"\033\n\007DealReq\022\020\n\010" +
+      "playerId\030\001 \002(\005\"o\n\010DealResp\022\020\n\010playerId\030\001" +
+      " \002(\005\022\034\n\006pokers\030\002 \003(\0132\014.netty.Poker\022!\n\010ro" +
+      "omInfo\030\003 \001(\0132\017.netty.RoomInfo\022\020\n\010grabHos",
+      "t\030\004 \002(\005\"-\n\013GrabHostReq\022\020\n\010playerId\030\001 \002(\005" +
+      "\022\014\n\004type\030\002 \002(\005\"\222\001\n\020PostGrabHostResp\022\014\n\004t" +
+      "ype\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\022\024\n\014hostPlaye" +
+      "rId\030\003 \001(\005\022\034\n\006pokers\030\004 \003(\0132\014.netty.Poker\022" +
+      "\020\n\010variable\030\005 \001(\005\022\030\n\020nextGrabPlayerId\030\006 " +
+      "\001(\005\"(\n\007MsgInfo\022\014\n\004type\030\001 \002(\005\022\017\n\007message\030" +
+      "\002 \002(\t\"\016\n\014PostDealOver\"@\n\017CreateNNRoomReq" +
+      "\022\r\n\005games\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\022\020\n\010playerI" +
+      "d\030\003 \002(\005\"\"\n\020CreateNNRoomResp\022\016\n\006roomId\030\002 " +
+      "\002(\005\"2\n\016EntryNNRoomReq\022\016\n\006roomId\030\001 \002(\005\022\020\n",
+      "\010playerId\030\002 \002(\005\"C\n\017EntryNNRoomResp\022!\n\010ro" +
+      "omInfo\030\001 \002(\0132\017.netty.RoomInfo\022\r\n\005order\030\002" +
+      " \002(\005\"0\n\017PostNNEntryRoom\022\035\n\006player\030\001 \002(\0132" +
+      "\r.netty.Player\"\"\n\016StartNNGameReq\022\020\n\010play" +
+      "erid\030\001 \002(\005\"\021\n\017StartNNGameResp\"\021\n\017PostSta" +
+      "rtNNGame\" \n\014NNPrepareReq\022\020\n\010playerId\030\001 \002" +
+      "(\005\"m\n\016PostNNDealResp\022\020\n\010playerId\030\001 \002(\005\022\016" +
+      "\n\006pokers\030\002 \003(\005\022\023\n\013playedGames\030\003 \002(\005\022\022\n\nt" +
+      "otalGames\030\004 \002(\005\022\020\n\010bankerId\030\005 \002(\005\"+\n\010Sta" +
+      "keReq\022\020\n\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(\005\"\032",
+      "\n\tStakeResp\022\r\n\005point\030\001 \002(\005\"0\n\rPostStakeR" +
+      "esp\022\020\n\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(\005\"3\n\016" +
+      "NNShowCardsReq\022\020\n\010playerid\030\001 \002(\005\022\017\n\007show" +
+      "All\030\002 \002(\010\"R\n\017NNShowCardsResp\022\020\n\010playerId" +
+      "\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030\003 \002(\0162\r" +
+      ".netty.NNType\"R\n\017PostNNShowCards\022\020\n\010play" +
+      "erId\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030\003 \002" +
+      "(\0162\r.netty.NNType\"%\n\021PostNNPrepareResp\022\020" +
+      "\n\010playerId\030\001 \002(\005\"\017\n\rPostStakeOver\"$\n\020NND" +
+      "issolutionReq\022\020\n\010playerId\030\001 \002(\005\"\'\n\023PostD",
+      "issolutionResp\022\020\n\010playerid\030\001 \002(\005\";\n\026NNAn" +
+      "swerDissolutionReq\022\020\n\010playerId\030\001 \002(\005\022\017\n\007" +
+      "isAgree\030\002 \002(\010\"D\n\033PostAnswerDissolutionRe" +
+      "sult\022\020\n\010agreeCnt\030\001 \002(\005\022\023\n\013disagreeCnt\030\002 " +
+      "\002(\005\"\027\n\025PostDissolutionResult\"1\n\014SendSoun" +
+      "dReq\022\020\n\010playerId\030\001 \002(\005\022\017\n\007soundId\030\002 \002(\005\"" +
+      "6\n\021PostSendSoundResp\022\020\n\010playerId\030\001 \002(\005\022\017" +
+      "\n\007soundId\030\002 \002(\005\"\036\n\nSignOutReq\022\020\n\010playeri" +
+      "d\030\001 \002(\005\"4\n\020ReEntryNNRoomReq\022\016\n\006roomId\030\001 " +
+      "\002(\005\022\020\n\010playerId\030\002 \002(\005\"#\n\017PostUnusualQuit",
+      "\022\020\n\010playerId\030\001 \002(\005\"$\n\020PostPlayerOnline\022\020" +
+      "\n\010playerId\030\001 \002(\005\"%\n\021PostPlayerOffline\022\020\n" +
+      "\010playerId\030\001 \002(\005*\277\t\n\nMESSAGE_ID\022\020\n\014msg_Lo" +
+      "ginReq\020\001\022\021\n\rmsg_LoginResp\020\002\022\025\n\021msg_Creat" +
+      "eRoomReq\020\003\022\026\n\022msg_CreateRoomResp\020\004\022\024\n\020ms" +
+      "g_EntryRoomReq\020\005\022\025\n\021msg_EntryRoomResp\020\006\022" +
+      "\025\n\021msg_PostEntryRoom\020\007\022\016\n\nmsg_Player\020\010\022\022" +
+      "\n\016msg_DisbandReq\020\t\022\023\n\017msg_PostDisband\020\n\022" +
+      "\027\n\023msg_DisbandCheckReq\020\013\022\030\n\024msg_PostDisb" +
+      "andCheck\020\014\022\026\n\022msg_SettlementInfo\020\r\022\022\n\016ms",
+      "g_DiscardReq\020\016\022\023\n\017msg_PostDiscard\020\017\022\017\n\013m" +
+      "sg_DealReq\020\020\022\020\n\014msg_DealResp\020\021\022\023\n\017msg_Gr" +
+      "abHostReq\020\022\022\030\n\024msg_PostGrabHostResp\020\023\022\017\n" +
+      "\013msg_MsgInfo\020\024\022\024\n\020msg_PostDealOver\020\025\022\027\n\023" +
+      "msg_CreateNNRoomReq\020\026\022\030\n\024msg_CreateNNRoo" +
+      "mResp\020\027\022\026\n\022msg_EntryNNRoomReq\020\030\022\027\n\023msg_E" +
+      "ntryNNRoomResp\020\031\022\027\n\023msg_PostNNEntryRoom\020" +
+      "\032\022\026\n\022msg_StartNNGameReq\020\033\022\027\n\023msg_StartNN" +
+      "GameResp\020\034\022\027\n\023msg_PostStartNNGame\020\035\022\024\n\020m" +
+      "sg_NNPrepareReq\020\036\022\026\n\022msg_PostNNDealResp\020",
+      "\037\022\020\n\014msg_StakeReq\020 \022\021\n\rmsg_StakeResp\020!\022\025" +
+      "\n\021msg_PostStakeResp\020\"\022\026\n\022msg_NNShowCards" +
+      "Req\020#\022\027\n\023msg_NNShowCardsResp\020$\022\027\n\023msg_Po" +
+      "stNNShowCards\020%\022\031\n\025msg_PostNNPrepareResp" +
+      "\020&\022\025\n\021msg_PostStakeOver\020\'\022\030\n\024msg_NNDisso" +
+      "lutionReq\020(\022\033\n\027msg_PostDissolutionResp\020)" +
+      "\022\036\n\032msg_NNAnswerDissolutionReq\020*\022#\n\037msg_" +
+      "PostAnswerDissolutionResult\020+\022\035\n\031msg_Pos" +
+      "tDissolutionResult\020,\022\024\n\020msg_SendSoundReq" +
+      "\020-\022\031\n\025msg_PostSendSoundResp\020.\022\022\n\016msg_Sig",
+      "nOutReq\020/\022\030\n\024msg_ReEntryNNRoomReq\0200\022\027\n\023m" +
+      "sg_PostUnusualQuit\0201\022\030\n\024msg_PostPlayerOn" +
+      "line\0202\022\031\n\025msg_PostPlayerOffline\0203*\265\002\n\006NN" +
+      "Type\022\r\n\tNNT_ERROR\020\000\022\014\n\010NNT_NONE\020\001\022\024\n\020NNT" +
+      "_SPECIAL_NIU1\020\002\022\024\n\020NNT_SPECIAL_NIU2\020\003\022\024\n" +
+      "\020NNT_SPECIAL_NIU3\020\004\022\024\n\020NNT_SPECIAL_NIU4\020" +
+      "\005\022\024\n\020NNT_SPECIAL_NIU5\020\006\022\024\n\020NNT_SPECIAL_N" +
+      "IU6\020\007\022\024\n\020NNT_SPECIAL_NIU7\020\010\022\024\n\020NNT_SPECI" +
+      "AL_NIU8\020\t\022\024\n\020NNT_SPECIAL_NIU9\020\n\022\026\n\022NNT_S" +
+      "PECIAL_NIUNIU\020\013\022\026\n\022NNT_SPECIAL_NIUHUA\020\014\022",
+      "\030\n\024NNT_SPECIAL_BOMEBOME\020\r*\314\001\n\010NNStatus\022\017" +
+      "\n\013STATUS_NONE\020\000\022\026\n\022STATUS_CREATE_ROOM\020\001\022" +
+      "\025\n\021STATUS_ENTER_ROOM\020\002\022\030\n\024STATUS_BEGIN_P" +
+      "REPARE\020\003\022\031\n\025STATUS_FINISH_PREPARE\020\004\022\026\n\022S" +
+      "TATUS_BEGIN_STAKE\020\005\022\032\n\026STATUS_BEGIN_SHOW" +
+      "CARDS\020\006\022\027\n\023STATUS_PREPARE_NEXT\020\007B\035\n\021com." +
+      "rxqp.protobufB\010DdzProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -44687,7 +45022,7 @@ public final class DdzProto {
           internal_static_netty_Player_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_Player_descriptor,
-              new java.lang.String[] { "ID", "Name", "ImgUrl", "Score", "IsDz", "Order", "IsOnline", "Pokerids", });
+              new java.lang.String[] { "ID", "Name", "ImgUrl", "Score", "IsDz", "Order", "IsOnline", "Pokerids", "Nntype", "Stakepoint", "Status", });
           internal_static_netty_Poker_descriptor =
             getDescriptor().getMessageTypes().get(11);
           internal_static_netty_Poker_fieldAccessorTable = new
@@ -44801,7 +45136,7 @@ public final class DdzProto {
           internal_static_netty_EntryNNRoomResp_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_EntryNNRoomResp_descriptor,
-              new java.lang.String[] { "RoomInfo", "Order", "Status", });
+              new java.lang.String[] { "RoomInfo", "Order", });
           internal_static_netty_PostNNEntryRoom_descriptor =
             getDescriptor().getMessageTypes().get(30);
           internal_static_netty_PostNNEntryRoom_fieldAccessorTable = new
