@@ -524,6 +524,9 @@ public class RoomBizImpl implements IRoomBiz {
 		roomInfo.setRoomId(roomId);
 		roomInfo.addAllPlayers(BeanCopy.playersCopy(players));
 		roomInfo.setTotalGames(room.getTotalGames());
+		roomInfo.setPlayedGames(room.getPlayedGames());
+		roomInfo.setMultiple(room.getMultiple());
+		roomInfo.setBankerId(room.getBankerId());
 		entryRoomResp.setRoomInfo(roomInfo);
 		entryRoomResp.setOrder(player.getOrder());
 		entryRoomResp.setStatus(player.getOfflineStatus());//返回玩家断线前的状态

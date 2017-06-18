@@ -1,44 +1,22 @@
 package com.rxqp.server.bussiness.biz.impl;
 
-import io.netty.channel.ChannelHandlerContext;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.concurrent.ConcurrentHashMap;
-
-import org.apache.commons.collections.CollectionUtils;
-
 import com.rxqp.common.constants.ExcMsgConstants;
 import com.rxqp.common.constants.MessageConstants;
 import com.rxqp.common.data.CommonData;
 import com.rxqp.common.exception.BusinnessException;
 import com.rxqp.protobuf.DdzProto;
-import com.rxqp.protobuf.DdzProto.MESSAGE_ID;
-import com.rxqp.protobuf.DdzProto.MessageInfo;
+import com.rxqp.protobuf.DdzProto.*;
 import com.rxqp.protobuf.DdzProto.MessageInfo.Builder;
-import com.rxqp.protobuf.DdzProto.NNPrepareReq;
-import com.rxqp.protobuf.DdzProto.NNShowCardsResp;
-import com.rxqp.protobuf.DdzProto.NNType;
-import com.rxqp.protobuf.DdzProto.PostNNDealResp;
-import com.rxqp.protobuf.DdzProto.PostNNPrepareResp;
-import com.rxqp.protobuf.DdzProto.PostNNShowCards;
-import com.rxqp.protobuf.DdzProto.PostSendSoundResp;
-import com.rxqp.protobuf.DdzProto.PostStakeOver;
-import com.rxqp.protobuf.DdzProto.PostStakeResp;
-import com.rxqp.protobuf.DdzProto.PostStartNNGame;
-import com.rxqp.protobuf.DdzProto.SendSoundReq;
-import com.rxqp.protobuf.DdzProto.StakeReq;
-import com.rxqp.protobuf.DdzProto.StakeResp;
-import com.rxqp.protobuf.DdzProto.StartNNGameReq;
 import com.rxqp.server.bo.Player;
 import com.rxqp.server.bo.Room;
 import com.rxqp.server.bussiness.biz.ICommonBiz;
 import com.rxqp.server.bussiness.biz.IGameBiz;
 import com.rxqp.server.bussiness.biz.IRoomBiz;
+import io.netty.channel.ChannelHandlerContext;
+import org.apache.commons.collections.CollectionUtils;
+
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static com.rxqp.protobuf.DdzProto.OfflineStatus.*;
 
@@ -294,6 +272,12 @@ public class GameBizImpl implements IGameBiz {
 			room.increaseShowCardsPlayerCnt();// 开牌人数加1
 			if (room.getShowCardsPlayerCnt().equals(room.getPlayers().size())) {// 所有玩家已开牌，则进行结算
 				room.increasePlayedGamesCnt();// 已玩局数加1
+				//~~~~~~~~~~~~~~~~`TODO~~~~~~~~~~~~~~~~~~~~~~~~~~~扣减房卡逻辑
+//				String deductionRoomCardsUrl = WeixinConstants.deductionRoomCardsUrl;
+//				deductionRoomCardsUrl = deductionRoomCardsUrl.replace("USERID",""+playerId);
+//				deductionRoomCardsUrl = deductionRoomCardsUrl.replace("CARDS","1");
+//				JSONObject obj1 = CommonUtils.sendGet(deductionRoomCardsUrl);
+				//~~~~~~~~~~~~~~~~`TODO~~~~~~~~~~~~~~~~~~~~~~~~~~~扣减房卡逻辑
 				MessageInfo.Builder mi = roomBiz.buildSettlementData(room);// 计算结算信息
 				for (Player pl : players) {
 					pl.getChannel().writeAndFlush(mi.build());
@@ -421,7 +405,6 @@ public class GameBizImpl implements IGameBiz {
 	/**
 	 * 判断是否炸弹
 	 * 
-	 * @param pokers
 	 * @return
 	 */
 	private static Boolean isBomb(List<Integer> pokerIds) {

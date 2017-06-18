@@ -17285,6 +17285,16 @@ public final class DdzProto {
      * <code>optional int32 currentPlayerId = 6;</code>
      */
     int getCurrentPlayerId();
+
+    // optional int32 bankerId = 7;
+    /**
+     * <code>optional int32 bankerId = 7;</code>
+     */
+    boolean hasBankerId();
+    /**
+     * <code>optional int32 bankerId = 7;</code>
+     */
+    int getBankerId();
   }
   /**
    * Protobuf type {@code netty.RoomInfo}
@@ -17372,6 +17382,11 @@ public final class DdzProto {
             case 48: {
               bitField0_ |= 0x00000010;
               currentPlayerId_ = input.readInt32();
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000020;
+              bankerId_ = input.readInt32();
               break;
             }
           }
@@ -17533,6 +17548,22 @@ public final class DdzProto {
       return currentPlayerId_;
     }
 
+    // optional int32 bankerId = 7;
+    public static final int BANKERID_FIELD_NUMBER = 7;
+    private int bankerId_;
+    /**
+     * <code>optional int32 bankerId = 7;</code>
+     */
+    public boolean hasBankerId() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional int32 bankerId = 7;</code>
+     */
+    public int getBankerId() {
+      return bankerId_;
+    }
+
     private void initFields() {
       roomId_ = 0;
       players_ = java.util.Collections.emptyList();
@@ -17540,6 +17571,7 @@ public final class DdzProto {
       playedGames_ = 0;
       totalGames_ = 0;
       currentPlayerId_ = 0;
+      bankerId_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -17581,6 +17613,9 @@ public final class DdzProto {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeInt32(6, currentPlayerId_);
       }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeInt32(7, bankerId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -17613,6 +17648,10 @@ public final class DdzProto {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(6, currentPlayerId_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, bankerId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -17751,6 +17790,8 @@ public final class DdzProto {
         bitField0_ = (bitField0_ & ~0x00000010);
         currentPlayerId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000020);
+        bankerId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -17808,6 +17849,10 @@ public final class DdzProto {
           to_bitField0_ |= 0x00000010;
         }
         result.currentPlayerId_ = currentPlayerId_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.bankerId_ = bankerId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -17864,6 +17909,9 @@ public final class DdzProto {
         }
         if (other.hasCurrentPlayerId()) {
           setCurrentPlayerId(other.getCurrentPlayerId());
+        }
+        if (other.hasBankerId()) {
+          setBankerId(other.getBankerId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -18307,6 +18355,39 @@ public final class DdzProto {
         return this;
       }
 
+      // optional int32 bankerId = 7;
+      private int bankerId_ ;
+      /**
+       * <code>optional int32 bankerId = 7;</code>
+       */
+      public boolean hasBankerId() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional int32 bankerId = 7;</code>
+       */
+      public int getBankerId() {
+        return bankerId_;
+      }
+      /**
+       * <code>optional int32 bankerId = 7;</code>
+       */
+      public Builder setBankerId(int value) {
+        bitField0_ |= 0x00000040;
+        bankerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 bankerId = 7;</code>
+       */
+      public Builder clearBankerId() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        bankerId_ = 0;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:netty.RoomInfo)
     }
 
@@ -18416,6 +18497,32 @@ public final class DdzProto {
      * </pre>
      */
     boolean getIsOnline();
+
+    // repeated int32 pokerids = 8;
+    /**
+     * <code>repeated int32 pokerids = 8;</code>
+     *
+     * <pre>
+     *玩家当前的扑克ids
+     * </pre>
+     */
+    java.util.List<java.lang.Integer> getPokeridsList();
+    /**
+     * <code>repeated int32 pokerids = 8;</code>
+     *
+     * <pre>
+     *玩家当前的扑克ids
+     * </pre>
+     */
+    int getPokeridsCount();
+    /**
+     * <code>repeated int32 pokerids = 8;</code>
+     *
+     * <pre>
+     *玩家当前的扑克ids
+     * </pre>
+     */
+    int getPokerids(int index);
   }
   /**
    * Protobuf type {@code netty.Player}
@@ -18507,6 +18614,27 @@ public final class DdzProto {
               isOnline_ = input.readBool();
               break;
             }
+            case 64: {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                pokerids_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              pokerids_.add(input.readInt32());
+              break;
+            }
+            case 66: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080) && input.getBytesUntilLimit() > 0) {
+                pokerids_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                pokerids_.add(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -18515,6 +18643,9 @@ public final class DdzProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+          pokerids_ = java.util.Collections.unmodifiableList(pokerids_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -18729,6 +18860,41 @@ public final class DdzProto {
       return isOnline_;
     }
 
+    // repeated int32 pokerids = 8;
+    public static final int POKERIDS_FIELD_NUMBER = 8;
+    private java.util.List<java.lang.Integer> pokerids_;
+    /**
+     * <code>repeated int32 pokerids = 8;</code>
+     *
+     * <pre>
+     *玩家当前的扑克ids
+     * </pre>
+     */
+    public java.util.List<java.lang.Integer>
+        getPokeridsList() {
+      return pokerids_;
+    }
+    /**
+     * <code>repeated int32 pokerids = 8;</code>
+     *
+     * <pre>
+     *玩家当前的扑克ids
+     * </pre>
+     */
+    public int getPokeridsCount() {
+      return pokerids_.size();
+    }
+    /**
+     * <code>repeated int32 pokerids = 8;</code>
+     *
+     * <pre>
+     *玩家当前的扑克ids
+     * </pre>
+     */
+    public int getPokerids(int index) {
+      return pokerids_.get(index);
+    }
+
     private void initFields() {
       iD_ = 0;
       name_ = "";
@@ -18737,6 +18903,7 @@ public final class DdzProto {
       isDz_ = false;
       order_ = 0;
       isOnline_ = false;
+      pokerids_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -18787,6 +18954,9 @@ public final class DdzProto {
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeBool(7, isOnline_);
       }
+      for (int i = 0; i < pokerids_.size(); i++) {
+        output.writeInt32(8, pokerids_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -18823,6 +18993,15 @@ public final class DdzProto {
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, isOnline_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < pokerids_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(pokerids_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getPokeridsList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -18958,6 +19137,8 @@ public final class DdzProto {
         bitField0_ = (bitField0_ & ~0x00000020);
         isOnline_ = false;
         bitField0_ = (bitField0_ & ~0x00000040);
+        pokerids_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -19014,6 +19195,11 @@ public final class DdzProto {
           to_bitField0_ |= 0x00000040;
         }
         result.isOnline_ = isOnline_;
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          pokerids_ = java.util.Collections.unmodifiableList(pokerids_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.pokerids_ = pokerids_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -19054,6 +19240,16 @@ public final class DdzProto {
         }
         if (other.hasIsOnline()) {
           setIsOnline(other.getIsOnline());
+        }
+        if (!other.pokerids_.isEmpty()) {
+          if (pokerids_.isEmpty()) {
+            pokerids_ = other.pokerids_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensurePokeridsIsMutable();
+            pokerids_.addAll(other.pokerids_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -19439,6 +19635,100 @@ public final class DdzProto {
       public Builder clearIsOnline() {
         bitField0_ = (bitField0_ & ~0x00000040);
         isOnline_ = false;
+        onChanged();
+        return this;
+      }
+
+      // repeated int32 pokerids = 8;
+      private java.util.List<java.lang.Integer> pokerids_ = java.util.Collections.emptyList();
+      private void ensurePokeridsIsMutable() {
+        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+          pokerids_ = new java.util.ArrayList<java.lang.Integer>(pokerids_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+      /**
+       * <code>repeated int32 pokerids = 8;</code>
+       *
+       * <pre>
+       *玩家当前的扑克ids
+       * </pre>
+       */
+      public java.util.List<java.lang.Integer>
+          getPokeridsList() {
+        return java.util.Collections.unmodifiableList(pokerids_);
+      }
+      /**
+       * <code>repeated int32 pokerids = 8;</code>
+       *
+       * <pre>
+       *玩家当前的扑克ids
+       * </pre>
+       */
+      public int getPokeridsCount() {
+        return pokerids_.size();
+      }
+      /**
+       * <code>repeated int32 pokerids = 8;</code>
+       *
+       * <pre>
+       *玩家当前的扑克ids
+       * </pre>
+       */
+      public int getPokerids(int index) {
+        return pokerids_.get(index);
+      }
+      /**
+       * <code>repeated int32 pokerids = 8;</code>
+       *
+       * <pre>
+       *玩家当前的扑克ids
+       * </pre>
+       */
+      public Builder setPokerids(
+          int index, int value) {
+        ensurePokeridsIsMutable();
+        pokerids_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 pokerids = 8;</code>
+       *
+       * <pre>
+       *玩家当前的扑克ids
+       * </pre>
+       */
+      public Builder addPokerids(int value) {
+        ensurePokeridsIsMutable();
+        pokerids_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 pokerids = 8;</code>
+       *
+       * <pre>
+       *玩家当前的扑克ids
+       * </pre>
+       */
+      public Builder addAllPokerids(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensurePokeridsIsMutable();
+        super.addAll(values, pokerids_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 pokerids = 8;</code>
+       *
+       * <pre>
+       *玩家当前的扑克ids
+       * </pre>
+       */
+      public Builder clearPokerids() {
+        pokerids_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
@@ -43457,7 +43747,7 @@ public final class DdzProto {
    * Protobuf type {@code netty.PostPlayerOffline}
    *
    * <pre>
-   * 52、广播通知其他玩家，离线玩家已经上线
+   * 52、广播通知其他玩家，离线玩家已经离线
    * </pre>
    */
   public static final class PostPlayerOffline extends
@@ -43686,7 +43976,7 @@ public final class DdzProto {
      * Protobuf type {@code netty.PostPlayerOffline}
      *
      * <pre>
-     * 52、广播通知其他玩家，离线玩家已经上线
+     * 52、广播通知其他玩家，离线玩家已经离线
      * </pre>
      */
     public static final class Builder extends
@@ -44214,117 +44504,118 @@ public final class DdzProto {
       "ayerId\030\002 \002(\005\"A\n\rEntryRoomResp\022!\n\010roomInf" +
       "o\030\001 \002(\0132\017.netty.RoomInfo\022\r\n\005order\030\002 \002(\005\"" +
       ".\n\rPostEntryRoom\022\035\n\006player\030\001 \002(\0132\r.netty" +
-      ".Player\"\216\001\n\010RoomInfo\022\016\n\006roomId\030\001 \002(\005\022\036\n\007" +
+      ".Player\"\240\001\n\010RoomInfo\022\016\n\006roomId\030\001 \002(\005\022\036\n\007" +
       "players\030\002 \003(\0132\r.netty.Player\022\020\n\010multiple" +
       "\030\003 \001(\005\022\023\n\013playedGames\030\004 \001(\005\022\022\n\ntotalGame" +
-      "s\030\005 \001(\005\022\027\n\017currentPlayerId\030\006 \001(\005\"p\n\006Play" +
-      "er\022\n\n\002ID\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\016\n\006imgUrl\030\003" +
-      " \001(\t\022\r\n\005score\030\004 \002(\005\022\014\n\004isDz\030\005 \002(\010\022\r\n\005ord" +
-      "er\030\006 \001(\005\022\020\n\010isOnline\030\007 \001(\010\"\"\n\005Poker\022\n\n\002I",
-      "D\030\001 \002(\005\022\r\n\005isOut\030\002 \002(\010\"/\n\nDisbandReq\022\017\n\007" +
-      "groupId\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\"\r\n\013PostD" +
-      "isband\" \n\017DisbandCheckReq\022\r\n\005agree\030\001 \002(\010" +
-      "\"\022\n\020PostDisbandCheck\"Q\n\016SettlementData\022\n" +
-      "\n\002ID\030\001 \002(\005\022\020\n\010gotscore\030\002 \002(\005\022\022\n\nfinalsco" +
-      "re\030\003 \002(\005\022\r\n\005isWin\030\004 \002(\010\"H\n\016SettlementInf" +
-      "o\022&\n\007players\030\001 \003(\0132\025.netty.SettlementDat" +
-      "a\022\016\n\006isOver\030\002 \002(\010\"[\n\nDiscardReq\022\020\n\010playe" +
-      "rId\030\001 \002(\005\022\017\n\007cardIds\030\002 \003(\005\022\027\n\017variableCa" +
-      "rdIds\030\003 \003(\005\022\021\n\tcardsType\030\004 \002(\005\"\227\001\n\013PostD",
-      "iscard\022\020\n\010playerId\030\001 \002(\005\022\017\n\007cardIds\030\002 \003(" +
-      "\005\022\027\n\017variableCardIds\030\003 \003(\005\022\032\n\022remainderP" +
-      "okersNum\030\004 \002(\005\022\033\n\023nextDiscardPlayerId\030\005 " +
-      "\002(\005\022\023\n\013mustDiscard\030\006 \002(\010\"\033\n\007DealReq\022\020\n\010p" +
-      "layerId\030\001 \002(\005\"o\n\010DealResp\022\020\n\010playerId\030\001 " +
-      "\002(\005\022\034\n\006pokers\030\002 \003(\0132\014.netty.Poker\022!\n\010roo" +
-      "mInfo\030\003 \001(\0132\017.netty.RoomInfo\022\020\n\010grabHost" +
-      "\030\004 \002(\005\"-\n\013GrabHostReq\022\020\n\010playerId\030\001 \002(\005\022" +
-      "\014\n\004type\030\002 \002(\005\"\222\001\n\020PostGrabHostResp\022\014\n\004ty" +
-      "pe\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\022\024\n\014hostPlayer",
-      "Id\030\003 \001(\005\022\034\n\006pokers\030\004 \003(\0132\014.netty.Poker\022\020" +
-      "\n\010variable\030\005 \001(\005\022\030\n\020nextGrabPlayerId\030\006 \001" +
-      "(\005\"(\n\007MsgInfo\022\014\n\004type\030\001 \002(\005\022\017\n\007message\030\002" +
-      " \002(\t\"\016\n\014PostDealOver\"@\n\017CreateNNRoomReq\022" +
-      "\r\n\005games\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\022\020\n\010playerId" +
-      "\030\003 \002(\005\"\"\n\020CreateNNRoomResp\022\016\n\006roomId\030\002 \002" +
-      "(\005\"2\n\016EntryNNRoomReq\022\016\n\006roomId\030\001 \002(\005\022\020\n\010" +
-      "playerId\030\002 \002(\005\"i\n\017EntryNNRoomResp\022!\n\010roo" +
-      "mInfo\030\001 \002(\0132\017.netty.RoomInfo\022\r\n\005order\030\002 " +
-      "\002(\005\022$\n\006status\030\003 \001(\0162\024.netty.OfflineStatu",
-      "s\"0\n\017PostNNEntryRoom\022\035\n\006player\030\001 \002(\0132\r.n" +
-      "etty.Player\"\"\n\016StartNNGameReq\022\020\n\010playeri" +
-      "d\030\001 \002(\005\"\021\n\017StartNNGameResp\"\021\n\017PostStartN" +
-      "NGame\" \n\014NNPrepareReq\022\020\n\010playerId\030\001 \002(\005\"" +
-      "m\n\016PostNNDealResp\022\020\n\010playerId\030\001 \002(\005\022\016\n\006p" +
-      "okers\030\002 \003(\005\022\023\n\013playedGames\030\003 \002(\005\022\022\n\ntota" +
-      "lGames\030\004 \002(\005\022\020\n\010bankerId\030\005 \002(\005\"+\n\010StakeR" +
-      "eq\022\020\n\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(\005\"\032\n\tS" +
-      "takeResp\022\r\n\005point\030\001 \002(\005\"0\n\rPostStakeResp" +
-      "\022\020\n\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(\005\"3\n\016NNS",
-      "howCardsReq\022\020\n\010playerid\030\001 \002(\005\022\017\n\007showAll" +
-      "\030\002 \002(\010\"R\n\017NNShowCardsResp\022\020\n\010playerId\030\001 " +
-      "\002(\005\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030\003 \002(\0162\r.ne" +
-      "tty.NNType\"R\n\017PostNNShowCards\022\020\n\010playerI" +
-      "d\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030\003 \002(\0162" +
-      "\r.netty.NNType\"%\n\021PostNNPrepareResp\022\020\n\010p" +
-      "layerId\030\001 \002(\005\"\017\n\rPostStakeOver\"$\n\020NNDiss" +
-      "olutionReq\022\020\n\010playerId\030\001 \002(\005\"\'\n\023PostDiss" +
-      "olutionResp\022\020\n\010playerid\030\001 \002(\005\";\n\026NNAnswe" +
-      "rDissolutionReq\022\020\n\010playerId\030\001 \002(\005\022\017\n\007isA",
-      "gree\030\002 \002(\010\"D\n\033PostAnswerDissolutionResul" +
-      "t\022\020\n\010agreeCnt\030\001 \002(\005\022\023\n\013disagreeCnt\030\002 \002(\005" +
-      "\"\027\n\025PostDissolutionResult\"1\n\014SendSoundRe" +
-      "q\022\020\n\010playerId\030\001 \002(\005\022\017\n\007soundId\030\002 \002(\005\"6\n\021" +
-      "PostSendSoundResp\022\020\n\010playerId\030\001 \002(\005\022\017\n\007s" +
-      "oundId\030\002 \002(\005\"\036\n\nSignOutReq\022\020\n\010playerid\030\001" +
-      " \002(\005\"4\n\020ReEntryNNRoomReq\022\016\n\006roomId\030\001 \002(\005" +
-      "\022\020\n\010playerId\030\002 \002(\005\"#\n\017PostUnusualQuit\022\020\n" +
-      "\010playerId\030\001 \002(\005\"$\n\020PostPlayerOnline\022\020\n\010p" +
-      "layerId\030\001 \002(\005\"%\n\021PostPlayerOffline\022\020\n\010pl",
-      "ayerId\030\001 \002(\005*\277\t\n\nMESSAGE_ID\022\020\n\014msg_Login" +
-      "Req\020\001\022\021\n\rmsg_LoginResp\020\002\022\025\n\021msg_CreateRo" +
-      "omReq\020\003\022\026\n\022msg_CreateRoomResp\020\004\022\024\n\020msg_E" +
-      "ntryRoomReq\020\005\022\025\n\021msg_EntryRoomResp\020\006\022\025\n\021" +
-      "msg_PostEntryRoom\020\007\022\016\n\nmsg_Player\020\010\022\022\n\016m" +
-      "sg_DisbandReq\020\t\022\023\n\017msg_PostDisband\020\n\022\027\n\023" +
-      "msg_DisbandCheckReq\020\013\022\030\n\024msg_PostDisband" +
-      "Check\020\014\022\026\n\022msg_SettlementInfo\020\r\022\022\n\016msg_D" +
-      "iscardReq\020\016\022\023\n\017msg_PostDiscard\020\017\022\017\n\013msg_" +
-      "DealReq\020\020\022\020\n\014msg_DealResp\020\021\022\023\n\017msg_GrabH",
-      "ostReq\020\022\022\030\n\024msg_PostGrabHostResp\020\023\022\017\n\013ms" +
-      "g_MsgInfo\020\024\022\024\n\020msg_PostDealOver\020\025\022\027\n\023msg" +
-      "_CreateNNRoomReq\020\026\022\030\n\024msg_CreateNNRoomRe" +
-      "sp\020\027\022\026\n\022msg_EntryNNRoomReq\020\030\022\027\n\023msg_Entr" +
-      "yNNRoomResp\020\031\022\027\n\023msg_PostNNEntryRoom\020\032\022\026" +
-      "\n\022msg_StartNNGameReq\020\033\022\027\n\023msg_StartNNGam" +
-      "eResp\020\034\022\027\n\023msg_PostStartNNGame\020\035\022\024\n\020msg_" +
-      "NNPrepareReq\020\036\022\026\n\022msg_PostNNDealResp\020\037\022\020" +
-      "\n\014msg_StakeReq\020 \022\021\n\rmsg_StakeResp\020!\022\025\n\021m" +
-      "sg_PostStakeResp\020\"\022\026\n\022msg_NNShowCardsReq",
-      "\020#\022\027\n\023msg_NNShowCardsResp\020$\022\027\n\023msg_PostN" +
-      "NShowCards\020%\022\031\n\025msg_PostNNPrepareResp\020&\022" +
-      "\025\n\021msg_PostStakeOver\020\'\022\030\n\024msg_NNDissolut" +
-      "ionReq\020(\022\033\n\027msg_PostDissolutionResp\020)\022\036\n" +
-      "\032msg_NNAnswerDissolutionReq\020*\022#\n\037msg_Pos" +
-      "tAnswerDissolutionResult\020+\022\035\n\031msg_PostDi" +
-      "ssolutionResult\020,\022\024\n\020msg_SendSoundReq\020-\022" +
-      "\031\n\025msg_PostSendSoundResp\020.\022\022\n\016msg_SignOu" +
-      "tReq\020/\022\030\n\024msg_ReEntryNNRoomReq\0200\022\027\n\023msg_" +
-      "PostUnusualQuit\0201\022\030\n\024msg_PostPlayerOnlin",
-      "e\0202\022\031\n\025msg_PostPlayerOffline\0203*\265\002\n\006NNTyp" +
-      "e\022\r\n\tNNT_ERROR\020\000\022\014\n\010NNT_NONE\020\001\022\024\n\020NNT_SP" +
-      "ECIAL_NIU1\020\002\022\024\n\020NNT_SPECIAL_NIU2\020\003\022\024\n\020NN" +
-      "T_SPECIAL_NIU3\020\004\022\024\n\020NNT_SPECIAL_NIU4\020\005\022\024" +
-      "\n\020NNT_SPECIAL_NIU5\020\006\022\024\n\020NNT_SPECIAL_NIU6" +
-      "\020\007\022\024\n\020NNT_SPECIAL_NIU7\020\010\022\024\n\020NNT_SPECIAL_" +
-      "NIU8\020\t\022\024\n\020NNT_SPECIAL_NIU9\020\n\022\026\n\022NNT_SPEC" +
-      "IAL_NIUNIU\020\013\022\026\n\022NNT_SPECIAL_NIUHUA\020\014\022\030\n\024" +
-      "NNT_SPECIAL_BOMEBOME\020\r*\247\001\n\rOfflineStatus" +
-      "\022\026\n\022STATUS_CREATE_ROOM\020\000\022\025\n\021STATUS_ENTER",
-      "_ROOM\020\001\022\030\n\024STATUS_BEGIN_PREPARE\020\002\022\031\n\025STA" +
-      "TUS_FINISH_PREPARE\020\003\022\026\n\022STATUS_BEGIN_STA" +
-      "KE\020\004\022\032\n\026STATUS_BEGIN_SHOWCARDS\020\005B\035\n\021com." +
-      "rxqp.protobufB\010DdzProto"
+      "s\030\005 \001(\005\022\027\n\017currentPlayerId\030\006 \001(\005\022\020\n\010bank" +
+      "erId\030\007 \001(\005\"\202\001\n\006Player\022\n\n\002ID\030\001 \002(\005\022\014\n\004nam" +
+      "e\030\002 \002(\t\022\016\n\006imgUrl\030\003 \001(\t\022\r\n\005score\030\004 \002(\005\022\014" +
+      "\n\004isDz\030\005 \002(\010\022\r\n\005order\030\006 \001(\005\022\020\n\010isOnline\030",
+      "\007 \001(\010\022\020\n\010pokerids\030\010 \003(\005\"\"\n\005Poker\022\n\n\002ID\030\001" +
+      " \002(\005\022\r\n\005isOut\030\002 \002(\010\"/\n\nDisbandReq\022\017\n\007gro" +
+      "upId\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\"\r\n\013PostDisb" +
+      "and\" \n\017DisbandCheckReq\022\r\n\005agree\030\001 \002(\010\"\022\n" +
+      "\020PostDisbandCheck\"Q\n\016SettlementData\022\n\n\002I" +
+      "D\030\001 \002(\005\022\020\n\010gotscore\030\002 \002(\005\022\022\n\nfinalscore\030" +
+      "\003 \002(\005\022\r\n\005isWin\030\004 \002(\010\"H\n\016SettlementInfo\022&" +
+      "\n\007players\030\001 \003(\0132\025.netty.SettlementData\022\016" +
+      "\n\006isOver\030\002 \002(\010\"[\n\nDiscardReq\022\020\n\010playerId" +
+      "\030\001 \002(\005\022\017\n\007cardIds\030\002 \003(\005\022\027\n\017variableCardI",
+      "ds\030\003 \003(\005\022\021\n\tcardsType\030\004 \002(\005\"\227\001\n\013PostDisc" +
+      "ard\022\020\n\010playerId\030\001 \002(\005\022\017\n\007cardIds\030\002 \003(\005\022\027" +
+      "\n\017variableCardIds\030\003 \003(\005\022\032\n\022remainderPoke" +
+      "rsNum\030\004 \002(\005\022\033\n\023nextDiscardPlayerId\030\005 \002(\005" +
+      "\022\023\n\013mustDiscard\030\006 \002(\010\"\033\n\007DealReq\022\020\n\010play" +
+      "erId\030\001 \002(\005\"o\n\010DealResp\022\020\n\010playerId\030\001 \002(\005" +
+      "\022\034\n\006pokers\030\002 \003(\0132\014.netty.Poker\022!\n\010roomIn" +
+      "fo\030\003 \001(\0132\017.netty.RoomInfo\022\020\n\010grabHost\030\004 " +
+      "\002(\005\"-\n\013GrabHostReq\022\020\n\010playerId\030\001 \002(\005\022\014\n\004" +
+      "type\030\002 \002(\005\"\222\001\n\020PostGrabHostResp\022\014\n\004type\030",
+      "\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\022\024\n\014hostPlayerId\030" +
+      "\003 \001(\005\022\034\n\006pokers\030\004 \003(\0132\014.netty.Poker\022\020\n\010v" +
+      "ariable\030\005 \001(\005\022\030\n\020nextGrabPlayerId\030\006 \001(\005\"" +
+      "(\n\007MsgInfo\022\014\n\004type\030\001 \002(\005\022\017\n\007message\030\002 \002(" +
+      "\t\"\016\n\014PostDealOver\"@\n\017CreateNNRoomReq\022\r\n\005" +
+      "games\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\022\020\n\010playerId\030\003 " +
+      "\002(\005\"\"\n\020CreateNNRoomResp\022\016\n\006roomId\030\002 \002(\005\"" +
+      "2\n\016EntryNNRoomReq\022\016\n\006roomId\030\001 \002(\005\022\020\n\010pla" +
+      "yerId\030\002 \002(\005\"i\n\017EntryNNRoomResp\022!\n\010roomIn" +
+      "fo\030\001 \002(\0132\017.netty.RoomInfo\022\r\n\005order\030\002 \002(\005",
+      "\022$\n\006status\030\003 \001(\0162\024.netty.OfflineStatus\"0" +
+      "\n\017PostNNEntryRoom\022\035\n\006player\030\001 \002(\0132\r.nett" +
+      "y.Player\"\"\n\016StartNNGameReq\022\020\n\010playerid\030\001" +
+      " \002(\005\"\021\n\017StartNNGameResp\"\021\n\017PostStartNNGa" +
+      "me\" \n\014NNPrepareReq\022\020\n\010playerId\030\001 \002(\005\"m\n\016" +
+      "PostNNDealResp\022\020\n\010playerId\030\001 \002(\005\022\016\n\006poke" +
+      "rs\030\002 \003(\005\022\023\n\013playedGames\030\003 \002(\005\022\022\n\ntotalGa" +
+      "mes\030\004 \002(\005\022\020\n\010bankerId\030\005 \002(\005\"+\n\010StakeReq\022" +
+      "\020\n\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(\005\"\032\n\tStak" +
+      "eResp\022\r\n\005point\030\001 \002(\005\"0\n\rPostStakeResp\022\020\n",
+      "\010playerid\030\001 \002(\005\022\r\n\005point\030\002 \002(\005\"3\n\016NNShow" +
+      "CardsReq\022\020\n\010playerid\030\001 \002(\005\022\017\n\007showAll\030\002 " +
+      "\002(\010\"R\n\017NNShowCardsResp\022\020\n\010playerId\030\001 \002(\005" +
+      "\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030\003 \002(\0162\r.netty" +
+      ".NNType\"R\n\017PostNNShowCards\022\020\n\010playerId\030\001" +
+      " \002(\005\022\016\n\006pokers\030\002 \003(\005\022\035\n\006nntype\030\003 \002(\0162\r.n" +
+      "etty.NNType\"%\n\021PostNNPrepareResp\022\020\n\010play" +
+      "erId\030\001 \002(\005\"\017\n\rPostStakeOver\"$\n\020NNDissolu" +
+      "tionReq\022\020\n\010playerId\030\001 \002(\005\"\'\n\023PostDissolu" +
+      "tionResp\022\020\n\010playerid\030\001 \002(\005\";\n\026NNAnswerDi",
+      "ssolutionReq\022\020\n\010playerId\030\001 \002(\005\022\017\n\007isAgre" +
+      "e\030\002 \002(\010\"D\n\033PostAnswerDissolutionResult\022\020" +
+      "\n\010agreeCnt\030\001 \002(\005\022\023\n\013disagreeCnt\030\002 \002(\005\"\027\n" +
+      "\025PostDissolutionResult\"1\n\014SendSoundReq\022\020" +
+      "\n\010playerId\030\001 \002(\005\022\017\n\007soundId\030\002 \002(\005\"6\n\021Pos" +
+      "tSendSoundResp\022\020\n\010playerId\030\001 \002(\005\022\017\n\007soun" +
+      "dId\030\002 \002(\005\"\036\n\nSignOutReq\022\020\n\010playerid\030\001 \002(" +
+      "\005\"4\n\020ReEntryNNRoomReq\022\016\n\006roomId\030\001 \002(\005\022\020\n" +
+      "\010playerId\030\002 \002(\005\"#\n\017PostUnusualQuit\022\020\n\010pl" +
+      "ayerId\030\001 \002(\005\"$\n\020PostPlayerOnline\022\020\n\010play",
+      "erId\030\001 \002(\005\"%\n\021PostPlayerOffline\022\020\n\010playe" +
+      "rId\030\001 \002(\005*\277\t\n\nMESSAGE_ID\022\020\n\014msg_LoginReq" +
+      "\020\001\022\021\n\rmsg_LoginResp\020\002\022\025\n\021msg_CreateRoomR" +
+      "eq\020\003\022\026\n\022msg_CreateRoomResp\020\004\022\024\n\020msg_Entr" +
+      "yRoomReq\020\005\022\025\n\021msg_EntryRoomResp\020\006\022\025\n\021msg" +
+      "_PostEntryRoom\020\007\022\016\n\nmsg_Player\020\010\022\022\n\016msg_" +
+      "DisbandReq\020\t\022\023\n\017msg_PostDisband\020\n\022\027\n\023msg" +
+      "_DisbandCheckReq\020\013\022\030\n\024msg_PostDisbandChe" +
+      "ck\020\014\022\026\n\022msg_SettlementInfo\020\r\022\022\n\016msg_Disc" +
+      "ardReq\020\016\022\023\n\017msg_PostDiscard\020\017\022\017\n\013msg_Dea",
+      "lReq\020\020\022\020\n\014msg_DealResp\020\021\022\023\n\017msg_GrabHost" +
+      "Req\020\022\022\030\n\024msg_PostGrabHostResp\020\023\022\017\n\013msg_M" +
+      "sgInfo\020\024\022\024\n\020msg_PostDealOver\020\025\022\027\n\023msg_Cr" +
+      "eateNNRoomReq\020\026\022\030\n\024msg_CreateNNRoomResp\020" +
+      "\027\022\026\n\022msg_EntryNNRoomReq\020\030\022\027\n\023msg_EntryNN" +
+      "RoomResp\020\031\022\027\n\023msg_PostNNEntryRoom\020\032\022\026\n\022m" +
+      "sg_StartNNGameReq\020\033\022\027\n\023msg_StartNNGameRe" +
+      "sp\020\034\022\027\n\023msg_PostStartNNGame\020\035\022\024\n\020msg_NNP" +
+      "repareReq\020\036\022\026\n\022msg_PostNNDealResp\020\037\022\020\n\014m" +
+      "sg_StakeReq\020 \022\021\n\rmsg_StakeResp\020!\022\025\n\021msg_",
+      "PostStakeResp\020\"\022\026\n\022msg_NNShowCardsReq\020#\022" +
+      "\027\n\023msg_NNShowCardsResp\020$\022\027\n\023msg_PostNNSh" +
+      "owCards\020%\022\031\n\025msg_PostNNPrepareResp\020&\022\025\n\021" +
+      "msg_PostStakeOver\020\'\022\030\n\024msg_NNDissolution" +
+      "Req\020(\022\033\n\027msg_PostDissolutionResp\020)\022\036\n\032ms" +
+      "g_NNAnswerDissolutionReq\020*\022#\n\037msg_PostAn" +
+      "swerDissolutionResult\020+\022\035\n\031msg_PostDisso" +
+      "lutionResult\020,\022\024\n\020msg_SendSoundReq\020-\022\031\n\025" +
+      "msg_PostSendSoundResp\020.\022\022\n\016msg_SignOutRe" +
+      "q\020/\022\030\n\024msg_ReEntryNNRoomReq\0200\022\027\n\023msg_Pos",
+      "tUnusualQuit\0201\022\030\n\024msg_PostPlayerOnline\0202" +
+      "\022\031\n\025msg_PostPlayerOffline\0203*\265\002\n\006NNType\022\r" +
+      "\n\tNNT_ERROR\020\000\022\014\n\010NNT_NONE\020\001\022\024\n\020NNT_SPECI" +
+      "AL_NIU1\020\002\022\024\n\020NNT_SPECIAL_NIU2\020\003\022\024\n\020NNT_S" +
+      "PECIAL_NIU3\020\004\022\024\n\020NNT_SPECIAL_NIU4\020\005\022\024\n\020N" +
+      "NT_SPECIAL_NIU5\020\006\022\024\n\020NNT_SPECIAL_NIU6\020\007\022" +
+      "\024\n\020NNT_SPECIAL_NIU7\020\010\022\024\n\020NNT_SPECIAL_NIU" +
+      "8\020\t\022\024\n\020NNT_SPECIAL_NIU9\020\n\022\026\n\022NNT_SPECIAL" +
+      "_NIUNIU\020\013\022\026\n\022NNT_SPECIAL_NIUHUA\020\014\022\030\n\024NNT" +
+      "_SPECIAL_BOMEBOME\020\r*\247\001\n\rOfflineStatus\022\026\n",
+      "\022STATUS_CREATE_ROOM\020\000\022\025\n\021STATUS_ENTER_RO" +
+      "OM\020\001\022\030\n\024STATUS_BEGIN_PREPARE\020\002\022\031\n\025STATUS" +
+      "_FINISH_PREPARE\020\003\022\026\n\022STATUS_BEGIN_STAKE\020" +
+      "\004\022\032\n\026STATUS_BEGIN_SHOWCARDS\020\005B\035\n\021com.rxq" +
+      "p.protobufB\010DdzProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -44390,13 +44681,13 @@ public final class DdzProto {
           internal_static_netty_RoomInfo_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_RoomInfo_descriptor,
-              new java.lang.String[] { "RoomId", "Players", "Multiple", "PlayedGames", "TotalGames", "CurrentPlayerId", });
+              new java.lang.String[] { "RoomId", "Players", "Multiple", "PlayedGames", "TotalGames", "CurrentPlayerId", "BankerId", });
           internal_static_netty_Player_descriptor =
             getDescriptor().getMessageTypes().get(10);
           internal_static_netty_Player_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_Player_descriptor,
-              new java.lang.String[] { "ID", "Name", "ImgUrl", "Score", "IsDz", "Order", "IsOnline", });
+              new java.lang.String[] { "ID", "Name", "ImgUrl", "Score", "IsDz", "Order", "IsOnline", "Pokerids", });
           internal_static_netty_Poker_descriptor =
             getDescriptor().getMessageTypes().get(11);
           internal_static_netty_Poker_fieldAccessorTable = new

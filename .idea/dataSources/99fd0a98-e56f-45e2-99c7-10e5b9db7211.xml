@@ -31,5 +31,22 @@
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
+    <column id="14" parent="9" name="cardNum">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="15" parent="9" name="updateTime">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="16" parent="9" name="lastLoginTime">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="17" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

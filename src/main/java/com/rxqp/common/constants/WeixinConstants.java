@@ -41,6 +41,7 @@ public class WeixinConstants {
     public static String getPlayerByOpenidUrl = "http://139.129.98.110:8090/game_service/getPlayerByOpenid.do?openid=OPENID";
     public static String getPlayerByPlayeridUrl = "http://139.129.98.110:8090/game_service/getPlayerByPlayerid.do?playerid=PLAYERID";
     public static String addUserWithOpenid = "http://139.129.98.110:8090/game_service/addUser.do?openid=OPENID&name=NAME&imgUrl=IMG_URL";
+    public static String deductionRoomCardsUrl = "http://http://localhost:8081/deductionRoomCards.do?userId=USERID&&cards=CARDS";
     //****************************************线上环境***************************************************
 
     public static String getWXUserInfoUrl = "https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID";
