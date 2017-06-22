@@ -85,6 +85,16 @@ public class CommonUtils {
 		return String.valueOf(Character.toChars(hexEmoji));
 	}
 
+	/*
+	 * 生成交易单号
+	 */
+	public static String getAccessToken(Integer playerId) {
+		String currentTime = DateUtils.getCurrentTime("yyyyMMddHHmmss");
+		String fixed = getRandomString(5);
+		String tradeNo = playerId.toString() + currentTime + fixed;
+		return tradeNo;
+	}
+
 	/**
 	 * 生产随机数字符串
 	 *

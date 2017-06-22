@@ -60,6 +60,9 @@ public class CoreBizImpl implements ICoreBiz {
 		case msg_ReEntryNNRoomReq://异常退出后从新进入房间
 			builder = roomBiz.reEntryRoom(messageInfoReq,ctx);
 			break;
+		case msg_ReLoginReq://重复登录
+			builder = loginBiz.reLogin(messageInfoReq,ctx);
+			break;
 		default:
 			System.out.println("default");
 			break;

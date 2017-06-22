@@ -1,6 +1,8 @@
 package com.rxqp.utils;
 
 import com.rxqp.common.constants.WeixinConstants;
+import com.rxqp.model.AccessToken;
+import com.rxqp.model.JsApiTicket;
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 import org.dom4j.DocumentException;
@@ -19,10 +21,6 @@ import java.io.OutputStream;
 import java.net.ConnectException;
 import java.net.URL;
 import java.util.Random;
-
-import com.rxqp.model.AccessToken;
-import com.rxqp.model.JsApiTicket;
-import com.rxqp.common.constants.WeixinConstants;
 
 public class WeixinUtil {
 
@@ -176,16 +174,6 @@ public class WeixinUtil {
 			sb.append(base.charAt(number));
 		}
 		return sb.toString();
-	}
-
-	/*
-	 * 生成交易单号
-	 */
-	public static String getOutTradeNo() {
-		String currentTime = DateUtils.getCurrentTime("yyyyMMddHHmmss");
-		String fixed = getRandomString(5);
-		String tradeNo = currentTime + fixed;
-		return tradeNo;
 	}
 
 	/**

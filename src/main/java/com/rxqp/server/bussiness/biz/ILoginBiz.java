@@ -22,4 +22,7 @@ public interface ILoginBiz {
 
 	public MessageInfo.Builder deletPlayerByPlayerid(MessageInfo messageInfoReq,
 									  ChannelHandlerContext ctx);
+
+	public MessageInfo.Builder reLogin(MessageInfo messageInfoReq,
+									 ChannelHandlerContext ctx);
 }

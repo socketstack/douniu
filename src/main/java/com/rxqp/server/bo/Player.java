@@ -33,6 +33,7 @@ public class Player implements Serializable {
 	private NNType nntype;// 当前玩家扑克的类型
 	private DdzProto.NNStatus nnStatus;//断线重连进入游戏后，状态 0;创建房间
 													//1;进入房间 2;进入准备状态 3;准备完毕自动发牌 4;准备下注 5;准备开牌
+	private String token;
 
 	private AccessTokenOpenId accessTokenOpenId;//用户微信接口相关信息
 
@@ -238,5 +239,13 @@ public class Player implements Serializable {
 
 	public void setNnStatus(DdzProto.NNStatus nnStatus) {
 		this.nnStatus = nnStatus;
+	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
 	}
 }
