@@ -77,7 +77,7 @@ public class LoginBizImpl implements ILoginBiz {
 				return msgInfo;
 			} else if(player != null && !player.getOnline()){//之前掉线，或者异常退出，现在再次登录
 				player.setOnline(true);//玩家重新登录
-				player.setOnPlay(true);//玩家游戏中
+//				player.setOnPlay(true);//玩家游戏中
 			}else{
 				player = new Player();
 			}
@@ -174,6 +174,9 @@ public class LoginBizImpl implements ILoginBiz {
 				Player player = CommonData.getPlayerById(playerId);
 				if(player!=null){
 					player.setOnline(false);//用户掉线
+					if(player.getRoomId()==null){
+						return;
+					}
 					Room room = CommonData.getRoomByRoomId(player.getRoomId());
 					if (room!=null){
 						List<Player> pls = room.getPlayers();
