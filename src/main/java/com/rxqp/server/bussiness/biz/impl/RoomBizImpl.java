@@ -2,6 +2,7 @@ package com.rxqp.server.bussiness.biz.impl;
 
 import com.rxqp.common.constants.ExcMsgConstants;
 import com.rxqp.common.constants.MessageConstants;
+import com.rxqp.common.constants.WeixinConstants;
 import com.rxqp.common.data.CommonData;
 import com.rxqp.common.exception.BusinnessException;
 import com.rxqp.protobuf.DdzProto;
@@ -12,7 +13,9 @@ import com.rxqp.server.bo.Room;
 import com.rxqp.server.bussiness.biz.ICommonBiz;
 import com.rxqp.server.bussiness.biz.IRoomBiz;
 import com.rxqp.utils.BeanCopy;
+import com.rxqp.utils.CommonUtils;
 import io.netty.channel.ChannelHandlerContext;
+import net.sf.json.JSONObject;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.stereotype.Service;
 
@@ -352,20 +355,46 @@ public class RoomBizImpl implements IRoomBiz {
 		if (isSuccess) {
 			// 广播其他玩家有玩家请求解散房间
 			if (CollectionUtils.isNotEmpty(players)) {
-				MessageInfo.Builder postMsgInfo = MessageInfo.newBuilder();
-				postMsgInfo.setMessageId(MESSAGE_ID.msg_PostDissolutionResult);
-				PostDissolutionResult.Builder postDissolutionResult = PostDissolutionResult
-						.newBuilder();
-				postMsgInfo.setPostDissolutionResult(postDissolutionResult);
-				MessageInfo.Builder mi = dissolutionBuildSettementData(room);
-				for (Player pl : players) {
-					pl.getChannel().writeAndFlush(postMsgInfo.build());// 广播解散房间成功
-					pl.getChannel().writeAndFlush(mi.build());// 广播计算结算信息
+				try {
+					deductionRoomCards(room);//扣减房卡
+					MessageInfo.Builder postMsgInfo = MessageInfo.newBuilder();
+					postMsgInfo.setMessageId(MESSAGE_ID.msg_PostDissolutionResult);
+					PostDissolutionResult.Builder postDissolutionResult = PostDissolutionResult
+							.newBuilder();
+					postMsgInfo.setPostDissolutionResult(postDissolutionResult);
+					MessageInfo.Builder mi = dissolutionBuildSettementData(room);
+					for (Player pl : players) {
+						pl.getChannel().writeAndFlush(postMsgInfo.build());// 广播解散房间成功
+						pl.getChannel().writeAndFlush(mi.build());// 广播计算结算信息
+					}
+				}catch (Exception e){
+					e.printStackTrace();
+				}finally {
+					removeRoom(room.getRoomId());// 删除该房间信息
 				}
-				removeRoom(room.getRoomId());// 删除该房间信息
 			}
 		}
 		return null;
+	}
+
+	public void deductionRoomCards(Room room){
+		int games = room.getTotalGames();
+		int type = room.getType();
+		try{
+			if (type == 3){//赢家支付
+				int cards = games / 10;//每张房卡10局
+				String deductionRoomCardsUrl = WeixinConstants.deductionRoomCardsUrl;
+				deductionRoomCardsUrl = deductionRoomCardsUrl.replace("USERID",""+room.getWinPlayerId());
+				Player player = CommonData.getPlayerById(room.getWinPlayerId());
+				player.setCardNum(player.getCardNum()-cards*4);
+				deductionRoomCardsUrl = deductionRoomCardsUrl.replace("CARDS",""+cards*4);
+				JSONObject obj1 = CommonUtils.sendGet(deductionRoomCardsUrl);
+				String isSuccess = obj1.getString("success");
+				System.out.println("isSuccess:"+isSuccess);
+			}
+		}catch (Exception e){
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -386,6 +415,7 @@ public class RoomBizImpl implements IRoomBiz {
 			playerSettlement.setID(player.getId());
 			playerSettlement.setGotscore(player.getScore());
 			playerSettlement.setFinalscore(player.getFinalScore());
+			playerSettlement.setLeaveCardNum(player.getCardNum());
 			if (player.getFinalScore() > 0) {
 				playerSettlement.setIsWin(true);
 			} else {
@@ -422,6 +452,7 @@ public class RoomBizImpl implements IRoomBiz {
 		}
 		SettlementData.Builder bankerSettlement = SettlementData.newBuilder();// 庄家的结算信息
 		bankerSettlement.setID(banker.getId());
+		bankerSettlement.setLeaveCardNum(banker.getCardNum());
 		for (Player player : players) {
 			SettlementData.Builder playerSettlement = SettlementData
 					.newBuilder();// 非庄家玩家各自的结算信息
@@ -430,12 +461,14 @@ public class RoomBizImpl implements IRoomBiz {
 			if (!player.getIsBanker()) {
 				Integer score = comparePoints(bankerSettlement, banker, player);
 				playerSettlement.setGotscore(score);
+				playerSettlement.setLeaveCardNum(player.getCardNum());
 				Integer playerFinalScore = player.getFinalScore() + score;
 				playerSettlement.setFinalscore(playerFinalScore);
 				player.setFinalScore(playerFinalScore);
 				player.setScore(score);
 				if (score > 0) {
 					playerSettlement.setIsWin(true);
+					room.setWinPlayerId(player.getId());
 				} else {
 					playerSettlement.setIsWin(false);
 				}
@@ -449,6 +482,7 @@ public class RoomBizImpl implements IRoomBiz {
 		banker.setScore(bankerSettlement.getGotscore());
 		if (bankerSettlement.getGotscore() > 0) {
 			bankerSettlement.setIsWin(true);
+			room.setWinPlayerId(banker.getId());
 		} else {
 			bankerSettlement.setIsWin(false);
 		}

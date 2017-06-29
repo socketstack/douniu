@@ -257,6 +257,10 @@ public final class DdzProto {
      * </pre>
      */
     msg_ReLoginReq(53, 54),
+    /**
+     * <code>msg_ReLoginResp = 55;</code>
+     */
+    msg_ReLoginResp(54, 55),
     ;
 
     /**
@@ -503,6 +507,10 @@ public final class DdzProto {
      * </pre>
      */
     public static final int msg_ReLoginReq_VALUE = 54;
+    /**
+     * <code>msg_ReLoginResp = 55;</code>
+     */
+    public static final int msg_ReLoginResp_VALUE = 55;
 
 
     public final int getNumber() { return value; }
@@ -563,6 +571,7 @@ public final class DdzProto {
         case 52: return msg_HeartBeatReq;
         case 53: return msg_HeartBeatResp;
         case 54: return msg_ReLoginReq;
+        case 55: return msg_ReLoginResp;
         default: return null;
       }
     }
@@ -1120,6 +1129,144 @@ public final class DdzProto {
     }
 
     // @@protoc_insertion_point(enum_scope:netty.NNStatus)
+  }
+
+  /**
+   * Protobuf enum {@code netty.BankerType}
+   *
+   * <pre>
+   *---------------------------------
+   * 庄玩法类型
+   *---------------------------------
+   * </pre>
+   */
+  public enum BankerType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>BT_NONE = 0;</code>
+     *
+     * <pre>
+     * 没有类型
+     * </pre>
+     */
+    BT_NONE(0, 0),
+    /**
+     * <code>BT_BAWANG = 1;</code>
+     *
+     * <pre>
+     * 霸王庄
+     * </pre>
+     */
+    BT_BAWANG(1, 1),
+    /**
+     * <code>BT_LUNZHUANG = 2;</code>
+     *
+     * <pre>
+     * 轮庄
+     * </pre>
+     */
+    BT_LUNZHUANG(2, 2),
+    /**
+     * <code>BT_ZHUANZHUANG = 3;</code>
+     *
+     * <pre>
+     * 转庄
+     * </pre>
+     */
+    BT_ZHUANZHUANG(3, 3),
+    ;
+
+    /**
+     * <code>BT_NONE = 0;</code>
+     *
+     * <pre>
+     * 没有类型
+     * </pre>
+     */
+    public static final int BT_NONE_VALUE = 0;
+    /**
+     * <code>BT_BAWANG = 1;</code>
+     *
+     * <pre>
+     * 霸王庄
+     * </pre>
+     */
+    public static final int BT_BAWANG_VALUE = 1;
+    /**
+     * <code>BT_LUNZHUANG = 2;</code>
+     *
+     * <pre>
+     * 轮庄
+     * </pre>
+     */
+    public static final int BT_LUNZHUANG_VALUE = 2;
+    /**
+     * <code>BT_ZHUANZHUANG = 3;</code>
+     *
+     * <pre>
+     * 转庄
+     * </pre>
+     */
+    public static final int BT_ZHUANZHUANG_VALUE = 3;
+
+
+    public final int getNumber() { return value; }
+
+    public static BankerType valueOf(int value) {
+      switch (value) {
+        case 0: return BT_NONE;
+        case 1: return BT_BAWANG;
+        case 2: return BT_LUNZHUANG;
+        case 3: return BT_ZHUANZHUANG;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BankerType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<BankerType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<BankerType>() {
+            public BankerType findValueByNumber(int number) {
+              return BankerType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.rxqp.protobuf.DdzProto.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final BankerType[] VALUES = values();
+
+    public static BankerType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private BankerType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:netty.BankerType)
   }
 
   public interface MessageInfoOrBuilder
@@ -1910,6 +2057,20 @@ public final class DdzProto {
      * </pre>
      */
     com.rxqp.protobuf.DdzProto.ReLoginReqOrBuilder getReLoginReqOrBuilder();
+
+    // optional .netty.ReLoginResp reLoginResp = 54;
+    /**
+     * <code>optional .netty.ReLoginResp reLoginResp = 54;</code>
+     */
+    boolean hasReLoginResp();
+    /**
+     * <code>optional .netty.ReLoginResp reLoginResp = 54;</code>
+     */
+    com.rxqp.protobuf.DdzProto.ReLoginResp getReLoginResp();
+    /**
+     * <code>optional .netty.ReLoginResp reLoginResp = 54;</code>
+     */
+    com.rxqp.protobuf.DdzProto.ReLoginRespOrBuilder getReLoginRespOrBuilder();
   }
   /**
    * Protobuf type {@code netty.MessageInfo}
@@ -2648,6 +2809,19 @@ public final class DdzProto {
                 reLoginReq_ = subBuilder.buildPartial();
               }
               bitField1_ |= 0x00100000;
+              break;
+            }
+            case 434: {
+              com.rxqp.protobuf.DdzProto.ReLoginResp.Builder subBuilder = null;
+              if (((bitField1_ & 0x00200000) == 0x00200000)) {
+                subBuilder = reLoginResp_.toBuilder();
+              }
+              reLoginResp_ = input.readMessage(com.rxqp.protobuf.DdzProto.ReLoginResp.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(reLoginResp_);
+                reLoginResp_ = subBuilder.buildPartial();
+              }
+              bitField1_ |= 0x00200000;
               break;
             }
           }
@@ -3899,6 +4073,28 @@ public final class DdzProto {
       return reLoginReq_;
     }
 
+    // optional .netty.ReLoginResp reLoginResp = 54;
+    public static final int RELOGINRESP_FIELD_NUMBER = 54;
+    private com.rxqp.protobuf.DdzProto.ReLoginResp reLoginResp_;
+    /**
+     * <code>optional .netty.ReLoginResp reLoginResp = 54;</code>
+     */
+    public boolean hasReLoginResp() {
+      return ((bitField1_ & 0x00200000) == 0x00200000);
+    }
+    /**
+     * <code>optional .netty.ReLoginResp reLoginResp = 54;</code>
+     */
+    public com.rxqp.protobuf.DdzProto.ReLoginResp getReLoginResp() {
+      return reLoginResp_;
+    }
+    /**
+     * <code>optional .netty.ReLoginResp reLoginResp = 54;</code>
+     */
+    public com.rxqp.protobuf.DdzProto.ReLoginRespOrBuilder getReLoginRespOrBuilder() {
+      return reLoginResp_;
+    }
+
     private void initFields() {
       messageId_ = com.rxqp.protobuf.DdzProto.MESSAGE_ID.msg_LoginReq;
       loginReq_ = com.rxqp.protobuf.DdzProto.LoginReq.getDefaultInstance();
@@ -3953,6 +4149,7 @@ public final class DdzProto {
       postPlayerOnline_ = com.rxqp.protobuf.DdzProto.PostPlayerOnline.getDefaultInstance();
       postPlayerOffline_ = com.rxqp.protobuf.DdzProto.PostPlayerOffline.getDefaultInstance();
       reLoginReq_ = com.rxqp.protobuf.DdzProto.ReLoginReq.getDefaultInstance();
+      reLoginResp_ = com.rxqp.protobuf.DdzProto.ReLoginResp.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -4233,6 +4430,12 @@ public final class DdzProto {
           return false;
         }
       }
+      if (hasReLoginResp()) {
+        if (!getReLoginResp().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -4398,6 +4601,9 @@ public final class DdzProto {
       }
       if (((bitField1_ & 0x00100000) == 0x00100000)) {
         output.writeMessage(53, reLoginReq_);
+      }
+      if (((bitField1_ & 0x00200000) == 0x00200000)) {
+        output.writeMessage(54, reLoginResp_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4620,6 +4826,10 @@ public final class DdzProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(53, reLoginReq_);
       }
+      if (((bitField1_ & 0x00200000) == 0x00200000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(54, reLoginResp_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -4780,6 +4990,7 @@ public final class DdzProto {
           getPostPlayerOnlineFieldBuilder();
           getPostPlayerOfflineFieldBuilder();
           getReLoginReqFieldBuilder();
+          getReLoginRespFieldBuilder();
         }
       }
       private static Builder create() {
@@ -5102,6 +5313,12 @@ public final class DdzProto {
           reLoginReqBuilder_.clear();
         }
         bitField1_ = (bitField1_ & ~0x00100000);
+        if (reLoginRespBuilder_ == null) {
+          reLoginResp_ = com.rxqp.protobuf.DdzProto.ReLoginResp.getDefaultInstance();
+        } else {
+          reLoginRespBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00200000);
         return this;
       }
 
@@ -5552,6 +5769,14 @@ public final class DdzProto {
         } else {
           result.reLoginReq_ = reLoginReqBuilder_.build();
         }
+        if (((from_bitField1_ & 0x00200000) == 0x00200000)) {
+          to_bitField1_ |= 0x00200000;
+        }
+        if (reLoginRespBuilder_ == null) {
+          result.reLoginResp_ = reLoginResp_;
+        } else {
+          result.reLoginResp_ = reLoginRespBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         result.bitField1_ = to_bitField1_;
         onBuilt();
@@ -5727,6 +5952,9 @@ public final class DdzProto {
         }
         if (other.hasReLoginReq()) {
           mergeReLoginReq(other.getReLoginReq());
+        }
+        if (other.hasReLoginResp()) {
+          mergeReLoginResp(other.getReLoginResp());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -6003,6 +6231,12 @@ public final class DdzProto {
         }
         if (hasReLoginReq()) {
           if (!getReLoginReq().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasReLoginResp()) {
+          if (!getReLoginResp().isInitialized()) {
             
             return false;
           }
@@ -12294,6 +12528,123 @@ public final class DdzProto {
         return reLoginReqBuilder_;
       }
 
+      // optional .netty.ReLoginResp reLoginResp = 54;
+      private com.rxqp.protobuf.DdzProto.ReLoginResp reLoginResp_ = com.rxqp.protobuf.DdzProto.ReLoginResp.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.protobuf.DdzProto.ReLoginResp, com.rxqp.protobuf.DdzProto.ReLoginResp.Builder, com.rxqp.protobuf.DdzProto.ReLoginRespOrBuilder> reLoginRespBuilder_;
+      /**
+       * <code>optional .netty.ReLoginResp reLoginResp = 54;</code>
+       */
+      public boolean hasReLoginResp() {
+        return ((bitField1_ & 0x00200000) == 0x00200000);
+      }
+      /**
+       * <code>optional .netty.ReLoginResp reLoginResp = 54;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.ReLoginResp getReLoginResp() {
+        if (reLoginRespBuilder_ == null) {
+          return reLoginResp_;
+        } else {
+          return reLoginRespBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .netty.ReLoginResp reLoginResp = 54;</code>
+       */
+      public Builder setReLoginResp(com.rxqp.protobuf.DdzProto.ReLoginResp value) {
+        if (reLoginRespBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reLoginResp_ = value;
+          onChanged();
+        } else {
+          reLoginRespBuilder_.setMessage(value);
+        }
+        bitField1_ |= 0x00200000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.ReLoginResp reLoginResp = 54;</code>
+       */
+      public Builder setReLoginResp(
+          com.rxqp.protobuf.DdzProto.ReLoginResp.Builder builderForValue) {
+        if (reLoginRespBuilder_ == null) {
+          reLoginResp_ = builderForValue.build();
+          onChanged();
+        } else {
+          reLoginRespBuilder_.setMessage(builderForValue.build());
+        }
+        bitField1_ |= 0x00200000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.ReLoginResp reLoginResp = 54;</code>
+       */
+      public Builder mergeReLoginResp(com.rxqp.protobuf.DdzProto.ReLoginResp value) {
+        if (reLoginRespBuilder_ == null) {
+          if (((bitField1_ & 0x00200000) == 0x00200000) &&
+              reLoginResp_ != com.rxqp.protobuf.DdzProto.ReLoginResp.getDefaultInstance()) {
+            reLoginResp_ =
+              com.rxqp.protobuf.DdzProto.ReLoginResp.newBuilder(reLoginResp_).mergeFrom(value).buildPartial();
+          } else {
+            reLoginResp_ = value;
+          }
+          onChanged();
+        } else {
+          reLoginRespBuilder_.mergeFrom(value);
+        }
+        bitField1_ |= 0x00200000;
+        return this;
+      }
+      /**
+       * <code>optional .netty.ReLoginResp reLoginResp = 54;</code>
+       */
+      public Builder clearReLoginResp() {
+        if (reLoginRespBuilder_ == null) {
+          reLoginResp_ = com.rxqp.protobuf.DdzProto.ReLoginResp.getDefaultInstance();
+          onChanged();
+        } else {
+          reLoginRespBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00200000);
+        return this;
+      }
+      /**
+       * <code>optional .netty.ReLoginResp reLoginResp = 54;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.ReLoginResp.Builder getReLoginRespBuilder() {
+        bitField1_ |= 0x00200000;
+        onChanged();
+        return getReLoginRespFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .netty.ReLoginResp reLoginResp = 54;</code>
+       */
+      public com.rxqp.protobuf.DdzProto.ReLoginRespOrBuilder getReLoginRespOrBuilder() {
+        if (reLoginRespBuilder_ != null) {
+          return reLoginRespBuilder_.getMessageOrBuilder();
+        } else {
+          return reLoginResp_;
+        }
+      }
+      /**
+       * <code>optional .netty.ReLoginResp reLoginResp = 54;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.rxqp.protobuf.DdzProto.ReLoginResp, com.rxqp.protobuf.DdzProto.ReLoginResp.Builder, com.rxqp.protobuf.DdzProto.ReLoginRespOrBuilder> 
+          getReLoginRespFieldBuilder() {
+        if (reLoginRespBuilder_ == null) {
+          reLoginRespBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.rxqp.protobuf.DdzProto.ReLoginResp, com.rxqp.protobuf.DdzProto.ReLoginResp.Builder, com.rxqp.protobuf.DdzProto.ReLoginRespOrBuilder>(
+                  reLoginResp_,
+                  getParentForChildren(),
+                  isClean());
+          reLoginResp_ = null;
+        }
+        return reLoginRespBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:netty.MessageInfo)
     }
 
@@ -13046,6 +13397,33 @@ public final class DdzProto {
      */
     int getCardNum();
 
+    // optional string wxopenid = 5;
+    /**
+     * <code>optional string wxopenid = 5;</code>
+     *
+     * <pre>
+     * 
+     * </pre>
+     */
+    boolean hasWxopenid();
+    /**
+     * <code>optional string wxopenid = 5;</code>
+     *
+     * <pre>
+     * 
+     * </pre>
+     */
+    java.lang.String getWxopenid();
+    /**
+     * <code>optional string wxopenid = 5;</code>
+     *
+     * <pre>
+     * 
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getWxopenidBytes();
+
     // required string token = 6;
     /**
      * <code>required string token = 6;</code>
@@ -13148,8 +13526,13 @@ public final class DdzProto {
               cardNum_ = input.readInt32();
               break;
             }
-            case 50: {
+            case 42: {
               bitField0_ |= 0x00000010;
+              wxopenid_ = input.readBytes();
+              break;
+            }
+            case 50: {
+              bitField0_ |= 0x00000020;
               token_ = input.readBytes();
               break;
             }
@@ -13351,6 +13734,61 @@ public final class DdzProto {
       return cardNum_;
     }
 
+    // optional string wxopenid = 5;
+    public static final int WXOPENID_FIELD_NUMBER = 5;
+    private java.lang.Object wxopenid_;
+    /**
+     * <code>optional string wxopenid = 5;</code>
+     *
+     * <pre>
+     * 
+     * </pre>
+     */
+    public boolean hasWxopenid() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional string wxopenid = 5;</code>
+     *
+     * <pre>
+     * 
+     * </pre>
+     */
+    public java.lang.String getWxopenid() {
+      java.lang.Object ref = wxopenid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          wxopenid_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string wxopenid = 5;</code>
+     *
+     * <pre>
+     * 
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getWxopenidBytes() {
+      java.lang.Object ref = wxopenid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        wxopenid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     // required string token = 6;
     public static final int TOKEN_FIELD_NUMBER = 6;
     private java.lang.Object token_;
@@ -13362,7 +13800,7 @@ public final class DdzProto {
      * </pre>
      */
     public boolean hasToken() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>required string token = 6;</code>
@@ -13411,6 +13849,7 @@ public final class DdzProto {
       name_ = "";
       imgUrl_ = "";
       cardNum_ = 0;
+      wxopenid_ = "";
       token_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -13450,6 +13889,9 @@ public final class DdzProto {
         output.writeInt32(4, cardNum_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getWxopenidBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeBytes(6, getTokenBytes());
       }
       getUnknownFields().writeTo(output);
@@ -13478,6 +13920,10 @@ public final class DdzProto {
           .computeInt32Size(4, cardNum_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getWxopenidBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(6, getTokenBytes());
       }
@@ -13609,8 +14055,10 @@ public final class DdzProto {
         bitField0_ = (bitField0_ & ~0x00000004);
         cardNum_ = 0;
         bitField0_ = (bitField0_ & ~0x00000008);
-        token_ = "";
+        wxopenid_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
+        token_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -13658,6 +14106,10 @@ public final class DdzProto {
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
+        result.wxopenid_ = wxopenid_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
         result.token_ = token_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -13691,8 +14143,13 @@ public final class DdzProto {
         if (other.hasCardNum()) {
           setCardNum(other.getCardNum());
         }
-        if (other.hasToken()) {
+        if (other.hasWxopenid()) {
           bitField0_ |= 0x00000010;
+          wxopenid_ = other.wxopenid_;
+          onChanged();
+        }
+        if (other.hasToken()) {
+          bitField0_ |= 0x00000020;
           token_ = other.token_;
           onChanged();
         }
@@ -14029,6 +14486,104 @@ public final class DdzProto {
         return this;
       }
 
+      // optional string wxopenid = 5;
+      private java.lang.Object wxopenid_ = "";
+      /**
+       * <code>optional string wxopenid = 5;</code>
+       *
+       * <pre>
+       * 
+       * </pre>
+       */
+      public boolean hasWxopenid() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional string wxopenid = 5;</code>
+       *
+       * <pre>
+       * 
+       * </pre>
+       */
+      public java.lang.String getWxopenid() {
+        java.lang.Object ref = wxopenid_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          wxopenid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string wxopenid = 5;</code>
+       *
+       * <pre>
+       * 
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getWxopenidBytes() {
+        java.lang.Object ref = wxopenid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          wxopenid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string wxopenid = 5;</code>
+       *
+       * <pre>
+       * 
+       * </pre>
+       */
+      public Builder setWxopenid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        wxopenid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string wxopenid = 5;</code>
+       *
+       * <pre>
+       * 
+       * </pre>
+       */
+      public Builder clearWxopenid() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        wxopenid_ = getDefaultInstance().getWxopenid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string wxopenid = 5;</code>
+       *
+       * <pre>
+       * 
+       * </pre>
+       */
+      public Builder setWxopenidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        wxopenid_ = value;
+        onChanged();
+        return this;
+      }
+
       // required string token = 6;
       private java.lang.Object token_ = "";
       /**
@@ -14039,7 +14594,7 @@ public final class DdzProto {
        * </pre>
        */
       public boolean hasToken() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>required string token = 6;</code>
@@ -14091,7 +14646,7 @@ public final class DdzProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  bitField0_ |= 0x00000020;
         token_ = value;
         onChanged();
         return this;
@@ -14104,7 +14659,7 @@ public final class DdzProto {
        * </pre>
        */
       public Builder clearToken() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         token_ = getDefaultInstance().getToken();
         onChanged();
         return this;
@@ -14121,7 +14676,7 @@ public final class DdzProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  bitField0_ |= 0x00000020;
         token_ = value;
         onChanged();
         return this;
@@ -22808,6 +23363,24 @@ public final class DdzProto {
      * </pre>
      */
     boolean getIsWin();
+
+    // optional int32 leaveCardNum = 5;
+    /**
+     * <code>optional int32 leaveCardNum = 5;</code>
+     *
+     * <pre>
+     * 玩家剩余房卡数（大局结束时发，每个玩家都不一样）
+     * </pre>
+     */
+    boolean hasLeaveCardNum();
+    /**
+     * <code>optional int32 leaveCardNum = 5;</code>
+     *
+     * <pre>
+     * 玩家剩余房卡数（大局结束时发，每个玩家都不一样）
+     * </pre>
+     */
+    int getLeaveCardNum();
   }
   /**
    * Protobuf type {@code netty.SettlementData}
@@ -22882,6 +23455,11 @@ public final class DdzProto {
             case 32: {
               bitField0_ |= 0x00000008;
               isWin_ = input.readBool();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              leaveCardNum_ = input.readInt32();
               break;
             }
           }
@@ -23020,11 +23598,36 @@ public final class DdzProto {
       return isWin_;
     }
 
+    // optional int32 leaveCardNum = 5;
+    public static final int LEAVECARDNUM_FIELD_NUMBER = 5;
+    private int leaveCardNum_;
+    /**
+     * <code>optional int32 leaveCardNum = 5;</code>
+     *
+     * <pre>
+     * 玩家剩余房卡数（大局结束时发，每个玩家都不一样）
+     * </pre>
+     */
+    public boolean hasLeaveCardNum() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional int32 leaveCardNum = 5;</code>
+     *
+     * <pre>
+     * 玩家剩余房卡数（大局结束时发，每个玩家都不一样）
+     * </pre>
+     */
+    public int getLeaveCardNum() {
+      return leaveCardNum_;
+    }
+
     private void initFields() {
       iD_ = 0;
       gotscore_ = 0;
       finalscore_ = 0;
       isWin_ = false;
+      leaveCardNum_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -23066,6 +23669,9 @@ public final class DdzProto {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBool(4, isWin_);
       }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeInt32(5, leaveCardNum_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -23090,6 +23696,10 @@ public final class DdzProto {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, isWin_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, leaveCardNum_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -23219,6 +23829,8 @@ public final class DdzProto {
         bitField0_ = (bitField0_ & ~0x00000004);
         isWin_ = false;
         bitField0_ = (bitField0_ & ~0x00000008);
+        leaveCardNum_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -23263,6 +23875,10 @@ public final class DdzProto {
           to_bitField0_ |= 0x00000008;
         }
         result.isWin_ = isWin_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.leaveCardNum_ = leaveCardNum_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -23290,6 +23906,9 @@ public final class DdzProto {
         }
         if (other.hasIsWin()) {
           setIsWin(other.getIsWin());
+        }
+        if (other.hasLeaveCardNum()) {
+          setLeaveCardNum(other.getLeaveCardNum());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -23530,6 +24149,55 @@ public final class DdzProto {
         return this;
       }
 
+      // optional int32 leaveCardNum = 5;
+      private int leaveCardNum_ ;
+      /**
+       * <code>optional int32 leaveCardNum = 5;</code>
+       *
+       * <pre>
+       * 玩家剩余房卡数（大局结束时发，每个玩家都不一样）
+       * </pre>
+       */
+      public boolean hasLeaveCardNum() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional int32 leaveCardNum = 5;</code>
+       *
+       * <pre>
+       * 玩家剩余房卡数（大局结束时发，每个玩家都不一样）
+       * </pre>
+       */
+      public int getLeaveCardNum() {
+        return leaveCardNum_;
+      }
+      /**
+       * <code>optional int32 leaveCardNum = 5;</code>
+       *
+       * <pre>
+       * 玩家剩余房卡数（大局结束时发，每个玩家都不一样）
+       * </pre>
+       */
+      public Builder setLeaveCardNum(int value) {
+        bitField0_ |= 0x00000010;
+        leaveCardNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 leaveCardNum = 5;</code>
+       *
+       * <pre>
+       * 玩家剩余房卡数（大局结束时发，每个玩家都不一样）
+       * </pre>
+       */
+      public Builder clearLeaveCardNum() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        leaveCardNum_ = 0;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:netty.SettlementData)
     }
 
@@ -23572,10 +24240,18 @@ public final class DdzProto {
     // required bool isOver = 2;
     /**
      * <code>required bool isOver = 2;</code>
+     *
+     * <pre>
+     * 大局是否结束
+     * </pre>
      */
     boolean hasIsOver();
     /**
      * <code>required bool isOver = 2;</code>
+     *
+     * <pre>
+     * 大局是否结束
+     * </pre>
      */
     boolean getIsOver();
   }
@@ -23731,12 +24407,20 @@ public final class DdzProto {
     private boolean isOver_;
     /**
      * <code>required bool isOver = 2;</code>
+     *
+     * <pre>
+     * 大局是否结束
+     * </pre>
      */
     public boolean hasIsOver() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required bool isOver = 2;</code>
+     *
+     * <pre>
+     * 大局是否结束
+     * </pre>
      */
     public boolean getIsOver() {
       return isOver_;
@@ -24287,18 +24971,30 @@ public final class DdzProto {
       private boolean isOver_ ;
       /**
        * <code>required bool isOver = 2;</code>
+       *
+       * <pre>
+       * 大局是否结束
+       * </pre>
        */
       public boolean hasIsOver() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required bool isOver = 2;</code>
+       *
+       * <pre>
+       * 大局是否结束
+       * </pre>
        */
       public boolean getIsOver() {
         return isOver_;
       }
       /**
        * <code>required bool isOver = 2;</code>
+       *
+       * <pre>
+       * 大局是否结束
+       * </pre>
        */
       public Builder setIsOver(boolean value) {
         bitField0_ |= 0x00000002;
@@ -24308,6 +25004,10 @@ public final class DdzProto {
       }
       /**
        * <code>required bool isOver = 2;</code>
+       *
+       * <pre>
+       * 大局是否结束
+       * </pre>
        */
       public Builder clearIsOver() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -30144,20 +30844,36 @@ public final class DdzProto {
     // required int32 games = 1;
     /**
      * <code>required int32 games = 1;</code>
+     *
+     * <pre>
+     * 游戏局数（10、20、30）
+     * </pre>
      */
     boolean hasGames();
     /**
      * <code>required int32 games = 1;</code>
+     *
+     * <pre>
+     * 游戏局数（10、20、30）
+     * </pre>
      */
     int getGames();
 
     // required int32 type = 2;
     /**
      * <code>required int32 type = 2;</code>
+     *
+     * <pre>
+     * 房卡扣除方式（1：房主支付	2：AA支付	3：赢家支付）
+     * </pre>
      */
     boolean hasType();
     /**
      * <code>required int32 type = 2;</code>
+     *
+     * <pre>
+     * 房卡扣除方式（1：房主支付	2：AA支付	3：赢家支付）
+     * </pre>
      */
     int getType();
 
@@ -30170,6 +30886,24 @@ public final class DdzProto {
      * <code>required int32 playerId = 3;</code>
      */
     int getPlayerId();
+
+    // required .netty.BankerType bankerType = 4;
+    /**
+     * <code>required .netty.BankerType bankerType = 4;</code>
+     *
+     * <pre>
+     * 庄玩法类型
+     * </pre>
+     */
+    boolean hasBankerType();
+    /**
+     * <code>required .netty.BankerType bankerType = 4;</code>
+     *
+     * <pre>
+     * 庄玩法类型
+     * </pre>
+     */
+    com.rxqp.protobuf.DdzProto.BankerType getBankerType();
   }
   /**
    * Protobuf type {@code netty.CreateNNRoomReq}
@@ -30241,6 +30975,17 @@ public final class DdzProto {
               playerId_ = input.readInt32();
               break;
             }
+            case 32: {
+              int rawValue = input.readEnum();
+              com.rxqp.protobuf.DdzProto.BankerType value = com.rxqp.protobuf.DdzProto.BankerType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(4, rawValue);
+              } else {
+                bitField0_ |= 0x00000008;
+                bankerType_ = value;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -30286,12 +31031,20 @@ public final class DdzProto {
     private int games_;
     /**
      * <code>required int32 games = 1;</code>
+     *
+     * <pre>
+     * 游戏局数（10、20、30）
+     * </pre>
      */
     public boolean hasGames() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required int32 games = 1;</code>
+     *
+     * <pre>
+     * 游戏局数（10、20、30）
+     * </pre>
      */
     public int getGames() {
       return games_;
@@ -30302,12 +31055,20 @@ public final class DdzProto {
     private int type_;
     /**
      * <code>required int32 type = 2;</code>
+     *
+     * <pre>
+     * 房卡扣除方式（1：房主支付	2：AA支付	3：赢家支付）
+     * </pre>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required int32 type = 2;</code>
+     *
+     * <pre>
+     * 房卡扣除方式（1：房主支付	2：AA支付	3：赢家支付）
+     * </pre>
      */
     public int getType() {
       return type_;
@@ -30329,10 +31090,35 @@ public final class DdzProto {
       return playerId_;
     }
 
+    // required .netty.BankerType bankerType = 4;
+    public static final int BANKERTYPE_FIELD_NUMBER = 4;
+    private com.rxqp.protobuf.DdzProto.BankerType bankerType_;
+    /**
+     * <code>required .netty.BankerType bankerType = 4;</code>
+     *
+     * <pre>
+     * 庄玩法类型
+     * </pre>
+     */
+    public boolean hasBankerType() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required .netty.BankerType bankerType = 4;</code>
+     *
+     * <pre>
+     * 庄玩法类型
+     * </pre>
+     */
+    public com.rxqp.protobuf.DdzProto.BankerType getBankerType() {
+      return bankerType_;
+    }
+
     private void initFields() {
       games_ = 0;
       type_ = 0;
       playerId_ = 0;
+      bankerType_ = com.rxqp.protobuf.DdzProto.BankerType.BT_NONE;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -30351,6 +31137,10 @@ public final class DdzProto {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasBankerType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -30366,6 +31156,9 @@ public final class DdzProto {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt32(3, playerId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeEnum(4, bankerType_.getNumber());
       }
       getUnknownFields().writeTo(output);
     }
@@ -30387,6 +31180,10 @@ public final class DdzProto {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, playerId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, bankerType_.getNumber());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -30514,6 +31311,8 @@ public final class DdzProto {
         bitField0_ = (bitField0_ & ~0x00000002);
         playerId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
+        bankerType_ = com.rxqp.protobuf.DdzProto.BankerType.BT_NONE;
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -30554,6 +31353,10 @@ public final class DdzProto {
           to_bitField0_ |= 0x00000004;
         }
         result.playerId_ = playerId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.bankerType_ = bankerType_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -30579,6 +31382,9 @@ public final class DdzProto {
         if (other.hasPlayerId()) {
           setPlayerId(other.getPlayerId());
         }
+        if (other.hasBankerType()) {
+          setBankerType(other.getBankerType());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -30593,6 +31399,10 @@ public final class DdzProto {
           return false;
         }
         if (!hasPlayerId()) {
+          
+          return false;
+        }
+        if (!hasBankerType()) {
           
           return false;
         }
@@ -30622,18 +31432,30 @@ public final class DdzProto {
       private int games_ ;
       /**
        * <code>required int32 games = 1;</code>
+       *
+       * <pre>
+       * 游戏局数（10、20、30）
+       * </pre>
        */
       public boolean hasGames() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required int32 games = 1;</code>
+       *
+       * <pre>
+       * 游戏局数（10、20、30）
+       * </pre>
        */
       public int getGames() {
         return games_;
       }
       /**
        * <code>required int32 games = 1;</code>
+       *
+       * <pre>
+       * 游戏局数（10、20、30）
+       * </pre>
        */
       public Builder setGames(int value) {
         bitField0_ |= 0x00000001;
@@ -30643,6 +31465,10 @@ public final class DdzProto {
       }
       /**
        * <code>required int32 games = 1;</code>
+       *
+       * <pre>
+       * 游戏局数（10、20、30）
+       * </pre>
        */
       public Builder clearGames() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -30655,18 +31481,30 @@ public final class DdzProto {
       private int type_ ;
       /**
        * <code>required int32 type = 2;</code>
+       *
+       * <pre>
+       * 房卡扣除方式（1：房主支付	2：AA支付	3：赢家支付）
+       * </pre>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required int32 type = 2;</code>
+       *
+       * <pre>
+       * 房卡扣除方式（1：房主支付	2：AA支付	3：赢家支付）
+       * </pre>
        */
       public int getType() {
         return type_;
       }
       /**
        * <code>required int32 type = 2;</code>
+       *
+       * <pre>
+       * 房卡扣除方式（1：房主支付	2：AA支付	3：赢家支付）
+       * </pre>
        */
       public Builder setType(int value) {
         bitField0_ |= 0x00000002;
@@ -30676,6 +31514,10 @@ public final class DdzProto {
       }
       /**
        * <code>required int32 type = 2;</code>
+       *
+       * <pre>
+       * 房卡扣除方式（1：房主支付	2：AA支付	3：赢家支付）
+       * </pre>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -30713,6 +31555,58 @@ public final class DdzProto {
       public Builder clearPlayerId() {
         bitField0_ = (bitField0_ & ~0x00000004);
         playerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // required .netty.BankerType bankerType = 4;
+      private com.rxqp.protobuf.DdzProto.BankerType bankerType_ = com.rxqp.protobuf.DdzProto.BankerType.BT_NONE;
+      /**
+       * <code>required .netty.BankerType bankerType = 4;</code>
+       *
+       * <pre>
+       * 庄玩法类型
+       * </pre>
+       */
+      public boolean hasBankerType() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required .netty.BankerType bankerType = 4;</code>
+       *
+       * <pre>
+       * 庄玩法类型
+       * </pre>
+       */
+      public com.rxqp.protobuf.DdzProto.BankerType getBankerType() {
+        return bankerType_;
+      }
+      /**
+       * <code>required .netty.BankerType bankerType = 4;</code>
+       *
+       * <pre>
+       * 庄玩法类型
+       * </pre>
+       */
+      public Builder setBankerType(com.rxqp.protobuf.DdzProto.BankerType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        bankerType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required .netty.BankerType bankerType = 4;</code>
+       *
+       * <pre>
+       * 庄玩法类型
+       * </pre>
+       */
+      public Builder clearBankerType() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        bankerType_ = com.rxqp.protobuf.DdzProto.BankerType.BT_NONE;
         onChanged();
         return this;
       }
@@ -45650,6 +46544,450 @@ public final class DdzProto {
     // @@protoc_insertion_point(class_scope:netty.ReLoginReq)
   }
 
+  public interface ReLoginRespOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required bool reLoginSuccessed = 1;
+    /**
+     * <code>required bool reLoginSuccessed = 1;</code>
+     *
+     * <pre>
+     * 重新登录成功 true， 否则为 false
+     * </pre>
+     */
+    boolean hasReLoginSuccessed();
+    /**
+     * <code>required bool reLoginSuccessed = 1;</code>
+     *
+     * <pre>
+     * 重新登录成功 true， 否则为 false
+     * </pre>
+     */
+    boolean getReLoginSuccessed();
+  }
+  /**
+   * Protobuf type {@code netty.ReLoginResp}
+   *
+   * <pre>
+   * 56、重连请求响应
+   * </pre>
+   */
+  public static final class ReLoginResp extends
+      com.google.protobuf.GeneratedMessage
+      implements ReLoginRespOrBuilder {
+    // Use ReLoginResp.newBuilder() to construct.
+    private ReLoginResp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ReLoginResp(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ReLoginResp defaultInstance;
+    public static ReLoginResp getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ReLoginResp getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ReLoginResp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              reLoginSuccessed_ = input.readBool();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.rxqp.protobuf.DdzProto.internal_static_netty_ReLoginResp_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.rxqp.protobuf.DdzProto.internal_static_netty_ReLoginResp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.rxqp.protobuf.DdzProto.ReLoginResp.class, com.rxqp.protobuf.DdzProto.ReLoginResp.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ReLoginResp> PARSER =
+        new com.google.protobuf.AbstractParser<ReLoginResp>() {
+      public ReLoginResp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ReLoginResp(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReLoginResp> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required bool reLoginSuccessed = 1;
+    public static final int RELOGINSUCCESSED_FIELD_NUMBER = 1;
+    private boolean reLoginSuccessed_;
+    /**
+     * <code>required bool reLoginSuccessed = 1;</code>
+     *
+     * <pre>
+     * 重新登录成功 true， 否则为 false
+     * </pre>
+     */
+    public boolean hasReLoginSuccessed() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required bool reLoginSuccessed = 1;</code>
+     *
+     * <pre>
+     * 重新登录成功 true， 否则为 false
+     * </pre>
+     */
+    public boolean getReLoginSuccessed() {
+      return reLoginSuccessed_;
+    }
+
+    private void initFields() {
+      reLoginSuccessed_ = false;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasReLoginSuccessed()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBool(1, reLoginSuccessed_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, reLoginSuccessed_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.rxqp.protobuf.DdzProto.ReLoginResp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReLoginResp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReLoginResp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReLoginResp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReLoginResp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReLoginResp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReLoginResp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReLoginResp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReLoginResp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.rxqp.protobuf.DdzProto.ReLoginResp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.rxqp.protobuf.DdzProto.ReLoginResp prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code netty.ReLoginResp}
+     *
+     * <pre>
+     * 56、重连请求响应
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.rxqp.protobuf.DdzProto.ReLoginRespOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.rxqp.protobuf.DdzProto.internal_static_netty_ReLoginResp_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.rxqp.protobuf.DdzProto.internal_static_netty_ReLoginResp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.rxqp.protobuf.DdzProto.ReLoginResp.class, com.rxqp.protobuf.DdzProto.ReLoginResp.Builder.class);
+      }
+
+      // Construct using com.rxqp.protobuf.DdzProto.ReLoginResp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        reLoginSuccessed_ = false;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.rxqp.protobuf.DdzProto.internal_static_netty_ReLoginResp_descriptor;
+      }
+
+      public com.rxqp.protobuf.DdzProto.ReLoginResp getDefaultInstanceForType() {
+        return com.rxqp.protobuf.DdzProto.ReLoginResp.getDefaultInstance();
+      }
+
+      public com.rxqp.protobuf.DdzProto.ReLoginResp build() {
+        com.rxqp.protobuf.DdzProto.ReLoginResp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.rxqp.protobuf.DdzProto.ReLoginResp buildPartial() {
+        com.rxqp.protobuf.DdzProto.ReLoginResp result = new com.rxqp.protobuf.DdzProto.ReLoginResp(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.reLoginSuccessed_ = reLoginSuccessed_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.rxqp.protobuf.DdzProto.ReLoginResp) {
+          return mergeFrom((com.rxqp.protobuf.DdzProto.ReLoginResp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.rxqp.protobuf.DdzProto.ReLoginResp other) {
+        if (other == com.rxqp.protobuf.DdzProto.ReLoginResp.getDefaultInstance()) return this;
+        if (other.hasReLoginSuccessed()) {
+          setReLoginSuccessed(other.getReLoginSuccessed());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasReLoginSuccessed()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.rxqp.protobuf.DdzProto.ReLoginResp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.rxqp.protobuf.DdzProto.ReLoginResp) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required bool reLoginSuccessed = 1;
+      private boolean reLoginSuccessed_ ;
+      /**
+       * <code>required bool reLoginSuccessed = 1;</code>
+       *
+       * <pre>
+       * 重新登录成功 true， 否则为 false
+       * </pre>
+       */
+      public boolean hasReLoginSuccessed() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required bool reLoginSuccessed = 1;</code>
+       *
+       * <pre>
+       * 重新登录成功 true， 否则为 false
+       * </pre>
+       */
+      public boolean getReLoginSuccessed() {
+        return reLoginSuccessed_;
+      }
+      /**
+       * <code>required bool reLoginSuccessed = 1;</code>
+       *
+       * <pre>
+       * 重新登录成功 true， 否则为 false
+       * </pre>
+       */
+      public Builder setReLoginSuccessed(boolean value) {
+        bitField0_ |= 0x00000001;
+        reLoginSuccessed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bool reLoginSuccessed = 1;</code>
+       *
+       * <pre>
+       * 重新登录成功 true， 否则为 false
+       * </pre>
+       */
+      public Builder clearReLoginSuccessed() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        reLoginSuccessed_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:netty.ReLoginResp)
+    }
+
+    static {
+      defaultInstance = new ReLoginResp(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:netty.ReLoginResp)
+  }
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_netty_MessageInfo_descriptor;
   private static
@@ -45935,6 +47273,11 @@ public final class DdzProto {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_netty_ReLoginReq_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_netty_ReLoginResp_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_netty_ReLoginResp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -45944,7 +47287,7 @@ public final class DdzProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021MessageInfo.proto\022\005netty\"\206\023\n\013MessageIn" +
+      "\n\021MessageInfo.proto\022\005netty\"\257\023\n\013MessageIn" +
       "fo\022$\n\tmessageId\030\001 \002(\0162\021.netty.MESSAGE_ID" +
       "\022!\n\010loginReq\030\002 \001(\0132\017.netty.LoginReq\022#\n\tl" +
       "oginResp\030\003 \001(\0132\020.netty.LoginResp\022+\n\rcrea" +
@@ -46005,136 +47348,143 @@ public final class DdzProto {
       "Quit\0221\n\020postPlayerOnline\0303 \001(\0132\027.netty.P" +
       "ostPlayerOnline\0223\n\021postPlayerOffline\0304 \001",
       "(\0132\030.netty.PostPlayerOffline\022%\n\nreLoginR" +
-      "eq\0305 \001(\0132\021.netty.ReLoginReq\"*\n\010LoginReq\022" +
-      "\014\n\004code\030\001 \002(\t\022\020\n\010playerid\030\002 \001(\005\"Z\n\016Playe" +
-      "rBaseInfo\022\n\n\002ID\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\016\n\006i" +
-      "mgUrl\030\003 \001(\t\022\017\n\007cardNum\030\004 \001(\005\022\r\n\005token\030\006 " +
-      "\002(\t\"q\n\tLoginResp\022-\n\016playerBaseInfo\030\001 \002(\013" +
-      "2\025.netty.PlayerBaseInfo\022\020\n\010shareurl\030\002 \001(" +
-      "\t\022\023\n\013playerState\030\003 \002(\005\022\016\n\006roomId\030\004 \001(\005\">" +
-      "\n\rCreateRoomReq\022\r\n\005games\030\001 \002(\005\022\014\n\004type\030\002" +
-      " \002(\005\022\020\n\010playerId\030\003 \002(\005\" \n\016CreateRoomResp",
-      "\022\016\n\006roomId\030\001 \002(\005\"0\n\014EntryRoomReq\022\016\n\006room" +
-      "Id\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\"A\n\rEntryRoomR" +
-      "esp\022!\n\010roomInfo\030\001 \002(\0132\017.netty.RoomInfo\022\r" +
-      "\n\005order\030\002 \002(\005\".\n\rPostEntryRoom\022\035\n\006player" +
-      "\030\001 \002(\0132\r.netty.Player\"\240\001\n\010RoomInfo\022\016\n\006ro" +
-      "omId\030\001 \002(\005\022\036\n\007players\030\002 \003(\0132\r.netty.Play" +
-      "er\022\020\n\010multiple\030\003 \001(\005\022\023\n\013playedGames\030\004 \001(" +
-      "\005\022\022\n\ntotalGames\030\005 \001(\005\022\027\n\017currentPlayerId" +
-      "\030\006 \001(\005\022\020\n\010bankerId\030\007 \001(\005\"\326\001\n\006Player\022\n\n\002I" +
-      "D\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\016\n\006imgUrl\030\003 \001(\t\022\r\n",
-      "\005score\030\004 \002(\005\022\014\n\004isDz\030\005 \002(\010\022\r\n\005order\030\006 \001(" +
-      "\005\022\020\n\010isOnline\030\007 \001(\010\022\020\n\010pokerids\030\010 \003(\005\022\035\n" +
-      "\006nntype\030\t \001(\0162\r.netty.NNType\022\022\n\nstakepoi" +
-      "nt\030\n \001(\005\022\037\n\006status\030\013 \001(\0162\017.netty.NNStatu" +
-      "s\"\"\n\005Poker\022\n\n\002ID\030\001 \002(\005\022\r\n\005isOut\030\002 \002(\010\"/\n" +
-      "\nDisbandReq\022\017\n\007groupId\030\001 \002(\005\022\020\n\010playerId" +
-      "\030\002 \002(\005\"\r\n\013PostDisband\" \n\017DisbandCheckReq" +
-      "\022\r\n\005agree\030\001 \002(\010\"\022\n\020PostDisbandCheck\"Q\n\016S" +
-      "ettlementData\022\n\n\002ID\030\001 \002(\005\022\020\n\010gotscore\030\002 " +
-      "\002(\005\022\022\n\nfinalscore\030\003 \002(\005\022\r\n\005isWin\030\004 \002(\010\"H",
-      "\n\016SettlementInfo\022&\n\007players\030\001 \003(\0132\025.nett" +
-      "y.SettlementData\022\016\n\006isOver\030\002 \002(\010\"[\n\nDisc" +
-      "ardReq\022\020\n\010playerId\030\001 \002(\005\022\017\n\007cardIds\030\002 \003(" +
-      "\005\022\027\n\017variableCardIds\030\003 \003(\005\022\021\n\tcardsType\030" +
-      "\004 \002(\005\"\227\001\n\013PostDiscard\022\020\n\010playerId\030\001 \002(\005\022" +
-      "\017\n\007cardIds\030\002 \003(\005\022\027\n\017variableCardIds\030\003 \003(" +
-      "\005\022\032\n\022remainderPokersNum\030\004 \002(\005\022\033\n\023nextDis" +
-      "cardPlayerId\030\005 \002(\005\022\023\n\013mustDiscard\030\006 \002(\010\"" +
-      "\033\n\007DealReq\022\020\n\010playerId\030\001 \002(\005\"o\n\010DealResp" +
-      "\022\020\n\010playerId\030\001 \002(\005\022\034\n\006pokers\030\002 \003(\0132\014.net",
-      "ty.Poker\022!\n\010roomInfo\030\003 \001(\0132\017.netty.RoomI" +
-      "nfo\022\020\n\010grabHost\030\004 \002(\005\"-\n\013GrabHostReq\022\020\n\010" +
-      "playerId\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\"\222\001\n\020PostGra" +
-      "bHostResp\022\014\n\004type\030\001 \002(\005\022\020\n\010playerId\030\002 \002(" +
-      "\005\022\024\n\014hostPlayerId\030\003 \001(\005\022\034\n\006pokers\030\004 \003(\0132" +
-      "\014.netty.Poker\022\020\n\010variable\030\005 \001(\005\022\030\n\020nextG" +
-      "rabPlayerId\030\006 \001(\005\"(\n\007MsgInfo\022\014\n\004type\030\001 \002" +
-      "(\005\022\017\n\007message\030\002 \002(\t\"\016\n\014PostDealOver\"@\n\017C" +
-      "reateNNRoomReq\022\r\n\005games\030\001 \002(\005\022\014\n\004type\030\002 " +
-      "\002(\005\022\020\n\010playerId\030\003 \002(\005\"\"\n\020CreateNNRoomRes",
+      "eq\0305 \001(\0132\021.netty.ReLoginReq\022\'\n\013reLoginRe" +
+      "sp\0306 \001(\0132\022.netty.ReLoginResp\"*\n\010LoginReq" +
+      "\022\014\n\004code\030\001 \002(\t\022\020\n\010playerid\030\002 \001(\005\"l\n\016Play" +
+      "erBaseInfo\022\n\n\002ID\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\016\n\006" +
+      "imgUrl\030\003 \001(\t\022\017\n\007cardNum\030\004 \001(\005\022\020\n\010wxopeni" +
+      "d\030\005 \001(\t\022\r\n\005token\030\006 \002(\t\"q\n\tLoginResp\022-\n\016p" +
+      "layerBaseInfo\030\001 \002(\0132\025.netty.PlayerBaseIn" +
+      "fo\022\020\n\010shareurl\030\002 \001(\t\022\023\n\013playerState\030\003 \002(" +
+      "\005\022\016\n\006roomId\030\004 \001(\005\">\n\rCreateRoomReq\022\r\n\005ga",
+      "mes\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\022\020\n\010playerId\030\003 \002(" +
+      "\005\" \n\016CreateRoomResp\022\016\n\006roomId\030\001 \002(\005\"0\n\014E" +
+      "ntryRoomReq\022\016\n\006roomId\030\001 \002(\005\022\020\n\010playerId\030" +
+      "\002 \002(\005\"A\n\rEntryRoomResp\022!\n\010roomInfo\030\001 \002(\013" +
+      "2\017.netty.RoomInfo\022\r\n\005order\030\002 \002(\005\".\n\rPost" +
+      "EntryRoom\022\035\n\006player\030\001 \002(\0132\r.netty.Player" +
+      "\"\240\001\n\010RoomInfo\022\016\n\006roomId\030\001 \002(\005\022\036\n\007players" +
+      "\030\002 \003(\0132\r.netty.Player\022\020\n\010multiple\030\003 \001(\005\022" +
+      "\023\n\013playedGames\030\004 \001(\005\022\022\n\ntotalGames\030\005 \001(\005" +
+      "\022\027\n\017currentPlayerId\030\006 \001(\005\022\020\n\010bankerId\030\007 ",
+      "\001(\005\"\326\001\n\006Player\022\n\n\002ID\030\001 \002(\005\022\014\n\004name\030\002 \002(\t" +
+      "\022\016\n\006imgUrl\030\003 \001(\t\022\r\n\005score\030\004 \002(\005\022\014\n\004isDz\030" +
+      "\005 \002(\010\022\r\n\005order\030\006 \001(\005\022\020\n\010isOnline\030\007 \001(\010\022\020" +
+      "\n\010pokerids\030\010 \003(\005\022\035\n\006nntype\030\t \001(\0162\r.netty" +
+      ".NNType\022\022\n\nstakepoint\030\n \001(\005\022\037\n\006status\030\013 " +
+      "\001(\0162\017.netty.NNStatus\"\"\n\005Poker\022\n\n\002ID\030\001 \002(" +
+      "\005\022\r\n\005isOut\030\002 \002(\010\"/\n\nDisbandReq\022\017\n\007groupI" +
+      "d\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\"\r\n\013PostDisband" +
+      "\" \n\017DisbandCheckReq\022\r\n\005agree\030\001 \002(\010\"\022\n\020Po" +
+      "stDisbandCheck\"g\n\016SettlementData\022\n\n\002ID\030\001",
+      " \002(\005\022\020\n\010gotscore\030\002 \002(\005\022\022\n\nfinalscore\030\003 \002" +
+      "(\005\022\r\n\005isWin\030\004 \002(\010\022\024\n\014leaveCardNum\030\005 \001(\005\"" +
+      "H\n\016SettlementInfo\022&\n\007players\030\001 \003(\0132\025.net" +
+      "ty.SettlementData\022\016\n\006isOver\030\002 \002(\010\"[\n\nDis" +
+      "cardReq\022\020\n\010playerId\030\001 \002(\005\022\017\n\007cardIds\030\002 \003" +
+      "(\005\022\027\n\017variableCardIds\030\003 \003(\005\022\021\n\tcardsType" +
+      "\030\004 \002(\005\"\227\001\n\013PostDiscard\022\020\n\010playerId\030\001 \002(\005" +
+      "\022\017\n\007cardIds\030\002 \003(\005\022\027\n\017variableCardIds\030\003 \003" +
+      "(\005\022\032\n\022remainderPokersNum\030\004 \002(\005\022\033\n\023nextDi" +
+      "scardPlayerId\030\005 \002(\005\022\023\n\013mustDiscard\030\006 \002(\010",
+      "\"\033\n\007DealReq\022\020\n\010playerId\030\001 \002(\005\"o\n\010DealRes" +
+      "p\022\020\n\010playerId\030\001 \002(\005\022\034\n\006pokers\030\002 \003(\0132\014.ne" +
+      "tty.Poker\022!\n\010roomInfo\030\003 \001(\0132\017.netty.Room" +
+      "Info\022\020\n\010grabHost\030\004 \002(\005\"-\n\013GrabHostReq\022\020\n" +
+      "\010playerId\030\001 \002(\005\022\014\n\004type\030\002 \002(\005\"\222\001\n\020PostGr" +
+      "abHostResp\022\014\n\004type\030\001 \002(\005\022\020\n\010playerId\030\002 \002" +
+      "(\005\022\024\n\014hostPlayerId\030\003 \001(\005\022\034\n\006pokers\030\004 \003(\013" +
+      "2\014.netty.Poker\022\020\n\010variable\030\005 \001(\005\022\030\n\020next" +
+      "GrabPlayerId\030\006 \001(\005\"(\n\007MsgInfo\022\014\n\004type\030\001 " +
+      "\002(\005\022\017\n\007message\030\002 \002(\t\"\016\n\014PostDealOver\"g\n\017",
+      "CreateNNRoomReq\022\r\n\005games\030\001 \002(\005\022\014\n\004type\030\002" +
+      " \002(\005\022\020\n\010playerId\030\003 \002(\005\022%\n\nbankerType\030\004 \002" +
+      "(\0162\021.netty.BankerType\"\"\n\020CreateNNRoomRes" +
       "p\022\016\n\006roomId\030\002 \002(\005\"2\n\016EntryNNRoomReq\022\016\n\006r" +
       "oomId\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\"C\n\017EntryNN" +
       "RoomResp\022!\n\010roomInfo\030\001 \002(\0132\017.netty.RoomI" +
       "nfo\022\r\n\005order\030\002 \002(\005\"0\n\017PostNNEntryRoom\022\035\n" +
       "\006player\030\001 \002(\0132\r.netty.Player\"\"\n\016StartNNG" +
       "ameReq\022\020\n\010playerid\030\001 \002(\005\"\021\n\017StartNNGameR" +
-      "esp\"\021\n\017PostStartNNGame\" \n\014NNPrepareReq\022\020" +
+      "esp\"\021\n\017PostStartNNGame\" \n\014NNPrepareReq\022\020",
       "\n\010playerId\030\001 \002(\005\"m\n\016PostNNDealResp\022\020\n\010pl" +
       "ayerId\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022\023\n\013playedGa" +
-      "mes\030\003 \002(\005\022\022\n\ntotalGames\030\004 \002(\005\022\020\n\010bankerI",
+      "mes\030\003 \002(\005\022\022\n\ntotalGames\030\004 \002(\005\022\020\n\010bankerI" +
       "d\030\005 \002(\005\"+\n\010StakeReq\022\020\n\010playerid\030\001 \002(\005\022\r\n" +
       "\005point\030\002 \002(\005\"\032\n\tStakeResp\022\r\n\005point\030\001 \002(\005" +
       "\"0\n\rPostStakeResp\022\020\n\010playerid\030\001 \002(\005\022\r\n\005p" +
       "oint\030\002 \002(\005\"3\n\016NNShowCardsReq\022\020\n\010playerid" +
       "\030\001 \002(\005\022\017\n\007showAll\030\002 \002(\010\"R\n\017NNShowCardsRe" +
       "sp\022\020\n\010playerId\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005\022\035\n\006" +
-      "nntype\030\003 \002(\0162\r.netty.NNType\"R\n\017PostNNSho" +
+      "nntype\030\003 \002(\0162\r.netty.NNType\"R\n\017PostNNSho",
       "wCards\022\020\n\010playerId\030\001 \002(\005\022\016\n\006pokers\030\002 \003(\005" +
       "\022\035\n\006nntype\030\003 \002(\0162\r.netty.NNType\"%\n\021PostN" +
-      "NPrepareResp\022\020\n\010playerId\030\001 \002(\005\"\017\n\rPostSt",
+      "NPrepareResp\022\020\n\010playerId\030\001 \002(\005\"\017\n\rPostSt" +
       "akeOver\"$\n\020NNDissolutionReq\022\020\n\010playerId\030" +
       "\001 \002(\005\"\'\n\023PostDissolutionResp\022\020\n\010playerid" +
       "\030\001 \002(\005\";\n\026NNAnswerDissolutionReq\022\020\n\010play" +
       "erId\030\001 \002(\005\022\017\n\007isAgree\030\002 \002(\010\"D\n\033PostAnswe" +
       "rDissolutionResult\022\020\n\010agreeCnt\030\001 \002(\005\022\023\n\013" +
       "disagreeCnt\030\002 \002(\005\"\027\n\025PostDissolutionResu" +
-      "lt\"1\n\014SendSoundReq\022\020\n\010playerId\030\001 \002(\005\022\017\n\007" +
+      "lt\"1\n\014SendSoundReq\022\020\n\010playerId\030\001 \002(\005\022\017\n\007",
       "soundId\030\002 \002(\005\"6\n\021PostSendSoundResp\022\020\n\010pl" +
       "ayerId\030\001 \002(\005\022\017\n\007soundId\030\002 \002(\005\"\036\n\nSignOut" +
-      "Req\022\020\n\010playerid\030\001 \002(\005\"4\n\020ReEntryNNRoomRe",
+      "Req\022\020\n\010playerid\030\001 \002(\005\"4\n\020ReEntryNNRoomRe" +
       "q\022\016\n\006roomId\030\001 \002(\005\022\020\n\010playerId\030\002 \002(\005\"#\n\017P" +
       "ostUnusualQuit\022\020\n\010playerId\030\001 \002(\005\"$\n\020Post" +
       "PlayerOnline\022\020\n\010playerId\030\001 \002(\005\"%\n\021PostPl" +
       "ayerOffline\022\020\n\010playerId\030\001 \002(\005\"-\n\nReLogin" +
-      "Req\022\020\n\010playerId\030\001 \002(\005\022\r\n\005token\030\003 \002(\t*\200\n\n" +
-      "\nMESSAGE_ID\022\020\n\014msg_LoginReq\020\001\022\021\n\rmsg_Log" +
-      "inResp\020\002\022\025\n\021msg_CreateRoomReq\020\003\022\026\n\022msg_C" +
-      "reateRoomResp\020\004\022\024\n\020msg_EntryRoomReq\020\005\022\025\n" +
-      "\021msg_EntryRoomResp\020\006\022\025\n\021msg_PostEntryRoo" +
-      "m\020\007\022\016\n\nmsg_Player\020\010\022\022\n\016msg_DisbandReq\020\t\022",
-      "\023\n\017msg_PostDisband\020\n\022\027\n\023msg_DisbandCheck" +
-      "Req\020\013\022\030\n\024msg_PostDisbandCheck\020\014\022\026\n\022msg_S" +
-      "ettlementInfo\020\r\022\022\n\016msg_DiscardReq\020\016\022\023\n\017m" +
-      "sg_PostDiscard\020\017\022\017\n\013msg_DealReq\020\020\022\020\n\014msg" +
-      "_DealResp\020\021\022\023\n\017msg_GrabHostReq\020\022\022\030\n\024msg_" +
-      "PostGrabHostResp\020\023\022\017\n\013msg_MsgInfo\020\024\022\024\n\020m" +
-      "sg_PostDealOver\020\025\022\027\n\023msg_CreateNNRoomReq" +
-      "\020\026\022\030\n\024msg_CreateNNRoomResp\020\027\022\026\n\022msg_Entr" +
-      "yNNRoomReq\020\030\022\027\n\023msg_EntryNNRoomResp\020\031\022\027\n" +
-      "\023msg_PostNNEntryRoom\020\032\022\026\n\022msg_StartNNGam",
-      "eReq\020\033\022\027\n\023msg_StartNNGameResp\020\034\022\027\n\023msg_P" +
-      "ostStartNNGame\020\035\022\024\n\020msg_NNPrepareReq\020\036\022\026" +
-      "\n\022msg_PostNNDealResp\020\037\022\020\n\014msg_StakeReq\020 " +
-      "\022\021\n\rmsg_StakeResp\020!\022\025\n\021msg_PostStakeResp" +
-      "\020\"\022\026\n\022msg_NNShowCardsReq\020#\022\027\n\023msg_NNShow" +
-      "CardsResp\020$\022\027\n\023msg_PostNNShowCards\020%\022\031\n\025" +
-      "msg_PostNNPrepareResp\020&\022\025\n\021msg_PostStake" +
-      "Over\020\'\022\030\n\024msg_NNDissolutionReq\020(\022\033\n\027msg_" +
-      "PostDissolutionResp\020)\022\036\n\032msg_NNAnswerDis" +
-      "solutionReq\020*\022#\n\037msg_PostAnswerDissoluti",
-      "onResult\020+\022\035\n\031msg_PostDissolutionResult\020" +
-      ",\022\024\n\020msg_SendSoundReq\020-\022\031\n\025msg_PostSendS" +
-      "oundResp\020.\022\022\n\016msg_SignOutReq\020/\022\030\n\024msg_Re" +
-      "EntryNNRoomReq\0200\022\027\n\023msg_PostUnusualQuit\020" +
-      "1\022\030\n\024msg_PostPlayerOnline\0202\022\031\n\025msg_PostP" +
-      "layerOffline\0203\022\024\n\020msg_HeartBeatReq\0204\022\025\n\021" +
-      "msg_HeartBeatResp\0205\022\022\n\016msg_ReLoginReq\0206*" +
-      "\265\002\n\006NNType\022\r\n\tNNT_ERROR\020\000\022\014\n\010NNT_NONE\020\001\022" +
-      "\024\n\020NNT_SPECIAL_NIU1\020\002\022\024\n\020NNT_SPECIAL_NIU" +
-      "2\020\003\022\024\n\020NNT_SPECIAL_NIU3\020\004\022\024\n\020NNT_SPECIAL",
-      "_NIU4\020\005\022\024\n\020NNT_SPECIAL_NIU5\020\006\022\024\n\020NNT_SPE" +
-      "CIAL_NIU6\020\007\022\024\n\020NNT_SPECIAL_NIU7\020\010\022\024\n\020NNT" +
-      "_SPECIAL_NIU8\020\t\022\024\n\020NNT_SPECIAL_NIU9\020\n\022\026\n" +
-      "\022NNT_SPECIAL_NIUNIU\020\013\022\026\n\022NNT_SPECIAL_NIU" +
-      "HUA\020\014\022\030\n\024NNT_SPECIAL_BOMEBOME\020\r*\314\001\n\010NNSt" +
-      "atus\022\017\n\013STATUS_NONE\020\000\022\026\n\022STATUS_CREATE_R" +
-      "OOM\020\001\022\025\n\021STATUS_ENTER_ROOM\020\002\022\030\n\024STATUS_B" +
-      "EGIN_PREPARE\020\003\022\031\n\025STATUS_FINISH_PREPARE\020" +
-      "\004\022\026\n\022STATUS_BEGIN_STAKE\020\005\022\032\n\026STATUS_BEGI" +
-      "N_SHOWCARDS\020\006\022\027\n\023STATUS_PREPARE_NEXT\020\007B\035",
-      "\n\021com.rxqp.protobufB\010DdzProto"
+      "Req\022\020\n\010playerId\030\001 \002(\005\022\r\n\005token\030\003 \002(\t\"\'\n\013" +
+      "ReLoginResp\022\030\n\020reLoginSuccessed\030\001 \002(\010*\225\n" +
+      "\n\nMESSAGE_ID\022\020\n\014msg_LoginReq\020\001\022\021\n\rmsg_Lo",
+      "ginResp\020\002\022\025\n\021msg_CreateRoomReq\020\003\022\026\n\022msg_" +
+      "CreateRoomResp\020\004\022\024\n\020msg_EntryRoomReq\020\005\022\025" +
+      "\n\021msg_EntryRoomResp\020\006\022\025\n\021msg_PostEntryRo" +
+      "om\020\007\022\016\n\nmsg_Player\020\010\022\022\n\016msg_DisbandReq\020\t" +
+      "\022\023\n\017msg_PostDisband\020\n\022\027\n\023msg_DisbandChec" +
+      "kReq\020\013\022\030\n\024msg_PostDisbandCheck\020\014\022\026\n\022msg_" +
+      "SettlementInfo\020\r\022\022\n\016msg_DiscardReq\020\016\022\023\n\017" +
+      "msg_PostDiscard\020\017\022\017\n\013msg_DealReq\020\020\022\020\n\014ms" +
+      "g_DealResp\020\021\022\023\n\017msg_GrabHostReq\020\022\022\030\n\024msg" +
+      "_PostGrabHostResp\020\023\022\017\n\013msg_MsgInfo\020\024\022\024\n\020",
+      "msg_PostDealOver\020\025\022\027\n\023msg_CreateNNRoomRe" +
+      "q\020\026\022\030\n\024msg_CreateNNRoomResp\020\027\022\026\n\022msg_Ent" +
+      "ryNNRoomReq\020\030\022\027\n\023msg_EntryNNRoomResp\020\031\022\027" +
+      "\n\023msg_PostNNEntryRoom\020\032\022\026\n\022msg_StartNNGa" +
+      "meReq\020\033\022\027\n\023msg_StartNNGameResp\020\034\022\027\n\023msg_" +
+      "PostStartNNGame\020\035\022\024\n\020msg_NNPrepareReq\020\036\022" +
+      "\026\n\022msg_PostNNDealResp\020\037\022\020\n\014msg_StakeReq\020" +
+      " \022\021\n\rmsg_StakeResp\020!\022\025\n\021msg_PostStakeRes" +
+      "p\020\"\022\026\n\022msg_NNShowCardsReq\020#\022\027\n\023msg_NNSho" +
+      "wCardsResp\020$\022\027\n\023msg_PostNNShowCards\020%\022\031\n",
+      "\025msg_PostNNPrepareResp\020&\022\025\n\021msg_PostStak" +
+      "eOver\020\'\022\030\n\024msg_NNDissolutionReq\020(\022\033\n\027msg" +
+      "_PostDissolutionResp\020)\022\036\n\032msg_NNAnswerDi" +
+      "ssolutionReq\020*\022#\n\037msg_PostAnswerDissolut" +
+      "ionResult\020+\022\035\n\031msg_PostDissolutionResult" +
+      "\020,\022\024\n\020msg_SendSoundReq\020-\022\031\n\025msg_PostSend" +
+      "SoundResp\020.\022\022\n\016msg_SignOutReq\020/\022\030\n\024msg_R" +
+      "eEntryNNRoomReq\0200\022\027\n\023msg_PostUnusualQuit" +
+      "\0201\022\030\n\024msg_PostPlayerOnline\0202\022\031\n\025msg_Post" +
+      "PlayerOffline\0203\022\024\n\020msg_HeartBeatReq\0204\022\025\n",
+      "\021msg_HeartBeatResp\0205\022\022\n\016msg_ReLoginReq\0206" +
+      "\022\023\n\017msg_ReLoginResp\0207*\265\002\n\006NNType\022\r\n\tNNT_" +
+      "ERROR\020\000\022\014\n\010NNT_NONE\020\001\022\024\n\020NNT_SPECIAL_NIU" +
+      "1\020\002\022\024\n\020NNT_SPECIAL_NIU2\020\003\022\024\n\020NNT_SPECIAL" +
+      "_NIU3\020\004\022\024\n\020NNT_SPECIAL_NIU4\020\005\022\024\n\020NNT_SPE" +
+      "CIAL_NIU5\020\006\022\024\n\020NNT_SPECIAL_NIU6\020\007\022\024\n\020NNT" +
+      "_SPECIAL_NIU7\020\010\022\024\n\020NNT_SPECIAL_NIU8\020\t\022\024\n" +
+      "\020NNT_SPECIAL_NIU9\020\n\022\026\n\022NNT_SPECIAL_NIUNI" +
+      "U\020\013\022\026\n\022NNT_SPECIAL_NIUHUA\020\014\022\030\n\024NNT_SPECI" +
+      "AL_BOMEBOME\020\r*\314\001\n\010NNStatus\022\017\n\013STATUS_NON",
+      "E\020\000\022\026\n\022STATUS_CREATE_ROOM\020\001\022\025\n\021STATUS_EN" +
+      "TER_ROOM\020\002\022\030\n\024STATUS_BEGIN_PREPARE\020\003\022\031\n\025" +
+      "STATUS_FINISH_PREPARE\020\004\022\026\n\022STATUS_BEGIN_" +
+      "STAKE\020\005\022\032\n\026STATUS_BEGIN_SHOWCARDS\020\006\022\027\n\023S" +
+      "TATUS_PREPARE_NEXT\020\007*N\n\nBankerType\022\013\n\007BT" +
+      "_NONE\020\000\022\r\n\tBT_BAWANG\020\001\022\020\n\014BT_LUNZHUANG\020\002" +
+      "\022\022\n\016BT_ZHUANZHUANG\020\003B\035\n\021com.rxqp.protobu" +
+      "fB\010DdzProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -46146,7 +47496,7 @@ public final class DdzProto {
           internal_static_netty_MessageInfo_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_MessageInfo_descriptor,
-              new java.lang.String[] { "MessageId", "LoginReq", "LoginResp", "CreateRoomReq", "CreateRoomResp", "EntryRoomReq", "EntryRoomResp", "PostEntryRoom", "Player", "DisbandReq", "PostDisband", "DisbandCheckReq", "PostDisbandCheck", "SettlementInfo", "DiscardReq", "PostDiscard", "DealReq", "DealResp", "GrabHostReq", "MsgInfo", "PostGrabHostResp", "PostDealOver", "CreateNNRoomReq", "CreateNNRoomResp", "EntryNNRoomReq", "EntryNNRoomResp", "PostNNEntryRoom", "StartNNGame", "StartNNgameResp", "PostStartNNGame", "NnPrepareReq", "NnDealResp", "StakeReq", "StakeResp", "PostStakeResp", "NnShowCardsReq", "NnShowCardsResp", "PostNNShowCards", "PostNNPrepareResp", "PostStakeOver", "NnDissolutionReq", "PostDissolutionResp", "NnAnswerDissolutionReq", "PostAnswerDissolutionResult", "PostDissolutionResult", "SendSoundReq", "PostSendSoundResp", "SignOutReq", "ReEntryNNRoomReq", "PostUnusualQuit", "PostPlayerOnline", "PostPlayerOffline", "ReLoginReq", });
+              new java.lang.String[] { "MessageId", "LoginReq", "LoginResp", "CreateRoomReq", "CreateRoomResp", "EntryRoomReq", "EntryRoomResp", "PostEntryRoom", "Player", "DisbandReq", "PostDisband", "DisbandCheckReq", "PostDisbandCheck", "SettlementInfo", "DiscardReq", "PostDiscard", "DealReq", "DealResp", "GrabHostReq", "MsgInfo", "PostGrabHostResp", "PostDealOver", "CreateNNRoomReq", "CreateNNRoomResp", "EntryNNRoomReq", "EntryNNRoomResp", "PostNNEntryRoom", "StartNNGame", "StartNNgameResp", "PostStartNNGame", "NnPrepareReq", "NnDealResp", "StakeReq", "StakeResp", "PostStakeResp", "NnShowCardsReq", "NnShowCardsResp", "PostNNShowCards", "PostNNPrepareResp", "PostStakeOver", "NnDissolutionReq", "PostDissolutionResp", "NnAnswerDissolutionReq", "PostAnswerDissolutionResult", "PostDissolutionResult", "SendSoundReq", "PostSendSoundResp", "SignOutReq", "ReEntryNNRoomReq", "PostUnusualQuit", "PostPlayerOnline", "PostPlayerOffline", "ReLoginReq", "ReLoginResp", });
           internal_static_netty_LoginReq_descriptor =
             getDescriptor().getMessageTypes().get(1);
           internal_static_netty_LoginReq_fieldAccessorTable = new
@@ -46158,7 +47508,7 @@ public final class DdzProto {
           internal_static_netty_PlayerBaseInfo_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_PlayerBaseInfo_descriptor,
-              new java.lang.String[] { "ID", "Name", "ImgUrl", "CardNum", "Token", });
+              new java.lang.String[] { "ID", "Name", "ImgUrl", "CardNum", "Wxopenid", "Token", });
           internal_static_netty_LoginResp_descriptor =
             getDescriptor().getMessageTypes().get(3);
           internal_static_netty_LoginResp_fieldAccessorTable = new
@@ -46242,7 +47592,7 @@ public final class DdzProto {
           internal_static_netty_SettlementData_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_SettlementData_descriptor,
-              new java.lang.String[] { "ID", "Gotscore", "Finalscore", "IsWin", });
+              new java.lang.String[] { "ID", "Gotscore", "Finalscore", "IsWin", "LeaveCardNum", });
           internal_static_netty_SettlementInfo_descriptor =
             getDescriptor().getMessageTypes().get(17);
           internal_static_netty_SettlementInfo_fieldAccessorTable = new
@@ -46302,7 +47652,7 @@ public final class DdzProto {
           internal_static_netty_CreateNNRoomReq_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_CreateNNRoomReq_descriptor,
-              new java.lang.String[] { "Games", "Type", "PlayerId", });
+              new java.lang.String[] { "Games", "Type", "PlayerId", "BankerType", });
           internal_static_netty_CreateNNRoomResp_descriptor =
             getDescriptor().getMessageTypes().get(27);
           internal_static_netty_CreateNNRoomResp_fieldAccessorTable = new
@@ -46483,6 +47833,12 @@ public final class DdzProto {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_netty_ReLoginReq_descriptor,
               new java.lang.String[] { "PlayerId", "Token", });
+          internal_static_netty_ReLoginResp_descriptor =
+            getDescriptor().getMessageTypes().get(57);
+          internal_static_netty_ReLoginResp_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_netty_ReLoginResp_descriptor,
+              new java.lang.String[] { "ReLoginSuccessed", });
           return null;
         }
       };

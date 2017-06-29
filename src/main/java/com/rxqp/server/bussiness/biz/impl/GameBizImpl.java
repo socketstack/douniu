@@ -2,6 +2,7 @@ package com.rxqp.server.bussiness.biz.impl;
 
 import com.rxqp.common.constants.ExcMsgConstants;
 import com.rxqp.common.constants.MessageConstants;
+import com.rxqp.common.constants.WeixinConstants;
 import com.rxqp.common.data.CommonData;
 import com.rxqp.common.exception.BusinnessException;
 import com.rxqp.protobuf.DdzProto;
@@ -12,7 +13,9 @@ import com.rxqp.server.bo.Room;
 import com.rxqp.server.bussiness.biz.ICommonBiz;
 import com.rxqp.server.bussiness.biz.IGameBiz;
 import com.rxqp.server.bussiness.biz.IRoomBiz;
+import com.rxqp.utils.CommonUtils;
 import io.netty.channel.ChannelHandlerContext;
+import net.sf.json.JSONObject;
 import org.apache.commons.collections.CollectionUtils;
 
 import java.util.*;
@@ -276,18 +279,17 @@ public class GameBizImpl implements IGameBiz {
 			room.increaseShowCardsPlayerCnt();// 开牌人数加1
 			if (room.getShowCardsPlayerCnt().equals(room.getPlayers().size())) {// 所有玩家已开牌，则进行结算
 				room.increasePlayedGamesCnt();// 已玩局数加1
-				//~~~~~~~~~~~~~~~~`TODO~~~~~~~~~~~~~~~~~~~~~~~~~~~扣减房卡逻辑
-//				String deductionRoomCardsUrl = WeixinConstants.deductionRoomCardsUrl;
-//				deductionRoomCardsUrl = deductionRoomCardsUrl.replace("USERID",""+playerId);
-//				deductionRoomCardsUrl = deductionRoomCardsUrl.replace("CARDS","1");
-//				JSONObject obj1 = CommonUtils.sendGet(deductionRoomCardsUrl);
-				//~~~~~~~~~~~~~~~~`TODO~~~~~~~~~~~~~~~~~~~~~~~~~~~扣减房卡逻辑
+				//扣减房卡逻辑
+				if(room.getPlayedGames().equals(1)){
+					deductionRoomCards(room);
+				}
 				MessageInfo.Builder mi = roomBiz.buildSettlementData(room);// 计算结算信息
 				for (Player pl : players) {
 					pl.setPokerIds(null);//结算完毕清除上一盘每个玩家的牌
 					pl.getChannel().writeAndFlush(mi.build());
 				}
 				if (room.getPlayedGames() > room.getTotalGames()) {// 该房间的房卡局数已经结束
+					deductionRoomCards(room);
 					roomBiz.removeRoom(room.getRoomId());// 删除该房间信息
 				} else {// 每一小局完了，需要初始化房间对象的相关数据
 					room.init();
@@ -302,6 +304,51 @@ public class GameBizImpl implements IGameBiz {
 		resp.setNntype(nntype);
 		msgInfo.setNnShowCardsResp(resp);
 		return msgInfo;
+	}
+
+	public void deductionRoomCards(Room room){
+		int games = room.getTotalGames();
+		int type = room.getType();
+		try{
+			if (type == 1){//房主支付
+				int cards = games / 10;//每张房卡10局
+				String deductionRoomCardsUrl = WeixinConstants.deductionRoomCardsUrl;
+				deductionRoomCardsUrl = deductionRoomCardsUrl.replace("USERID",""+room.getBankerId());
+				Player player = CommonData.getPlayerById(room.getBankerId());
+				player.setCardNum(player.getCardNum()-cards*4);
+				deductionRoomCardsUrl = deductionRoomCardsUrl.replace("CARDS",""+cards*4);
+				JSONObject obj1 = CommonUtils.sendGet(deductionRoomCardsUrl);
+				String isSuccess = obj1.getString("success");
+				System.out.println("isSuccess:"+isSuccess);
+			}else if(type == 2){//aa支付
+				List<Player> pls = room.getPlayers();
+				if(CollectionUtils.isNotEmpty(pls)){
+					int cards = games / 10;//每张房卡10局
+					for (Player player:pls){
+						String deductionRoomCardsUrl = WeixinConstants.deductionRoomCardsUrl;
+						deductionRoomCardsUrl = deductionRoomCardsUrl.replace("USERID",""+player.getId());
+						Player pl = CommonData.getPlayerById(player.getId());
+						pl.setCardNum(player.getCardNum()-cards);
+						deductionRoomCardsUrl = deductionRoomCardsUrl.replace("CARDS",""+cards);
+						JSONObject obj1 = CommonUtils.sendGet(deductionRoomCardsUrl);
+						String isSuccess = obj1.getString("success");
+						System.out.println("isSuccess:"+isSuccess);
+					}
+				}
+			}else if (type == 3 && (room.getPlayedGames() > room.getTotalGames())){//赢家支付
+				int cards = games / 10;//每张房卡10局
+				String deductionRoomCardsUrl = WeixinConstants.deductionRoomCardsUrl;
+				deductionRoomCardsUrl = deductionRoomCardsUrl.replace("USERID",""+room.getWinPlayerId());
+				Player player = CommonData.getPlayerById(room.getWinPlayerId());
+				player.setCardNum(player.getCardNum()-cards*4);
+				deductionRoomCardsUrl = deductionRoomCardsUrl.replace("CARDS",""+cards*4);
+				JSONObject obj1 = CommonUtils.sendGet(deductionRoomCardsUrl);
+				String isSuccess = obj1.getString("success");
+				System.out.println("isSuccess:"+isSuccess);
+			}
+		}catch (Exception e){
+			e.printStackTrace();
+		}
 	}
 
 	/**

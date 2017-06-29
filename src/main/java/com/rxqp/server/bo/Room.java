@@ -8,10 +8,10 @@ public class Room {
 	private Integer roomId;
 	private List<Player> players;
 	private Integer multiple = 1;// 倍率,1倍为底
-	private Integer playedGames = 1;// 已经玩了几盘
+	private Integer playedGames = 0;// 已经玩了几盘
 	private Integer totalGames = 0;// 一共几盘
 	private Integer currentPlayerId;// 当前出牌玩家
-	private Integer type;// 1表示房主出房费，2表示进入房间者均摊房费
+	private Integer type;// 1表示房主出房费，2表示进入房间者均摊房费 3表示赢家支付
 	private List<Integer> prePokerIds;// 当前牌局中当前一轮出牌中，前一个玩家出牌的ID集合
 	private Integer prePlayerId = -1;// 上一个出牌的玩家ID
 	private Boolean isStartGame = false;// 是否已经开始玩游戏
@@ -22,6 +22,7 @@ public class Room {
 	private Integer agreeDissolutionCnt = 1;// 同意解散房间人数,发起人是同意的
 	private Integer disAgreeDissolutionCnt = 0;// 不同意解散房间人数
 	private Date firtPlayerOffLineTime;//该房间第一位玩家离线时间
+	private Integer winPlayerId;//大赢家id
 
 	public Room() {
 	}
@@ -183,6 +184,22 @@ public class Room {
 
 	public void setDisAgreeDissolutionCnt(Integer disAgreeDissolutionCnt) {
 		this.disAgreeDissolutionCnt = disAgreeDissolutionCnt;
+	}
+
+	public Boolean getStartGame() {
+		return isStartGame;
+	}
+
+	public void setStartGame(Boolean startGame) {
+		isStartGame = startGame;
+	}
+
+	public Integer getWinPlayerId() {
+		return winPlayerId;
+	}
+
+	public void setWinPlayerId(Integer winPlayerId) {
+		this.winPlayerId = winPlayerId;
 	}
 
 	public synchronized void increaseDisAgreeDissolutionCnt() {

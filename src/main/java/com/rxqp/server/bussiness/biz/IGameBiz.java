@@ -1,9 +1,9 @@
 package com.rxqp.server.bussiness.biz;
 
-import io.netty.channel.ChannelHandlerContext;
-
 import com.rxqp.protobuf.DdzProto.MessageInfo;
 import com.rxqp.protobuf.DdzProto.MessageInfo.Builder;
+import com.rxqp.server.bo.Room;
+import io.netty.channel.ChannelHandlerContext;
 
 public interface IGameBiz {
 
@@ -51,4 +51,10 @@ public interface IGameBiz {
 	 */
 	public Builder sendSoundProccess(MessageInfo messageInfoReq,
 			ChannelHandlerContext ctx);
+
+	/**
+	 * 扣减房卡
+	 * @param room
+	 */
+	public void deductionRoomCards(Room room);
 }

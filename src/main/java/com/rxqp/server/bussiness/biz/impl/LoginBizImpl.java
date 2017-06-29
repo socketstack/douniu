@@ -91,6 +91,7 @@ public class LoginBizImpl implements ILoginBiz {
 			player.setImgUrl(playerBaseInfo.getImgUrl());
 			player.setIsland(true);
 			player.setToken(playerBaseInfo.getToken());
+			player.setCardNum(playerBaseInfo.getCardNum());
 			CommonData.putPlayerIdToPlayer(playerId, player);
 			CommonData.putChannelIdToPlayerId(player.getChannel().hashCode(),playerId);
 			//
@@ -260,6 +261,7 @@ public class LoginBizImpl implements ILoginBiz {
 			player.setID(obj.getInt("id"));
 			player.setName(obj.getString("name"));
 			player.setImgUrl(obj.getString("imgUrl"));
+			player.setCardNum(obj.getInt("cardNum"));
 			player.setToken(CommonUtils.getAccessToken(playerId));//生成登录token
 //			player.setCardNum(obj.getInt("cardNum"));
 		}else{
@@ -286,6 +288,7 @@ public class LoginBizImpl implements ILoginBiz {
 			player.setID(pl.getId());
 			player.setName(weixinUserInfo.getName());
 			player.setImgUrl(weixinUserInfo.getHeadImgUrl());
+			player.setCardNum(pl.getCardNum());
 			player.setToken(CommonUtils.getAccessToken(pl.getId()));//生成登录token
 		}else{
 			return null;
@@ -295,25 +298,34 @@ public class LoginBizImpl implements ILoginBiz {
 	}
 
 	private Player getPlayerByOpenid(WeixinUserInfo weixinUserInfo){
-		String openid = weixinUserInfo.getOpneid();
-		String url = WeixinConstants.getPlayerByOpenidUrl;
-		url = url.replace("OPENID", openid);
-		JSONObject obj = CommonUtils.sendGet(url);
-		Player player = new Player();
-		if (obj == null){
-			String url1 = WeixinConstants.addUserWithOpenid;
-			url1 = url1.replace("OPENID", openid);
-			url1 = url1.replace("NAME", weixinUserInfo.getName());
-			url1 = url1.replace("IMG_URL", weixinUserInfo.getHeadImgUrl());
-			JSONObject obj1 = CommonUtils.sendGet(url1);
-			if(obj1==null)
-				return null;
-			player.setId(obj1.getInt("id"));
-			return player;
-		}else{
+		try{
+			String openid = weixinUserInfo.getOpneid();
+			String url = WeixinConstants.getPlayerByOpenidUrl;
+			url = url.replace("OPENID", openid);
+			JSONObject obj = CommonUtils.sendGet(url);
+			Player player = new Player();
+			if (obj == null){
+				String url1 = WeixinConstants.addUserWithOpenid;
+				url1 = url1.replace("OPENID", openid);
+				url1 = url1.replace("NAME", weixinUserInfo.getName());
+				url1 = url1.replace("IMG_URL", weixinUserInfo.getHeadImgUrl());
+				obj = CommonUtils.sendGet(url1);
+				if(obj==null)
+					return null;
+				player.setCardNum(0);
+			}else{
+				player.setCardNum(obj.getInt("cardNum"));
+			}
 			player.setId(obj.getInt("id"));
+			player.setName(obj.getString("name"));
+			player.setImgUrl(obj.getString("imgUrl"));
+			player.setToken(CommonUtils.getAccessToken(player.getId()));//生成登录token
 			return player;
+		}catch (Exception e){
+			e.printStackTrace();
+			return null;
 		}
+
 	}
 
 	private WeixinUserInfo getWeixinUserInfo(String access_token,String openid){

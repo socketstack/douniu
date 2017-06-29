@@ -34,6 +34,7 @@ public class Player implements Serializable {
 	private DdzProto.NNStatus nnStatus;//断线重连进入游戏后，状态 0;创建房间
 													//1;进入房间 2;进入准备状态 3;准备完毕自动发牌 4;准备下注 5;准备开牌
 	private String token;
+	private Integer cardNum;//玩家剩余的房卡数
 
 	private AccessTokenOpenId accessTokenOpenId;//用户微信接口相关信息
 
@@ -247,5 +248,13 @@ public class Player implements Serializable {
 
 	public void setToken(String token) {
 		this.token = token;
+	}
+
+	public Integer getCardNum() {
+		return cardNum;
+	}
+
+	public void setCardNum(Integer cardNum) {
+		this.cardNum = cardNum;
 	}
 }
