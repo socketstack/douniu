@@ -56,5 +56,8 @@ public interface IGameBiz {
 	 * 扣减房卡
 	 * @param room
 	 */
-	public void deductionRoomCards(Room room);
+	public void deductionRoomCards(Room room,boolean lastDeduction);
+
+	public Builder heartBeatProccess(MessageInfo messageInfoReq,
+									 ChannelHandlerContext ctx);
 }

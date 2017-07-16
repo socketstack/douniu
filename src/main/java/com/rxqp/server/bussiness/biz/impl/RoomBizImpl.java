@@ -21,7 +21,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+import static com.rxqp.protobuf.DdzProto.BankerType.*;
 import static com.rxqp.protobuf.DdzProto.NNStatus.*;
+import static com.rxqp.protobuf.DdzProto.NNType.NNT_ERROR;
+import static com.rxqp.protobuf.DdzProto.NNType.NNT_NONE;
 
 @Service
 public class RoomBizImpl implements IRoomBiz {
@@ -41,8 +44,15 @@ public class RoomBizImpl implements IRoomBiz {
 			CreateNNRoomReq.Builder creatRoomReq = messageInfoReq
 					.getCreateNNRoomReq().toBuilder();
 			Integer games = creatRoomReq.getGames();// 房间场数
-			Integer type = creatRoomReq.getType();// type:1--房主支付房费 3--各自支付房费
+			Integer type = creatRoomReq.getType();// type:1：房主支付	2：AA支付	3：赢家支付
 			Integer playerId = creatRoomReq.getPlayerId();
+			BankerType bankerType = creatRoomReq.getBankerType();
+			if (bankerType == BT_NONE){
+				messageInfo = commonBiz.setMessageInfo(
+						MessageConstants.PLAYER_STATE_TYPE_1008,
+						MessageConstants.PLAYER_STATE_MSG_1008);
+				return messageInfo;
+			}
 			messageInfo.setMessageId(MESSAGE_ID.msg_CreateNNRoomResp);
 
 			Integer roomId = -1;
@@ -60,7 +70,7 @@ public class RoomBizImpl implements IRoomBiz {
 				return messageInfo;
 			}
 			try {
-				roomId = createNewRoom(games, type, playerId);
+				roomId = createNewRoom(games, type, playerId, bankerType);
 			} catch (BusinnessException e) {
 				if (ExcMsgConstants.NO_EXISTS_THE_ROOM_EXC_CODE.equals(e
 						.getCode())) {// 该房间不存在
@@ -102,7 +112,7 @@ public class RoomBizImpl implements IRoomBiz {
 		return messageInfo;
 	}
 
-	private Integer createNewRoom(Integer games, Integer type, Integer playerId)
+	private Integer createNewRoom(Integer games, Integer type, Integer playerId,BankerType bankerType)
 			throws BusinnessException {
 		Integer roomId = (int) ((Math.random() * 9 + 1) * ROOM_ID_LENGTH);
 		int cnt = 0;
@@ -127,6 +137,8 @@ public class RoomBizImpl implements IRoomBiz {
 			room.setTotalGames(games);
 			room.setType(type);
 			room.setBankerId(playerId);// 第一盘房主为庄家
+			room.setBankerType(bankerType);//庄类型
+
 			CommonData.putRoomIdToRoom(roomId, room);
 		}
 		return roomId;
@@ -184,9 +196,7 @@ public class RoomBizImpl implements IRoomBiz {
 			// 设置下一位玩家的ID
 			int existPlayersCnt = players.size();// 当前已经进入房间的玩家数量
 			players.get(existPlayersCnt - 1).setNextPlayerId(playerId);// 将其设置为前一位玩家的下家
-			if (existPlayersCnt == 4) {// 当前玩家是第五位进入房间的玩家
-				player.setNextPlayerId(players.get(0).getId());// 其下一位玩家是第一位玩家
-			}
+			player.setNextPlayerId(players.get(0).getId());// 其下一位玩家是第一位玩家
 			if (!player.getIsland()) {// 该玩家未登陆
 				messageInfo = commonBiz.setMessageInfo(
 						MessageConstants.PLAYER_NO_LOGIN_TYPE_1001,
@@ -203,6 +213,7 @@ public class RoomBizImpl implements IRoomBiz {
 			roomInfo.setRoomId(roomId);
 			roomInfo.addAllPlayers(BeanCopy.playersCopy(players));
 			roomInfo.setTotalGames(room.getTotalGames());
+			roomInfo.setIsDisband(room.getDisband());//该房间是否处于解散房间状态
 			entryRoomResp.setRoomInfo(roomInfo);
 			entryRoomResp.setOrder(players.size());// 玩家按先后顺序第N位进入房间，方便前端安排座位顺序
 			// 广播房间里其他玩家
@@ -241,6 +252,7 @@ public class RoomBizImpl implements IRoomBiz {
 				player.setFinalScore(0);
 				player.setBetPoints(0);
 				player.setNntype(null);
+				player.setIsBanker(false);
 			}
 			CommonData.removeRoom(roomId);
 			return true;
@@ -252,47 +264,58 @@ public class RoomBizImpl implements IRoomBiz {
 	@Override
 	public Builder disolutionRoom(MessageInfo messageInfoReq,
 			ChannelHandlerContext ctx) {
-		MessageInfo.Builder messageInfo = MessageInfo.newBuilder();
-		NNDissolutionReq req = messageInfoReq.getNnDissolutionReq();
-		Integer playerId = req.getPlayerId();
-		Player player = CommonData.getPlayerById(playerId);
-		if (player == null) {
-			messageInfo = commonBiz.setMessageInfo(
-					MessageConstants.PLAYER_NO_LOGIN_TYPE_1001,
-					MessageConstants.PLAYER_NO_LOGIN_MSG_1001);
-			return messageInfo;
-		}
-		Room room = CommonData.getRoomByRoomId(player.getRoomId());
-		if (room == null) {
-			messageInfo = commonBiz.setMessageInfo(
-					MessageConstants.THE_ROOM_NO_EXTIST_ERROR_TYPE,
-					MessageConstants.THE_ROOM_NO_EXTIST_ERROR_MSG);
-			return messageInfo;
-		}
-		room.setAgreeDissolutionCnt(1);
-		room.setDisAgreeDissolutionCnt(0);
-		List<Player> players = room.getPlayers();
-		// 广播其他玩家有玩家请求解散房间
-		if (CollectionUtils.isNotEmpty(players)) {
-			if (players.size() == 1) {// 说明只有房主一个人，则直接解散房间成功
+		try {
+			MessageInfo.Builder messageInfo = MessageInfo.newBuilder();
+			NNDissolutionReq req = messageInfoReq.getNnDissolutionReq();
+			Integer playerId = req.getPlayerId();
+			Player player = CommonData.getPlayerById(playerId);
+			if (player == null) {
+				messageInfo = commonBiz.setMessageInfo(
+						MessageConstants.PLAYER_NO_LOGIN_TYPE_1001,
+						MessageConstants.PLAYER_NO_LOGIN_MSG_1001);
+				return messageInfo;
+			}
+			Room room = CommonData.getRoomByRoomId(player.getRoomId());
+			if (room == null) {
+//				messageInfo = commonBiz.setMessageInfo(
+//						MessageConstants.THE_ROOM_NO_EXTIST_ERROR_TYPE,
+//						MessageConstants.THE_ROOM_NO_EXTIST_ERROR_MSG);
+//				return messageInfo;
 				messageInfo.setMessageId(MESSAGE_ID.msg_PostDissolutionResult);
 				PostDissolutionResult.Builder postDissolutionResult = PostDissolutionResult
 						.newBuilder();
 				messageInfo.setPostDissolutionResult(postDissolutionResult);
-				removeRoom(room.getRoomId());// 删除该房间信息
 				return messageInfo;
 			}
-			MessageInfo.Builder postMsgInfo = MessageInfo.newBuilder();
-			postMsgInfo.setMessageId(MESSAGE_ID.msg_PostDissolutionResp);
-			PostDissolutionResp.Builder postDissolutionResp = PostDissolutionResp
-					.newBuilder();
-			postDissolutionResp.setPlayerid(playerId);
-			postMsgInfo.setPostDissolutionResp(postDissolutionResp);
-			for (Player pl : players) {
-				pl.getChannel().writeAndFlush(postMsgInfo.build());
+			room.getAgreeDissolutionIds().add(playerId);
+			room.setDisband(true);//该房间当前处于请求解散房间状态
+			room.setStartDisbandTime((int)(System.currentTimeMillis() / 1000));//单位是S
+			List<Player> players = room.getPlayers();
+			// 广播其他玩家有玩家请求解散房间
+			if (CollectionUtils.isNotEmpty(players)) {
+				if (players.size() == 1) {// 说明只有房主一个人，则直接解散房间成功
+					messageInfo.setMessageId(MESSAGE_ID.msg_PostDissolutionResult);
+					PostDissolutionResult.Builder postDissolutionResult = PostDissolutionResult
+							.newBuilder();
+					messageInfo.setPostDissolutionResult(postDissolutionResult);
+					removeRoom(room.getRoomId());// 删除该房间信息
+					return messageInfo;
+				}
+				MessageInfo.Builder postMsgInfo = MessageInfo.newBuilder();
+				postMsgInfo.setMessageId(MESSAGE_ID.msg_PostDissolutionResp);
+				PostDissolutionResp.Builder postDissolutionResp = PostDissolutionResp
+						.newBuilder();
+				postDissolutionResp.setPlayerid(playerId);
+				postMsgInfo.setPostDissolutionResp(postDissolutionResp);
+				for (Player pl : players) {
+					pl.getChannel().writeAndFlush(postMsgInfo.build());
+				}
 			}
+			return null;
+		}catch (Exception e){
+			e.printStackTrace();
+			return null;
 		}
-		return null;
 	}
 
 	@Override
@@ -317,9 +340,11 @@ public class RoomBizImpl implements IRoomBiz {
 			return messageInfo;
 		}
 		if (isAgree) {
-			room.increaseAgreeDissolutionCnt();
+//			room.increaseAgreeDissolutionCnt();
+			room.getAgreeDissolutionIds().add(playerId);
 		} else {
-			room.increaseDisAgreeDissolutionCnt();
+//			room.increaseDisAgreeDissolutionCnt();
+			room.getDisAgreeDissulutionIds().add(playerId);
 		}
 
 		List<Player> players = room.getPlayers();
@@ -330,10 +355,8 @@ public class RoomBizImpl implements IRoomBiz {
 					.setMessageId(MESSAGE_ID.msg_PostAnswerDissolutionResult);
 			PostAnswerDissolutionResult.Builder postAnswerDissolutionResult = PostAnswerDissolutionResult
 					.newBuilder();
-			postAnswerDissolutionResult.setAgreeCnt(room
-					.getAgreeDissolutionCnt());
-			postAnswerDissolutionResult.setDisagreeCnt(room
-					.getDisAgreeDissolutionCnt());
+			postAnswerDissolutionResult.setAgreeCnt(room.getAgreeDissolutionIds().size());
+			postAnswerDissolutionResult.setDisagreeCnt(room.getDisAgreeDissulutionIds().size());
 			postMsgInfo
 					.setPostAnswerDissolutionResult(postAnswerDissolutionResult);
 			for (Player pl : players) {
@@ -344,12 +367,24 @@ public class RoomBizImpl implements IRoomBiz {
 		Integer playerCnt = room.getPlayers().size();
 		Boolean isSuccess = false;
 		if (playerCnt == 2 || playerCnt == 3) {
-			if (room.getAgreeDissolutionCnt() >= 2) {
+			if (room.getAgreeDissolutionIds().size() >= 2) {
 				isSuccess = true;
 			}
+			if (room.getDisAgreeDissulutionIds().size()>=2){
+				room.setDisband(false);//解散房间失败
+				room.setStartDisbandTime(0);
+				room.getDisAgreeDissulutionIds().clear();
+				room.getAgreeDissolutionIds().clear();
+			}
 		} else if (playerCnt == 4 || playerCnt == 5) {
-			if (room.getAgreeDissolutionCnt() >= 3) {
+			if (room.getAgreeDissolutionIds().size() >= 3) {
 				isSuccess = true;
+			}
+			if (room.getDisAgreeDissulutionIds().size() >= 3){
+				room.setDisband(false);//解散房间失败
+				room.setStartDisbandTime(0);
+				room.getDisAgreeDissulutionIds().clear();
+				room.getAgreeDissolutionIds().clear();
 			}
 		}
 		if (isSuccess) {
@@ -390,7 +425,7 @@ public class RoomBizImpl implements IRoomBiz {
 				deductionRoomCardsUrl = deductionRoomCardsUrl.replace("CARDS",""+cards*4);
 				JSONObject obj1 = CommonUtils.sendGet(deductionRoomCardsUrl);
 				String isSuccess = obj1.getString("success");
-				System.out.println("isSuccess:"+isSuccess);
+				System.out.println("deductionRoomCards isSuccess:"+isSuccess);
 			}
 		}catch (Exception e){
 			e.printStackTrace();
@@ -444,7 +479,7 @@ public class RoomBizImpl implements IRoomBiz {
 		List<Player> players = room.getPlayers();
 		Player banker = CommonData.getPlayerById(room.getBankerId());// 庄家
 		if (banker.getNntype() != null
-				&& banker.getNntype().equals(NNType.NNT_ERROR)) {// 庄家牌类型有误
+				&& banker.getNntype().equals(NNT_ERROR)) {// 庄家牌类型有误
 			mi = commonBiz.setMessageInfo(
 					MessageConstants.BANKER_CARDS_ERROR_TYPE,
 					MessageConstants.BANKER_CARDS_ERROR_MSG);
@@ -453,6 +488,7 @@ public class RoomBizImpl implements IRoomBiz {
 		SettlementData.Builder bankerSettlement = SettlementData.newBuilder();// 庄家的结算信息
 		bankerSettlement.setID(banker.getId());
 		bankerSettlement.setLeaveCardNum(banker.getCardNum());
+		bankerSettlement.setGotscore(0);
 		for (Player player : players) {
 			SettlementData.Builder playerSettlement = SettlementData
 					.newBuilder();// 非庄家玩家各自的结算信息
@@ -561,6 +597,10 @@ public class RoomBizImpl implements IRoomBiz {
 		roomInfo.setPlayedGames(room.getPlayedGames());
 		roomInfo.setMultiple(room.getMultiple());
 		roomInfo.setBankerId(room.getBankerId());
+		roomInfo.setIsDisband(room.getIsStartGame());//该房间是否处于请求解散房间状态
+		roomInfo.addAllAgreePlayerIds(room.getAgreeDissolutionIds());//同意解散房间玩家ids
+		roomInfo.addAllRefusePlayerIds(room.getDisAgreeDissulutionIds());//不同解散房间意玩家dis
+		roomInfo.setStartDisbandTime(room.getStartDisbandTime());
 		entryRoomResp.setRoomInfo(roomInfo);
 		entryRoomResp.setOrder(player.getOrder());
 		// 广播房间里其他玩家,离线玩家已经上线
@@ -572,6 +612,35 @@ public class RoomBizImpl implements IRoomBiz {
 
 		messageInfo.setEntryNNRoomResp(entryRoomResp);
 		return messageInfo;
+	}
+
+	/**
+	 * 计算下一小局的庄家
+	 * @param room
+	 */
+	@Override
+	public void computeBanker(Room room) {
+		if (room.getBankerType() == BT_NONE || room.getBankerType() == BT_BAWANG){
+			return;
+		}else if (room.getBankerType() == BT_LUNZHUANG){//轮庄
+			Integer bankId = room.getBankerId();
+			Player banker = CommonData.getPlayerById(bankId);
+			NNType nntype = banker.getNntype();
+			if (nntype == NNT_ERROR || nntype == NNT_NONE){//无牛下庄
+				room.setBankerId(banker.getNextPlayerId());
+				banker.setIsBanker(false);
+				Player newBanker = CommonData.getPlayerById(banker.getNextPlayerId());
+				newBanker.setIsBanker(true);
+			}
+		}else if(room.getBankerType() == BT_ZHUANZHUANG){//转庄
+			Integer bankId = room.getBankerId();
+			Player banker = CommonData.getPlayerById(bankId);
+			NNType nntype = banker.getNntype();
+			room.setBankerId(banker.getNextPlayerId());
+			banker.setIsBanker(false);
+			Player newBanker = CommonData.getPlayerById(banker.getNextPlayerId());
+			newBanker.setIsBanker(true);
+		}
 	}
 
 	//广播通知其他玩家，离线玩家已经上线
@@ -597,7 +666,7 @@ public class RoomBizImpl implements IRoomBiz {
 			Player bankerPlayer, Player player) {
 		NNType bankerNntype = bankerPlayer.getNntype();
 		NNType playerNntype = player.getNntype();
-		if (playerNntype.equals(NNType.NNT_ERROR))
+		if (playerNntype.equals(NNT_ERROR))
 			return 0;
 		if (bankerNntype.getNumber() > playerNntype.getNumber()) {// 如果庄家牌型大
 			int rate = getRateByNNType(bankerNntype);

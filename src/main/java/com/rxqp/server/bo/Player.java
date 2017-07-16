@@ -7,6 +7,7 @@ import io.netty.channel.Channel;
 
 import java.io.Serializable;
 import java.net.Socket;
+import java.util.Date;
 import java.util.List;
 
 public class Player implements Serializable {
@@ -35,6 +36,7 @@ public class Player implements Serializable {
 													//1;进入房间 2;进入准备状态 3;准备完毕自动发牌 4;准备下注 5;准备开牌
 	private String token;
 	private Integer cardNum;//玩家剩余的房卡数
+	private Date lastTime;//最后一次心跳
 
 	private AccessTokenOpenId accessTokenOpenId;//用户微信接口相关信息
 
@@ -256,5 +258,17 @@ public class Player implements Serializable {
 
 	public void setCardNum(Integer cardNum) {
 		this.cardNum = cardNum;
+	}
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
+
+	public Date getLastTime() {
+		return lastTime;
+	}
+
+	public void setLastTime(Date lastTime) {
+		this.lastTime = lastTime;
 	}
 }

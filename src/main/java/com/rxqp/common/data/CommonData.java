@@ -121,4 +121,8 @@ public class CommonData {
 	public static void deleteRoomById(Integer roomId) {
 		roomIdToRoomInfo.remove(roomId);
 	}
+
+	public static Map<Integer, Player> getPlayerIdToPlayerMap(){
+		return playerIdToPlayer;
+	}
 }

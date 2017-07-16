@@ -1,4 +1,4 @@
-package com.rxqp.dn.controller;
+package com.rxqp.controller;
 
 import javax.servlet.http.HttpServletRequest;
 

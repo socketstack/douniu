@@ -24,6 +24,9 @@ public class CoreBizImpl implements ICoreBiz {
 		DdzProto.MESSAGE_ID messageId = messageInfoReq.getMessageId();
 		MessageInfo.Builder builder = MessageInfo.newBuilder();
 		switch (messageId) {
+		case msg_HeartBeatReq://客户端发送心跳包
+			builder = gameBiz.heartBeatProccess(messageInfoReq, ctx);
+			break;
 		case msg_LoginReq:// 登录请求
 			builder = loginBiz.login(messageInfoReq, ctx);
 			break;
@@ -60,8 +63,8 @@ public class CoreBizImpl implements ICoreBiz {
 		case msg_ReEntryNNRoomReq://异常退出后从新进入房间
 			builder = roomBiz.reEntryRoom(messageInfoReq,ctx);
 			break;
-		case msg_ReLoginReq://重复登录
-			builder = loginBiz.reLogin(messageInfoReq,ctx);
+		case msg_ReConnectReq://重新连接服务器
+			builder = loginBiz.reConnectReq(messageInfoReq,ctx);
 			break;
 		default:
 			System.out.println("default");

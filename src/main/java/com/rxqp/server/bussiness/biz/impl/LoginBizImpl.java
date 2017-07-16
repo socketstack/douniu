@@ -29,6 +29,7 @@ import java.util.List;
 public class LoginBizImpl implements ILoginBiz {
 
 	private static Integer id = 1;
+	public static int NEW_PLAYER_CARDS = 20;
 
 	private ICommonBiz commonBiz = new CommonBiz();
 
@@ -125,30 +126,35 @@ public class LoginBizImpl implements ILoginBiz {
 	}
 
 	@Override
-	public MessageInfo.Builder reLogin(MessageInfo messageInfoReq,
+	public MessageInfo.Builder reConnectReq(MessageInfo messageInfoReq,
 									 ChannelHandlerContext ctx) {
-		ReLoginReq reLoginReq = messageInfoReq.getReLoginReq();
+		ReConnectReq reLoginReq = messageInfoReq.getReConnectReq();
 		MessageInfo.Builder messageInfo = MessageInfo.newBuilder();
-		messageInfo.setMessageId(MESSAGE_ID.msg_LoginResp);
+		messageInfo.setMessageId(MESSAGE_ID.msg_ReConnectResp);
 		String token = reLoginReq.getToken();
 		Integer playerId = reLoginReq.getPlayerId();
 		Player player = CommonData.getPlayerById(playerId);
 		if (player != null) {
 			if (playerId.equals(player.getId()) && token.equals(player.getToken())) {
-				LoginResp.Builder loginResp = LoginResp.newBuilder();
-				PlayerBaseInfo playerBaseInfo = getUserInfoByPlayerId(playerId);
-				playerBaseInfo.toBuilder().setToken(player.getToken());
-				loginResp.setPlayerBaseInfo(playerBaseInfo);
-				loginResp.setShareurl(CommonConstants.SHARE_URL);
-				if (player.getOnPlay()) {
-					loginResp.setPlayerState(1);//斗牛在线状态
-				} else {
-					loginResp.setPlayerState(0);//正常状态
-				}
-				if (player.getRoomId() != null) {
-					loginResp.setRoomId(player.getRoomId());
-				}
-				messageInfo.setLoginResp(loginResp);
+				ReConnectResp.Builder reConnectResp = ReConnectResp.newBuilder();
+//				PlayerBaseInfo playerBaseInfo = getUserInfoByPlayerId(playerId);
+//				player.setToken(playerBaseInfo.toBuilder().getToken());
+				player.setOnline(true);
+				player.setChannel(ctx.channel());
+				player.setLastTime(new Date());
+//				playerBaseInfo.toBuilder().setToken(player.getToken());
+//				loginResp.setPlayerBaseInfo(playerBaseInfo);
+//				loginResp.setShareurl(CommonConstants.SHARE_URL);
+//				if (player.getOnPlay()) {
+//					loginResp.setPlayerState(1);//斗牛在线状态
+//				} else {
+//					loginResp.setPlayerState(0);//正常状态
+//				}
+//				if (player.getRoomId() != null) {
+//					loginResp.setRoomId(player.getRoomId());
+//				}
+				reConnectResp.setReLoginSuccessed(true);
+				messageInfo.setReConnectResp(reConnectResp);
 			} else {
 				messageInfo = commonBiz.setMessageInfo(
 						MessageConstants.PLAYER_STATE_TYPE_1007,
@@ -309,10 +315,11 @@ public class LoginBizImpl implements ILoginBiz {
 				url1 = url1.replace("OPENID", openid);
 				url1 = url1.replace("NAME", weixinUserInfo.getName());
 				url1 = url1.replace("IMG_URL", weixinUserInfo.getHeadImgUrl());
+				url1 = url1.replace("UNIONID",weixinUserInfo.getUnionid());
 				obj = CommonUtils.sendGet(url1);
 				if(obj==null)
 					return null;
-				player.setCardNum(0);
+				player.setCardNum(NEW_PLAYER_CARDS);
 			}else{
 				player.setCardNum(obj.getInt("cardNum"));
 			}
@@ -343,6 +350,7 @@ public class LoginBizImpl implements ILoginBiz {
 		weixinUserInfo.setOpneid(obj.getString("openid"));
 		weixinUserInfo.setProvince(obj.getString("province"));
 		weixinUserInfo.setSex(obj.getInt("sex"));
+		weixinUserInfo.setUnionid(obj.getString("unionid"));
 //		weixinUserInfo.setPrivilege(obj.getJSONArray("privilege"));
 		return weixinUserInfo;
 	}

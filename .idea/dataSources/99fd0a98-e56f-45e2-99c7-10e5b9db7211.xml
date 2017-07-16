@@ -43,7 +43,11 @@
       <Position>7</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <key id="17" parent="9" name="PRIMARY">
+    <column id="17" parent="9" name="unionid">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="18" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

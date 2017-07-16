@@ -63,7 +63,7 @@ public class GameBizImpl implements IGameBiz {
 						.newBuilder();
 				postprepareResp.setPlayerId(playerId);
 				msg.setPostNNPrepareResp(postprepareResp);
-				pl.setPokerIds(null);//清除上一盘的牌
+//				pl.setPokerIds(null);//清除上一盘的牌
 				pl.getChannel().writeAndFlush(msg.build());
 			}
 
@@ -129,6 +129,35 @@ public class GameBizImpl implements IGameBiz {
 			pokers.add(i);
 		}
 		return pokers;
+	}
+
+	@Override
+	public Builder heartBeatProccess(MessageInfo messageInfoReq, ChannelHandlerContext ctx) {
+		try{
+			MessageInfo.Builder msgInfo = MessageInfo.newBuilder();
+			msgInfo.setMessageId(MESSAGE_ID.msg_HeartBeatResp);
+
+			HeartBeatReq req = messageInfoReq.getHeartBeatReq();
+			Integer playerId = req.getPlayerId();
+			if (playerId == null){
+				msgInfo = commonBiz.setMessageInfo(
+						MessageConstants.PLAYER_STATE_TYPE_1009,
+						MessageConstants.PLAYER_STATE_MSG_1009);
+				return msgInfo;
+			}
+			Player player = CommonData.getPlayerById(playerId);
+			if(player!=null){
+				player.setLastTime(new Date());
+				player.setOnline(true);
+			}
+			return msgInfo;
+		}catch (Exception e){
+			e.printStackTrace();
+			MessageInfo.Builder msgInfo = commonBiz.setMessageInfo(
+					MessageConstants.UNKNOWN_CAUSE_TYPE,
+					MessageConstants.UNKNOWN_CAUSE_MSG);
+			return msgInfo;
+		}
 	}
 
 	@Override
@@ -241,76 +270,82 @@ public class GameBizImpl implements IGameBiz {
 	@Override
 	public Builder showCardsProcess(MessageInfo messageInfoReq,
 			ChannelHandlerContext ctx) {
-		MessageInfo.Builder msgInfo = MessageInfo.newBuilder();
-		msgInfo.setMessageId(MESSAGE_ID.msg_NNShowCardsResp);
+		try{
+			MessageInfo.Builder msgInfo = MessageInfo.newBuilder();
+			msgInfo.setMessageId(MESSAGE_ID.msg_NNShowCardsResp);
 
-		Integer playerId = messageInfoReq.getNnShowCardsReq().getPlayerid();
-		boolean showAll = messageInfoReq.getNnShowCardsReq().getShowAll();// 是否公开牌
-		Player player = CommonData.getPlayerById(playerId);
-		List<Integer> remainderPokerIds = null;
-		if (player.getPokerIds().size() < 5) {
-			remainderPokerIds = getRemainderPokerIds(player.getRoomId());// 剩下的两张牌
-			player.getPokerIds().addAll(remainderPokerIds);
-		}
-		NNType nntype = getNNType(player);
-		player.setNntype(nntype);
-
-		if (showAll) {// 开牌
-			Room room = CommonData.getRoomByRoomId(player.getRoomId());
-			if (room == null) {
-				msgInfo = commonBiz.setMessageInfo(
-						MessageConstants.THE_ROOM_NO_EXTIST_ERROR_TYPE,
-						MessageConstants.THE_ROOM_NO_EXTIST_ERROR_MSG);
-				return msgInfo;
+			Integer playerId = messageInfoReq.getNnShowCardsReq().getPlayerid();
+			boolean showAll = messageInfoReq.getNnShowCardsReq().getShowAll();// 是否公开牌
+			Player player = CommonData.getPlayerById(playerId);
+			List<Integer> remainderPokerIds = null;
+			if (player.getPokerIds().size() < 5) {
+				remainderPokerIds = getRemainderPokerIds(player.getRoomId());// 剩下的两张牌
+				player.getPokerIds().addAll(remainderPokerIds);
 			}
-			List<Player> players = room.getPlayers();
+			NNType nntype = getNNType(player);
+			player.setNntype(nntype);
 
-			for (Player pl : players) {
-				MessageInfo.Builder mi = MessageInfo.newBuilder();
-				mi.setMessageId(MESSAGE_ID.msg_PostNNShowCards);
-				PostNNShowCards.Builder postNNShowCards = PostNNShowCards
-						.newBuilder();
-				postNNShowCards.setPlayerId(playerId);
-				postNNShowCards.addAllPokers(player.getPokerIds());
-				postNNShowCards.setNntype(nntype);
-				mi.setPostNNShowCards(postNNShowCards);
-				pl.getChannel().writeAndFlush(mi.build());
-			}
-			room.increaseShowCardsPlayerCnt();// 开牌人数加1
-			if (room.getShowCardsPlayerCnt().equals(room.getPlayers().size())) {// 所有玩家已开牌，则进行结算
-				room.increasePlayedGamesCnt();// 已玩局数加1
-				//扣减房卡逻辑
-				if(room.getPlayedGames().equals(1)){
-					deductionRoomCards(room);
+			if (showAll) {// 开牌
+				Room room = CommonData.getRoomByRoomId(player.getRoomId());
+				if (room == null) {
+					msgInfo = commonBiz.setMessageInfo(
+							MessageConstants.THE_ROOM_NO_EXTIST_ERROR_TYPE,
+							MessageConstants.THE_ROOM_NO_EXTIST_ERROR_MSG);
+					return msgInfo;
 				}
-				MessageInfo.Builder mi = roomBiz.buildSettlementData(room);// 计算结算信息
+				List<Player> players = room.getPlayers();
+
 				for (Player pl : players) {
-					pl.setPokerIds(null);//结算完毕清除上一盘每个玩家的牌
+					MessageInfo.Builder mi = MessageInfo.newBuilder();
+					mi.setMessageId(MESSAGE_ID.msg_PostNNShowCards);
+					PostNNShowCards.Builder postNNShowCards = PostNNShowCards
+							.newBuilder();
+					postNNShowCards.setPlayerId(playerId);
+					postNNShowCards.addAllPokers(player.getPokerIds());
+					postNNShowCards.setNntype(nntype);
+					mi.setPostNNShowCards(postNNShowCards);
 					pl.getChannel().writeAndFlush(mi.build());
 				}
-				if (room.getPlayedGames() > room.getTotalGames()) {// 该房间的房卡局数已经结束
-					deductionRoomCards(room);
-					roomBiz.removeRoom(room.getRoomId());// 删除该房间信息
-				} else {// 每一小局完了，需要初始化房间对象的相关数据
-					room.init();
+				room.increaseShowCardsPlayerCnt();// 开牌人数加1
+				if (room.getShowCardsPlayerCnt().equals(room.getPlayers().size())) {// 所有玩家已开牌，则进行结算
+					room.increasePlayedGamesCnt();// 已玩局数加1
+					//扣减房卡逻辑
+					if(room.getPlayedGames().equals(2)){
+						deductionRoomCards(room,false);
+					}
+					MessageInfo.Builder mi = roomBiz.buildSettlementData(room);// 计算结算信息
+					roomBiz.computeBanker(room);//计算下一小局庄家
+					for (Player pl : players) {
+						pl.setPokerIds(null);//结算完毕清除上一盘每个玩家的牌
+						pl.getChannel().writeAndFlush(mi.build());
+					}
+					if (room.getPlayedGames() > room.getTotalGames()) {// 该房间的房卡局数已经结束
+						deductionRoomCards(room,true);
+						roomBiz.removeRoom(room.getRoomId());// 删除该房间信息
+					} else {// 每一小局完了，需要初始化房间对象的相关数据
+						room.init();
+					}
 				}
+				return null;
 			}
+			NNShowCardsResp.Builder resp = NNShowCardsResp.newBuilder();
+			resp.setPlayerId(playerId);
+			resp.addAllPokers(remainderPokerIds);
+
+			resp.setNntype(nntype);
+			msgInfo.setNnShowCardsResp(resp);
+			return msgInfo;
+		}catch (Exception e){
+			e.printStackTrace();
 			return null;
 		}
-		NNShowCardsResp.Builder resp = NNShowCardsResp.newBuilder();
-		resp.setPlayerId(playerId);
-		resp.addAllPokers(remainderPokerIds);
-
-		resp.setNntype(nntype);
-		msgInfo.setNnShowCardsResp(resp);
-		return msgInfo;
 	}
 
-	public void deductionRoomCards(Room room){
+	public void deductionRoomCards(Room room,boolean lastDeduction){
 		int games = room.getTotalGames();
 		int type = room.getType();
 		try{
-			if (type == 1){//房主支付
+			if (type == 1 && !lastDeduction){//房主支付，第一小局结算后扣房卡
 				int cards = games / 10;//每张房卡10局
 				String deductionRoomCardsUrl = WeixinConstants.deductionRoomCardsUrl;
 				deductionRoomCardsUrl = deductionRoomCardsUrl.replace("USERID",""+room.getBankerId());
@@ -319,8 +354,8 @@ public class GameBizImpl implements IGameBiz {
 				deductionRoomCardsUrl = deductionRoomCardsUrl.replace("CARDS",""+cards*4);
 				JSONObject obj1 = CommonUtils.sendGet(deductionRoomCardsUrl);
 				String isSuccess = obj1.getString("success");
-				System.out.println("isSuccess:"+isSuccess);
-			}else if(type == 2){//aa支付
+				System.out.println("banker deductionRoomCards isSuccess:"+isSuccess);
+			}else if(type == 2 && !lastDeduction){//aa支付,第一小局结算后扣房卡
 				List<Player> pls = room.getPlayers();
 				if(CollectionUtils.isNotEmpty(pls)){
 					int cards = games / 10;//每张房卡10局
@@ -332,10 +367,10 @@ public class GameBizImpl implements IGameBiz {
 						deductionRoomCardsUrl = deductionRoomCardsUrl.replace("CARDS",""+cards);
 						JSONObject obj1 = CommonUtils.sendGet(deductionRoomCardsUrl);
 						String isSuccess = obj1.getString("success");
-						System.out.println("isSuccess:"+isSuccess);
+						System.out.println("aa deductionRoomCards isSuccess:"+isSuccess);
 					}
 				}
-			}else if (type == 3 && (room.getPlayedGames() > room.getTotalGames())){//赢家支付
+			}else if (type == 3 && lastDeduction){//赢家支付,最后扣房卡
 				int cards = games / 10;//每张房卡10局
 				String deductionRoomCardsUrl = WeixinConstants.deductionRoomCardsUrl;
 				deductionRoomCardsUrl = deductionRoomCardsUrl.replace("USERID",""+room.getWinPlayerId());
@@ -344,7 +379,7 @@ public class GameBizImpl implements IGameBiz {
 				deductionRoomCardsUrl = deductionRoomCardsUrl.replace("CARDS",""+cards*4);
 				JSONObject obj1 = CommonUtils.sendGet(deductionRoomCardsUrl);
 				String isSuccess = obj1.getString("success");
-				System.out.println("isSuccess:"+isSuccess);
+				System.out.println("winer isSuccess:"+isSuccess);
 			}
 		}catch (Exception e){
 			e.printStackTrace();
@@ -516,12 +551,24 @@ public class GameBizImpl implements IGameBiz {
 		messageInfo.setMessageId(MESSAGE_ID.msg_PostSendSoundResp);
 		SendSoundReq req = messageInfoReq.getSendSoundReq();
 		Integer playerId = req.getPlayerId();
+		Player player = CommonData.getPlayerById(playerId);
 		Integer soundId = req.getSoundId();
-		PostSendSoundResp.Builder postSendSoundResp = PostSendSoundResp
-				.newBuilder();
-		postSendSoundResp.setPlayerId(playerId);
-		postSendSoundResp.setSoundId(soundId);
-		messageInfo.setPostSendSoundResp(postSendSoundResp);
-		return messageInfo;
+		if(player!=null){
+			Integer roomId = player.getRoomId();
+			if(roomId != null){
+				Room room = CommonData.getRoomByRoomId(roomId);
+				if (room!=null && CollectionUtils.isNotEmpty(room.getPlayers())){
+					for (Player pl:room.getPlayers()){
+						PostSendSoundResp.Builder postSendSoundResp = PostSendSoundResp
+								.newBuilder();
+						postSendSoundResp.setPlayerId(playerId);
+						postSendSoundResp.setSoundId(soundId);
+						messageInfo.setPostSendSoundResp(postSendSoundResp);
+						pl.getChannel().writeAndFlush(messageInfo.build());
+					}
+				}
+			}
+		}
+		return null;
 	}
 }

@@ -38,6 +38,12 @@ public class MessageConstants {
 	public static Integer PLAYER_STATE_TYPE_1007 = 1007;
 	public static String PLAYER_STATE_MSG_1007 = "用户id和token验证失败!";
 
+	public static Integer PLAYER_STATE_TYPE_1008 = 1008;
+	public static String PLAYER_STATE_MSG_1008 = "请选择庄类型!";
+
+	public static Integer PLAYER_STATE_TYPE_1009 = 1009;
+	public static String PLAYER_STATE_MSG_1009 = "服务端收到未知用户发送的心跳!";
+
 	public static Integer CREATE_ROOM_ERROR_TYPE = 3001;
 	public static String CREATE_ROOM_ERROR_MSG = "创建房间失败!";
 

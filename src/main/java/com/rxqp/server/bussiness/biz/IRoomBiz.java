@@ -62,4 +62,10 @@ public interface IRoomBiz {
 
 	public MessageInfo.Builder reEntryRoom(MessageInfo messageInfoReq,ChannelHandlerContext ctx);
 
+	/**
+	 * 计算下一小局的庄家
+	 * @param room
+	 */
+	public void computeBanker(Room room);
+
 }
