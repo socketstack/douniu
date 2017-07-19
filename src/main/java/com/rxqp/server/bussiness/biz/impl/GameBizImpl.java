@@ -313,17 +313,20 @@ public class GameBizImpl implements IGameBiz {
 					if(room.getPlayedGames().equals(2)){
 						deductionRoomCards(room,false);
 					}
-					MessageInfo.Builder mi = roomBiz.buildSettlementData(room);// 计算结算信息
-					roomBiz.computeBanker(room);//计算下一小局庄家
+
+					MessageInfo.Builder mi = null;
+					if (room.getPlayedGames() > room.getTotalGames()) {// 该房间的房卡局数已经结束
+						deductionRoomCards(room,true);
+						mi = roomBiz.buildSettlementData(room);// 计算结算信息
+						roomBiz.removeRoom(room.getRoomId());// 删除该房间信息
+					} else {// 每一小局完了，需要初始化房间对象的相关数据
+						mi = roomBiz.buildSettlementData(room);// 计算结算信息
+						roomBiz.computeBanker(room);//计算下一小局庄家
+						room.init();
+					}
 					for (Player pl : players) {
 						pl.setPokerIds(null);//结算完毕清除上一盘每个玩家的牌
 						pl.getChannel().writeAndFlush(mi.build());
-					}
-					if (room.getPlayedGames() > room.getTotalGames()) {// 该房间的房卡局数已经结束
-						deductionRoomCards(room,true);
-						roomBiz.removeRoom(room.getRoomId());// 删除该房间信息
-					} else {// 每一小局完了，需要初始化房间对象的相关数据
-						room.init();
 					}
 				}
 				return null;

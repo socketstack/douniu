@@ -311,12 +311,13 @@ public class LoginBizImpl implements ILoginBiz {
 			JSONObject obj = CommonUtils.sendGet(url);
 			Player player = new Player();
 			if (obj == null){
-				String url1 = WeixinConstants.addUserWithOpenid;
-				url1 = url1.replace("OPENID", openid);
-				url1 = url1.replace("NAME", weixinUserInfo.getName());
-				url1 = url1.replace("IMG_URL", weixinUserInfo.getHeadImgUrl());
-				url1 = url1.replace("UNIONID",weixinUserInfo.getUnionid());
-				obj = CommonUtils.sendGet(url1);
+				String url1 = WeixinConstants.addUserWithOpenidUrl;
+				String param = WeixinConstants.addUserWithOpenidParam;
+				param = param.replace("OPENID", openid);
+				param = param.replace("NAME", weixinUserInfo.getName());
+				param = param.replace("IMG_URL", weixinUserInfo.getHeadImgUrl());
+				param = param.replace("UNIONID",weixinUserInfo.getUnionid());
+				obj = CommonUtils.sendPost(url1,param);
 				if(obj==null)
 					return null;
 				player.setCardNum(NEW_PLAYER_CARDS);

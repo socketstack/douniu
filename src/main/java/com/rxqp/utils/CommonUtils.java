@@ -363,6 +363,69 @@ public class CommonUtils {
 		return jsonObject;
 	}
 
+	public static JSONObject sendPost(String ADD_URL,JSONObject obj) {
+
+		try {
+			//创建连接
+			URL url = new URL(ADD_URL);
+			HttpURLConnection connection = (HttpURLConnection) url
+					.openConnection();
+			connection.setDoOutput(true);
+			connection.setDoInput(true);
+			connection.setRequestMethod("POST");
+			connection.setUseCaches(false);
+			connection.setInstanceFollowRedirects(true);
+			connection.setRequestProperty("Content-Type",
+					"application/x-www-form-urlencoded");
+
+			connection.connect();
+
+			//POST请求
+			DataOutputStream out = new DataOutputStream(
+					connection.getOutputStream());
+
+			out.writeBytes(obj.toString());
+			out.flush();
+			out.close();
+
+			//读取响应
+			BufferedReader reader = new BufferedReader(new InputStreamReader(
+					connection.getInputStream()));
+			String lines;
+			StringBuffer sb = new StringBuffer("");
+			while ((lines = reader.readLine()) != null) {
+				lines = new String(lines.getBytes(), "utf-8");
+				sb.append(lines);
+			}
+			System.out.println(sb);
+			reader.close();
+			// 断开连接
+			connection.disconnect();
+			JSONObject jsonObject;
+			try {
+				jsonObject = JSONObject.fromObject(sb.toString());
+			} catch (Exception e) {
+				String jStr = XmlConverUtil.xmltoJson(sb.toString());
+				jsonObject = JSONObject.fromObject(jStr);
+				return null;
+			}
+			return  jsonObject;
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+
+	}
+
 	public static void main(String[] args) {
 		// System.out.println(getRandomString(32));
 		// PrePayReq prePayReq = new PrePayReq();
@@ -386,8 +449,19 @@ public class CommonUtils {
 //		String xml = mapToXml(map);
 //		System.out.println(xml);
 //		String url = "http://localhost:8081/addUser.do?openid=OPENID2&name=mff&imgUrl=http://www.xxxx.com/fyj/rtjk/xxx.gif";
-		String url = "http://139.129.98.110:8090/game_service/getPlayerByOpenid.do?openid=oEJQm1ZaRtilEGFWqPDwo6HnanV8";
-		JSONObject re = sendGet(url);
+//		String url = "http://139.129.98.110:8090/game_service/getPlayerByOpenid.do?openid=oEJQm1ZaRtilEGFWqPDwo6HnanV8";
+		String url = "http://139.129.98.110:8090/game_service/addUser.do";
+		String param = "openid=oEJQm1fg7j-3s-NkIhw7_bEFG4nM&name=Go on a trip alone&imgUrl=http://wx.qlogo.cn/mmopen/HQ332oGoPAs9EcxMRzJOsn9K3RG6nPq3zSuguVLCzCZvVtS2MX6EERGYcY9iao2zxpjk3Dsb2qrjul6cgoogjibc2ZcKyibhfES/0&unionid=oYzERwznU6iDNllHen0l2Ir1siKo";
+		JSONObject re = sendPost(url,param);
+
+//		String url = "http://139.129.98.110:8090/game_service/addUser.do";
+//
+//		JSONObject obj = new JSONObject();
+//		obj.element("openid", "oEJQm1fg7j-3s-NkIhw7_bEFG4n");
+//		obj.element("name", "Go on a trip alone");
+//		obj.element("imgUrl", "http://wx.qlogo.cn/mmopen/HQ332oGoPAs9EcxMRzJOsn9K3RG6nPq3zSuguVLCzCZvVtS2MX6EERGYcY9iao2zxpjk3Dsb2qrjul6cgoogjibc2ZcKyibhfES/0");
+//		obj.element("unionid", "oYzERwznU6iDNllHen0l2Ir1siKo");
+//		JSONObject re = sendPost(url,obj);
 		System.out.println(re);
 	}
 }
